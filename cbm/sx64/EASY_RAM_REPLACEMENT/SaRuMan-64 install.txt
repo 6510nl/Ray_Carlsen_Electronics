@@ -1,0 +1,14 @@
+             INTRODUCING THE SARUMAN-64... A BETTER WAY TO REPLACE RAM   
+                       updates and corrections 9-28-2021
+
+     One of my least favorite jobs as a repair tech is extracting and replacing RAM chips in a C64, C128, SX64 and Plus/4. If the C64 or Plus/4 board has been damaged by a faulty power supply or the offending chips are the MT brand which are all known to be bad, I always replace all eight because experience has shown I'll see that computer again sooner or later to replace other RAM that might work fine now but will likely fail as well. 
+
+     Over the years I've done my share of extracting chips, cleaning the holes and installing sockets for new RAM. It's hateful work which takes several hours to complete, and my cost for the parts alone is over $20. I had taken to swapping out some motherboards and relegating damaged "dead" boards to the shelf to use for parts simply because the standard repair is so time consuming. Also, I have an allergy to solder fumes which makes that work even more unpleasant for me.
+
+     Enter the SaRuMan-64, a small module sold in Canada by Francois Leveille <eslapion@videotron.ca> that is designed to replace all RAM at one time. It's SRAM based and so draws less current than CMOS dynamic RAM chips. These modules can only be used on Commodore 8 bit computer motherboards C64, SX-64, and Plus/4 to replace all existing RAM. They are -not- designed to upgrade earlier computers such as the VIC20, C16 or PET, nor the RAM in an REU. The new components run cool and should therefore outlive the computer. 
+
+     The SaRuMan-64 can be made to replace all eight RAM chips in all other C64 boards, the SX, and the Plus/4. The SaRuMan-128 module replaces all RAM in the C128. With the exception of the last two C64 boards with only two RAM chips, each C64 board version (326298, 250407, and 250425) has the same 8 chip complement in the same order but pin spacing is slightly different in each, so buying the modules without headers made them easier for me to install. There are photos of each board install in their respective directories.
+
+INSTALLATION ON THE SX CPU BOARD...
+
+     The module is placed over IC locations UA5 and UA6 after all eight original RAM have been extracted or snipped out. Headers of the new board directly connect all eight address lines, /CAS, /RAS/, /WE, two data lines and +5V VCC. The six remaining data lines to the module are then connected with short jumper wires to the other empty motherboard locations at pins 2 or 14, and the ground connection to the module connected to pin 16 of any of the empty motherboard locations. Note that the eight data lines need not be in any specific order so those jumpers can be placed in a convenient arrangement. The photo shows all connections. 

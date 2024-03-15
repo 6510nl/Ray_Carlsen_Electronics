@@ -1,0 +1,84 @@
+            A/V CABLES FOR COMMODORE COMPUTERS   5-23-2014
+
+     There are lots of cables out there and none of them are wired the
+same as an original Commodore. CBM made two types. The earliest was a
+two-wire used with the VIC20, with one plug each for video and audio.
+That cable will also work with all versions of the C64. Early C64
+boards and the VIC20 have a five pin DIN A/V socket, and later C64's
+and the C128 series use an 8 pin DIN. I admit I'm not sure who made
+that particular cable.
+     The next Commodore cable type was a three-wire made for use only
+with the three rear inputs of a Commodore monitor (1702, 1084, etc.)
+because it separated the luminance (black and white signal) from the
+chroma (color information), which is similar to contemporary S-video.
+That cable has eight pins in the DIN plug to match the A/V socket of
+later C64's and the 128 and that arrangement produces the best picture 
+on a Commodore monitor. The three colored plugs of that cable match 
+the three colored input jacks on the rear of the monitor. Make sure 
+the monitor switch is in the correct position to use those rear input 
+jacks. Although most Commodore monitors use the three RCA jacks for 
+Y/C video and audio, one has a different connector. The CBM 1902A 
+monitor has a 6 pin DIN and requires the appropriate cable (6 pin DIN
+to 8 Pin DIN) for use with the computer. If that 6 pin looks familiar, 
+it's the same as used on the computer for its serial cable. 
+     Later Commodore computers including the C128 still have a single
+composite output so any video monitor will work with the appropriate
+cable. Note: the Commodore three-wire cable will not work with a
+composite (single wire for video) monitor. The resulting video will be
+black and white only. Obviously a three wire (8 pin DIN) cable will
+not work with the VIC20 or the early version C64 as those computers 
+use a five pin DIN A/V jack.
+
+FOUR WIRE CABLES AND COMMODORE COMPUTERS
+
+     OK, now it gets complicated... there are lots of four wire cables
+out there and none of them were original Commodore AFAIK. They all use
+a five pin DIN connector and the colors of the wires will -not- match
+the Commodore receptacles (yellow for video, etc.). There are even
+different color combinations with different four wire cables! These
+cables go all the way back to the 1960's. They were originally used in
+European audio systems. I first saw DIN connectors in Germany when I
+was in the Army in 1965.
+     If you have a four-wire cable, it will probably still work with
+your Commodore computer but you must find the plug combinations that
+matches your monitor. Of course the colors will not match. NOTE: one
+of those wires of the four wire cable will connect directly to the SID
+audio -input-. If that plug touches anything metal with the computer
+on, it can instantly destroy the SID (sound chip). Ask me how I know.
+
+FOUR WIRE CABLE CONNECTIONS WITH A COMMODORE (OR OTHER) MONITOR
+
+    If you have a Commodore monitor but no matching three wire cable, 
+you might have to make do with the more common four wire cable. Switch 
+the CBM monitor to its front inputs. Use those for composite, not the 
+rear S-video jacks. Now, Commodore monitor or not, connect one of the 
+four plugs to the video input of your monitor (yellow socket) and turn 
+the computer on. If the opening screen comes up, that's your composite 
+video line. If the picture has no color, that's video but it's not 
+composite. Turn the computer off each time when you want to change 
+connections. Try each of the other plugs to locate the audio output. 
+If you turn up the volume, you should hear the normal characteristic 
+whine of the SID chip. Once you've found all the correct wires, tape 
+up the unused plugs so they can't short to anything. Note that there
+is only mono audio out of the computer so connect it to the left 
+audio input if your monitor is stereo. Many TV's or monitors with 
+stereo sound will route the left input to both speakers. 
+
+ALTERNATE S-VIDEO HOOKUP USING A FOUR WIRE CABLE WITH A CBM MONITOR
+
+     Although you should not use a four-wire cable with the rear jacks
+of a Commodore monitor, you can try to see if an alternate hookup will
+produce an acceptable picture. Switch the monitor to the rear inputs
+and turn the computer off. As above, test each of the cable plugs, one
+at a time (computer on only to make the test), to find the correct ones.
+Two of the four-wire plugs will produce a B/W picture but one of them
+will look cleaner on the screen. That's the wide band B/W output.
+Connect that one to the yellow input jack of the monitor and the other
+video output to the red (color) input jack. You should have a color
+picture if the connections are correct. The quality of the picture can
+vary depending on the monitor, specifically if it will accept composite
+video for its color input. If it looks good, connect the audio and
+you're done. Be sure to tape up the unused plug (SID audio input) for
+safety!
+
+Ray

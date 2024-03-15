@@ -1,0 +1,23 @@
+       SFD-1001 Parts List (main components only)
+
+Location       Part Number    Description
+7G, 9G                        2116 (2) 2K x 8 static RAM
+
+DOS:
+1J             901887-01      2364 ROM DOS 2.7 C000-DFFF
+3J             901887-02      2364 ROM DOS 2.7 E000-FFFF
+3J             901888-01      2364 ROM DOS 2.7 E000-FFFF
+2H                            6502 CPU
+4J, 6J                        6532 (2) RIOT
+
+Controller:
+5C             901467-01      6316-017 ROM GCR
+1E                            6502 CPU
+5E                            6522 VIA
+3E             251232         adapter board (see below)
+drive mech.                   Matsushita JU-570-2, dual head
+
+Adapter Board in 3E socket:
+U2             251257-02A     2716 EPROM controller
+U1             901885-04      6530 RIOT w/ ROM disabled
+U3                            74LS14 TTL

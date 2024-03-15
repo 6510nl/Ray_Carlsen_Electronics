@@ -1,0 +1,51 @@
+   50 IFPEEK(165)=255THEN4000:REM REPORT PROGRAMMING ERROR.
+   60 PRINT"PROGRAMMING OK."
+   70 V:REM VERIFY ONCE AGAIN.
+   80 IFPEEK(165)=255THEN4020:REM REPORT VERIFY ERROR.
+   90 PRINT"VERIFY OK.":ETC, ETC....
+
+   SETTING UP A RAM BUFFER
+
+       Let's say you're using a 64 mode BASIC application
+   program and you want to set aside a large RAM buffer for
+   moving data to and from EPROM's and disk that you're sure
+   BASIC will not intrude upon. Here's a suggestion. Early In
+   your program, execute the following BASIC statement:
+
+   10 POKE55,0:POKE56,64:CLR
+
+   This confines your BASIC program to the 14k from 0801 through
+   3FFF.  Now, you have 32k from 4000 through BFFF for your RAM
+   buffer; and 8k from C000 through DFFF to use as a utility
+   area for ML programs, etc.
+
+   ONE FURTHER IMPORTANT POINT
+
+       A decimal address of 32768 must become a negative number
+   when expressed as a numeric variable.  This number will
+   decrease to -1 at 65535. This is of concern only for
+   addresses above 7FFF. Examination of the following table
+   will give you an idea of how to handle this.
+
+         DESIRED        DECIMAL VALUE        NUMERIC VARIABLE
+       HEX ADDRESS        EQUIVALENT            EQUILAVENT
+
+           1000              4096                    4096
+           2000              8192                    8192
+           4000             16384                   16384
+           7FFF             32767                   32767
+           8000             32768                  -32768
+           8FFF             36863                  -32673
+           9000             36864                  -32672
+           9FFF             40959                  -24577
+           A000             40960                  -24576
+           AFFF             45055                  -20481
+           B000             45056                  -20480
+           BFFF             49151                  -16385
+           C000             49152                  -16384
+           CFFF             53247                  -12289
+           D000             57248                  -12288
+           DFFF             57343                   -8193
+
+
+                               -20-

@@ -1,0 +1,53 @@
+   you typed them. For example:
+
+       Print "ZERO PAGE RAM":M0,FF:Print"END OF ZERO PAGE"
+
+       REMEMBER: ALL PROMOS 2.0 COMMAND PARAMETERS ARE ENTERED
+   AS HEXADECIMAL NUMBERS.
+
+   ERRORS
+
+       If you make a mistake typing in a PROMOS command, chances
+   are you'll be advised by the SYNTAX error message. If you
+   fail to supply all the parameters required by a command, an
+   UNDEFINED FUNCTION error will result. If you input incorrect
+   hexadecimal numbers, an ILLEGAL QUANTITY error will be
+   reported. Some PROMOS commands report other errors as may be
+   necessary.
+
+   PROMOS 2.0 COMMANDS
+
+   THE G COMMAND- Print command Glossary.
+
+       This isn't really a command at all. Type a G and a
+   carriage return and a list of the PROMOS commands and an
+   example of each is printed on the screen. If you commit
+   only one command to memory, make it this one.
+
+   THE R (or {}) COMMAND- Read EPROM data into computer memory.
+
+       By reading an EPROM, we mean transferring some or all of
+   the information it contains into the computer's memory. The
+   key letter can either be R or {}, the English monetary symbol.
+   Example:
+
+       R2000, 3FFF, 0, 6
+
+       The meaning of this command is: fill computer RAM from
+   2000 to 3FFF with data from this EPROM, beginning at EPROM
+   address 0000. The '6' is a parameter called the CONTROL
+   WORD. It is a number that tells the PROMENADE everything it
+   needs to know about the particular EPROM you are dealing
+   with. In the example, 6 is appropriate for the 2764A. A
+   list of control words appears inside the back cover of this
+   manual. A detailed discussion of control words and what they
+   mean is presented in APPENDIX A.
+      Another example:
+
+     {} 5000 BFFF 1000 E6
+
+      Here, we have used the {} symbol rather than R. The
+   command does exactly the same thing either way. In this
+
+
+                             -7-

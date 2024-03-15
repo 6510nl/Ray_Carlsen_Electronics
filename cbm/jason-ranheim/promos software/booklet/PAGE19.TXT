@@ -1,0 +1,53 @@
+       V command   A5- 00 = verify ok. FF = verify failed.
+                   A6,A7- EPROM address at failure.
+
+       C command   A5- 00 = COMP ok. FF = COMP failed.
+                   A6,A7- RAM address at lowest failure.
+                   A8- Checksum of compared data.
+                   A9- Hashtotal of compared data.
+       
+       H command   A5- 00 = No occurrence. FF = Bytes found.
+                   A6,A7- RAM address of first occurrence.
+
+       E command   A5- 00 = EPROM erased. FF = Not erased.
+                   A6,A7- EPROM address of lowest unerased byte.
+
+       Note that the C command generates a checksum and a
+   hashtotal.  You can use a 'dummy' C command to generate these
+   quantities for any range of RAM data.  For example:
+
+       C2000,DFFF,2000
+
+   compares RAM from 2000 through DFFF with itself. In the
+   process, the checksum and hashtotal over that range are
+   generated and reported.
+
+   SIMPLE SAMPLE PROGRAM
+
+   10 PRINT"INSTALL 27256 IN PROMENADE SOCKET."
+   20 PRINT:PRINT"TYPE A CARRIAGE RETURN WHEN READY."
+   30 GETA$:IFA$<>CHR$(13)THEN30
+   40 {}4000,BFFF,0,E6
+   50 S"27256 DATA",8,4000,BFFF:ETC.
+
+   USING BASIC VARIABLES
+
+      PROMOS commands would be of little utility In a BASIC
+   program if they could not make use of variable data. The
+   PROMOS L and S commands accept a string variable for the file
+   name. Any numeric parameters that you want to express as a
+   variable- addresses, control words, device numbers, etc. MUST
+   USE the INTEGER variable form. These are numeric variables
+   with a '%' sign suffix. Regular floating point variables
+   will not work. REMEMBER, numeric BASIC variables are always
+   DECIMAL quantities. Here's a simple example of the use of
+   variable quantities in a program:
+
+   10 NM$="MY FILE":DN%=8:LS%=8192:REM DEFINE PARAMETERS
+   20 LNM$,DN%,LS%:REM LOAD "MY FILE" STARTING AT $2000 FROM
+      DEVICE 8.
+   30 ES%=0:CW%=5:PM%=7:REM DEFINE PARAMETERS FOR PROGRAMMING.
+   30 LE%=PEEK(166)+256*PEEK(167):REM CALC LOAD END ADDRESS.
+   40 PLS%,LE%,ES%,CW%,PM%:REM PROGRAM 2764 EPROM.
+
+                            -19-

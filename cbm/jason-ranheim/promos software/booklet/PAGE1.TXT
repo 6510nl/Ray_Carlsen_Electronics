@@ -1,0 +1,47 @@
+                                INTRODUCTION
+
+            The acronym EPROM stands for Eraseable, Programmable,
+      Read Only Memory. It refers to another of those electronic
+      marvels that came out of INTEL Corp. in the mid Seventies. A
+      memory chip that the user can program to contain any sort of
+      digital information whatsoever. And even better, a chip that
+      can be erased by simple exposure to ultra-violet light and
+      reused many times. With these abilities, it is no wonder
+      that EPROM's are produced in such tremendous quantities. The
+      dollar volume is exceeded only by that of dynamic RAM'S.
+           With the tremendous proliferation of types and sizes,
+      programming an EPROM became a very complicated undertaking.
+      Many EPROM programming devices were designed to handle just a
+      single EPROM type; and those that could do more required
+      setting a multitude of switches or plugging In a 'personality
+      module'.  Some even required a voltmeter to set up.
+      Programming an EPROM could easily take an entire afternoon.
+      That unhappy situation suddenly changed with the introduction
+      of the PROMENADE C1.
+           By combining some sophisticated hardware with the power
+      of an inexpensive personal computer, the PROMENADE makes the
+      job almost trivial. And with new programming techniques, the
+      PROMENADE cuts the time required to duplicate an EPROM from
+      many minutes to just seconds. With all of its features and
+      capabilities, the PROMENADE has set the standard for EPROM
+      programmers all around the world. It has been widely
+      imitated, even copied exactly; but its most important
+      attribute has never been duplicated- VALUE.
+           But even the best products can be improved, and with the
+      introduction of PROMOS 2.0 the PROMENADE Is made even better.
+      Simple, yet powerful commands for the manipulation of data In
+      the computer and for moving that data to and from EPROM'S,
+      disk drives and the like give performance and ease of use
+      that have never before been achieved. Even better, these
+      commands can be incorporated into BASIC programs that let the
+      user customize his system to any EPROM programming
+      application.
+          The user is strongly urged to read this manual carefully
+      and to thoroughly familiarize himself with the material. An
+      hour or two spent this way will be repaid many times over.
+
+                                           JASON-RANHEIM COMPANY
+                                           Auburn, California
+                                           November, 1988
+
+                                     -1-

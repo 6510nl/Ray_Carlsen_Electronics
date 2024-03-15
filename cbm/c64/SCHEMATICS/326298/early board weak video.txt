@@ -1,0 +1,31 @@
+  
+           WEAK VIDEO OUT OF THE EARLY C64 326298 MOTHERBOARD
+                Latest updates or corrections 7-13-2018
+
+     I always wondered why this particular motherboard put out such a weak 
+video signal. I have four of them and they all do it. The early VIC chip 
+itself has a characteristic flaw, vertical "ghost" lines that closely 
+follow each screen character. That IC is the ceramic version 6567R56A and 
+they all do it. The later CBM black epoxy case 6567 IC outputs clean video. 
+However, the weak video persisted even after the VIC chip was replaced. 
+     I recently had some free time so I decided to find out why those early 
+boards put out video that is faint and blurry. It turned out to be a 
+factory mistake. There are several components between the output line of 
+the VIC chip pin 15 and the two video sources (luminance and composite) 
+that feed the A/V jack. There is a buffer transistor Q4 wired as an emitter 
+follower, a low impedance source to drive the outputs. Measured with an 
+oscilloscope, the luminance signal looked OK but the level of the composite 
+output was less than half normal. It should be at least 1VPP at the jack 
+when connected to a monitor. Looking at the schematics (I have several from 
+different sources), they all show the value of resistor R10 to be 120 ohms, 
+but in my four boards that resistor is 300 ohms! No wonder the video is so 
+weak. There are two other resistors that are shown on the schematics but 
+that don't exist on the boards, namely R48 and R49. The signal on coil L3 
+goes directly to pin 3 (no series resistor) of the video modulator and there 
+is no resistor to ground there either. 
+     So, how do we fix the weak video problem? Inside the video cage, just 
+to the right of the VIC chip, I connected a 220 ohm resistor across R10 to 
+bring the video level up where it belongs. Easy and quick. (See photo) This 
+old board now looks as good as the later version C64's. 
+
+Ray

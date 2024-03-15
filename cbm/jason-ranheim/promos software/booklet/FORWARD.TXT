@@ -1,0 +1,52 @@
+          PROMENADE C1 PROFESSIONAL EPROM PROGRAMMER
+
+                 For the COMMODORE 64 and 128 
+
+          With PROMOS 2.0 Operating System Software
+
+This manual and the PROMOS 2.0 software program are COPYRIGHT
+(C) 1988 by J. W. Ranheim. All rights are reserved.
+Neither this manual nor the PROMOS 2.0 program may be copied,
+reproduced, transferred, transmitted, disclosed or reduced to
+machine-readable form including magnetic or other storage
+media, without the prior written consent of the copyright
+owner, except that a reasonable number of archival copies of
+the PROMOS 2.0 software program may be made by the purchaser
+for his own exclusive personal use.
+PROMENADE, PROMENADE C1, PROMOS, and PROMOS 2.0 are
+trademarks of Jason-Ranhein Company.
+
+                     LIMITED WARRANTY
+
+JASON-RANHEIM COMPANY warrants to the ORIGINAL PURCHASER of
+these products that they are free from defects in materials
+and workmanship for a period of ninety (90) days from the
+date of purchase. These Jason-Ranhein Company products are
+sold 'AS IS' without express or implied warranty of any kind,
+and Jason-Ranhein Company Is not liable for any losses or
+damages of any kind resulting from the use of these products.
+Jason- Ranheim Company agrees for a period of ninety (90) -
+days to repair or replace, at its option, free of charge, any
+Jason-Ranhein Company product, postage paid, with proof of
+the date of purchase at its Factory Service Center.
+This warranty is not applicable to normal wear and tear.
+This warranty shall not be applicable and shall be void if
+the defect In the Jason-Ranheim Company product has arisen
+through abuse, unreasonable use, mistreatment or neglect.
+This warranty is in lieu of all other express warranties and
+no other representation or claims of any nature shall be
+binding on or obligate Jason-Ranhein Company. Any implied
+warranties applicable to these products including warranties
+of merchantability and fitness for a particular purpose are
+limited to the ninety (90) day period described above. In no
+event will Jason-Ranheim Company, its officers, employees,
+agents, successors or assigns be liable for any special,
+incidental, or consequential damage resulting from the
+possession, use or malfunction of these Jason-Ranheim Company
+products.
+
+                    JASON-RANHEIM COMPANY
+                      3105 Gayle Lane
+                    Auburn, Calif. 95603
+                     (916) 878-0785
+

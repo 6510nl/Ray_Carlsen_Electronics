@@ -1,0 +1,18 @@
+              HOW TO USE A C128 KEYBOARD ON A C128DCR
+
+    The keyboard from a "flat" C128 will work on your C128DCR (USA 
+version in the metal case) computer with an adapter cable. Note that a 
+straight-through (pin 1 to pin 1, etc.) will NOT work. The adapter has 
+to be wired with pin 1 and pin 13 reversed and all other pins similarly 
+cross connected. The easiest way to do that is with 25 wire ribbon cable 
+and two male 25 pin Dsub connectors. The line on one end of the cable 
+normally indicates pin 1. Wire one end that way and reverse it for the 
+other connector. I didn't have a crimper to secure those connectors so 
+I used my shop vise to do the job. You can use pliers but the jaws will 
+mar the connector face unless you protect it somehow. 
+    One other thing that needs to be done to make the C128 plug fit the 
+hood of the Dsub connector is to trim the edges off the plug. I used a 
+file to round off those edges and make the connector fit properly. This 
+doesn't alter it, so it can still be used with a C128 computer. 
+
+Ray

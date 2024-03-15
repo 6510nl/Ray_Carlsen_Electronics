@@ -1,0 +1,269 @@
+                   SETUP ADJUSTMENTS FOR CRT COLOR MONITORS
+
+Generic instructions for adjusting color purity, convergence and greyscale.
+                  Latest updates and corrections: 7-7-05
+
+     If you've never adjusted a monitor before, keep in mind there are
+dangerous voltages inside. The most obvious is the high voltage on the
+picture tube, but you're not likely to lift the cap on the CRT during
+your setup adjustments, so don't worry about that. The not-so-obvious
+danger is that monitors and TV sets are "line operated" devices. That
+means that the chassis is "hot" to ground at all times and poses a
+lethal potential between chassis parts and other grounded objects around
+it. Technicians use a 1:1 isolation transformer to reduce the risk of
+shock and damage to equipment. You can work in reasonable safety if you 
+keep other grounded objects (computer, drives, etc.) away from your work 
+area. Touch only with one hand (put the other hand in your pocket... a 
+habit I got into long ago) to reduce the risk of electrical shock. Taking 
+a hit from arm to arm across the chest can stop your heart. Now, down to 
+business...
+     Advances in technologies along with cost-cutting measures by all
+electronic equipment manufacturers have produced a display tube that needs
+less support hardware and fewer setup adjustments than earlier dot-matrix
+types. The most common Cathode-Ray Tube (CRT) now has three inline (side by
+side) electron "guns" rather than the triad arrangement of the earlier
+types. The newer tubes are sometimes referred to as "slot-mask" or just
+"inline" CRTs. With inline tubes, the deflection yoke is designed to match
+the tube so only simple corrections are needed to produce an acceptable
+picture. Setup adjustments are done by moving several sets of rings on the
+neck of the tube. These rings are made of magnetized material to direct the
+CRT electron beams to the desired locations on the tube face. The two major
+alignments are screen "purity" and "static beam convergence". The term
+"static" simply means beam correction with magnets rather than with
+electronic circuitry. The latter is usually referred to as "dynamic"
+convergence and is only used in high-end monitors and large screen TV sets.
+     There are three pairs of rings, each designed for a specific
+adjustment. The ones closest to the yoke (the large deflection coil
+assembly, mounted near the bell of the tube) are the two pole purity rings.
+Purity adjustments are necessary only if a blank white screen shows
+"blotches" of color. The next pair of rings are a four pole type that
+controls the RED and BLUE static convergence (horizontal and vertical lines
+in the center of the screen). The last pair of rings are 6 pole to control
+the static alignment of MAGENTA (RED + BLUE) with GREEN. Behind that pair
+of rings there is often a locking device. Note: not all makes and model use
+a locking ring.
+     Manufacturers usually put a line of glue across the assembly, and/or
+there is an ink line drawn across all the rings to indicate their position
+after factory alignment. Mark your own line if there is none. That's useful
+in case you get "lost" when attempting realignment so you can put them all
+back in order again. Each ring has two tabs that stick out to allow for
+adjustment with your fingers, a rounded end and a square end. The rounded
+ends are usually pretty close together in normal use and are generally the
+ones accessible with your fingers.
+     A picture tube is said to be in convergence when all three beams
+(primary colors of RED, GREEN and BLUE) overlap in all places on the
+screen. Misconvergence shows up as color "fringing" around the edges of
+objects anywhere on the screen. The convergence adjustments are normally
+"roughed in" before purity is adjusted because they interact with each
+other somewhat. Unless someone has been "diddling" and has it completely
+out of alignment, coarse settings will not change and you can just "tweek"
+the convergence to optimise it.
+          All ring pairs share one thing in common: when the rounded
+adjustment tabs are set together (aligned directly over each other), the
+magnetic fields of the two rings cancel each other out. If they are then
+rotated together, nothing happens. If a picture tube and yoke were perfect
+from the factory, they would need no correction, but that never happens.
+When pairs of rings are offset with respect to each other, magnetic fields
+are generated in specific directions relative to the tabs. One convergence
+adjustment is done by splitting or separating the tabs of a pair of rings
+in the necessary direction. That moves the beams in a horizontal direction
+and so affects vertical lines on the screen. The other adjustment is done
+by rotating both rings together, and that moves the beams in a vertical
+direction, affecting horizontal lines. Of course these adjustments interact
+with each other, so you must go back and forth between the two settings for
+optimal convergence. It takes very little movement of the rings to affect
+the image you see on the screen. All this may seem confusing at first, but
+it becomes clear when you see for yourself how movement of the rings
+changes the screen.
+     To be able to see the effect adjustments are having on the tube face,
+test patterns are recommended, the most common being a "crosshatch" pattern
+of a dozen or so horizontal and vertical white lines on a black background.
+Some techs are more comfortable with a white dot pattern, but it doesn't
+really matter. A screenful of zeros or + signs on the monitor will work as
+well. The front panel color level control must be turned down so there is
+no residual color on the screen to confuse the readings.
+
+                    IMPORTANT FIRST STEPS!!!
+
+     If a lock is used on the convergence ring assembly, it needs to be
+unscrewed (rotated counter-clockwise, looking at it from the rear of the
+tube) to unlock it. Otherwise you will break the rings attempting to move
+them. A locking ring will be similar in appearance to the adjustment rings
+and will have tabs for "adjustment", but it will be thicker than the others
+and will be the last one on the stack towards the rear of the tube. Back
+off the lock ring about one-half a turn. If it is left too loose, the
+adjustment rings will slip out of adjustment easily while you are
+working... too tight and they might break. If there are any wires around
+the assembly, they must be moved out of the way so they don't snag on any
+of the ring tabs underneath.
+     The glue (if it was used) on the rings holds them even if the lock is
+released, so you need to break the glue bonds between rings to be able to
+make adjustments. Use a sharp knife or flat blade screwdriver to gently pry
+between rings to free them from the assembly and from each other. Don't
+scrape the glue off. It's useful as a marker to see where the adjustments
+were... just in case. If there is no glue or marks of any kind, draw one
+with a magic marker or felt tip pen across the entire assembly before you
+begin. Glue or not, it's a good idea to make your own mark anyway. That
+way, if you get totally confused and mess up the adjustments, you can
+always put it back the way it was if you line up all the rings on your
+mark.
+     Since you will be working on a live chassis, it is assumed you already
+know your way around inside electronic equipment and will observe the proper 
+safeguards.
+
+                       COLOR PURITY ADJUSTMENTS
+
+     Screen color purity is normally the first CRT setup adjustment to be
+made, but it doesn't normally drift very much over time and therefore
+doesn't require routine adjustment. Purity is said to be good if, when each
+color is turned on and the other two turned off, the entire screen is all
+one color. Bad purity will show up as wrong colors on what should be a pure
+color field, or color blotches on what should be a white screen (all three
+guns turned on). If you can already get a good white screen, don't fool
+with the purity adjustments. But, if you must...
+     There are internal controls for each CRT "gun" to set the brightness
+level for that color. To adjust green screen purity (the center gun and the
+most common one to view during purity setup adjustments), turn down the red
+and blue guns with their respective controls and/or turn up the green. If
+you can, somehow mark the position of the controls beforehand so you can
+put them back when you're finished. Each TV or monitor has it's own
+terminology for these controls. Some call them "low light", others "screen"
+or "G2" or "cut off", and still others "bias". These controls need to be
+reset to their proper points when purity adjustments are completed or the
+resulting offset "white balance" will show as "tinting" of one color over
+the entire screen when the brightness is changed.
+     An alternate way to do the setup without having to adjust any CRT
+level controls is with a generator or via a program in the computer feeding
+the monitor. For example, a simple BASIC program can be written to set
+forground and background color to GREEN only. Patterns of lines or dots can
+be likewise generated in a program.
+     To adjust purity, set up a green screen as indicated above. Loosen the
+yoke clamp and pull the yoke back towards the convergence assembly as far
+as it will go. If there is any glue or tape holding it, it may be necessary
+to gently twist the yoke to break it loose from the tube. A wide vertical
+bar of solid green should appear in the center of the screen. If it's off
+center, the purity rings should be rotated and/or separated to center the
+green bar. Then slide the yoke forward just enough to get an overall green
+screen without contamination by red or blue. Use a bar or crosshatch
+pattern to make sure the yoke is straight (rotational misalignment will
+cause the picture to be tilted), and then gently tighten the yoke clamp.
+It's a good idea to check the red screen purity, then blue. Slight
+adjustments of the rings or yoke position may be required to optimize the
+purity of each of the three color fields. Some compromise may be necessary,
+but it's usually not important to get it perfect. It has to be pretty far
+off to show up on a white screen.
+     If you turned any of the level controls to do the purity adjustments,
+reset them to their original spots. The screen should be a neutral grey. To
+check for proper "grey scale" or "CRT tracking", turn down the brightness
+control and see if the white screen goes to any color as it darkens. If it
+does, adjust the level controls a bit to get a neutral grey dark screen.
+
+                              CONVERGENCE
+
+     For convergence adjustments, you need to use something to generate a
+pattern of horizontal and vertical lines on the screen called a
+"crosshatch". Some techs prefer a pattern of dots. If your source video is
+from a computer, a screenfull of zeros or + signs will work OK. As stated
+before, the purity rings are the first set on the convergence stack behind
+the yoke. Don't adjust those unless you have to. The second pair of rings
+is used to converge the RED and BLUE lines at the center of the screen.
+Separating the rings will move the beams horizontally (side to side), so
+for that adjustment, you must look at the vertical lines of the crosshatch
+to see the effect. Holding and moving both rings together moves the beams
+vertically. To see that effect, you need to watch the horizontal lines at
+the center of the screen.
+     The third set of rings set the convergence of MAGENTA (RED+BLUE) AND
+GREEN. AS before, Looking at the center of the screen, separating the rings
+allows for horizontal beam movement (observe vertical lines) and rotating
+both rings together moves the beams vertically (observe horizontal lines).
+All slot-mask picture tubes use a variation of this setup procedure.
+     If the center of the screen is properly converged but there is still
+misconvergence at the screen edges, you must tilt the -front- of the yoke
+up or down (without loosening the mounting clamp), or side to side for
+compensation while observing a crosshatch pattern on the screen. Note that
+up/down movement of the yoke will affect convergence at the screen left and
+right sides, and side to side movement of the yoke will affect screen edge
+convergence at the top and bottom of the screen. Smaller tubes don't
+normally require adjustment, but larger screen sizes can show quite a bit
+of misconvergence at the edges. When adjustment is optimised, small rubber
+or plastic wedges are used to hold the yoke in place. Sometimes these
+blocks fall out. If edge convergence is bad and center convergence is OK,
+look for loose or missing blocks. They are fitted with double-sided tape or
+glue to keep them in position between the yoke and the bell of the tube so
+the yoke can't move. Silicon rubber sealer works well as glue.
+
+                               GREYSCALE
+
+     The setup procedure can be called black and white tracking, color 
+balance, white balance, CRT tracking, or just greyscale adjustment. CRT 
+monitors are similar enough that this generic information can be used with
+most of them. If you somehow mark the controls before you make any 
+adjustments, you can return them to the starting point just in case you get 
+"lost". A dab of paint or ink from a marker pen works well, but whatever 
+you use, don't get any inside the control itself. 
+     There are two sets of controls (usually three per set, but some
+monitors have only two "drive" controls) to set the picture highlights
+and lowlights separately. These controls set the voltage levels that
+appear on each of the three color "guns" of the picture tube or CRT. The
+highlights or bright areas of the image are set with the "background" or
+"drive" controls, and the lowlights are set with the "screen", "cutoff"
+or "G2" controls. Each manufacturer has their own names for these
+controls, and of course each model has the controls in different places
+physically. Some will place all controls on the CRT neck board (the
+board that plugs directly onto the picture tube), and some will have
+some or all on the main chassis, usually along the rear panel for easy
+access. They are normally adjusted by use of a small, flat blade
+screwdriver with an insulated (plastic) handle.
+     To prepare the monitor for adjustments, turn the color level
+(intensity) control all the way down. You don't want any color from the
+video to offset the adjustments you are trying to make. All other
+controls are set at normal viewing levels. Feed a video signal from a
+video game or computer into the monitor so you have a fixed stable image
+with an average of highlights and lowlights. A moving image from a TV
+station is not a good choice because the forground/background levels
+keep changing. As an alternative, don't connect a video signal, but just
+use the brightness control on the front panel to run the "raster" (blank
+screen) brightness up and down and make the adjustments for low and high
+levels that way. It's not as "obvious", but it works.
+     For only a minor correction of CRT greyscale, inspect the image to
+see which areas of the picture are not neutral grey or white. If it's
+the dark areas (low brightness off-color), use the "cutoff" control for
+the predominant color (green in your case) and back that control down
+until the screen looks grey. Adjustment of the other two cutoff controls
+may be necessary to get it looking just right, but don't adjust any
+control more than a few degrees. The adjustments are rather coarse and a
+small control movement is all that's normally necessary. Color balance
+offset in the dark areas will show up more than a similar offset in the
+highlights, and some "drift" is normal as the monitor ages.
+     If the white areas of the image are affected, back down the drive
+control of the predominant color or raise the others to match so you
+have a neutral white in the highlights. You may have to make minor
+adjustments to both sets of controls so all levels of brightness are
+neutral grey when you're done. Run the front panel user brightness up
+and down to see if the raster "tracks" properly (doesn't change color
+off neutral grey). 
+     Some monitors have an internally adjustable brightness control that
+sets a normal range for the front panel control and/or limits the
+maximum brightness you can get without overloading the HV circuits. It's
+normally located on the main board and may be called "sub-bright" or
+"bright limit". It is normally set to produce a good picture with the
+front panel brightness control set in the middle ("detent" position) of
+it's range. 
+     One last setting you might need to make at some point is the master
+screen or G2 adjustment. It's a -very- coarse adjustment that sets the
+overall level of brightness. As a tube ages, the G2 may need to be set
+higher to compensate for a low-brightness problem. If this control is
+set too high, the image may be too bright and/or take on a milky
+appearance with faint diagonal "retrace" lines in the picture. If set
+too low, you will not have enough brightness even with the front panel
+brightness control at maximum. This master screen is on the flyback
+(line output) transformer, the large black plastic block usually located
+at the right rear of the main chassis. For identification purposes, note
+the thick (usually red in color) wire that runs from the flyback to the
+top of the picture tube. The two controls on the flyback are the focus
+(top control) and master screen or G2 (bottom control). 
+
+Ray Carlsen CET
+CARLSEN ELECTRONICS... a leader in trailing-edge technology.
+
+Questions or comments are welcome, especially if you spot a mistake here.

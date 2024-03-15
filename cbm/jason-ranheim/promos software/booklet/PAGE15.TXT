@@ -1,0 +1,53 @@
+             R2000,3FFF,0,6:N=0
+
+         This reads the master and initializes the count. Now:
+
+         P2000,3FFF,0,6,6:V:N=N+1:?:?"TOTAL COPIES:"N
+
+    THE S COMMAND- Save computer RAM.
+
+       This situation continually arises: You've read a ROM or
+    an EPROM. Now you want to save the data on disk so that you
+    can make a copy later. The S command is what you need. It
+    causes a defined section of RAM to be saved to disk as a PGM
+    file. An example:
+
+         S"EPROM DATA",8,4000,BFFF
+
+         This command takes data from 4000 through BFFF and stores
+    it on disk as the program file called EPROM DATA.
+    Experienced users will recognize this as the same S command
+    their monitor programs have provided them for years. But
+    NOTE one important difference. Monitor S commands require
+    that you specify a range one byte longer than what you really
+    want to save. This is the case with the C128's built-in
+    monitor. With the PROMOS S command, you specify the range
+    exactly.
+         There is one important restriction on the use of the S
+    command in 64 mode: You cannot save from the address range
+    D000 through DFFF. This restriction does not apply in 128
+    mode.
+         One further note for 128 users: If you want to save from
+    bank 1, just use a prior B command to set bank 1 RAM first.
+         Another example:
+
+       {}2000,2FFF,0,18:S"2532 DATA",9,2000,2FFF
+
+         Here, we read a 2532 and save the data to disk on drive 9
+    as a PGM file called '2532 DATA'.
+
+    THE L COMMAND- Load program from disk.
+
+         Now, you have the data on disk.  How do you get that data
+    back Into the computer so an EPROM can be burned from it?
+    The answer Is the L command. An example:
+
+         L"2532 DATA",9
+
+         This command loads the PGM file '2532 DATA' back into the
+    same locations in memory from where it was saved, namely 2000
+    through 2FFF, from device 9. On completion of the load,
+    PROMOS reports the load start address and the load end
+
+
+                                -15-

@@ -1,0 +1,999 @@
+
+                       Hinweise fr Benutzer des
+                       
+                     Hochleistungs-Pack-Programmes
+                     
+                          LHarc Version 1.12B
+                                04/29/89
+
+           Copyright (c) Haruyasu Yoshizaki (Yoshi), 1988-89
+
+                                                    Nifty Serve PFF00253
+                                                    ASCII PCS   pcs02846
+
+------------------------------------------------------------------------
+
+0. Eines Tages...
+
+   nach der Lektre von "A Hard Disk Cookbook" von Shouei Press, ent-
+   stand in mir der Wunsch, eine eigene Archivierungs-Utility zu ent-
+   wickeln. Auf dem Nifty Serve Netz machte ich das erste Mal Bekannt-
+   schaft mit Mikis Larc, das alle bekannten Packprogramme in der Kom-
+   primierungsrate bertraf, wie in der Forum Software Debut and Review 
+   berichtet. Das n„chste Schlsselerlebnis hatte ich, als ich Okumuras 
+   LZari kennenlernte, dessen Komprimierungsleistung noch um einiges 
+   besser war. Ich machte mich daran, LZari in Assembler neu zu schreiben,
+   mit dem Ziel, es schneller zu machen, fand jedoch keine M”glichkeit, 
+   die Geschwindigkeit des Entpackens zu steigern.
+
+   Als Alternative benutzte ich die Huffmann Codierung mit einem LZSS
+   Codierer, um bei einer „hnlich hohen Komprimierung die Geschwindig-
+   keit des Entpackvorganges erh”hen zu k”nnen. Dies ist der Grundgedanke,
+   der hinter LHarc steckt.
+
+   Kein Programmierer kann mit Sicherheit von seinem Programm behaupten,
+   daá es absolut fehlerfrei ist. Wenn Ihnen aber Speicherplatz wichtiger
+   ist als Zeit, sollten Sie mein Programm einmal testen. Es mag zwar im 
+   Vergleich zu anderen Archivierungsprogrammen langsamer sein, erzielt aber
+   die h”chste Komprimierungsrate aller gegenw„rtig existierende Packpro-
+   gramme.(copyright reserved).
+
+
+1. Arbeiten mit LHarc:
+
+   "LHarc" eingeben, und es erscheint der Hilfeschirm
+   
+   
+   
+   Befehlsbersicht:
+   =================
+
+   LHarc [Befehl] [/<Schalter>[-|+|2|<Option>]] <Archiv_Datei>
+         [<Pfadname>] [<Name Zielverzeichnis>\ | <Laufwerk>:]
+
+         Schalter k”nnen an beliebiger Stelle hinter dem Befehl
+         stehen. Es k”nnen mehrere Schalter gleichzeitig ange-
+         geben werden.
+
+
+   Terminologie:
+   =============
+
+   Ein Pfadname besteht aus dem Namen eines oder mehrerer Verzeichnisse
+   und dem Namen einer Datei:
+
+        a:\tc\include\stdio.ext
+        |<---- Pfadname ----->|
+        |<Verzeichn.>||<Datei>|
+        |<-- Name -->||<Name >|
+
+
+   Befehle 
+   =========
+
+   a (Add) = packen
+
+   LHarc a Archive.LZH file1.ext
+
+        Packt 'file1.ext' in die Archivdatei 'Archive.LZH'. Ist
+        'Archive.LZH' noch nicht vorhanden, wird diese von LHarc 
+        angelegt. Existiert bereits eine Datei 'file1.ext', wird 
+        diese durch die angegebene Datei ersetzt.
+
+
+   u (Update) = aktualisieren
+
+   LHarc u Archive.LZH file1.ext
+
+        Packt 'file1.ext' in die Archivdatei 'Archive.LZH', wie auch der 
+        Befehl 'a'. Im Unterschied zu diesem werden aber, falls 'file1.ext' 
+        bereits existiert, Erstellungsdatum und -zeit beider Dateien ver-
+        glichen. LHarc fgt dann die aktuellere Datei hinzu und ignoriert 
+        die „ltere (mit dem Schalter  /c kann der Vergleich von Erstellungs-
+        datum und -zeit unterbunden werden).
+
+
+   m (Move) = kopieren und l”schen
+
+   LHarc m Archive.LZH file1.ext
+
+        entspricht
+
+   LHarc u Archive.LZH file1.ext
+   DEL file1.ext
+
+        Vorsicht! Die zweite Befehlszeile ist immer aktiv! 
+        Datei 'file1.ext' kann eventuell unwiederbringlich 
+        gel”scht werden.
+
+
+   f (Freshen) = erneuern
+
+   LHarc f Archive.LZH file1.ext
+
+        Ersetzt 'file1.ext' in 'Archive.LZH' nur dann mit einer ak-
+        tuelleren Datei diesen Namens, wenn bereits eine gleichnamige
+        Datei existiert. Existiert keine gleichnamige Datei, geschieht
+        nichts (mit dem Schalter  /c kann der Vergleich von Erstel-
+        lungsdatum und -zeit unterbunden werden).
+
+
+   e (Extract) or x (eXtract) = entpacken
+
+   LHarc e Archive.LZH
+
+        Entpackt alle Dateien aus 'Archive.LZH' in das angegebene
+        Verzeichnis oder Laufwerk. Ist das angegebene Verzeichnis 
+        nicht vorhanden, fragt LHarc, ob es angelegt werden soll.
+
+   LHarc e Archive.LZH file1.ext
+
+       Entpackt nur Datei 'file1.ext' aus 'Archive.LZH'. Existiert
+       im Zielverzeichnis bereits eine Datei namens 'file1.ext', wird
+       nicht entpackt, wenn die bestehende Datei neueren oder gleichen 
+       Datums ist (mit dem Schalter /c kann der Vergleich von 
+       Erstellungsdatum und -zeit unterbunden werden).
+
+
+
+   LHarc e Archive.LZS file.ext
+
+        Entpackt 'file.ext' aus einer mit Larc 3.xx. archivierten 
+        .LZS Datei.
+       
+
+        Anmerkung:  Larc is ein anderes beliebtes Public-Domain Archivie-
+                    rungsprogramm in Japan.
+
+
+   p (disPlay) = anzeigen
+
+   LHarc p Archive.LZH file1.ext
+
+        Leitet Datei 'file1.ext' aus 'Archive.LZH' auf die standard-
+        m„áige Ausgabeeinheit um.
+
+   LHarc p /v Archive.LZH file1.ext
+
+        Ruft das Hilfsprogramm LESS auf, mit dem die zur Ausgabe um-
+        geleitete Datei formatiert und angezeigt werden kann. LHarc 
+        legt dazu eine tempor„re Datei 'LHARC.TMP' an, die anschlie-
+        áend wieder gel”scht wird.
+
+   LHarc p /vsee Archive.LZH file1.ext
+
+        Ruft das Textformatierungsprogramm SEE auf, das die Datei
+        'file1.ext' seitenformatiert auf der Standard-Ausgabeeinheit
+        anzeigt. Siehe auch PC-LESS.ARC, LIST64A.ARC, and SEE15.ARC. 
+        (Diese sollten in den meisten BBS Bibliotheken vorhanden sein.)
+
+
+   d (Delete) = entfernen
+
+   LHarc d Archive.LZH file1.ext
+
+        Entfernt 'file1.ext' aus 'Archive.LZH'.
+
+
+   l (List) = Dateien listen
+
+   LHarc l Archive.LZH
+
+        Informationen zu allen in der Archivdatei 'Archive.LZH'
+        enthaltenen Dateien werden in Listenform auf dem Bildschirm 
+        ausgegeben. Fr jede Datei ist eine Ausgabezeile vorgesehen.
+        Ein '+' vor dem Dateinamen zeigt an, daá zus„tzlich zum Datei-
+        namen noch der Pfadname mitgesichert wurde (Der Schalter /x 
+        bewirkt, daá LHarc erweiterte Dateinamen anzeigt.)
+
+        Werden bei diesem Befehl Dateinamen und Erweiterungen angegeben,
+        werden nur die Dateien mit den entsprechenden Namen oder Erwei-
+        terungen aufgelistet.
+
+   LHarc l Archive.LZH *.c *.h readme.DOC
+
+        Gibt eine Liste mit Informationen zu allen in 'Archive.LZH' ent-
+        haltenen .C, .H, and README.DOC Dateien aus.
+
+   v (View) = Dateien listen
+
+   LHarc v Archive.LZH
+
+        Entspricht:
+
+   LHarc l /x Archive.LZH
+
+        Gibt einen Liste mit Informationen zu allen in  'Archive.LZH'
+        enthaltenen Dateien aus. Im Unterschied zum 'l'- Befehl sind hier
+        fr jeden Eintrag zwei Zeilen vorgesehen: Die erste Zeile enth„lt
+        den vollst„ndigen Pfadnamen, die zweite Zeile die restlichen In-
+        formationen. (Der Schalter /x bewirkt, daá LHarc erweiterte Datei-
+        namen anzeigt.)
+
+
+   s (Self-extract) = automatisches Entpacken
+
+   LHarc s [/x] [k<KEY>] Archive.LZH
+
+        Erstellt im angegebenen Verzeichnis oder Laufwerk zu 'Archive.LZH'
+        eine Datei 'Archive.COM' (oder 'Archive.EXE', bei einer Gr”áe von
+        mehr als 64KB), die sich bei Aufruf automatisch entpackt.
+
+        Anm.:  Es gibt nun zwei Formate fr selbst-entpackende 
+               Dateien (SFX). Mit dem Schalter /x wird eine groáe
+               SFX erstellt, die immer eine 'Archive.EXE' Datei ist.
+               Die AUTOEXEC.BAT beachtet den Schalter /x , wenn das
+               Schlsselword richtig eingegeben wird (Mehr hierzu 
+               sp„ter). Auf diese Art und Weise kann eine Datei von
+               einer Gr”áe von mehr als 1MB automatisch entpackt
+               werden. Ohne den Schalter /x wird, entsprechend der 
+               Gr”áe, eine  'Archive.COM' oder 'Archive.EXE' Datei
+               erstellt. Damit k”nnen Dateien bis zu 640 KB freien 
+               Hauptspeichers entpackt werden. šberprfen Sie bitte,
+               ob Ihre selbst-entpackende Datei gr”áer als 400 KB ist.
+               Wenn ja, benutzen Sie den /x Schalter.
+               
+
+
+   (kein Befehl angegeben)
+
+   LHarc Archive.LZH
+
+        Entspricht dem 'l' Befehl. Diese Option ist zur Zeit noch
+        verfgbar, entf„llt aber eventuell in knftigen Versionen.
+
+   t (test) = berprfen
+
+   LHarc t Archive.LZH
+
+        šberprft mittels des CRC-Checks, ob die Archivdatei
+        Archive.LZH in Ordnung ist. Diese Funktion wurde in der
+        vorliegenden Version 1.12 neu eingefhrt.
+
+
+   Schalter:
+   =========
+
+   Schalter werden durch das vorangestellte Zeichen '/' gekennzeichnet.
+   Soll mehr als ein Schalter angegeben werden, werden alle Schalter
+   ohne dazwischenliegende Leerzeichen oder sonstige Trennzeichen an-
+   einander gereiht, z.B "/rxwe:\work" or "/cxvless". Werden die Schalter
+   'v' and 'w' zusammen mit anderen Schaltern benutzt, so sind sie als
+   jeweils letzte anzugeben, wie in obigen Beispielen auch.
+
+   Optional kann hinter jedem Schalter ein '+' oder '-' angegeben wer-
+   den. Dabei bedeudet '+', daá der Schalter aktiv und '-', daá der
+   Schalter inaktiv ist. '2' stellt eine besondere Option fr die 
+   Schalter /r und /v dar (mehr dazu weiter unten). Wird nur der Schal-
+   ter /<Schalter> ohne '+' oder '-' angegeben, wird der Schalter von
+   'an' auf 'aus' gesetzt, bzw. von 'aus' auf 'an', abh„ngig vom ak-
+   tuellen Status.
+   
+   Anm.:  Benutzen Sie bitte nur Kleinbuchstaben bei der Angabe von 
+          Schalter, Groábuchstaben sind fr knftige Funktionen vor-
+          gesehen.
+
+
+   /x[-|+] (eXtend file names) = erweiterte Dateinamen
+
+        Erweitert Dateinamen um Verzeichnisnamen. Mit diesem Schal-
+        ter wird bestimmt, ob nur der Dateiname oder der gesamte
+        Pfadname mitgesichert wird.  
+
+
+        Angenommen, Sie befinden sich im Root Directory \, und haben
+        zwei Dateien '\tc\include\sys\stat.h' und '\stat.h':
+
+   LHarc a Archive.LZH stat.h
+
+        Fgt nur die Datei 'stat.h' aus dem aktuellen Verzeichnis
+        (Root) der Archivdatei 'Archive.LZH' hinzu, 
+        w„hrend
+
+   LHarc a Archive.LZH stat.h \tc\include\sys\stat.h
+
+        mit der Meldung "Gleicher Dateiname in anderem Pfad" nicht
+        ausgefhrt wird, da Schalter "erweiterte Dateinamen" nicht
+        angegeben ist.
+
+        Der Befehl 
+
+   LHarc a /x Archive.LZH stat.h \tc\include\sys\stat.h
+
+        hingegen fgt beide Dateien der Archivdatei 'Archive.LZH'
+        hinzu.  
+        
+        Entsprechend:
+
+   LHarc e Archive.LZH stat.h
+
+        Entpackt nur die Datei 'stat.h' in das Root Directory,
+        w„hrend:
+
+   LHarc e /x Archive.LZH stat.h
+
+        zwei Dateien mit der Bezeichnung 'stat.h' entpackt: 
+        eine in das Root Directory und die andere in das Ver-
+        zeichnis \tc\include\sys\.
+
+   Der Schalter /r erm”glicht durch rekursives Suchen in den Verzeich-
+   nissen, alle Dateien mit gleichem Namen zu packen: 
+   
+   
+   LHarc a /r Archive.LZH stat.h
+
+        Erweitert 'Archive.LZH' um zwei Dateien namens 'stat.h' und deren
+        Pfadnamen: eine 'stat.h' aus dem Root Directory, und eine 'stat.h'
+        aus dem Verzeichnis \tc\include\sys\.
+
+        Mit dem /r Schalter wird zugleich auch der /x Schalter aktiviert.
+        Sollen die Pfadnamen weggelassen werden, ist nach dem /r Schalter
+        ein /x- anzugeben.
+
+
+   /p[-|+] (distinguish Path names) = Pfadnamen unterscheiden
+
+        Unterscheidet zwischen den um die Verzeichnisnamen erweiterten
+        Dateinamen. Angenommen Ihre Archivdatei 'tc.lzh' enth„lt sowohl
+        Datei 'stat.h' als auch Datei '\sys\stat.h':
+
+        Mit
+        
+   LHarc e tc stat.h
+
+        werden beide Dateien 'stat.h' entpackt, wobei die „ltere mit der
+        neueren berschrieben wird.
+        
+
+   LHarc e /p tc stat.h
+
+        hingegen entpackt nur Datei 'stat.h', und
+
+   LHarc e tc sys\stat.h
+
+        entpackt nur '\sys\stat.h'.
+
+
+   /c[-|+] (skip time-stamp Comparison) = Vergleich Erstellungsdatum
+                                         und -zeit ausschalten
+
+   LHarc [efux] /c Archive.LZH [file1.ext file2.ext ...]
+
+        Soll eine Datei mit dem gleichen Namen wie eine bereits vor-
+        handene Datei angelegt werden, vergleicht LHarc Erstellungs-
+        datum und -zeit der beiden Dateien. Dabei werden in manchen 
+        F„llen Dateien berschrieben, in anderen F„llen ignoriert.
+        Ist dieser Schalter aktiv, werden bereits bestehende Dateien
+        auf jeden Fall mit den entpackten Dateien berschrieben.
+
+
+   /m[-|+] (no message) = Abfrage an/ausschalten
+
+   LHarc [<command>] /m Archive.LZH [file1.ext file2.ext ...]
+
+        Normalerweise fragt LHarc "Overwrite [Y/N]?" u. dergl..
+        Mit diesem Schalter k”nnen diese Abfragen ausgeschaltet
+        werden und LHarc macht so weiter, als ob "y" eingegeben
+        worden w„re. 
+
+
+   /a[-|+] (any Attribute) = Attribute ignorieren
+
+   LHarc a /a Archive.LZH file1.arc
+
+        Fgt 'file1.arc' der Datei 'Archive.LZH'hinzu.
+
+        Normalerweise packt LHarc keine Dateien mit den Attributen
+        hidden, read-only oder vom System vergebenen Attributen. Ist 
+        Schalter /a aktiv, werden auch solche Dateien gepackt.
+
+
+   /r[-|+|2] (recursively) = rekursives Suchen
+
+   Es gibt drei M”glichkeiten, zu packende Dateien anzugeben:
+
+        (a) Dateiname(n) angeben:  /r-
+
+            Packt nur die Datei(en) mit dem angegebenen Namen (=Standard)
+
+        (b) Wildcards verwenden:  /r or /r+
+
+            LHarc a /r Archive.LZH *.C
+
+                 Erweitert 'Archive.LZH' um alle Dateien mit 
+                 der Erweiterung '.C' - Dieser Schalter bewirkt,
+                 daá LHarc das aktuelle, bzw. das Working Direc-
+                 tory, und seine Unterverzeichnisse nach Dateien 
+                 mit dem angegebenen Namen durchsucht. Allen Da-
+                 teinamen wird der Name des Verzeichnisses voran-
+                 gestellt. Mit diesem Schalter packt man alle Ver-
+                 sionen einer Datei oder  Dateien gleichen Typs.
+
+        (c) Verzeichnis angeben:  /r2
+
+            LHarc a /r2 Archive.LZH \DOC
+
+                 Erweitert 'Archive.LZH' um alle im durch den
+                 Pfadnamen \DOC angegebenen Verzeichnis vorhan-
+                 denen Dateien, „hnlich der -r Option in UNIX.
+                 Mit diesem Schalter kann ein komplettes Ver-
+                 zeichnis gepackt werden (auáer dem Root Di-
+                 rectory).
+
+        Die Schalter /r and /r2 aktivieren gleichzeitig auch den
+        Schalter /x. Es kann daher erforderlich sein, nach der 
+        Verwendung von /r oder /r2. den Schalter /x mit /x- wie-
+        der auszuschalten. Der Schalter /x- bewirkt, daá LHarc mit-
+        gesicherte Verzeichnisnamen auáer acht l„át.
+
+
+   /w[-|+|<Name Verzeichnis>] (set working directory)
+                            = Working directory anlegen
+
+   LHarc a /w[d:\TMP] Archive.LZH [file1.ext file2.ext ...]
+
+        Legt im Verzeichnis \TMP auf Laufwerk D: tempor„re Dateien
+        an. Wird kein Verzeichnis angegeben, wird das aktuelle Ver-
+        zeichnis zum Working Directory. Alle von nun an gepackten
+        Dateien werden in diesem Verzeichnis abgelegt und sp„ter ge-
+        l”scht. Working Directories, die mit einer Environment Va-
+        riablen angelegt wurden, verlieren durch diese Anweisung Ihre
+        Gltigkeit (siehe unten).
+
+   Der Schalter /w ist zu verwenden wenn
+
+        (1) im Verzeichnis, in dem die Archivdatei angelegt ist, nicht
+            ausreichend Platz zur Verfgung steht
+            oder
+        (2) sie mit einer RAM Disk schnell und ruhig arbeiten wollen.
+
+
+   /v[-|+|2|<Name der Utility>] (View by page)
+                              = seitenweises Anzeigen
+
+   LHarc p /v Archive.LZH file1.ext
+
+        Entpackt 'file1.ext' aus 'Archive.LZH' und ruft die Default
+        Ausgabe-Utility LESS zur formatierten Anzeige auf der Stan-
+        dard-Ausgabeeinheit auf.
+
+        Anm.:  LESS.COM ist eine Utility „hnlich MORE.COM in 
+               MS-DOS, etwas besser sogar, aber nicht so gut wie
+               das "less" amerikanischer Unix-Netze. PC-LESS.ARC
+               oder LIST64A.ARC (erh„ltlich ber zahlreiche BBS 
+               Quellen in den U.S.A.) eignen sich genauso gut
+               wie die japanische Utility .
+
+   LHarc p /v2 [/v<Name Utility>] Archive.LZH file1.ext
+
+        Ruft die angegebene Utility zur formatierten Ausgabe auf der
+        Standard-Ausgabeeinheit auf, unterdrckt dabei aber die Aus-
+        gabe von Pfad- oder Dateinamen. Dieser Schalter ist dafr vor-
+        gesehen, sich Dateien in Bin„rform als Dump ausgeben zu lassen.
+
+
+   LHarc legt zun„chst eine tempor„re entpackte LHARC.TMP Datei an und
+   ruft anschlieáend die angegebene Ausgabe-Utility auf. Dabei handelt
+   es sich meist um ein Programm zur Seitenformatierung wie SEE.EXE oder
+   LIST.EXE. Tempor„re Dateien werden in der Regel nach dem Anzeigen des
+   Inhalts wieder gel”scht.
+
+   LHarc /n Archive.LZH
+
+        Anzeige ausschalten. LHarc benutzt nun eine ANSI Escape Sequence,
+        um den Stand der Archivierung anzuzeigen. Besitzer von IBM-PCs
+        mssen sich dabei mit einer wenig sch”nen Anzeige abfinden. Dieser
+        Schalter unterdrckt den Escape-Code.
+        
+
+   LHarc s /x /k<KEY> Archive.LZH
+
+        Der Schalter /k verschlsselt das Schlsselwort <KEY>, oder jedes
+        beliebige Wort, fr das Selbst-entpacken einer Archive.EXE Datei.
+        N„here Einzelheiten dazu finden sich in Abschnitt 3.
+
+
+   Name Archiv-Dateie (Pfadname):
+   ==============================
+
+   Alle mit LHarc gepackten Dateien haben dasselbe Format wie mit Larc
+   gepackte Dateien, nur benutzt Larc die Erweiterung .LZS. Wird fr
+   die Archiv-Datei eine andere Erweiterung als .LZH angegeben, stellt 
+   LHarc die Frage:
+
+
+      "Extension of archive is not '.LZH.' Continue processing? [Y/N]"
+
+
+   Wildcards k”nnen verwendet werden mit den Befehlen
+   'e', 'x', 'p', 'l', 'v', and 's' :
+
+   LHarc e *.LZH *.c
+
+        Entpackt alle Dateien mit der Erweiterung .C in s„mtlichen
+        Archivdateien im aktuellen Verzeichnis.
+
+
+   Ausgangsverzeichnis (Laufwerk):
+   ===============================
+
+   Wird ein Ausgangsverzeichnis angegeben, so wird dies dem aktuellen
+   Vezeichnis gleichgesetzt. Der Name eines Ausgangsverzeichnisses wird
+   mit '\' oder ':' abgeschlossen. Alle Dateien werden dann gepackt, ohne
+   daá dieses Verzeichnis mitgesichert wird, es sei denn Schalter /x fin-
+   det Verwendung.
+
+   Beispiel:  Vorhanden ist folgender Verzeichnisbaum:
+
+                           |-- BIN --
+                           |
+          |-- \ --|-- TC --|-- LIB --
+                           |
+                           |-- INCLUDE --|-- SYS --|-- STAT.H
+
+   Befindet man sich im Root Directory, \, und gibt ein
+
+   LHarc a /r Archive.LZH stat.h tc\include\
+        
+        wird die Datei stat.h aus dem Verzeichnis \tc\include\sys\
+        in die Archivdatei 'Archive.LZH' im Ausgangsverzeichnis
+        \tc\include gepackt. Als vom Ausgangsverzeichnis ausgehender
+        Pfadname wird dabei "\sys\stat.h" mitgesichert. 
+
+
+   Dateiname (Pfadname):
+   =====================
+
+   Datei- oder Pfadnamen zu packender Dateien sind anzugeben, ansonsten
+   geht LHarc von *.* ohne Verzeichnisnamen aus. Die Wildcards '*' und
+   '?' werden genauso verwendet wie in DOS. Nicht zu verwenden sind 
+   sie allerdings bei der Angabe von Pfadnamen, auáer mit dem Schalter
+   /r2, „hnlich der -r Option bei cp, mv und rm unter UNIX.
+   
+
+
+   Switch character:
+   =================
+
+   Wird als Trennzeichen fr Schalter ein anderes Zeichen als Slash '/'
+   verwendet, z.B. '-',(DOS Funktion 37H, Set Vector), muá dieses Zei-
+   chen , also '-', anstelle von '/' angegeben werden, z.B. "-cx". Das 
+   Zeichen '/' kann dann als Trennzeichen fr Verzeichnisse benutzt werden, 
+   „hnlich wie in UNIX ('-' kann dann trotzdem als Schalterzeichen in LHarc
+   verwendet werden).
+
+   Dies ist unter Umst„nden nur ab MS-DOS 3.xx m”glich.
+
+
+2. Schalter setzen mit einer Environment Variablen
+
+   Alle Schalter in LHarc k”nnen auch mit der Variablen LHARC gesetzt
+   werden:
+
+   SET LHARC=/we: /r2
+
+        macht Laufwerk E: zum Working Directory und packt alle Dateien
+        in Directory mode.
+
+
+   LHarcs Working Directory kann auch mit der Environment
+   Variablen 'TMP' bestimmt werden:
+
+   SET TMP=E:
+
+   durch den /w Schalter wird diese Anweisung auáer Kraft gesetzt.
+
+
+3. Selbst-entpackende Dateien
+
+   Diesem Thema wollen wir uns jetzt ausfhrlich widmen. Zu allen 
+   selbst-entpackenden Dateien in LHarc gibt es jetzt eine vollkommen
+   neue Textdatei. Diese, mit '!' bezeichnete Datei, wird beim Ent-
+   packenn von LHarc ausgegeben. Legen Sie eine ASCII Datei an und
+   benennen Sie diese in '!' um. Wird nun der Name einer gepackten
+   .EXE oder .COM Datei eingegeben, sucht LHarc zuerst nach der Text-
+   datei '!' und gibt sie dann mit einer [Y/N] Abfrage zusammen aus, so
+   daá Sie den gesammten Text erst lesen k”nnen. Dabei handelt es sich
+   eigentlich nur um eine ausfhrbare Datei zur Bildschirmausgabe, 
+   v”llig gefahrlos. Kein Grund zur Beunruhigung !
+    
+   Sie k”nnen mit Lharc auch gepackte E-mail senden, indem Sie die erste
+   Seite einfach '!' nennen. Beim Entpacken erscheint dann dieser Abschnitt
+   Ihrer Mail auf dem Bildschirm, zusammen mit der Abfrage Continue [Y/N].
+   Nicht schlecht, oder?  Dieses neue Feature in LHarc nenne ich "telop".
+   Sie haben also nun die M”glichkeit, zus„tzlich zu den gepackten Dateien
+   auch noch telop '!' zu archivieren. Inhalt von telop kann z.B. eine kur-
+   ze Beschreibung der gepackten Dateien sein. Diese Beschreibung k”nnen 
+   Sie dann aufrufen und sich auf dem Bildschirm anzeigen lassen, ohne Da-
+   teien dabei zu entpacken.
+   
+   Darber hinaus gibt es aus Grnden der Anwenderfreundlichkeit und zum
+   Schutz vor trojanischen Pferden zwei Versionen der SFX selbst-entpacken-
+   den Dateien. 
+   
+
+
+   1.  Kleine SFX: Hierbei handelt es sich um SFX Dateien, die die
+       Gr”áe des verfgbaren freien Hauptspeichers nicht berschrei-
+       ten. Theoretisch ist es nicht m”glich, selbst-entpackende Da-
+       teien von mehr als 640 KB Gr”áe zu erzeugen. Mit kleinen SFX
+       sollte aus praktischen Grnden nur bei Dateigr”áen bis 400 KB 
+       gearbeitet werden. Mancher Anwender kann unter Umst„nden schon
+       bei 400 KB freiem Hauptspeicher Schwierigkeiten mit kleinen 
+       SFX bekommen. Im Zweifelsfall sollten Sie mit groáen SFX ar-
+       beiten, die als n„chstes erl„utert werden.
+
+   2.  Groáe SFX: Groáe SFX k”nnen eine Gr”áe von bis zu 1 MB anneh-
+       men. Des weiteren kann einen AUTOLARC.BAT Datei mit eingefgt
+       werden, die dann automatisch gestartet wird. Fr den automa-
+       tischen Start dieser AUTOLARC.BAT habe ich ein "Schlsselwort"-
+       System vorgesehen. Der Anwender muá das "Schlsselwort" kennen,
+       um den Batch zum ersten Mal starten zu k”nnen. Danach startet
+       der Batch beim Selbst-Entpacken auch ohne daá das "Schlssel-
+       wort" eingegeben wird.  
+
+
+Amlegen einer kleinen SFX:
+--------------------------
+   LHarc s Archive.LZH
+
+        Legt, je nach Gr”áe, eine selbst-entpackende Archive.COM 
+        oder Archive.EXE Datei an. Enth„lt diese eine telop '!' 
+        Datei, wird diese zuerst auf dem Bildschirm ausgegeben. 
+        Anschlieáend k”nnen Sie Y oder N eingeben, um Dateien zu
+        entpacken oder auch nicht. 
+        Eine telop Datei ! mit den Meldungen von LHarc kann wie
+        folgt angelegt werden: 
+
+   LHarc e Archive.COM>!
+
+        oder, bei einer .EXE Datei:
+
+   LHarc e Archive.EXE>!
+
+
+
+Anlegen einer groáen SFX:
+-------------------------
+   LHarc s /x Archive.LZH
+
+        Fr eine selbst-entpackende Datei mit automatischem Programm-
+        start ist zus„tzlich noch der Schalter /k und das Schlssel-
+        wort anzugeben:
+
+   LHarc s /x /kKEY Archive.LZH
+                ---
+
+        Der Schalter /x bewirkt das Anlegen einer groáen SFX-Datei.
+        KEY steht in obigem Beispiel fr ein Schlsselwort, das frei
+        w„hlbar ist. Ein Schlsselwort wird nur ben”tigt, wenn die
+        Archivdatei Archive.LZH eine von Ihnen angelegte AUTOLARC.BAT
+        Datei enth„lt. Mit dem Schalter /x werden immer groáe SFX an-
+        gelegt, in obigem Beispiel also eine Archive.EXE Datei. Natr-
+        lich kann auch hier eine '!' Text-Datei verwendet werden.
+
+
+   Archive [/ed:] [/x]
+
+        fr eine selbsstartende Datei mit einer AUTOLARC.BAT Datei:
+
+   Archive KEY
+
+        oder
+
+   Archive key [/ed:] [/x]
+
+        Anm.:  Das Schlsselwort muá nicht geheim sein.
+               Ist es allgemein bekannt und bestehen ir-
+               gendwelche Bedenken, geben Sie eingach ein: 
+               
+                           Archive
+
+               ohne Schlsselwort und der Dateiinhalt wird 
+               zur šberprfung entpackt ohne daá ein automa-
+               tischer Programmstart erfolgt. Dadurch wird 
+               das Starten von Batches in LHarc noch viel-
+               seitiger und gleichzeitig eine Gef„hrdung
+               durch Trojanische Pferde gering gehalten.
+
+        Beim Entpacken wird die AUTOLARC.BAT Datei nur dann abgearbei-
+        tet, wenn das Schlsselwort eingegeben wird. Ohne dieses Schls-
+        selwort wird lediglich die Datei entpackt und es findet auch
+        keine Abfrage statt. Hat die AUTOLARC.BAT das Schlsselwort
+        einmal gelernt, l„uft l„uft sie automatisch jederzeit und in 
+        jedem Verzeichnis, ohne daá das Schlsselwort eingegeben wird.
+        Dies kann gef„hrlich sein. Bei der Eingabe des Schlselwortes
+        erfolgt keine Unterscheidung zwischen Groá- und Kleinschrei-
+        bung. KEY und key starten das Programm gleichermaáen.
+        Die Obergrenze fr selbst-entpackende Dateien liegt bei 1MB 
+        in gepacktem Format. Testen Sie einfach einmal fr sich selbst.
+
+        Der optionale Schalter /e gibt das Verzeichnis [d:] an, in das
+        Dateien zus„tzlich entpackt werden sollen. Enth„lt Archive.LZH
+        Dateien mit Pfadnamen, werden diese Dateien mit Pfadnamen
+        in den entsprechenden Unterverzeichnissen entpackt. Sind diese
+        Unterverzeichnisse noch nicht vorhanden, werden sie von der
+        Archive[.EXE] Datei automatisch angelegt.  
+        
+        Der Schalter /e ist neu in dieser Version. Die AUTOLARC.BAT 
+        Datei wird immer in das aktuelle Verzeichnis entpackt, unab-
+        h„ngig von Schalter /e.
+
+        Das Attribut aller gepackten Dateien ist immer 20H. Sollen
+        die Dateien auf "read only" gesetzt werden, kann dies in 
+        einer AUTOLARC.BAT mit folgender Befehlszeile geschehen:  
+
+
+            chmod -w file?.*
+
+        wenn Archive.LZH die Dateien file1.EXE, file1.DOC, file2.EXE,
+        file2.DOS...[etc.] enth„lt.
+
+
+4. Archve-Datei Header
+
+   LHarc's Header ist kompatibel zu dem von Larc. Es gibt zwei M”g-
+   lichkeiten der Archivierung:
+
+            -lh0-   gespeichert in ursprnglichem Zustand
+            -lh1-   komprimiert mit  LZHuf- Codierung.
+
+   LHarc ist in der Lage, Dateien aus mit Larc generierten Archivdateien
+   (mit der Extension .LZS) zu entpacken, sofern sie zum Typ 4 oder 5
+   geh”ren.
+
+Anm.:  Larc ist ein anderes japanisches Archivierungsprogramm, dessen
+       Source Code in einer Fachzeitschrift ver”ffentlicht wurde. Larc
+       ist mittlerweile auch in den USA erh„ltlich.
+
+
+5. Ergebnis-Codes
+
+   LHarc liefert die folgenden Ergebnis-Codes zur aktuellen Programm-
+   funktion:
+
+       0  ordnungsgem„á beendet.
+
+       1  Dateien wurden gepackt, nicht vorhandene Dateinamen wurden da-
+          bei ignoriert; CRC-Error beim Entpacken.
+
+       2  Abbruch wegen Fehler; es wurden keinerlei Archivdateien angelegt
+          oder Dateien kopiert 
+
+       3  Tempor„re Dateien k”nnen nicht in Archivdateien geschrieben werden.
+          Bearbeitete Datei wurde in LHARC.)2( umbenannt, originale Archiv-
+          datei wurde gel”scht. Versuchen Sie, LHARC.)2( in Ihre Archiv-
+          datei umzubenennen, was allerdings unter Umst„nden auch zu einer 
+          Besch„digung der Datei fhren kann.
+
+
+6. Tempor„re Dateien
+
+              LHARC.)1(   Original-Archivdatei, umbenannt
+              LHARC.)2(   Arbeits-Datei zum Anlegen einer neuen Archivdatei
+              LHARC.TMP   Arbeits-Datei , die von einem Seitenformatierungs-
+                          programm zur Ausgabe angelegt wurde.
+
+   Existiert bereits eine Datei mit einem dieser Namen, ist die Reaktion 
+   von LHarc nicht vorhersehbar.
+
+
+7. Meine Vertriebs-Politik
+
+   Unter folgenden Bedingungen darf diese Software frei kopiert 
+   und in Umlauf gebracht werden:
+
+   1.  Die Kopie muá auf jeden Fall den Hinweis 
+       "Copyright by Haruyasu Yoshizaki"  enthalten.
+
+   2.  Dieses Manual oder eine Hardcopy davon sind mit der Kopie
+       weiterzugeben
+
+   3.  Sie drfen das Programm modifizieren, mssen dann aber
+       den kompletten Source Code des Programms mitliefern,
+       einschlieálich Ihrer nderungen. Sie mssen auch darauf
+       hinweisen, daá Sie die entsprechenden nderungen vor-
+       genommen haben.
+
+   4.  Vertreiben Sie nach M”glichkeit die neueste verfgbare Version.
+
+   5.  Ich bernehme keinerlei Haftung fr irgendwelche Schadensersatz-
+       ansprche, die evtl. aus dem Einsatz dieser Software entstehen.
+
+   6.  Ich bin nicht verpflichtet, dieses Programm zu berarbeiten, 
+       um irgendwelche Fehler zu beheben.
+
+   7.  Die folgenden Hinweise gelten fr den kommerziellen Einsatz
+       dieser Software:
+
+         a.  Software, die mit Hilfe dieses Programms erstellt 
+             wurde sollte nicht kopiergeschtzt sein, und zwar
+             kopiergeschtzt in dem Sinne, daá der DISKCOPY-Befehl
+             von MS-DOS eine unvollst„ndige Kopie erstellt.  
+
+         b.  Jeder Teil des Programmpakets sollte den Namen 
+             "LHarc" und den Copyright-Vermerk fhren.
+
+         c.  Die Vertriebspolitik fr diese Software sollte entweder
+             im Manual, im Programmpaket, oder auf der Disketten-
+             hlle enthalten sein.
+
+
+8. Dank
+
+   Mein besonderer Dank gilt Herrn H. Okumura, der den Code fr LZari
+   in PC-VAN zur Verfgung stellte, auf dem meine LZHuf-Codierung basiert,
+   und Herrn K. Miki, dem Entwickler von Larc, der LZARI auf Nifty Serve 
+   zug„nglich machte. Ich m”chte auch allen danken, die mir Kritik, Be-
+   merkungen und Fehlermeldungen zukommen lieáen.
+
+   Auch Herrn Prof. Kenjirou Okubo bin ich fr seinen pers”nlichen Einsatz
+   (in Form von Zeit und Geld fr seine vielen Telefonate in die Vereinigten
+   Staaten) zu Dank verpflichtet. Er trug wesentlich dazu bei, LHarc in den
+   Vereinigten Staaten Interessenten zug„nglich zu machen.
+
+   Durch Verwendung von S. Takanamis pcs27162 konnte die .EXE Datei fr
+   LHarc um fast 2KB verkleinert werden. Ich danke Herrn Takanami fr
+   die Erlaubnis, seine von mir gesch„tzte Utility einzusetzen.  
+   
+   Ich habe LHarc mittlerweile schon einige Male berarbeitet, glaube
+   aber kaum, daá es mir je gelingen wird, es v”llig fehlerfrei gestal-
+   ten zu k”nnen. Ich wrde mich daher ber Ihre Meinung zu LHarc und
+   Fehlermeldungen sehr freuen. Sie k”nnen mir diese ber das SDR Forum
+   von Nifty Serve oder ber salon.pds im ASCII Net zukommen lassen.
+
+9. Literaturhinweise
+
+   1) Labo, A.P., A Hard Disk Cookbook:  Shouei Press (1987).
+
+   2) Kurita, T., Huffman coding, bit:  Jewelry Box of Computing 43,
+      vol. 20, no. 7, pp. 100-101 (1988).
+
+   3) Miki, K., Documentation for Larc:  LARC.MAN
+
+
+10. Liste der Revisionen
+
+Ver. 1.12b
+    1. Fehler in AUTOLARC.BAT behoben.
+
+Ver. 1.12
+    1. 't' Befehl zum berprfen gepackter Dateien.
+    2. ge„nderte Bildschirmausgabe aufgrund neuer Befehle und Schalter
+    3. Fehler im CRC Error Check bei gepackten Dateien mit der Gr”áe 0
+       behoben.
+    4. Neue telop Datei '!' in groáer und kleiner SFX.
+
+Ver. 1.01
+
+    1. Kleinere Verbesserungen hinsichtlich Bildschirmausgabe und Meldungen.
+    2. šberarbeitung des User's Manual, um es klarer und verst„ndlicher
+       zu machen.
+
+Ver. 1.00
+
+    1. LHarc um Mode ohne Work file erweitert.
+    2. Schalter /r aktiviert gleichzeitig Schalter /x .
+
+Ver. 0.07c
+
+    1. Fehler beim šberprfen des freien Hauptspeichers beseitigt.
+    2. Programm zum Selbstentpacken komprimiert.
+
+Ver. 0.07a
+
+    1. Ver. 0.05-0.07 besch„digten Heap areas.  Fehler behoben.
+    2. Akzeptiert beliebige Verzeichnisnamen mit beliebigen Attributen.
+
+Ver. 0.07
+
+
+    1. Besserer Schutz fr schreibgeschtzte Archivdateien.
+    2. Der Befehl 'm' entfernt Dateien, die mit „lteren Versionen er-
+       stellt wurden.
+    3. Fehlerbehandlungsroutine beim Arbeiten mit Wildcards in Archi-
+       vierungsdateinamen berarbeitet.
+    4. Wird kein Befehl angegeben, reagiert LHarc als ob der 'l' Befehl
+       angegeben w„re. 
+    5. Entdeckt CRC beim Entpacken einen Fehler, wird der Fehlercode 1
+       zurckgeliefert.
+    6. Wird beim automatischen Entpacken ein Fehler entdeckt, wird das
+       Programm unterbrochen.
+    7. Fehler im CRC behoben, der auftrat, wenn beim Entpacken ein Ver-
+       zeichnisname vorkam.
+       
+Ver. 0.06b
+
+    1. Verhindert, daá bei miáglcktem Versuch, eine gepackte Datei zu
+       erneuern (=freshen), Cluster besch„digt werden. 
+    2. Fehler behoben, der beim Umleiten der Ausgabe mit dem Befehl 'p'
+       und der Option '+' auftrat. 
+
+Ver. 0.06
+
+    1. Wenn ein Zugriff auf Dateien mit den Befehlen 'u', 'm' oder 'f'
+       fehlschl„gt, bel„át LHarc die Dateien im ursprnglichen Zustand.
+    2. Der 'f' Befehl interpretierte gelegentlich Dateiattribute falsch.
+       Diese M”glichkeit wurde eliminiert.
+
+Ver. 0.05
+
+    1. CRC Prfroutinen jetzt auch bei selbst-entpackenden Dateien.
+    2. Vollst„ndig rekursiver Modus bei den Befehlen 'a,u,m' m”glich.
+    3. Erfllt die Voraussetzungen fr APPEND.EXE in MS-DOS Version 3.3.
+    4. '\' am Ende des Namens eines Working-Directory bei Verwendung
+       des Schalters /w nicht mehr erforderlich.
+
+Ver. 0.04
+
+    1. Untersttzung der Environment Variablen 'TMP'.
+    2. "LHarc p /v a.lzh a_file" l”schte bei Fehler Datei 'a_file'.
+       Fehler behoben.
+    3. Beim Anlegen einer selbst-entpackenden Datei wird berprft,
+       ob bereits eine Datei gleichen Namens existiert.
+    4. Wurde in einer selbst-entpackenden Archivdatei eine Datei mit
+       einer kleineren Datei gleichen Namens berschrieben, blieb der
+       Rest der gr”áeren Datei erhalten. Fehler beseitigt.
+    
+
+Ver. 0.03
+
+    1. Environment Variable 'LHARC' setzt einige Schalter automatisch.
+    2. M”glichkeit, bei Schaltern  '+' und '-' anzugeben, eingebaut.
+    3. /v Schalter neu.
+    4. Wildcards in Namen fr Archivdateien bei den Befehlen 'e,x,p,l,v,s'
+       zugelassen.
+    5. Home Directory Namen vertrugen sich nicht mit Kanji-Code. Behoben.
+    6. Fehler im Dateikopf selbstentpackender .EXE Dateien beseitigt.
+
+Ver. 0.02
+
+    1. Untersttzung des 'm' Befehls.
+    2. Larc 3.xx -kompatibel. .LZS -Dateien vom Typ 4 u. 5 werden entpackt.
+    3. Akzeptiert Systeme mit anderen Zeichen zur Darstellung von Schaltern.
+    4. Kleinere Fehler im 'e' Befehl behoben.
+    5. Format des 'l' Befehls berarbeitet.
+
+Ver. 0.01
+
+    1. Untersttzt selbst-entpackende Dateien.
+    2. 'p' Befehl neu.
+    3. /c Schalter fr zus„tzliche Kombinationen von Befehlen und Schaltern.
+    4. Fehlerbehandlung berarbeitet.
+    5. Fehler bei 'l' Befehl behoben.
+    6. Neuer Algorithmus zum Sortieren von Pfadnamen.
+
+
+11. Bemerkungen
+
+a. Meine Pl„ne fr die Zukunft
+
+   Bei bestimmten Dateien ist die Komprimierungsrate nicht so gut wie 
+   bei PKwares PKZIP. Fr solche Dateien werde ich vielleicht die LZSS
+   Komprimierung mit einer entsprechenden arithmetischen Komprimierung
+   verwenden. Dies ist eine effektive Methode und meine Experimente zei-
+   gen, daá die Komprimierungsraten nicht schlechter sind als die von
+   PKware. Der Nachteil dabei ist, daá das Packen und Entpacken zu lange
+   dauert und der Speicherbedarf sich erh”ht. Ich habe daher vor, weiter
+   an diesem LZHuf- Algorithmus zu arbeiten.
+   
+   Fr Anregungen und Kritik bin ich dankbar und ich werde auch weiterhin
+   experimentieren.
+   
+   
+
+b. Namensgebung LHarc
+
+   Einige Leute haben sich besorgt darber ge„uáert, daá die Zeichenfolge
+   "arc" im Namen "LHarc." enthalten ist. Fr diese Leute m”chte ich
+   folgendes bemerken: 
+   SEAs Klage gegen gegen PKware richtete sich in erster Linie gegen die
+   Art und Weise wie PKWare PK(x)arc unter besonderem Hinweis auf seine 
+   Kompatibilit„t zu ARC vermarktete und die dadurch entgangenen Shareware
+   Beitr„ge.  
+   Dies ist bei LHarc nicht der Fall. Ich verwende eine andere Archivie-
+   rungsmethode und habe LHarc zu einem Freeware-Programm gemacht, das
+   nicht ARC-kompatibel ist. Ich hoffe daher, daá mir „hnliche Vorwrfe 
+   erspart bleiben werden.
+
+                                - Ende -

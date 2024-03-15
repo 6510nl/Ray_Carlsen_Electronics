@@ -1,0 +1,438 @@
+
+           COMMODORE VIC20 COMPUTER - DIAGNOSTICS AND REPAIR 
+              latest additions and corrections  4-9-2023
+
+     There are two basic versions of the VIC20. I've only seen one of the 
+very early 1980 model designated as the VIC20-E, so it must be rather rare.
+Therefore, I'll not discuss that one any further here. That board and the 
+later standard VIC20 are easily recognized from the outside by the two pin 
+connector used for 9VAC power. The power supply for that model is a 9 volt
+transformer rated at 3 Amps AC. It's about half the size of the C64 PS. 
+Earlier boards are larger and have two large black heat sinks for the 
+bridge rectifier and 5 volt power regulator. Since most of the power 
+supply is inside the computer, those early VIC20's run warmer inside. 
+     The later 1981/82 VIC20 is different than the earlier ones. The board 
+is smaller and uses fewer, more integrated chips (CR or cost reduced) but 
+still uses the same basic chips as the earlier board. It has a 7 pin DIN 
+connector and uses the same power "brick" as a Commodore 64 but draws 
+more power from that supply than a C64. The computer itself runs cooler 
+than earlier versions because the power regulators and their heat sinks 
+are in the PS and not in the computer.
+     Because of the differences in boards and some chip ID numbers, I will
+list the two versions separately in the chips vs symptoms portion of this
+article. Although TTL (so-called "glue logic") chips are rather robust, any 
+part can fail at any time. Two IC's that do seem to fail most often are the
+VIC and Kernal ROM. Note that all semiconductor devices (transistors, diodes 
+and ICs) that normally run hot fail more often than those that run cooler. 
+I noticed the VIC chip inside the metal cover runs hot in all models and 
+should therefore have a metal heat sink that touches the metal cover of the 
+enclosure above it. I've seen many failures of that IC due to overheating. 
+That's why I always install a heat sink on it when I get a VIC20 on the 
+bench for repair. The sink consists of a thin strip of metal epoxied to the 
+top of the IC and with ends bent upwards to touch the shield cover when 
+it's reinstalled. (See the photos) That draws the heat away from the IC and 
+transfers it to the metal cover. Another common failure is the Kernal ROM 
+UE12, a Commodore 901486-06. Either chip failure will cause a blank screen. 
+Note that a completely dead VIC will not display any change on the monitor 
+screen when the computer is switched on. If the VIC is working and the 
+Kernal is bad, the screen will darken (blank screen) when the computer is 
+turned on. It's advisable to install a heat sink on any IC that normally 
+runs hot to make it last longer. The BASIC ROM next to the Kernal also runs 
+pretty hot but I've yet to see one of those fail. That said, a heat sink is 
+cheap insurance. 
+     Other than that, the IC's directly connected to external ports such as 
+the VIA and interface logic can be damaged due to external voltage "spikes" 
+and surges. That's why you should avoid plugging or unplugging anything 
+with the computer powered up. 
+     The last part of this article will tell how to troubleshoot problems
+and offers some diagnostic procedures you can do with little or no test
+equipment. Careful observation is important. As with other Commodore
+computers, the easiest way to test suspected chips is by installing them,
+one at a time, in a working board. If a chip is soldered in (no socket), 
+it makes it that much more difficult to swap them for tests. Minimum 
+equipment for board rework includes a vacuum desoldering iron, a 
+volt-ohmmeter and basic hand tools.
+     Since the VIC20 has no internal RF modulator, you need to either use
+the factory external RF converter box that plugs into the 5 pin A/V port 
+on the computer (to feed the RF input of your TV), or use a direct A/V 
+connection to a monitor or TV A/V inputs. The USA version outputs a 
+signal on TV channel 3 or 4 (switchable) and the European version on TV 
+channel 36. Note that the RF converter itself (the ones made in Japan) 
+suffers a common problem. See the article regarding that repair.
+     There is a not-so-obvious problem that may look like a failure but
+it's simply a factory setting to allow use of the RF unit. In the days
+when the VIC20's came out, few people had video monitors, just TV sets. 
+The external RF adapter outputs a signal on channel 3 or 4 so the TV sees 
+it as a normal broadcast channel. 
+     The apparent fault will be low video or perhaps no color when running 
+the VIC20 with a two-wire A/V cable into a video monitor such as a 1702 or 
+1084. The video level was factory set that way to accommodate the RF adapter. 
+If the video level is set too high into the adapter, it will overload the 
+adapter and produce a distorted image. So, running an A/V cable will 
+produce a normal picture if the video level pot inside the VIC cage is 
+adjusted up (counter-clockwise) a bit. Too high and the color will start 
+to distort, so a correct setting is just below that level. There are 
+photos of early and late boards on this website to indicate which pot to 
+adjust. Don't touch any of the others!
+
+     The VIC20 opening screen should appear within about four seconds 
+after power up. It has a cyan border and blue letters on a white 
+background. The full screen is 22 characters wide by 23 high. At power up, 
+it should look like this:
+
+* * * * CBM BASIC VERSION 2 * * * *
+3 5 8 3  B Y T E S  F R E E
+R E A D Y
+[] <---(flashing cursor)
+
+***********************************************************************
+
+EARLY VERSION BOARD: ASSY #324003 FAB #324002-01 REV D 1980
+     (note large black heat sinks and two pin power connector)
+
+UAB1		6522		VIA	INTERFACE, KEYBOARD-SERIAL
+  Startup screen normal, but no cursor. Keyboard doesn't work at all.
+Partial failure: some keys "stuck" or don't work... may be a whole row or
+column. Also can cause serial port (drive access) problems. Can produce
+blank screen if shorted (remove to check).
+
+UAB3		6522		VIA	INTERFACE, SERIAL-JOY-USER-CASS
+  Startup screen normal, but drive access problems ("SEARCHING FOR.. "
+forever). One or more joystick positions don't work. No cassette or user
+port access. Can produce blank screen if shorted (remove to check).
+
+UB4		7406		LOGIC	SERIAL PORT BUFFERS
+  Blank screen. Partial failure: serial port (disk drive) access problems.
+
+UB6		LM555		TIMER	POWER-ON SYSTEM RESET
+  Will not reset on power up. May produce garbled or random screen
+characters-graphics, or screen may start up "frozen". If drive resets 
+when computer is powered up, this chip is OK.
+
+UB7		6560 (NTSC) or 6561 (PAL)	VIC	VIDEO/AUDIO
+  White or blank screen, garbled or no video, screen full of (or few 
+random) "garbage" characters. "Blind" disk commands may still work.
+Partial failure: Dark or smeary image, loss of color, garbled or no 
+sound, game paddles or light pen doesn't work.
+
+UB9		7402 (M53202P)	OSC	MASTER CLOCK OSC
+  White screen... no RF interference in AM radio (see text). Partial 
+failure can produce missing color or incorrect colors, slight or severe 
+tearing of picture or diagonal lines, sounds play at incorrect pitch. 
+Symptoms may only appear after warmup.
+
+UC2		74LS04		LOGIC
+  Screen character colors incorrect (scrambled). If very bad, entire 
+screen becomes garbled with flashing characters, vertical bars and 
+random colors.
+
+UC3		74LS02		LOGIC
+
+UC4		74LS138		LOGIC	MEMORY CONTROL
+  Blank screen.
+
+UC5		74LS138		LOGIC	BLOCK CONTROL
+  Blank screen.
+
+UC6		74LS138		LOGIC	I/O CONTROL
+
+UD1 		CD4066		QUAD SWITCH (LOGIC GATES)
+  (UC2 in very early version) Screen characters have incorrect colors.
+
+UD2-UD6
+UE1-UE6		2114 or TMM314A	SRAM	MEMORY
+  Blank screen. Partial failure: less than normal "3583 BYTES FREE" at
+startup, sometimes will produce "garbage" screen or screen freeze after
+warmup. Shorted chips may get very hot. NOTE: UE1 is used to generate 
+character color. 
+
+UD7		901460-03	ROM	CHARACTER
+  Startup screen characters missing (just blocks or flashing lines where
+characters should be) and alphanumerics missing from games. Game carts 
+that use mostly graphics characters may look normal while running.
+
+UD8 and UE8	MPS65245 or MOS65245 or 74LS245 TRI-STATE LOGIC
+  Blank screen.	Partial failure: garbled video or audio. see UB7
+
+UD9		74LS133		13 INPUT LOGIC GATE
+  Blank screen.
+
+UE3             7406            LOGIC
+  Serial port problems or blank screen.
+
+UE10		6502		MICROPROCESSOR
+  Blank screen. Partial failure: computer may run for awhile, then freeze. 
+
+UE11		901486-01	ROM	BASIC
+  Startup screen with borders but no characters. Disk commands do not 
+work, but game carts still work.
+
+UE12		901486-06	ROM	KERNAL
+  Blank screen on startup, no drive access, game carts don't work.
+Partial failure: games may still work. This is a very common failure IC!
+
+UF8		MPS65245 or MOS65245 or 74LS245 TRI-STATE LOGIC
+  Blank screen.
+
+Q3		2SD880		TRANSISTOR, CASS. MOTOR DRIVER
+  Most common problem when cassette motor will not run.
+
+VR1		LM323K		+5V REGULATOR, 3 AMP
+  Computer appears "dead" with no red power indicator, or wavy picture 
+with hum in sound. Shorted regulator will damage chips in the computer 
+and blow the fuse.
+
+		KBPC802		BRIDGE RECTIFIER, 5A 50V
+  Computer appears "dead" with no red power indicator. Partial failure 
+may produce hum in audio and wavy picture. Partially shorted bridge may 
+make the power pack (transformer) get hot and may blow the main fuse 
+(3.15A) inside the computer. Bad solder connections may make this part 
+look intermittent or open. The block will run too hot if the heat sink
+it's attached to doesn't contact it properly. See text below. 
+
+F1		3.15 AMP FB	FUSE, MAIN POWER
+  Computer "dead"... no red power light. If new fuse blows, suspect 
+short in bridge rectifier, regulator, or computer chips, in that order. 
+Make sure the fuse clips are clean and tight or fuse and holder will get 
+hot and the new fuse will eventually blow for no apparent reason.
+
+Y1				CRYSTAL, 14.31818MHz in USA version
+  See UB9 (7402)
+  
+
+***********************************************************************
+
+LATEST VERSION CR BOARD: ASSY #250403 FAB #251040-01 REV D 1981/2
+     (note this model uses the same power pack as a C64)
+
+UAB1		6522		VIA	INTERFACE, KEYBOARD-SERIAL
+  Startup screen normal, but no cursor. Keyboard doesn't work at all. 
+Partial failure: some keys "stuck" or don't work... may be a whole row 
+or column. Also may cause serial port (drive access) problems. Can 
+produce blank screen if shorted (remove to check).
+
+UAB3		6522		VIA	INTERFACE, JOY-USER-SERIAL-CASS
+  Startup screen normal, but drive access problems ("SEARCHING FOR... "
+forever). One or more joystick positions don't work. No cassette or user
+port access. Can produce blank screen if shorted (remove to check).
+
+UB4		7406		LOGIC	
+  Blank screen or serial port (disk drive) access problems.
+
+UB6		LM555		TIMER	POWER ON RESET
+  Will not reset on power up. May produce garbled or random screen
+characters-graphics, or screen may start up "frozen". If drive resets 
+when computer is powered up, this chip is OK.
+
+UB7		6560-101	VIC	VIDEO/AUDIO
+  White or blank screen, garbled or no video, screen full of (or few 
+random) "garbage" characters. "Blind" disk commands may still work. 
+Partial failure: Dark or smeary image, loss of color, garbled or no 
+sound, game paddles or light pen doesn't work.
+
+UB9		7402 (M53202P)	OSC	MASTER CLOCK OSC
+  White screen... no RF interference in AM radio (see text). Partial 
+failure: can produce missing color or incorrect colors, slight or 
+severe tearing of picture or diagonal lines, sounds play at incorrect 
+pitch. Symptoms may only appear after warmup.
+
+UC2		74LS04		LOGIC
+  Screen character colors incorrect (scrambled). If very bad, entire 
+screen becomes garbled with flashing characters, vertical bars and 
+random colors.
+
+UC3		74LS02		LOGIC
+
+UC4		74LS138		LOGIC	MEMORY CONTROL
+  Blank screen.
+
+UC5		74LS138		LOGIC	BLOCK CONTROL
+  Blank screen.
+
+UC6		74LS138		LOGIC	I/O
+
+U14-U15	MB8416A			RAM	MEMORY
+  Blank screen. Less than normal "3583 BYTES FREE" at startup. Sometimes
+will produce "garbage" screen or screen freeze after warmup. Shorted 
+chips can get very hot.
+
+UD1		CD4066		QUAD SWITCH (LOGIC GATES) 
+  Incorrect color on screen characters.
+
+UD2		2114		SRAM
+
+UD7		901460-03	ROM	CHARACTER
+  Startup screen characters missing (just blocks or flashing lines where
+characters should be) and alphanumerics missing from games. Game carts 
+that use mostly graphics characters may look normal while running.
+
+UD8 & UE8	MPS65245 or MOS65245 or 74LS245	TRI-STATE LOGIC
+  Blank screen. Partial failure: garbled video or audio. see UB7
+
+UD9		74LS133		LOGIC
+
+UE1		2114		SRAM
+
+UE2		2114		SRAM
+
+UE10		6502		MICROPROCESSOR
+  Blank screen. Partial failure: programs may run for awhile, then freeze. 
+
+UE11		901486-01	ROM	BASIC
+  Startup screen with borders but no characters. Disk commands do not 
+work, but game carts still work.
+
+UE12		901486-06	ROM	KERNAL
+  Blank screen on startup, no drive access, game carts don't work. Partial
+failure: some game carts may still work. This IC is a very common failure!
+
+UF8		MPS65245 or MOS65245 or 74LS245	TRI-STATE LOGIC
+
+U13             74LS08
+  White garbled screen or blank screen.
+
+Q3		2SD880		TRANSISTOR, CASS. MOTOR DRIVER
+  Cassette motor doesn't run. Common failure.
+
+CR2		S10B		BRIDGE RECT, 1A, 50V
+
+F1		1 AMP FB	FUSE, 9 VOLT AC SOURCE
+  Opening screen normal and all functions work except cassette motor and
+9VAC source to user port.
+
+Y1				CRYSTAL, 14.31818MHz
+  See UB9 (master oscillator chip).
+
+*******************************************************************
+
+     Diagnosis of chip and other failures is often difficult, but there
+are some things you can try to narrow the diagnosis to a specific fault.
+Blank screen is the most common symptom, and it can be the most difficult
+because there are many potential causes, including power supply (internal
+in the early version VIC20) faults. Note the difference in the two terms:
+blank screen and white screen. Blank refers to a dark screen (called a
+"raster") with no border and no characters. White screen is likewise blank
+with no border and no characters, but brighter than a "blank" screen.
+     An AM radio tuned to the lowest point on the dial (off station) can be
+used to see if the computer is generating RF interference (which is normal).
+The digital signals inside a computer are like little transmitters, and an
+AM radio held nearby can pick up those signals. Keep the TV or monitor off
+for this test as it generates strong interference of its own. The VIC20
+startup sequence to opening screen takes about four seconds and produces
+characteristic sounds at power up. If you are used to the sounds it normally
+makes, that can be used during diagnostics. For example, if the computer
+generates normal interference sounds in the radio, it indicates the 
+microprocessor and support chips are working, and a blank screen may be a
+VIC chip problem. Of course a total failure of the VIC chip will produce a
+white screen and little noise in the radio because nothing is running in the
+computer except the master oscillator. Clock signals go through the VIC chip
+to feed the rest of the computer.
+     Early VIC20 computers have a rather high input current and you need to
+make sure the fuse is tight in the fuse holder. If it's loose in the clips,
+the fuse and socket will get hot from the slight bit of resistance in the 
+contacts. The resulting B+ voltage may be too low to run the computer 
+properly and the fuse may eventually open due to the heat. Make sure the 
+clips are clean of dirt and corrosion, and squeeze them together to make a 
+tight fit before the fuse is installed. Likewise, make sure the power plug 
+is tight in the receptacle. If necessary, squeeze the plug end gently with 
+a pair of pliers to crimp its internal contacts (be careful not to crush 
+them), to make a tight fit before plugging in the supply to the computer. 
+Loose connections at the socket will cause intermittent operation or no 
+power to the computer. Another common trouble spot in the early version is 
+the solder connections on the large bridge rectifier under one of the black 
+heat sinks. I often resolder it just to make sure it's making good contact. 
+Also, be sure to tighten the heat sink on that bridge block. Every early 
+version VIC20 I've worked on had a loose screw mounting the diode to the 
+sink, which was making the diode run very hot. If left that way, the diode 
+will actually get hot enough to un-solder itself and/or fail (usually by 
+shorting and blowing the fuse) eventually. Rather than removing the entire 
+bottom metal shield, I cut it from hole to hole at the diode area with 
+snips, then cut away the plastic to get at the mounting screw underneath. 
+As preventive maintenance, tighten the screw and apply a dab of epoxy to 
+the threads to keep it from getting loose again. A nut (metric) will keep 
+it tight forever. 
+     Speaking of contacts, one preventive (and diagnostic) step you can take
+is to reseat all the socketed chips. The contact point between chip and
+socket is very small and a bit of corrosion or dust can cause intermittent
+operation or a "dead computer" symptom. Lift up each end of the chip with a
+small screwdriver and press it back down to wipe the contacts. Don't pry
+against the PC board or you may damage the traces (printed "wires"). No need
+to remove chips for this procedure, but if you do, make sure the pins are
+straight when you reinstall them. A bent pin is sometimes impossible to see
+(unless the chip is removed again) and the resulting failure or intermittent
+adds yet another problem.
+     One diagnostic check you can make on a "dead" computer is to feel each
+of the chips and see if any are getting hot. Some chips (the large ones like
+the microprocessor and the VIC) will run very warm to the touch after the
+computer has been running for awhile. There is quite a bit of variation in
+normal chip temperatures, so a bit of experience helps in diagnosis. Some
+chips run almost cold and it's perfectly normal, but if you find a cold VIC
+after running the computer for ten minutes, it may be bad. If a replacement
+also runs cold, the chip is either not getting power (no +5 volts on pin 40)
+or the ground has opened up (pin 20). I had such a failure in one board. The
+white screen and "radio check" told me the computer was nearly dead. The
+master oscillator was running (checked with an oscilloscope) and the chip
+had +5 volts on pin 40. The chip was replaced and it still didn't work. It
+turns out the socket was at fault. It was likely damaged because of a bent
+IC pin on a previous VIC chip installation. The ground return (pin 20) for
+the chip was open circuit. I was able to repair the socket by bending the
+receptacle for pin 20 back so it made proper contact with the new chip when
+it was inserted. I only mention this to show how a "simple" fault can be
+VERY hard to find. Unexpected or illogical faults like that one really burn
+up bench time and frazzle a technicians nerves. It's not a "normal" failure,
+but it happens often enough to keep us humble.
+     As a diagnostic, the computer will still start up with a select few of
+the chips removed, such as the two VIA chips, the character ROM, & UC2. If 
+you suspect one of those chips is shorted and producing a blank screen, you 
+can remove them to see if the computer will then start up. Obviously, without 
+a character ROM you will not have a normal screen display but a normal border 
+should appear. Swapping the two VIA chips can help diagnose which one is bad. 
+Faults will follow the bad chip. 
+     A stuck (shorted) keyboard key can be isolated by unplugging the keyboard 
+and powering up the computer without it, or substituting another keyboard. C64 
+keyboards work on VIC20s and (for some versions) internal parts can be 
+interchanged as well. Keys that require a hard press to make them work are 
+probably worn out (or dirty). If you don't have spare parts handy, the 
+conductive rubber plunger can be swapped for a little-used key to get that 
+one working again. If several keys are bad, you might try wiping the 
+contacts gently with a clean sheet of paper. Of course that requires the 
+keyboard be taken completely apart (many tiny screws and some unsoldering).
+     Power supply problems account for quite a few failures. As I mentioned
+before, there are two different versions of the VIC20 and each requires the
+appropriate power pack. Early version boards use a single 9VAC source
+(transformer-only inside the power pack) at a rather hefty 2 Amps. That 
+kind of supply rarely fails. The rectifier, filter capacitors and regulator 
+are all inside the computer. You'll notice the two large black metal heat 
+sinks when you open it up. That version is easy to identify by its two pin 
+power connector instead of the round DIN socket of the later VIC20CR.
+     Later version VIC20s use the same supply as a C64, so there are two 
+voltages: +5VDC at 1.5 Amps and 9VAC at 1 Amp. It's helpful to know that a 
+VIC20 draws more power from the supply, so if the power pack is marginal, 
+it may still work with a C64 but not with your VIC20. It's best to use one 
+of the "beefier" after-market repairable supplies, especially if you plan 
+to use accessories like RAM expansion or game cartridges. They draw power 
+from the computer supply. If the 5 volt source is low or missing, the 
+computer will not work at all and the red power light will not come on or 
+will be dim. If the 9VAC is missing because of a bad supply or open 1 Amp 
+fuse in the computer, the red power light will come on and the computer 
+will work except for no cassette power and no 9VAC to the user port. 
+It might therefore go unnoticed. If the fuse is blown, look for a short on 
+one of those ports. Accidental mis-contact while connecting to a port (with 
+the computer turned on) is usually the cause of an open fuse. Avoid 
+connecting or disconnecting -anything- with equipment turned on!
+     The above information may help get your computer going again, but keep
+in mind that actual computer faults can be a challenge even for experienced
+techs. There is a limit to what the novice can repair him/herself. I've been
+in the repair business for over 40 years and I still sometimes damage a
+chip or board trace when removing components from a Commodore computer or
+drive. It's just not that easy to do. So, if you have a major problem with
+your VIC20, it's probably best to start looking for another one or contact 
+a repair tech. If a computer is uneconomical to repair, it's advisable to 
+keep the bad one for parts. Chips are scarce now, and we need to salvage
+whatever we can to keep our systems running as long as possible.
+
+Ray Carlsen CET
+Carlsen Electronics... a leader in trailing-edge technology.
+
+Questions and comments are always welcome, especially if you spot a mistake
+here. Thanks!

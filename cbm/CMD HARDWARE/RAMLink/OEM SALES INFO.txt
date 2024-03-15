@@ -1,0 +1,36 @@
+RAMLink Packages (prices may fluctuate based on SIMM cost)
+
+      RL1         RAMLink w/RAMCard (1 MB, no RTC)                  229.95
+      RL1RTC      RAMLink w/RAMCard & RTC (1 MB)                    249.95
+      RL2         RAMLink w/RAMCard (1 MB, no RTC)                  289.95
+      RL2RTC      RAMLink w/RAMCard & RTC (1 MB)                    309.95
+      RL3         RAMLink w/RAMCard (1 MB, no RTC)                  349.95
+      RL3RTC      RAMLink w/RAMCard & RTC (1 MB)                    369.95
+      RL4         RAMLink w/RAMCard (4 MB, no RTC)                  339.95
+      RL4RTC      RAMLink w/RAMCard & RTC (4 MB)                    359.95
+      RL5         RAMLink w/RAMCard (1 MB, no RTC)                  389.95
+      RL5RTC      RAMLink w/RAMCard & RTC (1 MB)                    409.95
+      RL8         RAMLink w/RAMCard (1 MB, no RTC)                  529.95
+      RL8RTC      RAMLink w/RAMCard & RTC (1 MB)                    549.95
+      RL9         RAMLink w/RAMCard (1 MB, no RTC)                  589.95
+      RL9RTC      RAMLink w/RAMCard & RTC (1 MB)                    609.95
+      RL12        RAMLink w/RAMCard (1 MB, no RTC)                  719.95
+      RL12RTC     RAMLink w/RAMCard & RTC (1 MB)                    739.95
+      RL13        RAMLink w/RAMCard (1 MB, no RTC)                  779.95
+      RL13RTC     RAMLink w/RAMCard & RTC (1 MB)                    799.95
+      RL16        RAMLink w/RAMCard (1 MB, no RTC)                  909.95
+      RL16RTC     RAMLink w/RAMCard & RTC (1 MB)                    929.95
+       (Backup Battery listed separately below)
+    
+     RAMLink System Components (as sold seperately)
+
+      RL          RAMLink Base Model (no RAMCard)                   149.95
+      RLRC        RAMLink w/RAMCard (0 MB, no RTC)                  199.95
+      RLRTC       RAMLink w/RAMCard and RTC (0 MB)                  219.95
+      RAMCARD     RAMCard (no RTC)                                   59.95
+      RAMCARDRTC  RAMCard w/RTC                                      79.95
+      RTCKIT      RAMLink RTC Kit (must have RAMCard II)             29.95
+      RL BATTERY  RAMLink Battery                                    24.95
+      RL-HD CABLE RAMLink-HD Parallel Cable                          14.95
+      SIMM1       1 MB SIMM                                           Call
+      SIMM4       4 MB SIMM                                           Call

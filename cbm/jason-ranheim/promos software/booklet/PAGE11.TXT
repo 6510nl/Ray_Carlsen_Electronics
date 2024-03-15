@@ -1,0 +1,54 @@
+   This command copies data in a specified range from one area
+   of computer RAM to another. By way of example:
+
+       T2000,2FFF,C000
+
+       This command transfers data from RAM in the range 2000
+   through 2FFF to C000 through CFFF.
+       Another example:
+
+       T4000,40FF,4001
+
+       This command moves data from 4000 through 40FF up one
+   address location.
+
+   THE C COMMAND- Compare computer RAM data.
+
+       This command causes the computer to compare the data in
+   one range of memory locations with that of another. The
+   address of all locations where the data differs is printed
+   out. For example:
+
+       C100,1FF,4000
+
+       This command compares RAM data in the range 0100 through
+   01FF to data In the range 4000 through 40FF. The addresses
+   of all discrepant locations appear on the screen.
+
+   THE H COMMAND- Hunt for byte data.
+
+       This command causes the computer to hunt for occurrences
+   of a group of specified data bytes. The address of each
+   occurrence is printed on the screen. The sought for group
+   may be up to seven bytes long. For example:
+
+       H2000,BFFF,20,D2,FF
+
+       This command examines ran from 2000 through BFFF for the
+   byte sequence 20,D2,FF: 6502 code for JSR FFD2. Another
+   example:
+
+       H1000,7FFF,52,41,4E,47,45 49,4D
+
+       This command hunts for a group of seven ASCII characters.
+
+   THE D COMMAND- Scan EPROM data.
+
+       The D command reads data from an EPROM and prints it on
+   the screen as hex data just as the M command does. Computer
+   RAM is not affected. Example:
+
+
+
+                            -11-
+

@@ -1,0 +1,26 @@
+         CHANGING A DRIVE FROM DEVICE 8 TO DEVICE 9, 10, or 11
+
+             Latest additions & corrections: 9-11-2013
+
+     The internal 1571 in the metal case USA version C128DCR has no
+external switches for drive select. It is factory set for device #8.
+There are drive select "jumpers" inside the computer however, on the
+motherboard near the drive. They are the two tiny silver half-circles
+with a bar between them. Cutting the bar opens the jumper. If you look at
+the PC board just under the left side of the drive, you will see them. It
+is not necessary to remove the drive unless you plan to solder in there.
+The jumpers are located near ICs U106 (a 6522), U114 and U112. DS (drive
+select) jumper #1 is nearest to U112, towards the front of the computer.
+     Electrically, the jumpers connect two pins of IC U106 VIA chip
+(65C22 or 6522 in some models) to chassis ground. Jumper 1 grounds pin 15
+and jumper 2 grounds pin 16. That information is helpful just in case the
+foil pad(s) jumpers on the PC board are accidently damaged when you are
+installing a drive select switch. If the pads lift off the board, you can
+still make connections directly to the IC pins for your switch.
+     The 1570 drive is not as common but is similar to the 1571 in that it 
+uses the same board, will do burst-mode data transfers with the C128, and 
+will do MFM as well as GCR disk encoding like the 1571. Since it has only 
+one head, it uses SSDD disks like a 1541. It has no drive select switches
+but instead has internal jumpers. They are connected to VIA U9 pins 15 and
+16. I have never seen a 1570, so my information about it is minimal. 
+

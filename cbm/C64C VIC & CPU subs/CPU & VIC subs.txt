@@ -1,0 +1,16 @@
+                 VIC and CPU substitutions in the C64C board (250469)
+                            latest updates  11-8-2021
+
+     Somehow I ended up with a dozen or more 8564 VIC chips for the "flat" C128.
+I decided to see if one could be adapted to work in a C64C motherboard which
+normally uses a hard-to-find 8562 IC. It works but of course requires an adapter 
+to cross-connect some pins. The 8562 is a 40 pin IC and the 8564 has 48 so some
+of its pins are not used. 
+     Another experiment was tried to see if a C128 8502 MPU IC would substitute
+for the 8500 in the C64C and it also worked. The photo "CPU & VIC subs.jpg" shows
+how they are wired up. 
+
+     Note: these are just experiments to see if those chips can be substituted. 
+I don't know how well they will work in all applications. 
+
+Ray

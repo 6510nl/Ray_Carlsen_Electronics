@@ -1,0 +1,53 @@
+       The user has to be concerned with only one of these other
+   voltages. This Is a relatively high value called the
+   PROGRAMMING VOLTAGE. There are three standard programming
+   voltages in general use: 12.5v, 21v, and 25 volts. As we
+   shall see a little later, the user must specify this voltage
+   for the particular EPROM he is dealing with.
+
+   ENTERING PROMOS 2.0 COMMANDS
+
+       All of the various tasks you will want to accomplish
+   using the PROMENADE will be done by means of one or more
+   PROMOS 2.0 commands. These commands consist of a key letter
+   followed by up to nine hexadecimal numbers called parameters.
+   To execute a PROMOS 2.0 command, simply type it on the
+   screen. Edit it as required and then type a carriage return.
+       Multiple parameters in your command may be separated by
+   one or more spaces or by (at most) one comma. You do not
+   need to supply a '$' sign nor are you required to supply
+   leading zeros. The following examples of the PROMOS 'M'
+   command will serve to illustrate. This command Is used to
+   display the contents of computer memory on the screen, and
+   it will be described In detail later.
+
+       M0000 03FF
+       M0000,03FF
+       M0 3FF
+       M0,3FF
+       M    0              3FF
+       M 00   ,  03FF
+
+       All of these forms are equivalent. PROMOS does not
+   perversely require that you type in an exact form as long as
+   your meaning is unambiguous.
+
+   MULTIPLE COMMANDS
+
+       You may enter two or more PROMOS commands separated by
+   colons on the same command line. The commands will be
+   executed sequentially in the order you typed them. For
+   example:
+
+       M2000,2040:12000,2040
+
+   results in a hex display of computer RAM data from 2000
+   through 2040, followed by an ASCII display of the same data.
+
+   MIXING BASIC AND PROMOS COMMANDS
+
+       You may mix PROMOS and BASIC commands together on the
+   same command line. They will execute in the order in which
+
+                              -6-
+

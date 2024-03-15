@@ -1,0 +1,10 @@
+           INTRODUCING THE SARUMAN-128... A BETTER WAY TO REPLACE RAM   
+                       updates and corrections 9-28-2021
+
+     One of my least favorite jobs as a repair tech is extracting and replacing RAM chips in a C64, C128, SX64 and Plus/4. If the C64 or Plus/4 board has been damaged by a faulty power supply or the offending chips are the MT brand which are all known to be bad, I always replace all eight (or all 16 in the 128) because experience has shown I'll see that computer again sooner or later to replace other RAM that might work fine now but will likely fail as well. 
+
+     Enter the SaRuMan-128, a small module sold in Canada by Francois Leveille <eslapion@videotron.ca> that is designed to replace all RAM at one time. It's SRAM based and so draws less current than CMOS dynamic RAM chips. 
+
+INSTALLATION ON A "FLAT" C128 MOTHERBOARD
+
+     For this installation, a single SaRuMan-128 module is used for both 64K banks of RAM. The module is placed over IC locations U51, U52 and U53 (clean those holes) after all sixteen original RAM have been extracted or snipped out. The new board directly connects all eight address lines, /CASRAM1, /RAS/, /WE, bank 1 data lines, +5V VCC and ground. The five remaining data lines to the module are then connected with short jumper wires to the other empty motherboard locations at pins 2 or 14. One additional jumper connects module CASRAM2 to IC board location U44 pin 15 as shown in the photo. 

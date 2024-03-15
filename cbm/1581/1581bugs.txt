@@ -1,0 +1,25 @@
+
+The following is taken directly from the 1581 Toolkit Chapter 9 of the 1581
+DOS Reference Guide Copyright 1988 David W. Martin
+
+1581 Bugs
+
+Soon after it's appearance on the market the 1581 disk drive was plagued
+with several unfortunate hardware problems that Commodore has since
+corrected.
+
+Extensive testing of the 1581 was done and three manufacturing problems were
+corrected.
+
+The first one involved an improperly grounded jumper (J1) on the PC board
+inside the 1581 disk drive.  Allows the drive to use the 6 ms step rate.
+
+The second involved a bad batch of WD1770 chips that were later replaced
+with the WD1772 chip.  A typical symptom of this problem is a corrupted
+directory after a disk copy.
+
+The third involves a bad solder connection of pin 10 on device U10.  It
+causes intermitant (sic) "device not present" errors.
+
+There is a public domain program to detect the problems.  1581.DIAG is for
+the C128 and the 1581.DIAG.C64 of course is for the Commodore 64.

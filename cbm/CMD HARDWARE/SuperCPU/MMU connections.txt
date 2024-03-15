@@ -1,0 +1,22 @@
+The SCPU requires the installation of a piggyback board that goes under the MMU chip
+in the C128 amd 128D. That CMD OEM board connects to the motherboard CPU U6 via some 
+clips. One thing not in the SuperCPU manual is the wire colors for those pigtail clips.
+
+Someone made an after-market Link board that fits under U6 8502 CPU with a socket for 
+the connections so clips to the CPU IC pins are no longer necessary. Those clips can 
+be unsoldered and the plug wires installed on the MMU baord. Of course the plug wire 
+colors are different than on the original mini-clips, so both are shown here.
+
+CLIP WIRES   CPU U6     PLUG WIRES
+
+Black goes  to pin 24    Orange
+Green goes  to pin 28    Yellow
+Blue goes   to pin 29    White
+Yellow goes to pin 30    Red
+Red goes    to pin 39    Black
+
+That Link board also has pins so the clips from an original MMU board can be connected
+to eliminate the need to access U6 pins with those clips. Such connections to the IC
+may cause a short between pins and CMD admitted that it wasn't a very good way to do 
+it... the reason the Link board was made.
+

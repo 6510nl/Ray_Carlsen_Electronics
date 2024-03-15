@@ -1,0 +1,82 @@
+               Installing a PC mechanism in a 1581 doisk drive  
+                  latest updates or corrections 2-21-2014
+
+Someone brought me a 1581 to repair and they didn't know anything of the 
+history of it, so I was starting from scratch. The first thing I noticed 
+was that the mechanism was not original Commodore (usually a Chinon F-354E 
+or Matsushita JU-363-292) but a Teac FD235F 720K PC type. Disks were hard 
+to insert/eject because that drive sits lower in the housing than a 
+Commodore mechanism. Although the drive could read correctly on the first 
+try, subsequent reads after the disk was changed brought up the first disk 
+directory. Obviously, disk change was not being detected. I swapped in an 
+old Amiga mechanism to make sure the 1581 board was OK, and it worked fine. 
+I noticed that the Teac drive did have the drive select jumper on D0 as it 
+should be, so the 1581 recognized the mechanism correctly. Someone had 
+attempted to install a replacement mechanism but couldn't get it to work. 
+     The misaligned height of the drive in the case was easy to remedy. I 
+just installed a few shims to raise it up so it matched the opening. The 
+eject lever, fortunately, was a perfect match. The disk change problem was 
+more of a challenge. I searched some old newsgroup files I saved on the 
+subject of modding a 1581 with a PC drive and found one that described 
+swapping some of the pins on the drive cable to make one work in a 1581. 
+However, I couldn't get it to work. It couldn't even read the disks with 
+those mods installed. Back to square one. 
+     In the Teac drive, the disk-in and write protect switches sit on the 
+left side, just inside the drive door. When a disk is inserted, the disk-in 
+switch opens and the voltage on it goes to +5VDC. I traced that line to an 
+IC and the logic level changed there, but didn't anywhere else on the board. 
+I concluded that either the chip is defective (no output pulse for disk 
+changes) or something else in the mechanism is incompatible with the 1581 
+board. Since everything else seemed to work, I decided to try a modification 
+of my own to make it see disk changes. 
+     Experimentally, grounding pin 2 of the 34 pin (dual in-line header that 
+connects the mechanism to the 1581 board) after disk changes would result in 
+a re-read of the BAM when the drive was next accessed. However, keeping that 
+pin grounded was not the answer... then it couldn't read disks at all. 
+     I pulled the DC (disk change) jumper on the Teac mechanism board to 
+isolate their circuitry from pin 2 of the 34 pin connector. Then I built up 
+a little pulse generator circuit with a single NPN transistor, one capacitor, 
+one resistor and one diode. This circuit is wired between the disk-in switch 
+(used as the "trigger") and pin 2 of the 34 pin header on the drive rear. 
+     When a disk is inserted, the switch line goes high. That positive going 
+voltage is coupled through a 1uF capacitor to the base of a transistor and 
+turns it on for a fraction of a second. After the capacitor charges, the 
+voltage on the transistor base goes low again and the transistor turns off. 
+A diode from base to ground is used to discharge the capacitor when a disk 
+is removed and the line goes low again. The transistor collector lead is 
+wired to pin 2 of the 34 pin header and a 1K ohm resistor is tied from that 
+point to +5VDC to pull the line high when the transistor is not conducting. 
+This circuit supplies a low-going pulse every time a disk is changed and 
+satisfies the requirements of the 1581 board. The circuit modification 
+looks like this:
+
+                             | +5VDC
+                             |
+                             \
+                             /  1K ohm resistor
+                             \
+                             /
+                             |
+                             +------> to pin 2 of 34 pin header
+                             |
+        1uF 16V capacitor   /
+              -    +      |/ C
+       >--------||---+----|     NPN transistor
+  from disk-in       |  B |\ E
+  switch             |      \
+                  K__|__     |
+           diode    /|\      |
+                  A  |       |
+                     |_______|
+                             |
+                             | ground
+                              
+     One last problem had nothing to do with the modifications. I 
+discovered that the new drive would not reliably read all disks although
+the head alignment checked OK. As it turned out, the spindle speed was 
+off by quite a bit. Since the Teac mechanism didn't have an adjustment 
+for spindle speed, I looked for a circuit problem on the motor board and
+found an open capacitor. My customer now has a working 1581!
+
+Ray Carlsen 
+Carlsen Electronics... a leader in trailing-edge technology.

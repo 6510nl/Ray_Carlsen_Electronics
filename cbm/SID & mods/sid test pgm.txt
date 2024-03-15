@@ -1,0 +1,26 @@
+              SID 3-VOICE TEST PROGRAM     3-13-2012
+
+     For those wishing to test the 3 voices of the SID chip, here is
+a BASIC program to do that:
+
+ 5 REM C64 SID 3-VOICE TEST PROGRAM
+ 10 FORL=54272TO54296:POKEL,0:NEXT:POKE54296,15:GOSUB60
+ 20 POKEW,17:POKEA,9:POKEHF,15:POKELF,35:POKES,128:GOSUB50:GOSUB70
+ 30 POKEW,17:POKEA,9:POKEHF,20:POKELF,40:POKES,128:GOSUB50:GOSUB80
+ 40 POKEW,17:POKEA,9:POKEHF,25:POKELF,50:POKES,128:GOSUB50:GOTO10
+ 50 FORX=1TO2000:NEXTX:RETURN
+ 60 W=54276:A=54277:HF=54273:LF=54272:S=54278:RETURN
+ 70 W=54283:A=54284:HF=54280:LF=54279:S=54285:RETURN
+ 80 W=54290:A=54291:HF=54287:LF=54286:S=54292:RETURN 
+
+     Line 10 resets the SID and POKEs maximum volume to the three voices.
+Line 20 POKEs values to voice 1 and plays a note for a few seconds. Line
+30 adds voice two and plays a note mixed with voice 1 for a few seconds.
+Line 40 adds the third voice to the first two for a few seconds, then the
+program loops back to the beginning. The parameters for the three voices
+are in the subroutines in lines 60, 70 and 80. The subroutine in line 50
+adds a delay so each voice can be monitored as the program advances. If 
+any/all of the voices are missing or sound "muddy", suspect a bad SID. 
+
+Ray Carlsen
+

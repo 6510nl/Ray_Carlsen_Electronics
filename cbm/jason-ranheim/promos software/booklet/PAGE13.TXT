@@ -1,0 +1,54 @@
+   for short). The PMW Is discussed at length In Appendix B.
+   It tells PROMOS how you want the programming to be done.
+       Some examples:
+
+       P2000,3FFF,0,6,7
+
+       This command fills a 2764A completely with data from
+   computer RAM in the range 2000 through 3FFF.  The EPROM Is
+   programmed from beginning to end. The CONTROL WORD is 6; and
+   we have used intelligent programming method #1 as defined by
+   the PMW of 7.
+       Notice that the P command gives you complete freedom.
+   You can take information from anywhere in computer RAM and
+   put it anywhere on the EPROM. Suppose you wanted to program
+   just one byte on an EPROM:
+
+      P213A,213A,3456,5,A
+
+      In this case, the starting and ending RAM addresses are
+   the same, 213A. The EPROM address is 3456. The control
+   word, 5 is for the 27128 and we have chosen A for the PMW.
+   This command takes a single byte of data at 213A and programs
+   it into EPROM location 3456 In the 27128.
+      The considerations of RANGE size are exactly the same as
+   with the R command. To be sure you are programming ALL of an
+   EPROM, add the maximum EPROM address to the computer RAM
+   starting address to obtain the computer RAM ending address.
+      Some more examples:
+
+      Suppose you wanted to take the data from two 2764's and
+   put it on a single 27128A. Here's one way to do it. First
+   let's choose to use computer RAM from 2000 through 5FFF to
+   contain the data. Read the first 2764:
+
+      R2000,3FFF,0,5
+
+      Now read the second:
+
+      R4000,5FFF,0,5
+
+      Now program the 27128A:
+
+      P2000,5FFF,0,6,6
+
+      That's all there is to It.
+
+     Suppose you wanted to read a COMMODORE Kernal ROM, make
+ some changes, then put the altered data on a 2764A. Here's
+ how to do it: The Kernal ROM in the C64 is compatible with
+ the 68764 (8k) EPROM. The control word Is 30.  Read it in:
+
+
+                           -13-
+

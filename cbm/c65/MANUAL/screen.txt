@@ -1,0 +1,101 @@
+THE C65 BASIC V10 SCREEN COMMANDS
+V0.1/16.08.1999
+===============================================================================
+written by TXW
+
+THE C65 INFORMATION PAGE
+http://www.toxic-waste.de/c65/
+email:michael@toxic-waste.de
+
+Please note that this information is not a complete tutorial describing all 
+functions and possibilities of the screen commands, it is meant as a start and 
+will be completed in future versions.
+
+All information and programs in this text are tested on a V910612 ROM Version.
+Older (and newer) ROMs may vary the results.. 
+===============================================================================
+
+If you want to use the drawing commands of Basic V10 (such as BOX, LINE, CIRCLE,
+CHAR or ELLIPSE), you first have to set up a screen on wich these instructions
+take place. A screen consists of some bitplanes (up to 8) and a color palette.
+The number of possible colors is 2^number of bitplanes, so with 8 bitplanes you
+have 256 colors. 
+
+Chapther 1 of the C65 user manual describes to following screen resolutions:
+
+320 x 200 x 256  (8-bitplane)  non-interlaced
+640 x 200 x 16*  (4-bitplane)  non-interlaced
+1280 x 200 x 4*   (2-bitplane)  non-interlaced
+320 x 400 x 256  (8-bitplane)  interlaced
+640 x 400 x 16*  (4-bitplane)  interlaced
+1280 x 400 x 4*   (2-bitplane)  interlaced
+*plus sprite and border colors
+
+Anyway, it seems that most of them cannot be set using the basic instructions
+on my C65 (ROM 910612). My C65 won't let me set more than 7 bitplanes in
+320x200 mode and won't take more than 3 planes in the higher resolutions. May-
+be this works only with the (non-existant?) ram-expansion.
+
+Before you tell the C65 wich sort of screen you want to use, you first have to
+initialize the bitmap-graphics mode. This is done simply by giving the 'GRAPHIC
+ CLR' instruction.
+
+So now you have to decide wich sort of screen you want to use. That's where the
+SCREEN DEF command comes into context. Chapter 3 of the user manual gives us
+the following syntax:
+
+SCREEN DEF screen#, width, height, depth
+
+                 screen#      0-1
+                 width        0=320, 1=640, 2=1280
+                 height       0=200, 1=400
+                 depth        1-8 bitplanes (2-256 colors)
+
+You can define two screens, with the numbers 0 and 1, comes in handy for 
+double-buffering, hm? The resolution is set by the width and height parame-
+ters, the depth in bitplanes is set with the last parameter.
+
+To define screen 1 with a resolution of 320x200 and 128 colors, you would use
+the following command: SCREEN DEF 1,0,0,5
+For a 640x200 screen 0 with 8 colors use: SCREEN DEF 0,1,0,3
+
+Easy, huh? Well, next thing is to open the screen. This will take care of memo-
+ry-allocation and screen-setup. Only parameter to give is the screen number we
+used in our SCREEN DEF statement. The appropriate command is (guess what..)
+SCREEN OPEN. So with SCREEN OPEN 1 you open screen number 1.
+
+Before you can start drawing boxes and circles, you still have to tell your 65
+which screen to use as view-screen and wich screen to use as draw-screen. Very
+ good for double-buffering (showing one screen while you update the other, 
+then changing the screens). This is archived by using the SCREEN SET command 
+with the syntax:
+
+SCREEN SET  DrawScreen#, ViewScreen#
+
+If you do not use double-buffering then you can use the same screen as draw- 
+and viewscreen without a problem. To draw on and view the screen 1 you just 
+say: SCREEN SET 1,1
+
+Well, that was all. Now you can start to draw with the commands described in 
+chapter 3 of the user manual.
+Don't forget to SCREEN CLOSE after you are done, or you will be lost in bit-
+map mode after your program ended.
+
+It would be a good idea to set some colors using the PALETTE command and alter-
+ing the draw-color using the PEN command.
+
+Here's a little program example, for more programs check the download section 
+of the C65 Information page.
+
+10 GRAPHIC CLR                  : REM ** INIT GRAPHIC MODE
+20 SCREEN DEF 1,0,0,5           : REM ** DEFINE 320x200x32COLS SCREEN
+30 SCREEN OPEN 1                : REM ** SET UP THE SCREEN
+40 PALETTE 1,0,0,0,0            : REM ** SCREEN 1 COLOR 0 = BLACK
+50 PALETTE 1,1,15,15,15         : REM ** SCREEN 1 COLOR 1 = WHITE
+60 SCNCLR 0                     : REM ** CLEAR SCREEN WITH COLOR 0
+70 PEN 0,1                      : REM ** SET PEN 0 TO DRAW COLOR 1 (WHITE)
+80 LINE 100,100,200,200         : REM ** DRAW A LINE
+90 CHAR 5,5,2,2,2,"C65 rules"   : REM ** DRAW SOME TEXT
+100 SLEEP 5                     : REM ** WAIT 5 SECONDS
+110 SCREEN CLOSE 1              : REM ** NEVER FORGET! CLOSE EVERYTHING!
+120 PALETTE RESTORE             : REM ** RESTORE THE OLD SYSTEM COLORS

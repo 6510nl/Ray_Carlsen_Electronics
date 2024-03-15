@@ -1,0 +1,13 @@
+Short:        Various image conversions
+Architecture: m68k-amigaos
+
+(24-bit IFF Tool Suite) 9/21/91
+-------------------------------
+IFF24To8	--	Converts 24-bit IFF images to 8-bit IFF images,
+			wonderful for viewing with DeluxePaint on a PC.
+
+Pro2BMP		--	Converts 24-bit 3D-Professional format images into
+			24bit .BMP files that Microsoft Windows can understand
+
+Pro2IFF		--	Converts 24-bit 3D-Professional format images into
+                	the more useful 24-bit IFF format.

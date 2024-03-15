@@ -1,0 +1,11 @@
+     There is a not-so-obvious problem of using a datassette -and- a 
+1581 at the same time on a C64. Someone wanted to transfer files from 
+their datassette to their 1581, but it wouldn't work and they thought
+there was something wrong with their drive because accessing the drive 
+locked up the serial bus with that configuration of hardware. Since 
+the C64 doesn't use the SRQ line anyway, the "fix" was to disconnect 
+that line either at the computer serial port or in the cable to the 
+1581 so it can't pull the line LOW. Note that the C128 doesn't show 
+that problem because its hardware configuration is different!
+
+Ray Carlsen

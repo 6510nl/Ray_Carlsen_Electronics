@@ -1,0 +1,157 @@
+                      Heat Sinking ICs in the C-64     
+               latest additions and corrections 5-10-2014
+
+     Solid state devices such as Integrated Circuits (ICs) fail for two
+basic reasons, assuming they were not defective from the factory:
+overvoltage and excessive heat. The Commodore "brick" PS has a history 
+of sudden failure, sometimes taking the computer with it. After-market
+repairable supplies are much more reliable. Voltage "spikes" and static
+electricity can destroy ICs in the computer through any of the accessory
+ports. Both of these hazards are preventable to a degree... the use of a
+higher quality supply and simple precautions such as never plugging
+anything in or unplugging (cartridges, mouse, etc.) when the computer is 
+turned on just make good sense. Static electricity buildup on a dry Winter 
+day can damage chips in the computer if you touch one of the ports before 
+draining off the charge on your body or clothing. You have experienced 
+the shock of shuffling your feet across a carpet and touching a doorknob.
+That can be a fatal shock for IC chips in the computer. 
+     Repeated heating and cooling of semiconductor devices (especially 
+ICs and power transistors/diodes) with normal use, even within their 
+normal temperature range, will eventually cause them to fail. It is 
+usually the devices that generate the most heat in normal operation that 
+fail first, such as the PLA chip in the C64. If you bend a piece of metal 
+back and forth, it eventually fatigues and breaks. Repeated heating and 
+cooling does the same thing to the microscopic components inside an IC 
+or transistor. So, is there any way to prevent the damage or at least 
+make parts last longer? Absolutely!
+     You could leave the computer on 24 hours a day... some systems run
+that way and a BBS was a good example. I knew of one system that had run
+without a breakdown for over 10 years (except for the old hard drive power
+supplies). For most of us however, the computer doesn't get enough use to
+justify the expense of a system running all the time. 
+     An alternate solution is to reduce the extremes of temperature inside 
+the ICs by the use of heat "sinks", and thereby reduce the thermal stress 
+on the devices. A heat sink is a strip of metal fastened to the IC to draw 
+off its waste heat and allow it to flow out to the surrounding air. 
+     The physical design of the C64 limits the airflow over the chips. 
+Tiny air vents in several places in the upper and lower half-shells offer
+minimal convection cooling. That cardboard and tinfoil shield inside the
+early C64s, although of questionable usefulness as an interference filter, 
+is very good at -blocking- the airflow and holding all the heat inside the 
+case. I have run tests to see how effective that shield is in reducing 
+radio and TV interference, and found little difference after removing the 
+shield. In fact, a stock 1541 (with all shields in place) generates more 
+"noise" than the C64 with or without its "shield". Bottom line: remove the 
+tinfoil/cardboard shield from your C64 if it has one. The later C64 has a 
+all-metal shield with "fingers" that act as heat sinks. Do not remove it!
+     Four of the large ICs tend to run hot normally: the PLA, the SID, the
+MPU and the VIC. They would benefit most from heat sinking. That later C64, 
+the C64C and the "flat" C128 all have a metal shield with "fingers" that 
+touch each of the larger chips. Even so, the fingers barely touch those 
+chips when the computer comes from the factory. To provide maximum heat 
+transfer, I always remove the shield and bend the fingers down a bit so 
+when the shield is replaced, all tabs sit flat on all chips. See the photo 
+SHIELD SINKS.JPG. It is a before & after image of the smears of heat 
+sink compound on each IC. The larger contact area provides the best effect.
+     The C-128DCR (metal box) has no such shield but does have space for a 
+small internal fan near the power supply. NOTE: Most 128DCR boxes were 
+shipped without a fan installed. Commodore saved a few bucks. Even so, the 
+IC's used in the DCR are of a different IC "family" called CMOS and don't 
+normally run hot like the earlier NMOS C64 chips do. The SX-64 has one heat 
+sink clamped to the VIC chip, and the older model C64 has a metal "finger" 
+touching the VIC chip inside the metal box. Other than that, the C64 and SX 
+computers have no sinking for their hot chips. However, you can easily make 
+and install them yourself to extend the life of your computer. 
+
+FOR THE "BREADBOX" 64:
+     Remove the screws from the bottom of the computer, but leave the
+keyboard in place. Run the computer for 10 minutes or so, lift the keyboard 
+and feel the tops of all the chips... some will be quite warm. Those are 
+the ones that most need the help! You may be able to purchase (if still 
+available) commercial heat sinks that fasten to the top of the chips with 
+clamps, adhesive strips or glue. The larger, the better. If you want to 
+make your own, any thin metal stock will do. The only consideration is that 
+it be flexible enough to bend without breaking, and stiff enough to hold 
+its shape when bent. It must be flat on the bottom for intimate contact 
+when glued to the chip. I once used strips of "tin" cut from large juice 
+cans. The sink ears should be made just high enough to clear all components 
+on the PC board, but not touching the keyboard when it is reattached: bend 
+the ears over if you need to for clearance. The large surface area of the 
+added heat sink is necessary since the airflow inside the case is poor. See 
+the photos of the various versions of added sinks. You may notice a string 
+around the sink in some of the photos. I always add that as a fail-safe in 
+case the sink gets dislodged in transit. Although the epoxy I use is rugged, 
+if a sink should break loose for any reason, the string (it's actually 
+nylon fishing line) will hold it in place so it can't move around inside 
+the computer and short something out.
+     I use fast-set epoxy to attach the sink to the IC. The best I've ever 
+used is called "J-B Kwik", a very tough fast set epoxy. If you have several
+sinks prepared ahead of time, you can mix one batch and glue them all
+before the epoxy starts to set. Print the name or number of the IC on the 
+top of the sink with a felt tip pen ahead of time so you can still identify 
+the chips when you're done. It's a good idea to also put a mark on the end 
+of the sink to indicate which direction the chip is oriented. Note the notch 
+on one end. Mark it there. Be careful not to use too much epoxy (one small 
+pea-sized drop is plenty), or it will ooze out the sides and down into the 
+socket. (Note: not all chips are socketed.) Spread the epoxy over the sink 
+(or on top of the chip) and gently press it into place. I don't recommend 
+Superglue as it will eventually break loose from the IC. Heat sink (white 
+silicon paste) compound should only be used as for thermal transfer if a 
+commercial heat sink is used. It is -not- glue and can't be used as such. 
+Epoxy forms a good bond even with irregular surfaces, as it fills the 
+"voids" and provides sufficient heat transfer to the sink. Just make sure 
+the metal and IC top is free of dirt, oil, fingerprints, etc. before you 
+apply the epoxy. Use grease-cutting solvent on both surfaces, if necessary. 
+Paint thinner works well. I always roughen up the mating surfaces with 
+sandpaper to ensure a good bond. 
+     As I stated, the chips that benefit most from sinking are the large
+heat producing ones, like the PLA (CBM #906114-XX, 82S100PLA, or 93459),
+the SID (CBM #906112-XX or 6581), and the VIC (CBM #906109 or 6567). The
+6510 CPU and the Kernal ROM should have sinks as well. The VIC chip is 
+already sinked in most C-64s. It's usually inside a metal box and the cover 
+has a tab that touches the chip. If yours doesn't have one, sink it.
+Whatever sink design you use, make sure your heat sink fins don't touch 
+any circuit components and cause a short! The two VIA (6526) chips run 
+cool to the touch and don't really need sinking. Since they connect to the 
+external ports, they are more sensitive to static "zaps". The other ROMs 
+run warm and could probably benefit from sinks but they rarely fail 
+without them. The eight RAM chips (4164) normally run cool, at least until 
+the power supply regulator fails. When RAM chips get hot to the touch, 
+they're already gone! 
+
+SINKS FOR THE 1541:
+     Heat sinking can be added to the chips in the 1541 disk drive as
+well. Its power supply is internal, making IC heat buildup even worse.
+The problem with modifications to the drive is the space limitations
+inside the case. It's pretty crowded in there, but it can be done. Find
+the chips that get the hottest as described with the C-64 and add sinking
+as necessary. The heat sinks you make will have to be cut to fit the space
+allowed. The two bridge rectifier blocks get -very- hot and would
+certainly benefit from sinking. The easiest way is to cut and form the
+metal so it forms a U shape to clamp over the diodes (without touching the
+wiring, of course). A small amount of epoxy on one side will hold it in
+place. You might consider adding a small fan to the drive to keep the heat
+from building up around the hottest chips. Look for instructions in another
+article about adding fans to Commodore equipment. Strangely enough, the 
+most common chip failure in a 1541 is the DOS ROM (901229-0x), but it 
+doesn't run hot! Heat buildup in that drive is one reason for R/W head 
+misalignment if the drive hits the zero stop repeatedly after warmup. 
+     The 1571 has an internal switch-mode power supply that all but
+eliminates heat problems. The 1541-II and 1581 both use external supplies
+and consequently run cooler. No matter what equipment you have, it's
+important to keep the vents clear on the computer and accessories. Don't
+put papers, books or disks over the vent holes on the computer, drives or
+monitor. Don't stack 1541s. Replace your original C-64 supply with one of
+the repairable "heavy duty" types if you can find one. A small fan placed 
+on the rear of the 1541 drive is probably the best way to fan-cool it. 
+Installing a fan in the C128DCR is a good way to extend the life of that 
+computer although none of its chips actually run hot. Some users don't 
+like the noise a fan generates but I don't mind because I know it helps 
+lengthen the life of the internal components. 
+     IC chips and other parts for Commodore computers and periferals are
+in short supply. Obviously, sinking will not help a chip that is already
+failing from excessive heat, but with the simple suggestions and
+modifications described here, you can help to extend the life of the ICs
+and keep your Commodore system working for many more years. 
+
+Ray 

@@ -1,0 +1,85 @@
+    Make your own transit card for your 1541/1571 drives.   12-09-99
+
+     The transit card (sometimes called a "head vibration protector") that
+comes with a new disk drive is an important tool. The card is made of
+stiff cardboard and is the same size as a floppy disk, except for the tab
+that sticks out of the front end. That tab, unlike a disk, pushes the head
+stepper mechanism back to track zero when the card is inserted into the
+drive. In addition, when the drive door is latched down, the heads are
+allowed to rest on the card and are therefore prevented from hitting each
+other in the 1571 and clone drives. More importantly for the 1571, the
+head lifter mechanism is released, so any physical shock to the drive will
+not bend the head mount. This is -very- important when the drive is to be
+transported or shipped! A scrap disk will protect the heads and mount, but
+will not keep the stepper mechanism locked in place.
+     One use for the transit card is often overlooked. Normally the drive
+"parks" the head over the directory track (18), but when a 1541 head moves
+past track 18, under some conditons, the drive can sometimes become "lost"
+and fail to respond to the computer. Some disk errors can do that, as can
+turning the computer or drive off before a program has reinitialized the
+drive. Even if turned off and on again, the drive will not be able to read
+a disk. You can send an Initialize command or format a disk to pull the
+head back, but a quicker way to recover the "dead" drive is to turn it
+off, insert the transit card to push the head back, remove the card and
+turn the drive on again. That method does not require that the computer be
+turned off, so any program running is not lost.
+     Early 1541 drives were shipped with a card, the CBM 251171-02. It
+would fit only the 1541 because the tab on the front was quite large
+(about 1.5" wide), and centered on the front of the card. A later version
+of the card, a CBM 251171-03 had a smaller offset tab, and was used in the
+1571 drive. That same card will work in a 1541 as well. I tested the later
+card in all my 5.25" drives and it fits and works with all of them. That
+includes the 1541 (both ALPS and Newtronics), the 1541-II, both versions
+of the Amtech/Blue Chip (1541 and 1571 clones), the Excelerator (Oceanics)
+1541 clone and the MSD SD-2 dual drive.
+     You can make your own card out of thick (not corrugated) cardboard or
+plastic. It should be stiff enough so the tab does not bend when the card
+is inserted, but not so thick (more so than a floppy disk) that it will
+not fit the drive. I will include the dimensions here. Note that the tab
+is offset to the right slightly, unlike the early 1541 tab which was
+centered. By the way, if you have one of the early cards, you can easily
+trim the tab to match these dimensions. If you're making a card from
+"scratch", you can use a disk as a template (but don't forget the tab).
+                             
+                    Insert this end of card into drive.                      
+                         tab depth = 7/8" or 2.2cm
+                             .--------------.
+                             |              |
+<--------- 2 1/4"----------->|<-- 1 1/8"--->|<------- 1 7/8" ------>
+           5.8cm             |    2.8cm     |         4.8cm
+                             |              |
+.----------------------------'              `-----------------------.
+|                                                                   |
+|                                                                   |
+|                                                                   |
+|        Card (less tab) measures 5 1/4" (13.4cm) square            |
+|                (same size as floppy disk)                         |
+|                                                                   |
+|                                                                   |
+|                                                                   |
+|                                                                   |
+|                                 .                                 |
+|                          .            .                           |
+|                Hole in center of card    .                        |
+|                        .                  .                       |
+|                                                                   |
+|<----- 1 7/8" -------> .<-- 1 9/16" diam--> .<----- 1 7/8" ----->  |
+|       4.7cm               4cm                        4.7cm        |
+|                        .                  .                       |
+|                         .                .                        |
+|                           .            .                          |
+|                                 .                                 |
+|                                 ^                                 |
+|                                 |                                 |
+|                                 |                                 |
+|                                 |                                 |
+|                               1 7/8"                              |
+|                               4.7cm                               |
+|                                 |                                 |
+|                                 |                                 |
+|                                 |                                 |
+|                                 V                                 |
+`-------------------------------------------------------------------'
+
+Ray Carlsen CET
+CARLSEN ELECTRONICS... a leader in trailing-edge technology.

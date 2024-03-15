@@ -1,0 +1,95 @@
+
+               CHANGING THE DEVICE NUMBER IN AN MSD DRIVE
+                   Latest changes or updates  7-6-05
+
+Quoting from the operators manual, and some added information:
+
+CHANGING THE DISK DRIVE DEVICE NUMBER
+
+     The device number on the MSD SUPER DISK DRIVE (dual: SD2) comes from 
+the factory selected as device number 8, drive number 0 and 1. This is the 
+usual or "default" device number, but if more than one disk drive is to be 
+used with the system, it is necessary to give each disk drive a different 
+device number or drive number. With this disk drive, it is not possible to 
+change the drive numbers (ie 0 and 1), but the device number can be changed 
+using either software (a short BASIC program after power up) or hardware 
+(changing jumpers on the drive PC board). 
+     The disk drive determines its device number from a set of jumpers on 
+the PC board inside the drive. At the time the drive is powered on, the 
+jumper settings are "read" by the microprocessor and the resulting number 
+is stored in a specific memory location. This makes it possible to change 
+the default device number by changing (opening or closing) the jumpers. 
+After power up, the device number can be changed by using a "memory-write"
+command to the memory location that has the device number stored in it. 
+That command must be used each time the drive is turned on. Each method has 
+advantages and disadvantages which will be detailed below. 
+
+CHANGING THE DEVICE NUMBER BY THE JUMPER (HARDWARE METHOD)
+
+1. Turn off the drive and remove all cables from the drive.
+2. Remove six screws from the drive case and remove the top cover. 
+3. Locate the jumper block JB1 on the top of the PC board near the rear of 
+the drive. It is located between ICs U10 and U11. At that location, there 
+are four solder pads with two bare wire "jumpers" soldered in horizontally. 
+This is the factory configuration for device 8. If JB1-1 is cut (or simply 
+unplugged if a "header" with a removable jumper is installed), the drive 
+will respond as device 9 when powered up. If the jumper at JB1-2 is removed, 
+the drive will be device 10, and with both jumpers removed, device 11. A 
+SPST (single pole, single pole) switch can be installed instead of a jumper 
+to allow the drive to be changed later without opening the case. Note: 
+there is room on the rear of the case for added switches.
+4. Replace the case top and install the cabinet screws. 
+     Electrically, the two jumpers ground two pins of an IC, namely U22 
+buffer (74LS240) pins 11 and 17. With a jumper at JB1-1, pin 17 of U22 is 
+grounded, and with a jumper at UB1-2, pin 11 is grounded. This info is 
+helpful in case the solder pads or board traces become damaged and cannot 
+be used.
+
+CHANGING THE DEVICE NUMBER BY SOFTWARE
+
+     The device number can be changed by performing a memory-write to 
+locations $0077 and $0078. The memory-write command is performed after the 
+command channel has been opened with a BASIC statement, usually:
+OPEN 15,8,15 
+The memory-write has the following format:
+PRINT#<file#>,"M-W"CHR$(119)CHR$(0)CHR$(2)CHR$(dv+32)CHR$(dv+64)
+The dv represents the device number that is desired. An example routine for 
+changing the drive from device 8 to device 9 is:
+10 OPEN 15,8,15
+20 PRINT#15,"M-W"CHR$(119)CHR$(0)CHR$(2)CHR$(9+32)CHR$(9+64)
+30 CLOSE 15
+To make it easier, this little program can be written to a disk and run each 
+time the number change is needed rather than typing it out every time. The 
+program can be written all on one line by using a colon between statements.
+     It is usually desirable to change the device number in hardware unless 
+a temporary change is all that is needed. In order to use the software method, 
+only one drive can be powered on, its device number changed, then the next 
+drive powered on and its device number changed, until all drives are on. If 
+this procedure is not followed, there will be a device "conflict" on the 
+serial bus and the drives will not work reliably or at all. 
+
+SOME ADDED NOTES FOR THE MSD-SD2 DRIVE
+
+     In my SD2, the PC board tends to bow outward physically towards the 
+metal case. I didn't want a short circuit to damage the drive, so I installed 
+a 6" X 6" cardboard spacer to keep the board away from the case top. A sheet 
+of thick plastic glued to the inside of the case top would work as well. 
+     The original cabinet screws were missing when I got my SD2. I noticed 
+that if the replacement screws were any longer than about 1/4", they would 
+hit the PC board inside. The important ones are the three on the side of 
+the case away from the drive mechanisms and closest to the PC board inside. 
+
+ERROR FLASH CODES FOR THE SD2 (seen at power up if there is a fault)
+
+Number of flashes  Suspected component failure
+1		   Micro U7
+2		   RAM U1
+3		   RAM U2
+4		   RAM U3
+5		   ROM U5
+6		   ROM U6
+7		   Drive mechanism
+
+
+Ray Carlsen CET
+Carlsen Electronics... a leader in trailing-edge technology

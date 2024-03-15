@@ -1,0 +1,163 @@
+
+                            LHA.EXE ver 2.55
+
+                            Last revised: January 10,1996
+        
+------------------------------------------------------------------------
+ Revision history of assembler version
+------------------------------------------------------------------------
+  ver 2.55e (by Hitoshi Ozawa)                           Jan.10,1996
+    - Translate documents to English.
+    - Rearchive file to make English a default language.
+  ver 2.55                                               Nov.15,1992
+    - Fix wild card handling routine bug.
+    - Fix to delete temporary files when Ctrl+C is pressed.
+  ver 2.54                                               Oct.04,1992
+    - Fix -lh0- option bug in self-extraction file.
+    - Extend wild card character support (LSI C-86 like).
+    - Change -i option.
+    - All algorithm to find unused temporary file name.
+  ver 2.53                                               Sep.11,1992
+    - Fix bug that prevented recognition of illegal MS-DOS file names.  
+  ver 2.52                                               Sep.07,1992
+    - Fix bug that deleted files when 'f' command specified.
+    - Fix bug that did not properly display file extraction progress.
+    - Change algorithm to decrease time to copy file.
+  ver 2.51                                               Aug.10,1992
+    - Add -f option not to check remaining resource.
+    - Add -d option (equivalent to -r2x1a2) to archive directory names.
+  ver 2.50 Test version                                  Jul.26,1992
+    - Able to extract file (including self-extracting file) as is
+      described in DJ magazine.
+  ver 2.14 Test version                                  Mar.03,1992
+    - Archive directory name with -r2x1a1 option.
+    - Do not display file name with 'p' command when -n[1|2] specified.
+    - Fix to properly display file name when extracting files.
+    - Fix 'f' command bug.
+    - Fix 'm' command bug that terminated process during file deletion.
+    - Allow path name including '\0' code to be 128 bytes long.
+      (MS-DOS 5.0 compatible)
+    - Refer to environmental variable TEMP when TMP not defined.
+      (MS-DOS 5.0 compatible)
+  ver 2.13                                               Jul.20,1991
+    - Fix bug that changes file name when -m2 option is specified and 
+      file already exists.
+  ver 2.13c Test version                                  Jul.13,1991
+    - Empty keyboard buffer when prompting [Y/N].
+    - Add -s option to suppress 'Skipped FILENAME.EXT newer or..'
+      display.
+    - Add routine to able VZ editor to output messages to console
+      when -i0 option is specified.
+  ver 2.12b Test Version                                  Jul.03,1991
+    - Fix bug in not recognizing file name with kanji code.
+    - Fix to recognize Ctrl+C while 'Copying TMP to ARC....'.
+    - Change unable to create file return code to 1.
+    - Change to return 0 when there is no error. 
+  ver 2.12a Test Version                                  Apr.15,1991
+    - Fix to prevent '_.' being recognized as parent directory, '..'.
+    - Support -i2 option to archive files with '_' file name.
+  ver 2.12                                                 Mar.21,1991
+    - Extend -- option to only recognize character '@' as the first
+      character of batch file name.
+    - Fix to proper handle when there are more than 64 environmental
+      characters.
+    - Fix to display initialize progress when extracting files
+      specified with wild card characters.
+    - Fix to display error message when terminating self-extracting
+      archive file.
+    - Add support and -a option explanation in LHA.DOC.
+  ver 2.11                                                 Mar.03,1991
+    - Change all file compression/extraction program to LHA.
+    - Fix LHA from terminating when file name with wild card
+      character is specified and unmatched file is detected with
+      'e', 'x', 'p', and 's' commands.
+    - Fix to always change temporary file name (LHTMP)1(.LZH) to
+      archive name when disk full is detected during file extraction.
+    - Fix file name with kanji characters to properly display when
+      extracting with -i0 option.
+    - Fix program to terminate properly after executing auto-execution
+      file in self-extracting file. 
+  ver 2.10                                                 Feb.24,1991
+    - Initial general release.
+    - Fix to convert all directory name to upper case characters with
+      -i0 option.
+    - Fix to disable prompt when 's' command when -m1 option specified.
+    - Warn when extraneous data detected in archive file with 't'
+      command.
+    - Support achiving of uncompress file using -z option.
+  ver 2.06                                                 Feb.24,1991
+    - Allow file to remain as self-extraction file even after file
+      is added/deleted from it.
+    - Support full file name with more than 1 period. (eg. FILE.TAR.Z)
+    - Fix format of 'u' and 'm' commands.
+    - Fix to abort when file can not be compressed.
+    - Fix to prevent FAT allocation error when disk full.
+  ver 2.05b                                                Feb.07,1991
+    - Fix self-extraction file creation bug.
+  ver 2.05a                                                Feb.06,1991
+    - Correct environmental parameter setting to LHA instead of LH.
+    - Fix to ignore extra codes appended to end of archive file.
+    - Fix format of 'u', 'm', and Skipped display.
+    - Support modification date to year 2038. (However, still does not
+      support illegal date.)
+    - Change -@ option to --.
+    - Fix -a file extraction option.
+    - Pre-test if new archive file could be created.
+    - If file to be archived could not found, return error code.
+      (ERRORLEVEL=2)
+    - Warn if file not used. (ERRORLEVEL=1)
+    - Fix APPEND command.
+  ver 2.05                                                 Jan,01,1991
+    - Change program file name to LHA.EXE.
+    - Fix compression routine bug.
+    - Fix memory management bug with 4K dictionary.
+    - Improve end of archive file checking algorithm.
+    - Improve corrupt file checking algorithm.
+    - Support '-@' option.
+    - Initial release of English version.
+    - Display which file is being processed when -l option specified.
+  ver 2.04a                                                Jan.20,1991
+    - Fix progress display routine bug with -o option.
+    - Fix CRC bug.
+    - Reduce time needed to compress file.
+  ver 2.04                                                 Jan.18,1991
+    - Display compression/extraction progress.
+    - Support -l option.
+    - Change '@' character in batch file name not to be recognized
+      as part of a file name.
+    - Fix temporary files from being erased when error occurs.
+    - Change temporary file names to LHTMP)1(.LZH and LHTMP)2(.LZH.
+    - Fix not to abort when reading level 2 header.
+    - Fix p command bug displaying several files.
+    - Fix free disk space calculation on MS-DOS v2.xx.
+    - Increase buffer size to reduce disk I/O.
+  ver 2.03a                                                Jan.04,1991
+    - Fix self-extraction archive file bug.
+  ver 2.03                                                 Jan.03,1991
+    - Support self-extraction archive file.
+  ver 2.02f                                                Dec.29,1990
+    - Fix error handling routine when file can not be compressed.
+  ver 2.02e                                                Dec.27,1990
+    - Fix compression routine bug.
+    - Prevent system error when compression information is broken.
+    - Change stack size to default LSI C-86 compiler default
+  ver 2.02d                                                Dec.25,1990
+    - Support ^C (when ^C is detected, end process).
+    - Fix *.lzs extraction routine.
+    - Change how files are handled when -a0 option specified.
+    - Fix f command bug.
+  ver 2.02c                                                 Dec.03,1990
+    -  Fix free disk space checking routine bug.
+    -  Made x command equivalent to e -x1m1 option.
+  ver 2.02b                                                 Nov.21,1990
+    - C Magazine publication version. Change routine to suppress
+      extraneous ^M codes when redirected.
+ ver 2.02a                                                  Nov.18,1990
+    - Initial assembler version release. Support self-verification
+      routine.
+------------------------------------------------------------------------
+               NIFTY-Serve  SDI00506 | PFF00253  Haruyasu Yoshizaki
+               ASCII-pcs    pcs02846             Yoshi
+               PC-VAN       FEM12376             Haruyasu Yoshizaki
+------------------------------------------------------------------------
+                              - end -

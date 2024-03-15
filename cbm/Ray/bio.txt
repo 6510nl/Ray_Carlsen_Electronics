@@ -1,0 +1,170 @@
+FROM THE INSIDE OUT... The Technician       (written in the 1990's)
+
+     Add one more name to the endangered species list: the Electronic Service
+Technician. Due to the way electronic devices are built nowadays, the increasing lack of
+support from the manufacturers with regards parts and service information, and the
+initial low cost of rather complex devices such as VCRs, CD Players, and now Computers,
+the independant service facility is becoming a thing of the past. The first VCRs sold
+for more than $1500. Repairs amounting to $400 were acceptable... now the customer can
+and does buy a new one for less than the cost of repairs! I can't argue with that... I
+would do the same. New technology is obsolete in just a few years and it is cheaper to
+manufacture products that are not repairable. Goods are now considered obsolete when it
+is no longer profitable to support them. Replacement picture tubes now cost more than a
+new set and don't last as long as ones built 10 to 20 years ago. Fewer after-market
+vendors, and more specialized and proprietary parts add to the problem. Generics are
+almost unknown. Manufacturers like Sony just keep raising the price of repair parts
+until no one can afford to get anything fixed. They make more money selling you a new
+one! Many people don't like the hopelessly complicated TV sets and VCRs of today, but
+that's all you can find in the stores.
+     U.S. manufacturers were required to maintain a repair parts stock for seven years.
+Almost from the beginning, the Japanese ignored that restriction and they were not
+forced to abide by our laws. They repeatedly "dumped" goods for less than it cost to
+make them to gain control of our markets. We couldn't remain competative, and now there
+are no American manufacturers of TV sets. Most consumer electronics goods are made
+overseas. A lot of "unrepairable" equipment ends up in the garbage because a new one
+costs so little. It can't be recycled. We are a throw-away society and the Japanese (and
+others) gladly feed our "habit" and our landfills! Electronics goods from Taiwan, Korea
+and China are now edging out the Japanese. They all reluctantly handle in-warranty
+service but, out-of-warranty factory service is almost unknown, except for the few small
+independant shops that are barely hanging on. Those are just some of the tradeoffs of
+the new technology. More than that, it is an indication of our willingness to sell out
+our Country and its productive people, a little at a time.
+     Most people don't think about service when they buy something. It is true that the
+overall quality and reliability of electronics produced today is quite high considering
+the complexity. Because they are so complex, we have gone way past the point that the
+common man can repair his own electronic gadgets. The "tube-jockeys" are long gone. Even
+skilled techs have trouble repairing micro-miniature circuit boards with parts so small
+and delicate that heat from a soldering iron would destroy them. The manufacturers don't
+consider them repairable... why should we? In warranty, the manufacturer just replaces
+an entire board or the whole unit. Out of warranty, they don't want to talk to you.
+     Repair technicians are the buffers between the consumer and the manufacturer. The
+tech has to know how the device works, what mistakes are likely to be made in its' use
+and, of course, how to fix it when it fails. The ever-increasing knowledge necessary to
+do the job takes a tremendous investment. In the tube days, a technician could make a
+living repairing TV sets alone. Now, just to survive, servicers must be able to repair
+(dare I say it... at a profit) just about anything the designers dream up. Specialists
+are rare now. Repair techs must have a working knowledge of electricity, electronics,
+optics, physics, chemistry and mechanics. Their tasks are as mundane as wiping the dust
+off a repaired TV or as important as servicing that electronic defibrillator, so the
+doctor can work his "magic".
+     There will always be a need for qualified technicians although the market is
+shrinking, especially in Consumer Electronics. The tech himself has to adapt to the
+changing environment, much more so than the buying public. Although his job requires
+that he know the products inside out, the tech is rarely consulted until after a
+purchase is made. We are always playing "catch-up". Many times, I don't see a product
+until a broken one shows up on my repair bench.
+     Repair techs are as different from each other as they are from you but we are of
+only two basic types: Bench Techs, who prefer their "8 hours" inside and Field Techs,
+who enjoy the freedom of the road. A manager who doesn't think there is any difference
+learns quickly when he sends his bench man on an outside job or forces the field man to
+do bench work. As a bench tech, I am most familiar with our needs, which are few and
+simple: A clean, quiet place to work, free of disturbances such as telephones and foot
+traffic, the necessary space for test equipment, service manuals and parts stock and,
+most important, that pot of coffee.
+     As you would concentrate on balancing your checkbook, we need to concentrate,
+without interruption, mentally juggling many pieces of information at once to localize
+an electronic fault. Through trial and error, making assumptions and checking them out,
+testing and retesting, we narrow down the fault to a specific area. It is an intense
+exercise in logic and we hate to be interupted during this process. If our train of
+thought is broken, we have to start all over again and rethink, retest and "find our
+place again". We are detectives searching for clues and we actually enjoy zeroing in on
+the bad part(s). It is rarely a matter of just seeing "where the smoke came from". A
+good tech will not only find the bad part but will find out what caused the problem in
+the first place. If a resistor is overheating, there is a reason. When a transistor
+shorts out, it usually points to another fault. Just to replace that part is not enough.
+We don't just treat the symptoms, we must "cure the disease". Re-work on a repair angers
+the customer and costs us time and money. Although the work is often frustrating, there
+is a pleasure in seeing that gadget work again, no matter what it is or who owns it. We
+enjoy sharing our knowledge, too. It's part of the fun.
+     We hate waste. It hurts to have to give up on a job because it's uneconomical to
+repair or we can't get the parts, and then see the equipment go in the trash. Many of us
+end up as "packrats". We salvage and store anything which we think may be useful later
+because we see a time when repair parts will be impossible to obtain. Even though the
+manufacturers do not support our efforts, we still try to repair down to the component
+level, rather than replacing the whole PC board, or the whole unit.
+     We take pride in a job well done. It is sometimes our only "thanks". Our motivation
+comes from within. No one but another tech knows what we do and why. You might say we
+have an image problem. We are misunderstood and, for the most part, invisible. My
+favorite joke is: "If it wasn't for the admiration, high pay and prestige, I would
+consider giving this up!" I can only think of one popular TV show that featured a TV
+repairman as one of the cast members: CHEERS resident "slimeball", Nick Tortelli,
+Carlas' first husband. In all my life, I have seen exactly ONE Television Commercial
+featuring a TV repair tech. When we do our jobs right, no one knows or cares. We are
+"video janitors". It is only when we goof that it shows.
+     As with all professions, there are those who shouldn't be in the business. Some are
+sloppy... they may be competent but are careless. That drives me crazy... especially if
+I have to do their re-work. A few can't solder. No excuse! Dishonest shop owners reflect
+badly on all of us but are, fortunately, in the minority. The "last gasp" of independant
+service has turned some saints into sinners.
+     Most techs you'll meet are middle-aged men. This profession doesn't draw many young
+people. I have only known two female techs. They are both professional, intelligent,
+fearless in attacking problems, and a joy to work with.
+     A repair shop usually is a Management afterthought... support for a Sales facility.
+It is the grubby little room in the back, cluttered with equipment waiting to be looked
+at and repaired sets as well as mountains of debris of every description... and an
+overworked tech. It's rare indeed to find a clean, quiet, well lit area free of clutter.
+I worked in two of them, so I know they exist. The need has always been there but the
+overhead costs are enormous. Management (and the general public) sees us as a necessary
+evil and we look the part. Most of the shops I have worked in are similar: the
+uninsulated back corner of the warehouse, someones garage, basement, back room, etc. I
+have always fought for more space, more schooling (new-set update classes, at least) and
+better test equipment. Since the "bean counters" don't really understand what it is we
+do, how can we hope to get them to spend more money on service. With those handicaps, we
+technicians labor along the best we can. We know the customer will come out on the short
+end... and we take the blame! The only worse thing would be no techs at all. With a
+fixed salary, we get only a fraction of the labor charged to the customer and nothing
+for the parts. We'll never be rich no matter how hard we work. It is not the kind of
+club that attracts new members and I'm too old to start over.
+     I didn't choose this profession. At the beginning it was a hobby. Like most kids I
+was curious about how things worked. I took apart toys and watches and radios. I "fixed"
+bicycles and roller skates. If anyone deserves credit for getting me started in
+electronics, it would be my father. He provided the fertile ground for my education and
+he bought the first tools and test instruments I owned. I remember working on a table
+radio salvaged from the neighbors trash. I spent months trying to make it work again.
+(That one never did.) No one around could answer all my questions, so I learned to read
+technical manuals. I progressed to black and white TV sets and would spend most of my
+spare time trying to figure out how the various circuits worked to produce that magical
+picture. (Try discussing stuff like that with your grade-school and high-school
+classmates... I was almost an outcast.) I spent months building and rebuilding sections
+of a TV set to see if I could make it better. All of this was play to me. I loved it! My
+first "job" (early Sixties) was fixing tube and (then new) transistor radios and
+reel-to-reel tape recorders at a "wage" of a few dollars per item repaired.
+     I'll never forget the first time I saw a color TV in a department store. I was 18.
+I sat on the floor in front of the set for half an hour in total amazement. "How do they
+do that?" A year later, I paid $50 for a set no one could fix and spent several months
+learning about color circuits. The first program I watched in color on my set was
+"Bonanza". By then, the Disney shows were in color too. Real Magic! I later talked the
+guy who sold me the set into hiring me part time for $50 a week. My "career" was flying!
+     The Army "borrowed" me for two years (1965-67) and, with my electronics background,
+of course made me a Military Policeman. Army logic. With a rifle over my shoulder, I
+guarded a missle base in Germany for 14 months. About three months before my tour of
+duty was to end, someone learned of my "talents" and sent me to "Radio School" in the
+Bavarian mountains. I slept through it and made Honor Graduate. They figured I would
+re-enlist but I hungered for freedom and electronics (in that order). I remember
+angering a re-enlistment Officer by answering: "Do I look crazy to you?" A month later,
+I was french-kissing a U.S. airport runway. Imagine being anxious to get back to work?
+     Since that time, my education and on-the-job training has been an accelerating
+spiral... VCRs, Videodisc players, Microwave Ovens, Audio cassette and CD players, Test
+Equipment, and on and on. Just to keep up, it was and is necessary to update my
+schooling on various pieces of equipment, new VCRs, TV Studio gear, microprocessors
+everywhere... and now Computers. Like most of my education in electronics, what I
+learned about computers has been self-taught. The computer is my "toy of choice" right
+now, when I can spare the time away from work. I'm a "hardware" kind of guy. I spend
+more time inside the computer than I do pounding the keys. Commodore, IBM, DEC,
+Kaypro... all have been my teachers.
+     The majority of people, outside the circle of technicians who fix all these magical
+boxes, must assume it's done with mirrors and smoke, assuming they think about it at
+all. They don't know what happens inside that box and most of them don't want to know...
+until it breaks! How amazed (or bored) they must be to stare into a Computer or VCR.
+Most of it makes logical sense to the tech. Sometimes WE stare in awe! We see the
+wonders around us contributing to our enrichment... and our demise as technicians.
+High-priced items like a Camcorder that is uneconomical to repair, or an "obsolete"
+computer are good examples.
+     I heard of a car made in France that has no hood opening. You put gas in one end
+and oil in the other... no maintenance. When it stops, you haul it in and it's ground up
+and you buy a new one. Electronics is headed in that direction. In the mean time, the
+electronics service tech, like the auto mechanic, is hated and feared and needed. Until
+we are needed, we are invisible. Soon we will be gone. The next time you talk to a tech,
+speak softly... buy him (or her) a cup of coffee... and imagine life without them.
+
+                           Ray Carlsen CET

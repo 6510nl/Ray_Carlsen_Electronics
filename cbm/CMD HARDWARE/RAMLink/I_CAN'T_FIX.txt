@@ -1,0 +1,8 @@
+                                      12-13-2021
+
+     Due to the unavailabilty of parts and service data, I can't repair the RAMLink.
+I have tried in the past but the only source for the proprietary information and
+protected chips is Maurice Randall (click here software), and he is unwilling to
+release anything. 
+
+Ray

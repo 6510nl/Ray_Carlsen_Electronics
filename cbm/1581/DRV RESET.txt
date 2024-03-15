@@ -1,0 +1,116 @@
+    ADDING A RESET SWITCH TO A 1541 (& clone)/ 1571 / 1581
+
+             latest changes and/or corrections: 11-27-04
+
+     There is a -drive- reset switch in the SX-64 and one in the
+C128DCR. It is sometimes advantageous to be able to reset the drive
+alone, and not the rest of the system. This article explains how to add
+a switch to your disk drive so that you can do a drive reset without
+turning off the computer or drive.
+     When a 1541 is first turned on (with or without the computer
+connected), an internal circuit called a "one-shot" holds the reset
+line low for a half-second until all voltages stabilize. The drive then
+goes through an internal start-up sequence. That's what's happening
+when the activity LED comes on and goes out as the drive is powered up. 
+The best way to add a reset switch to a stock disk drive is to use that
+one-shot circuit as the trigger. Implimenting it is a little tricky 
+because there are so many different models of 1541. I've done a bit of
+"homework" to make it easier for you.
+     The most common 1541 type, which is to say the most plentiful,
+uses the PCB #251830 (number stamped on the PC board). It is a medium
+sized board, housed in the standard brown case, and usually has the
+Newtronics drive. Fortunately, the older drive with the ALPS mechanism
+is similar. It uses a different PCB (#1540050), but the parts layout is
+about the same, at least as far as this modification is concerned. The
+mod involves wiring in a push-button switch and mounting it somewhere
+on the drive. The added wires can be soldered to the bottom of the PC
+board (requiring removal of the board), or to the top by soldering to
+component wires.
+     Locate capacitor C46. It is a 100uF 16 volt electrolytic mounted
+near the front of the board, about in the middle. It is near IC UD3 
+and diode CR7. The added drive reset switch will be wired across the
+capacitor C46. That cap is usually mounted with enough of it's leads
+sticking up that you can solder your two wires underneath it. If you
+can't get to those solder connections, as an alternative you can use
+the anode of CR7 as one lead of your switch, and the negative end
+(which is grounded) of the very large filter capacitor C17 (left rear
+of PC board) as the negative end. By the way, don't use the metal
+chassis as a ground... it's isolated and will not work. To identify the
+anode of CR7, examine the diode. Notice a small black band at one
+end... that is the -cathode- lead. The anode is the other end... it's
+closer to the front of the drive.
+     When you wire in the momentary-contact pushbutton switch, add a
+100 ohm 1/4 or 1/2 watt resistor in series (not across, but in-line
+with one leg). This is to prevent the discharging of the capacitor into
+your switch, which may eventually damage the contacts. It also serves
+to protect the drive electronics in case you connect the switch to the
+wrong place... it will not work, but it should do no harm.
+
+     If you have the very old type of 1541 (white case, long board),
+the capacitor will be C56, and the diode C17. They are located near the
+front left side of the PCB.
+
+     The newer white case 1541C has a short board (mine is labeled 
+251854) and the capacitor to look for is C13, a 47uF 16V unit. It 
+and the other components that make up the reset circuit inside the
+drive are near the DOS ROM IC UA2. Since the cap is mounted close to
+the PC board, it would be difficult to solder to its leads. Instead,
+you can attach one end of your added switch to one end of resistor 
+R13 (the lead nearest the edge of the circuit board) or the anode of
+diode CR7 right next to the resistor. The other end of your switch
+goes to ground. A convenient place is the negative end of the large
+filter capacitor C8 which is nearby, or you can tie the wire to the 
+metal case. Don't forget to install the 100 ohm series resistor for 
+safety. Connecting your switch wires can be done on top of the PC
+board without removing it from the drive.
+
+     In the 1541-II, the capacitor is C3. It is mounted so close to the
+board, you may not be able to solder to it. Instead, wire one lead of
+the added switch to the end of resistor R2 nearest capacitor C3. The
+other switch wire goes to ground, which is the large copper trace at
+the edge of the PC board.  Obviously, you must remove the drive from
+the chassis to get to the PC board. It is held down with four screws.
+Mark the plugs in some manner to make sure you put them back correctly. 
+Don't get them backwards! When you reassemble the drive, make sure the 
+added switch wires do not interfere with the spindle flywheel, and are 
+not pinched when you re-install the drive. A good place to mount the 
+push-button switch is in the upper left corner of the drive face.
+
+     The capacitor in the 1571 drive is C28, a 47uF 16V electrolytic.
+It is located at the rear of the drive PC board near the serial ports.
+To get to the board, you must remove the power supply cage... four
+screws. Lift the cage up and over... and set it on top of the drive
+assy. The wires are long enough that you will not need to remove any
+plugs. Mark them if you do remove them to make sure they go back on the
+same way. Mount the push-button under the power or drive LED on the
+front panel.
+
+     The capacitor in the 1581 drive is C20, a 47uF 10 volt. It is
+located about 2" from the serial ports. You must remove the drive (four
+screws) to get to the PC board. Install the push-button switch on the
+front panel, just to the right of the C= logo. Use a sub-miniature
+type... the spacing is very tight inside that case. Make sure the wires
+don't short to any metal part of the drive, and make sure no wires are
+pinched when you re-install the drive in the case.
+
+     The capacitor in the Excelerator+Plus drive (a clone of the 1541)
+is C12, a 100uF 25V electrolytic at the rear of the drive. Since the 
+cap is mounted so close to the PC board, connecting to it is virtually
+impossible without more disassembly. An easier connection point is one 
+end of resistor R7, a 100K 1/4 Watt at the rear of the drive on the 
+bottom board. Remove four screws holding the bottom plate and the drive 
+in its case, unplug the power switch connector, and slide the drive out 
+of the front of the case. 
+     Solder one wire from your reset switch to the end of R7 nearest the 
+edge of the PC board (farthest away from the power switch connector). The 
+ground wire for your switch goes to pin 2 or 3 of the power connector J7. 
+Don't forget to add the 100 ohm series resistor to the switch. FYI, the 
+connection point is the junction of ICs U15 pin 5 and IC U17 pin 4. A 
+convenient place to mount the pushbutton switch is on the front panel
+just to the right of the drive activity light. Make sure your added 
+wiring doesn't get tangled in the drive mechanics or get pinched when
+you reinstall the drive in its case, and don't forget to reconnect the 
+power switch plug before you put the cover back on. 
+
+Ray Carlsen 
+CARLSEN ELECTRONICS... A leader in trailing-edge technology.

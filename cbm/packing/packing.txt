@@ -1,0 +1,111 @@
+            PACKING ELECTRONIC EQUIPMENT TO SURVIVE SHIPPING
+               latest updates and corrections  2-1-2015
+
+     Small heavy objects such as a 1541 disk drive require special treatment 
+when it comes to packing them up for shipping. Here are a few tips to prevent 
+damage to your equipment when you decide to ship something for repairs or if 
+you're moving. I'll use the 1541 as an example, but the same ideas work for 
+most equipment. Foam chips or plastic "popcorn" can be used for cushioning 
+-only- if you put those chips in sealed bags to keep them from migrating 
+around inside the package. A heavy object packed in nothing but foam chips 
+will sink to the bottom of the box and will likely suffer case damage if the 
+container is dropped. Crushed newspaper is almost useless for protecting 
+heavy objects. If unprotected, your drive will almost certainly arrive with 
+a broken case. One special precaution when you ship a 1571 drive is to insert 
+a transit card or a scrap disk in the drive, close the drive door and put a 
+piece of tape across the door to keep it from snapping open in transit. That
+method protects the delicate upper head mount from damage due to physical 
+shock. The 1541 and other similar drives are not sensitive since they have 
+only one head, so a transit protection card or disk is not really necessary 
+for shipping it. Several layers of bubble wrap is very good for protecting a 
+C64 or 128. Keyboards are especially vulnerable and need that protection. I 
+prefer to double-box a computer (box within a box) to fully protect it. 
+     I always tell people to pack equipment well enough to survive a six foot 
+drop onto concrete. No kidding! Foam padding (the kind that deforms and 
+springs back when you release it) is a good lightweight cushion for all types 
+of equipment, especially for a heavy object like an SX-64 computer. Don't be 
+tempted to reuse old Styrofoam blocks that were originally used as packing 
+material for a TV set, DVD player or other equipment. Those blocks are form 
+fitted to the device they  protected and are worse than useless for your gear. 
+The best way I have found to pack easily breakable items is in a box within a 
+box, and with padding in both. The external box may be crumpled but the 
+internal box will survive, as will its contents.
+     Plastic "bubble wrap" is a good protective packing material, but don't 
+depend on it alone for heavy objects. It works best as the first line of 
+protection for such light things as keyboards and circuit boards. However, 
+one precaution if you're packing any circuit or mother board: use a sheet of 
+newspaper to cover the board before you use the plastic bubble wrap. The 
+reason is that most plastics generate static electrical charges strong enough 
+to damage ICs and other board components. The slight bit of moisture in 
+newspaper is enough to dampen any static charge buildup and protect the board 
+from damage. So, wrap the board in newspaper first, then in a few layers of 
+bubble wrap and finally in a good strong box.
+     Shipping companies charge for the weight and the size of a container. 
+Lots of cardboard inside the box will add quite a bit of unnecessary weight 
+and may not protect equipment the way you expect. I use cardboard sheets to 
+separate one heavy device from another (a C64 from its PS, for example), if 
+shipping more than one unit, for reinforcing the container itself, and for 
+covering a small heavy object such as a disk drive to protect its fragile 
+case. Whatever you use, make sure the contents do not "rattle" when the final 
+package is shaken. Looseness means the device inside can move around in the 
+packing material and could suffer damage in transit from vibration or sudden 
+drops.
+
+PACKING A GLASS TUBE COMPUTER MONITOR
+     I prefer to pack computer monitors face down on a two inch thick foam 
+pad over a reinforced bottom in the container. The CRT neck board can break 
+the tube if the monitor is shipped upright and it is set down hard. Since 
+most of the weight of a monitor is in the glass picture tube, it makes sense 
+to ship it face down. Don't be tempted to use Styrofoam chunks or chips in 
+the box bottom... they will not protect the monitor. Chips tend to migrate 
+around in a box and a heavy device will sink to the bottom and therefore be 
+subject to shock and vibration damage in transit. FYI: the control door on 
+the bottom front of the monitor case is the first thing to get damaged by 
+rough handling. You'll often find that door missing on a used monitor. The 
+monitor packing box should allow a space of at least two inches on all sides, 
+and that space packed tight with whatever protective material you use.
+     Surround the monitor in the box with foam or foam chips secured in bags 
+so the chips can't migrate. You want the final package to be tight and not 
+allow the contents to rattle around inside the box. Lastly, the case rear 
+should be protected with packing -around- the block of plastic that sticks 
+out. The tube neck is just inside that block. If anything hits the cabinet 
+there, it could break the tube. After tight packing, put another stiff chunk 
+of cardboard over the top to strengthen the box top, then seal it up. This 
+same procedure should be used to protect the SX-64 computer. 
+     Visualize what would happen inside if you were to sit on a box after 
+packing it or if you were to drop it. It may end up as the bottom box in a 
+stack on the truck, so it must be able to withstand that kind of force. The 
+sides must be stiff enough to withstand extra weight on it, so a beefy box 
+is required. A box within a box is even better. Put "this side up" with 
+arrows all around the sides of the container with "fragile" and "glass" in 
+big letters on it in several places. Tell the shipper it's a glass tube 
+computer monitor.
+
+     USPS offers the best rate with "standard" mail (was Parcel Post). I 
+always add tracking and include insurance if requested or if the goods are 
+expensive or hard to replace. Priority mailing doesn't always get there 
+faster than regular mail and it's much more expensive. I never use it for 
+large and/or heavy packages, but it does include $50 insurance. Add more 
+if you think it necessary. Note that Priority costs more if you use your 
+own box! Their free boxes (make sure it says "flat rate" on the box) offer 
+the best rates if you have something small enough to fit inside. I found 
+out the hard way when I boxed up a PS and used my own cardboard box. 
+Priority cost $18! If I had used one of their flat rate Priority boxes, the 
+same thing would have been only $12.35. Like all businesses, they are not 
+there to make friends, just money! 
+     For things that can't be replaced, or if requested to do so, I use UPS 
+or FedEx. "UPS Ground" includes tracking and $100 insurance unless you add 
+more. Expect to pay still more for guaranteed fast delivery. I ALWAYS pack 
+goods myself. No shipper should be expected to do as good a job as you 
+would. I would never drop off something for them to pack unless it was 
+genuinely unbreakable in the first place. Lastly, if shipping out of the 
+country, consider the cheapest USPS rate first. I tried shipping a repaired 
+C64 motherboard from the USA to Japan and UPS wanted $125! Our PO wanted 
+less than $20. Since that board could be replaced easily if lost in transit 
+(which, in truth, is not likely), it didn't make sense to spend more than 
+it was worth to ship it. If in doubt about the best way to send your goods, 
+ask the Post Office attendant. They can tell you the difference between 
+standard and Priority rates but they will always try to sell you the most 
+expensive rate unless you press them for something different. 
+
+Ray

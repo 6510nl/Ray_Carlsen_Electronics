@@ -1,0 +1,297 @@
+          PINOUTS FOR AUDIO / VIDEO / POWER SUPPLIES / MISC. 
+
+            latest corrections and/or additions: 8-6-08
+
+***********************************************************************
+
+Here is the A/V connector pinout for the VIC20. It is shown facing the 
+rear of the computer:
+
+           audio out -----3           1----- + 6 volts DC
+
+ comp video out (high)-----5         4----- comp video out (low)
+                                2----- ground
+
+Notice that the video output is on two pins. They are the same (wired
+together inside the computer) on some versions, and output a slightly
+different signal level in others. Use pin 4 for interfacing a video 
+monitor such as the 1702 and pin 2 for the shield (ground). 
+Note: the prewired CBM cable should be the two wire type. A three wire
+cable used for Y/C video (C64 or C128) will not work.
+Note: be careful of the +6 volt line! It's there to source power to 
+the -external- RF modulator used with the VIC20. 
+
+************************************************************************
+
+Here is the pinout for the C128 computer power connector. It is shown
+facing the right side of the computer. The C128 supply is a switcher and 
+has two outputs: 5 volts DC at 4.3 Amps, and 9 Volts AC at 1 Amp. Note: 
+the square metal shell of the plug is also a ground.
+
+       GROUND -------4         3----- 9VAC
+     
+                          5---------- 9VAC
+
+           +5VDC -----1       2----- NO CONNECTION
+
+************************************************************************
+
+Here is the A/V connector of the C64 and C128 shown facing the rear of
+the computer. Note that early versions of the C64 have a 5 pin DIN
+connector while later versions have an 8 pin. The two are wired exactly
+the same, except that the 8 pin connector has a separated chroma (color)
+output on pin 6. Earlier C64's didn't have separated chroma. Note the
+"U" shape of the connector pins. It's different than the circular
+pattern of the RGB DIN connector on the 1902A monitor, for example.
+Note: the early two wire cable (5 pin DIN) is used for composite video
+and audio only, and a three wire cable (8 pin DIN) is needed for Y/C 
+video and audio. 
+
+  see note below -----8             7-----no connection
+                             6---------chroma out
+       audio out -----3             1----- luminance (B & W signal)
+
+          audio in -----5         4----- composite video out
+                             2----- ground
+
+Important note: the later C64C and the C128 both have a power supply
+line going to one of the "unused" pins: pin 8. Be careful!!!
+
+************************************************************************
+
+The power connector pinout for the C64 is shown facing the right side 
+of the computer: 
+
+         9VAC -----7           6----- 9VAC
+
+      ground -----3             1----- ground
+
+         +5VDC -----5         4----- +5VDC or no connection
+                         2----- ground
+
+Note: although only four pins are actually used, the power connector 
+is a 7 pin DIN, as shown. 
+
+************************************************************************
+
+Here is the pinout for the joystick ports on the C64 and C128. It is
+shown facing the right side of the computer. 
+
+     1  2  3  4  5
+
+       6  7  8  9
+
+1 joy 0 (UP)
+2 joy 1 (DOWN)
+3 joy 2 (LEFT)
+4 joy 3 (RIGHT)
+5 POT Y (proportional mouse, paddle, or graphics tablet UP/DN input)
+6 button (joystick fire button or left mouse button)
+7 +5VDC
+8 ground 
+9 POT X (proportional mouse, paddle, or graphics tablet LT/RT input)
+
+Note that when a 1350 (rolling joystick) mouse is used, pins 1 through 4
+will have pulses on them instead of logic low levels as a joystick would
+provide. Also, a pressed right mouse button grounds pin 9. The POT lines
+are otherwise unused by a 1350.
+
+When a 1351 (proportional) mouse, a paddle, or graphics tablet is used,
+the two POT lines are used for direction control. A pressed right mouse
+button grounds pin 1.
+
+Joysticks do not use the POT inputs. 
+
+************************************************************************
+
+The C64/128 datassette connector is a 6 pin Cinch inline type. Although
+there are 12 possible connections (six above and six below), only six 
+are used. Note the bar between pins 2 and 3. This keeps the plug from
+being inserted upside down. This pinout is shown facing the the computer:
+
+      1    2    3    4    5    6
+     |-------||-----------------|
+     |_______||_________________|
+     
+      A    B    C    D    E    F
+
+1 BLACK  GROUND
+2 GREEN  +5VDC POWER 
+3 RED    CASS MOTOR DRIVE (+6VDC when motor runs)
+4 WHITE  CASS READ
+5 BROWN  CASS WRITE
+6 BLUE   CASS SENSE
+shield braid is grounded to metal chassis in USA
+
+************************************************************************
+
+The 1902A monitor has several connectors: an 8 pin DIN for RGBI (80 
+columns), a 6 pin DIN (like the C64 serial connector) for Y/C video,
+an RCA jack marked CVBS for composite video, and an RCA jack for audio. 
+The pinouts of the DIN jacks are viewed facing the rear of the monitor. 
+Note: 80 column monochrome video is available at pin 7 of this connector.
+Notice the circular arrangement of the pins. It's different than the
+"U" shape outline of pins on the C64/128 A/V connector.
+
+           horiz. sync-----7           6----- ground
+                                 8------------- vert. sync
+               green -----3             1----- no connection
+
+             intensity -----5         4----- blue
+                                 2----- red
+
+To interface the above connector to your C128, the pinout for the other 
+end of the cable is a 9 pin D, as follows. It is shown facing the rear 
+of the computer:
+
+                          .-----------------,
+1 ground                  \  5  4  3  2  1  /
+2 ground                   \               /
+3 red                       \  9  8  7  6 / 
+4 green                      "-----------"
+5 blue
+6 intensity
+7 monochrome (composite) video
+8 horiz. sync
+9 vertical sync
+
+            * * * * * * * * * * * * * * * * * * * * * * * * 
+
+The pinout for the 1902A monitor Y/C DIN connector is shown facing the
+rear of the monitor:  
+
+         no connection -----5         1----- no connection
+
+                                 6--------luminance and sync (Y signal)
+    chroma (c signal) -----4           2-----audio
+
+                                 3----- ground
+
+To interface this to a C128 or a C64, you need an 8 pin DIN connector, 
+on the other end of the cable, wired as follows (shown facing rear of 
+computer):
+
+ no connection -----8             7----- no connection
+                           6--------- chroma (C signal)
+     audio out -----3             1----- luminance and sync (Y signal)
+
+        audio in -----5         4----- composite video
+                           2--------ground
+
+Note: this DIN connector has a "U" shaped arrangement of pins. Don't 
+confuse it with the alternate "circular" 8 pin arrangement as used on 
+the CBM 1902A and some 1084 monitors. 
+
+*************************************************************************
+
+This is the pinout of the cassette connector of the C16, C116 and Plus/4. 
+It is a mini-DIN, unlike the inline edge type connector of the C64. This 
+pinout is shown facing the rear of the computer. It is important to get 
+these pins correct if you are going to make an interface cable for your 
+computer. A "mirror image" error in wiring will reverse power and ground 
+connections, and will likely damage your datassette and/or computer. Note 
+the blank (unconnected) pin in the center of the connector. 
+
+                       _____ sense
+                      /     
+      ground-----7   6   5-----write
+               
+      read -----4   [ ]   3----- motor drive
+
+        +5VDC -----2    1----- ground
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+This pinout of the joystick connectors of the C16, C116 and Plus/4 is 
+shown facing the computer. Note: center pin 4 is offset to the right.  
+
+                               _____ ground
+                              /
+      no connection -----8   7   6----- fire
+                               /------ right
+             +5VDC -----5     4   3----- left
+
+                 down -----2   1----- up
+
+*************************************************************************
+
+This is the pinout for an S-video connector. It is shown facing the
+rear of the monitor/TV, SVHS VCR, or whatever. The connector is a four
+pin mini DIN. Note the "keyway" at the bottom. Note also that the
+active pins are labeled IN / OUT. If the device is a source of video
+like a VCR or DVD player, the pins are OUTputs. If you're wiring a
+cable for a monitor, they are INputs.  
+
+
+   CHROMA (C) IN/OUT -------4       3-------- LUMINANCE (Y) IN/OUT
+
+
+      CHROMA GROUND--------2         1-------- LUMINANCE GROUND
+                               [_]
+                                    
+The luminance is the black and white information with sync. The chroma is
+the color information. Separated Y and C produces a better picture on a
+monitor screen than composite (single wire) video. To connect the Y/C
+output of a C64 or C128 to a Y/C monitor or TV, take the Y output of the
+computer (see 8 pin DIN AV output diagram) and connect it via a shielded
+cable to pin 3 of the miniDIN connector. Take the C output of the
+computer and connect it to pin 4 of the monitor. Don't depend on the
+metal shell as a ground connection between devices... some cables do not
+use the shell as a shield. Use the Y and C grounds, pins 1 and 2
+respectively for the grounds on your shielded cable(s). Audio can be
+included in your hookup from the computer to the monitor or to your
+stereo system. 
+
+*************************************************************************
+
+This is the pinout of the 1581 power connector. It is shown facing the 
+rear of the drive. Note that the same power supply is used for the 
+1541-II and the 1571-II. The supply puts out two voltages: +5 volts DC at 
+1 Amp and +12 volts DC at 1/2 Amp. Some versions of this supply are rated 
+at .7 Amps on the 5 volt output.
+
+          +12VDC -----O       O----- +5VDC
+
+    no connection -----O     O----- GROUND
+
+*************************************************************************
+
+This is the pinout for the serial port of the C64/C128. It is shown
+facing the rear of the computer. Pinout is the same for CBM drives, but
+then pins 3 and 6 are inputs. Serial cables are wired "straight through",
+that is, pin 1 to pin 1, pin 2 to pin 2, etc.
+
+                     5         1
+
+                          6
+
+                     4         2
+                          3
+
+PIN    SIGNAL DIRECTION	DESCRIPTION
+ 1     /SRQ	IN	Enables fast serial, 128 mode only with 1571/81.
+ 2	GND		Logic ground.
+ 3	ATN	I/O	Logic low = interrupt, then quiry for device #.
+ 4	CLK	I/O	Clock - timing for slow serial data.
+ 5	DATA	I/O	Data to/from computer/drive.
+ 6	/RST	OUT	Logic low pulse from computer = reset periferals. 
+
+*************************************************************************
+
+The pinout for the Oceanics / Excelerator Plus drive power supply
+connector is as follows. This diagram is shown facing the rear of the
+drive.
+
+      +12VDC @ 1/2 Amp ------4         1------- +5VDC @ 1 Amp
+
+                 Ground ------2       3------- Ground
+                                  5------ no connection
+                             
+Although the supply specs are the same as for a CBM 1541-II / 1581
+supply, the connector is different. A Radio Shack # 274-003 DIN
+connector will fit the Excelerator drive.
+
+*************************************************************************
+
+Ray Carlsen CET
+Carlsen Electronics

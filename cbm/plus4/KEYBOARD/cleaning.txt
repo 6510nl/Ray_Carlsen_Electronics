@@ -1,0 +1,10 @@
+                      CLEANING THE PLUS/4 KEYBOARD
+                 latest updates or corrections 1-9-2020
+
+     Few will take a keyboard apart unless they have to. With this one, many small parts will fall out when this keyboard is disassembled. It's best to spread out a large towel on the work surface beforehand which should keep springs and other parts from bouncing around and getting lost. Springs are the worst! Work slowly and carefully so as not to lose anything. 
+     As the photos show, dirt and debris can migrate into the keyboard and prevent good contact between the rubber pads and copper board traces. You may find many rubber pads stuck to the board which must be removed for cleaning. After complete disassembly, wipe the board with a clean cloth, then rub the copper contact areas with a pencil eraser. They should be shiny copper, not dull or discolored. Gently run the rubber pads over a clean sheet of paper. That's all they usually needed unless the board has suffered a liquid spill of soda or coffee with sugar. If that happens, it's a good idea to wash the pads and board with alcohol or just hot water. The pad working surfaces should be a dull black, -not- shiny. 
+     Reassembly is tricky. The keyboard side must be propped up so no keys are being pushed and all components (keytops, springs and pads) are in place when the board is lowered down into position over it. Use whatever items you can find to hold the board up for reassembly.
+
+Note: I have not done one of these in a long time and I'm working from memory, so if you spot any glaring errors here, let me know!
+
+Ray

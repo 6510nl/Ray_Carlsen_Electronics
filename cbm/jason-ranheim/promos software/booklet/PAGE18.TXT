@@ -1,0 +1,51 @@
+   Again:
+
+     {}A000,DFFF,0,4706
+
+   reads page 7 into the specified range.
+
+   USING PROMOS COMMANDS IN A BASIC PROGRAM
+
+       PROMOS commands can be used in a BASIC program just like
+   any regular BASIC command. Of course, PROMOS must be loaded
+   first and active or your BASIC program will not run.
+       Some of the commands work a little differently from a
+   running program as compared with direct mode:
+       First, control messages such as 'SEARCHING FOR',
+   'PROGRAMMING', etc. are not printed unless you enable then by
+   setting bit 7 at address 9D high. See the PROGRAMMERS
+   REFERENCE GUIDE for details.
+       Those commands which from direct mode report results on
+   the screen, such as R, P, L, S, V, C, H, and E, do not do so
+   when executed from a running program. Rather, certain
+   results are made available in low RAM locations as detailed
+   below. Your BASIC program can 'PEEK' these locations to make
+   use of this Information.
+       In general, address A5 (165 decimal) reports errors. If
+   an error Is detected, A5 will contain FF, otherwise it will
+   be 0. A6 and A7 will report an address in low-high order,
+   with the significance described below.  A8 and A9 report the
+   appropriate checksum and hashtotal respectively of the data
+   in the address range involved in the command.
+
+       L command   A5- 00 = Load ok. FF = load failed.
+                   A6,A7- Address of highest byte loaded.
+                   A8- Checksum for data loaded.
+                   A9- Hashtotal for data loaded.
+
+       S command   A5- 00 = Save ok. FF = Save failed.
+                   A6,A7- Address of highest byte saved.
+                   A8- Checksum for data saved.
+                   A9- Hashtotal for data saved.
+
+       R (or {})   A6,A7- Address of highest EPROM byte read.
+                   A8- Checksum for data read.
+                   A9- Hashtotal for data read.
+
+       P (or pi symbol)  A5- 00 = PGMing ok. FF = PGMing failed.
+                   A6,A7- EPROM address at failure.
+                   A8- Checksum for data programmed.
+                   A9- Hashtotal for data programmed.
+
+
+                             -18-

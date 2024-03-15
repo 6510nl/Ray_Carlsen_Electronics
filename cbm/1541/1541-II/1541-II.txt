@@ -1,0 +1,258 @@
+
+                  CBM 1541-II - DIAGNOSTICS AND REPAIR        
+                 latest updates and corrections 7-13-2022 
+
+     The 1541-II is a cost reduced version of the earlier 1541 disk drive, 
+but is identical in its basic functions although the red power LED and 
+green activity LED are exactly the opposite of the LEDs in the 1541, which
+used green power and red activity LEDs. This drive uses single sided double 
+density disks. High density disks will NOT work. The motherboards (Assy no. 
+340503) used in the two versions of the drives I own appear to be nearly 
+identical. For the most part, the chips used, board layout, and chip ID 
+numbers match each other. The design is what Commodore called "cost reduced" 
+because it uses fewer more integrated (and some proprietary) ICs. A reduced 
+chip count simplifies troubleshooting but also makes finding some replacement 
+chips difficult. Fortunately, some of the chips are interchangeble with 
+earlier 1541 models. Exceptions are as follows:
+     The R/W head amplifier chip is a surface mount device (SMD), and the 
+only other Commodore product I know of that uses that IC is a C128DCR (metal 
+case USA version). The DOS ROM code is in one 16K chip as in the 1541C, 
+unlike the earlier 1541 with two 8K DOS ROMs. The 1541-II uses a 251968-03 
+in a 27128 equivalent ROM, likely the only socketed chip unless the drive 
+has been repaired before. The only other proprietary IC is a motor control 
+device number 251828-03 (rev 4 board has a -01). That IC replaces many 
+individual TTL (logic) chips, and so far, I've never seen a bad one.
+     Like the 1571 and 1581, this drive has device select switches on the 
+rear of the case. That allows the user to easily change the device number 
+without opening the drive. The two tiny paddle switches are configured as 
+follows (leftmost switch is #1 and right switch is #2): Both up = device 8 
+(the default for all drives), #1 down & #2 up = device 9, #1 up & #2 down = 
+device 10, both down = device 11. Never use a pencil point to press those 
+paddles. The lead may break off in the drive and short something out. 
+      Like the 1541, the 1541-II uses two power supply sources: +5VDC for the 
+electronics and +12VDC for the motors. However, the 1541-II power supply is 
+external to the drive. That keeps heat buildup inside the drive to a minimum, 
+but some of those external "bricks" suffered early failures. 
+     These same power packs are also used for the 1581 drive and there are 
+apparently two different versions. The first one is a smaller unit that 
+supplies +5 volts DC at 700mA (0.7 Amps) and +12 volts DC at 0.5 Amps. The 
+larger power pack is rated at 1 Amp for the 5 volt source. Apparently the 
+earlier design was marginal to begin with and suffered premature failures. 
+     Both early and late design power packs are potted with epoxy and are 
+considered unrepairable. However, I was able to peel the bottom cover off 
+one of the smaller units (it was intermittant) and repair it by resoldering 
+all the connections on the internal PC board. The complaints I've heard when 
+a supply starts failing is that it works when cold but causes disk errors, 
+failure to read, and drive lockup after warmup. Suspect a bad supply if the 
+drive LEDs don't light at all. 
+
+                         THE DRIVE MECHANISM
+
+     I've seen two different 1541-II mechanisms: Mitsumi (actually a 
+Newtronics chassis) and Chinon. They both are simple in design and equally 
+robust, and they appear to be interchangeable. The Mitsumi reminds me of a 
+1571 mechanism but the single fixed head in this drive of course eliminates 
+one of the weak points of the 1571, namely the flimsy top head mount. It 
+shares one other failure point however... the door latch pin that works 
+loose and falls out. When that happens, the door latch doesn't work and the 
+lever just flaps loosely back and forth. If the pin is heard rattling around 
+inside the drive (hopefully it hasn't shorted anything out), it can be 
+reinserted in the door latch and secured with a dab of superglue. The Mitsumi 
+mechanism has a spindle drive belt like earlier 1541 types and has a motor 
+speed control on the drive PC board. The Chinon mechanism has a direct drive 
+spindle motor (no belt) and the speed is not adjustable.
+     Maintenance for any drive should begin with cleaning of the head (use
+alcohol or other solvent on a cotton swab) and stepper rails if they appear 
+to be sticky. Before any other maintenance, if there is a buildup of dust 
+inside the drive, blow it out with compressed air. Pay attention to the IR 
+sensor near the front left side of the drive. That sensor signals the drive 
+that a disk has been changed, and if clogged with dust, it may not report a 
+disk change. That could corrupt the next disk inserted and written to in the 
+drive. 
+     The head gap is so tiny, you may not be able to see the residue that 
+keeps your drive from reading disks reliably. It's best to just clean it 
+every few months if the drive is used regularly and more often if your disks 
+have seen a lot of use. It is not dirt that contaminates a head but the oxide 
+from worn disks. Make sure the felt pressure pad is intact on the upper 
+spring loaded plate. If missing, you can replace it with a pad from an old 
+audio cassette that has been trimmed to fit. Glue it with contact cement. 
+     The stepper rails are the two metal bars that the head assembly slides 
+back and forth on. Swab the rails with solvent and, either run them dry or 
+apply a very light coat of sewing machine oil. Don't use any kind of spray 
+lube inside the drive. Spray instead on a cotton swab, then apply to the 
+rails. Plain oil tends to collect dust and gets sticky over time. A very 
+light application of silicone spray on a Q-tip applied to the rails would 
+work better and last longer than any kind of grease or oil. 
+     Suspect a drive alignment problem -only-if the drive can't load known 
+good programs (commercial disks) but it works fine with it's own recently 
+formatted disks. A slightly misaligned drive will chatter when loading 
+programs as it encounters disk read errors, and it will fail to load if 
+severely misaligned. Note that some commercial programs have intentional 
+errors (copy protection) on the disk(s) that will make a normal drive 
+chatter and flash the green LED while loading. I should state that I've 
+never encountered a misaligned 1541-II. 
+     The 1541-II drive doesn't suffer from the heat related alignment 
+problems that the earlier 1541 does, but it can be "sluggish" and look like 
+it's out of alignment. That's usually caused by sticky head rails. Any 1541 
+drive can become sluggish if it sits for a long time without being used. 
+The head assembly should slide back and forth easily (drive turned off, of 
+course). If rails are sticky, the head has trouble finding the correct 
+track quickly enough and you end up with intermittant read errors, 
+especially when the drive is cold and seeks are at the outer tracks. 
+     If your computer setup or components have been moved recently, take 
+note: disk drive and serial cables too close to a TV or monitor can 
+sometimes pick up interference from the flyback transformer in the display 
+and garble the data. Move the drive and cables at least a foot away from 
+the monitor and try it again. If that helps, move the drive to the other 
+side of the monitor and route the cables away from the source of the
+interference. 
+
+IMPORTANT NOTICE: 
+     If you remove the mechanism from the drive (four screws and the door 
+latch knob), mark the connectors so you will be sure to put them back 
+correctly. Pin 1 is indicated on the board for each one. If accidently 
+reversed, you can do serious damage to the drive board or mechanism. Even 
+though the black head connector is "keyed", if connected incorrectly, the 
+hard-to-get R/W head amplifier chip will be destroyed!!! Note: there are
+two versions (I'm aware of) and their plug wiring is shown in the photo.
+     The easiest way to remove the plastic door knob without breaking it 
+is to pull on the front cover against the backside of the knob. It should 
+slide off easily that way. 
+
+             CHIPS FAILURES AND POSSIBLE SYMPTOMS
+
+U1	74LS08		LOGIC
+     No reset when drive powered up or from computer.
+ 
+U2	74LS42		LOGIC
+
+U3	6502		MICROPROCESSOR
+     Spindle runs continuously with green LED on.
+
+U4	251968-03 	DOS ROM, (reads as 27128 EPROM)
+     Spindle motor runs continuously and green LED stays on or blinks. 
+
+U5	LC-3517A	SRAM (generic 6116 2K SRAM)
+     When drive powered up, motor runs continuously and green LED flashes 
+slowly (about 1 flash every 2 seconds). 
+
+U6	6522		VIA
+     Drive does not respond to commands from computer or "Searching for..." 
+but no further response from drive.
+
+U7	7406		LOGIC
+     No drive reset from computer or "Searching for..." but no further 
+response from drive. 
+
+U8	6522		VIA
+     Spindle motor doesn't turn.
+
+U9	74LS04		LOGIC
+     No write protect sense.
+
+U10	251828-03	MOTOR CONTROLLER
+     Spindle motor doesn't turn, or write protect not working, or stepper 
+doesn't move, can cause continuous spindle and activity LED on.
+
+U11	74LS86		LOGIC
+     Drive does not respond to commands from computer.
+
+U12	CX20185		R/W HEAD AMPLIFIER (Surface mount IC)
+     alt: Sanyo LA8200M  No read and/or write. Check for clogged drive 
+head first! 
+
+U13	uPA2003C	LOGIC, CMOS, 7 GATE DRIVER, 
+     Spindle motor doesn't turn (or runs constantly) and/or stepper 
+doesn't move.
+
+U14	74LS14		LOGIC
+     No drive reset from computer.
+
+Power supply: Drive may work when system is cold but fails to read after 
+warmup, or spindle will run continuously but the LEDs will be dim or will 
+not light at all. Smaller power "brick" (700mA) is a common failure item. 
+
+                  DIAGNOSTICS... WHAT TO LOOK FOR
+
+     When you are troubleshooting a drive, it is important to know how it 
+works normally, and to observe it closely (with the cover off) for symptoms. 
+For example, note how the drive motors and indicator LED's function when 
+the drive is powered up, reset, and accessed by the computer. When the 
+drive is instructed to LOAD a program, note whether the stepper moves, how 
+much it moves, and if it "chatters". Try various functions like Initialize 
+and Format, and observe the results. Sometimes the clues to a malfunction 
+are subtle and different chips can cause the same apparent symptoms. Such 
+things as a bad serial cable can be swapped out, but if another cable is 
+not available, an ohmmeter check from one end to the other should show all 
+pins connected. It's a "straight-through" cable: pin 1 to pin 1, 2 to 2, 
+etc. with no shorts between adjacent pins. 
+     If your drive suddenly goes "dead" and you can't read disks without 
+"FILE NOT FOUND" errors, try the Initialize command:
+OPEN15,8,15:PRINT#15,"I0":CLOSE15 (assuming drive is set as device 8). 
+This (or formatting a disk) will return the heads to track zero and may
+bring it "back to life". The problem is a quirk in the operating system. 
+If the drive encounters certain errors while running a program, or if the 
+drive is turned off before a program is properly closed, the drive head 
+may get "stuck" past the directory track. A computer reset or turning the 
+drive off and back on again will not reset that condition, but an 
+Initialize or disk format will return the heads and restore normal 
+operation. As an alternative, if this happens and you have a program in 
+memory that you don't want to lose, take the top off the drive and push 
+the head back gently with your fingers. 
+     To properly diagnose a potential problem, you have to know exactly 
+how the drive should respond when it's working correctly.
+ DRIVE POWER UP: Red power LED comes on and stays on, green activity LED 
+comes on (and spindle motor turns) for about two seconds, then green LED 
+should go out and motor should stop.
+ COMPUTER POWER UP (OR RESET): Green LED should come on and go out, and 
+spindle motor should start and stop within two seconds. 
+ READ DIRECTORY: Insert a known good disk and type: LOAD"$",8 and hit the 
+RETURN key. The disk should spin and the head should move forward to track 
+18 and read the directory. The screen will show: SEARCHING FOR $. If it 
+finds it, the screen will say READY within a few seconds (time delay 
+determined by size of directory). If the disk read fails for any reason 
+(drive door open, unformatted disk, bad chips in the drive, etc.), the 
+green LED will flash and an error message: FILE NOT FOUND will appear. If 
+you read the disk error channel, it will say: 74, DRIVE NOT READY,00,00. 
+Note that you must "clear" the error by reading the error channel or 
+resetting the drive, or subsequent read attempts will also fail. 
+ INITIALIZE: This command from the computer should move the head from 
+wherever it was to track 18 (directory) and the disk should spin. The head 
+will not move (but the spindle motor will turn) if it is already over track 
+18. If there is no disk in the drive, or you insert an unformatted disk, or 
+if the drive door is open, it should cause the spindle motor to run and the 
+head to seek track 18 (directory) anyway. When it tries and fails, it will 
+pull the head back to track zero and "chatter" as it hits the head stop, 
+then advance to where track 18 should be. The green LED will flash because 
+of the drive read error. No error message will be shown on the screen, but 
+if you read the disk error channel, it will say: 21,READ ERROR,18,00.
+ FORMAT OR DISK "NEW": When you format a disk, the spindle motor will turn 
+and the green LED will come on. The drive will pull the head back to track 
+zero and "chatter", then the stepper will advance to each track as it writes 
+from track 1 to track 35. When it finishes the format (about 1 minute 25 
+seconds on a stock drive), the head will return to track 18 (directory). 
+If the format fails, the green LED will flash, but there will be no error 
+message on the screen. If you read the drive error channel, it will say: 
+21,READ ERROR,00,00. Format failures can be caused by write protect, drive 
+door open, bad disk, bad or clogged head, or bad chips in the drive. The 
+format will attempt to write to track 1, then do a read, and if that read 
+fails, the format will terminate, and the head will not move from track 1. 
+If it advances a few tracks and stops, suspect a bad disk, an intermittant 
+connection to the head or a faulty IC on the board. Swap out the drive 
+mechanics to check the head. It may test good with an ohmmeter (not open 
+circuit), but if defective, may still fail to format a disk. For write 
+protect problems, check the sensor to see if dust or perhaps a loose write 
+protect tab from an old disk is blocking it. 
+     As mentioned above, it is sometimes helpful to read the disk drive 
+error channel when the green activity LED is flashing. Here is a small 
+BASIC program to do that. It reads the channel, displays the error message, 
+and turns the flashing LED off. All of the possible drive error messages 
+are listed in the back of the operators manual. 
+ 10 OPEN 15,8,15 
+ 20 INPUT#15,EN,EM$,ET,ES 
+ 30 PRINT EN,EM$,ET,ES 
+ 40 CLOSE 15
+
+
+Ray Carlsen CET
+Carlsen Electronics... a leader in trailing-edge technology.

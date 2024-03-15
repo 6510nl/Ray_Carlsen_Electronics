@@ -1,0 +1,9 @@
+                  ENHANCER 2000 DISK DRIVE            6-30-2020
+
+     This disk drive is a clone of the Commodore 1541, is faster but I'm told is not fully compatible and will not load some software. The drive uses the same power supply as a Commodore 1541-II or 1581 and has the same plug pinout.
+     I recently got two of them in for repair but never saw one before except in photographs so it was something of a learning experience for me. Fortunately one of the drives had a working DOS ROM (27128 EPROM) so I was able to get a clone programmed and saved a copy for my files in case I run into one of them again in the future. The chip complement is similar to a 1541 but it is different enough that I couldn't easily use a 1541 schematic for diagnostics. 
+     I was able to get one drive working by using parts from both drives and cleaning the stepper rails which were very sticky and kept the head from moving back and forth. The remaining drive had problems on both the mechanism and controller boards. It had very high input current (shorted chips?) and I noticed that several chips on the controller board had been replaced before by a previous repair attempt, so I passed on that one and both drives were returned to the owner. 
+
+Ray Carlsen
+      
+     

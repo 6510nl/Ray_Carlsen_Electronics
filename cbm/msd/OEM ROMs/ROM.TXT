@@ -1,0 +1,41 @@
+                                       Section VI
+                               Useful ROM Subroutines (2.3)
+
+Address     Description
+
+C000-C002   DOS Version Number ("2.3")
+C003        Turns on LED 0 or LED 1, based on DRVNUM ($0054)
+C00F        Kills any error status on the LEDs
+C018        Turns off LED 0 or LED 1, based on@DRVNUM ($0054)
+C036        Invokes an error flash on LED 0 or LED 1, based on DRVNUM
+E83F        Start of RESET code (jump here to reset drive)
+F46C        Search for header in $4C28-4C2C. Return with .z=1 if
+              not found; .z=0 if found.
+F4A6        Search up to 30mS for a SYNC (.c=0 if found)
+F68A        Wait loop. Waits for .X milliseconds.
+
+            Example:       LDA #100      ;set up a 100 mS delay
+                           JSR $F68A     ;
+
+F693        Move the head of drive number in $D0 to track number .A
+              Also, sets read density after head is moved.
+
+            Example:       LDA #0        ;drive 0
+                           STA $B0       :store drive 0
+                           LDA #20       ;target = track 20
+                           JSR $F693     :move there
+
+F700        Move the head of drive number in $B0 to track 0.
+              Also, sets read density after head is moved.
+
+            Example:       LDA #0        :drive 0
+                           STA $B0       :store drive 0
+                           JSR $F700     ;move to track 0
+
+F754        Turn on Drive 0, Turn off Drive 1
+F759        Turn off both drives
+F767        Turn on Drive 1, Turn off Drive 0
+
+FE11        Set Port B in the IEEE mode (See section II E)
+FE1A        Set Port 8 in the Read mode (See section II E)
+FE25        Set Port B in the Status Mode (See section II E)

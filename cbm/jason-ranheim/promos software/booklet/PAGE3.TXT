@@ -1,0 +1,51 @@
+       TRUE or FALSE.  A light is either ON or OFF. In your
+       computer, a bit is represented by the voltage on a wire: it
+       is either HIGH (near 5 volts) or LOW (near 0 volts). The
+       high value we associate with the symbol '1'. The low value
+       we associate with the symbol '0'. In order to represent
+       members of larger collections of objects- letters of the
+       alphabet, for example, or large numbers, binary digits must
+       be grouped together.
+           Four binary digits taken together can represent 16
+       different objects. (Two to the 4th power.) Eight binary
+       digits taken together form a unit called a 'BYTE' in
+       computerese. A byte can stand for any one of two to the 8th
+       power (or 256) different objects. Your computer deals in
+       'BYTE' sized Information units. Data flows from one part of
+       your machine to another along eight wires called the data
+       bus- in bytes.
+           In order to specify exactly what information Is being
+       accessed at a given instant, your computer sends out an
+       'ADDRESS'.  This address is a 16 bit binary quantity that
+       flows along 16 wires called the address bus. Since there
+       are 16 address lines, two to the 16th power, or 65536 unique
+       addresses can be specified by your machine.
+           Now, instead of using binary numbers directly like your
+       computer does, it is customary to consider binary digits in
+       groups of four. Each possible value of this group is denoted
+       by a symbol: the numbers from 0 to 9 plus the letters A
+       through F. These are called 'HEXADECIMAL' numbers.
+       Accordingly, we have the following:
+
+                     BINARY          HEXADECIMAL         DECIMAL
+
+                      0000                  0                 0
+                      0001                  1                 1
+                      0010                  2                 2
+                      0011                  3                 3
+                      0100                  4                 4
+                      0101                  5                 5
+                      0110                  6                 6
+                      0111                  7                 7
+                      1000                  8                 8
+                      1001                  9                 9
+                      1010                  A                10
+                      1011                  B                11
+                      1100                  C                12
+                      1101                  D                13
+                      1110                  E                14
+                      1111                  F                15
+                     10000                 10                16
+
+
+                                      -3-

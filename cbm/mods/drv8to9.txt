@@ -1,0 +1,131 @@
+         CHANGING A 1541 FROM DEVICE 8 TO DEVICE 9, 10, or 11
+ (also included: SX-64, 1570/71, C128DCR internal drive, and MSD-SD2)
+
+             Latest additions & corrections: 10-31-02
+
+     There were at least three versions of the 1541, each with a 
+different PC board, and two types of drive mechanisms. The following is 
+the procedure for modifying a 1541 to enable a different device number.
+     All drives were shipped from the factory as device #8, with no
+jumpers cut. The jumpers, by the way, are two tiny silver half-circles
+with a "dash" in the center. They resemble a fat letter H. To open a
+jumper, cut the dash with a sharp knife. If you accidently cut the wrong
+one, you can apply a blob of solder to re-connect the two half-circles, or
+just lay a small bit of wire across it and solder it. Don't heat it for
+more than a few seconds or you will lift the trace off the board. Jumpers
+are usually marked 1 (or A) and 2 (or B). To change the device number from
+the factory setting of #8 to device #9, cut the jumper marked 1 or A. For
+device 10, cut the one marked 2 or B. If you cut both jumpers, you have
+device 11. These two jumpers represent grounds going to a 6522 VIA chip. 
+Jumper 1 (or A) is pin 15 of the chip, and 2 (or B) is pin 16. You can
+remove that IC, lift one or both pins, then re-insert it into it's socket
+to change the device number (for example, lift pin 15 for device #9) but
+it is best to cut the proper jumper... the chip pins will break off if
+bent more than a few times. 
+     By installing a device 8/9 switch (a SPST toggle switch that opens
+and closes jumper #1), you can easily switch back and forth between drive
+8 and 9 without opening the drive. Each terminal of the added switch is
+wired to one side of the cut jumper. The solder pads are so tiny that,
+unless you are proficient with a soldering iron, it is best to leave that
+work to a technician. Obviously, the modification should only be done with
+the drive turned off and all plugs disconnected. The most convenient place
+to mount the switch is on the front right-hand side of the drive. The
+spacing is tight behind the front panel... make sure you drill the hole
+with enough room behind it for the body of the switch. Solder the wires to
+the switch before you mount it... it's easier. 
+     Facing the front of the drive with the case top and shield removed,
+the drive select jumpers are located as follows for the various models: 
+The early VIC-1541 (sometimes called the 1540) in the white case had the
+long board and used the ALPS drive mechanism with the push-down door. The
+drive select jumpers, marked 1 and 2, were near the rear of the board,
+right next to the 6522 chip UAB1. Cut jumper 1 for device #9, jumper 2 for
+device #10, and both for 11.
+     Next came the shorter board 1541 in the standard brown case. It used
+the ALPS (push-down) mechanism and a silver colored metal shield. The PC
+board number was 1540050. Some of those board's drive select jumpers were
+marked A and B, some 1 and 2, and some were unmarked.  The jumpers were
+located 2" from the front of the board and 2 1/4" from the left side. They
+are positioned between electrolytic capacitor C46 and transistor Q3. 
+Jumper 1 (or A)  would be closest to the transistor.  Again, cut 1 or A
+for device #9, etc. as above.
+     A later version 1541 (sometimes called the 1542) had a shorter board
+(PCB #251830 or 251777), and used the Newtronics drive exclusively. The
+metal shield was gold in color. This drive was apparently the most common.
+Drive select jumpers are 1.5" from the front of the board and 2" from the
+left side. The jumper pads marked 1 and 2 are between transistors Q4 and
+Q5. Jumper #1 is closest to transistor Q5.
+     The latest version was the 1541C (PCB# 251854) and used the
+Newtronics mechanism in a off-white case. That's the only one with the
+photo-sensor to detect track zero, but it was disabled by Commodore, so
+the drive head still bangs like the earlier drives. The drive select
+jumpers are called J1 and J2, and are located 1 3/4" from the front of the
+board and 1/2" from the left side (near plug P1). 
+
+SX-64 INTERNAL 1541:
+     The built-in drive in the SX-64 is a 1541 with the ALPS mechanism.  
+(That is the only one I've seen installed.) The controller board (called
+the FDD) for that drive is PCB# 251109. It has two jumpers, like the
+stand-alone drives, for drive selection. They are located between plug
+P19 and plug P22 (which goes to the drive reset switch) on the FDD board.
+Jumper #1 is the one closest to P19. I wired my own SX with a four
+position slide switch on the left rear side of the unit to be able to set
+the number from 8 to 11. The SX is very compact and hard to work on. The
+modification to add the switch should really be done by a tech. As with
+the stand-alone 1541, device # changes are made by cutting the bar
+between the half-circle jumpers. 
+
+THE 1541-II, 1571 and 1581:
+     All of these Commodore drives were factory equipped with two tiny 
+paddle switches on the rear of the drive to select the device number. They 
+were shipped with both switches up for default device 8. If you want to 
+change it, use a small screwdriver, toothpick or other small object to push 
+one or both paddles down. Don't use a pencil... the lead may break off and 
+get into the drive causing a short. To set for drive 9, push down the left 
+switch, for 10, the right switch, and for 11, both switches. The new device 
+number is "memorized" by the drive every time it is powered up or the 
+computer and connected periferals are reset.
+
+C128DCR INTERNAL DRIVE:
+     The internal 1571 in the metal case USA version C128DCR has no
+external switches for drive select. It is factory set for device #8.
+There are drive select "jumpers" inside the computer however, on the
+motherboard near the drive. They are the two tiny silver half-circles
+with a bar between them. Cutting the bar opens the jumper. If you look at
+the PC board just under the left side of the drive, you will see them. It
+is not necessary to remove the drive unless you plan to solder in there.
+The jumpers are located near ICs U106 (a 6522), U114 and U112. DS (drive
+select) jumper #1 is nearest to U112, towards the front of the computer.
+     Electrically, the jumpers connect two pins of IC U106 VIA chip
+(65C22 or 6522 in some models) to chassis ground. Jumper 1 grounds pin 15
+and jumper 2 grounds pin 16. That information is helpful just in case the
+foil pad(s) jumpers on the PC board are accidently damaged when you are
+installing a drive select switch. If the pads lift off the board, you can
+still make connections directly to the IC pins for your switch.
+     The 1570 drive is not as common but is similar to the 1571 in that it 
+uses the same board, will do burst-mode data transfers with the C128, and 
+will do MFM as well as GCR disk encoding like the 1571. Since it has only 
+one head, it uses SSDD disks like a 1541. It has no drive select switches
+but instead has internal jumpers. They are connected to VIA U9 pins 15 and
+16. I have never seen a 1570, so my information about it is minimal. 
+
+MSD-SD2:
+     Turn off the drive and remove all cables. Remove six screws from the 
+drive case and remove the top cover. Locate the jumper block JB1 on the 
+top of the PC board near the rear of the drive. It is located between ICs 
+U10 and U11. At that location, there are four solder pads with two bare 
+wire "jumpers" soldered in horizontally. This is the factory configuration 
+for device 8. If JB1-1 is cut (or simply unplugged if a "header" with a 
+removable jumper is installed), the drive will respond as device 9 when 
+powered up or reset by the computer. If the jumper at JB1-2 is removed, 
+the drive will be device 10, and with both jumpers removed, device 11. A 
+SPST (single pole, single throw) switch can be installed instead of the 
+jumper to allow the drive to be changed later without opening the case. 
+Note: there is room on the rear of the case for added switches.
+     Electrically, the two jumpers ground two pins of an IC, namely U22
+buffer (74LS240) pins 11 and 17. With a jumper at JB1-1, pin 17 of U22 is
+grounded, and with a jumper at UB1-2, pin 11 is grounded. This info is
+helpful in case the solder pads or board traces become damaged and cannot
+be used, wires can be soldered to the chip pins directly.
+
+Ray Carlsen
+CARLSEN ELECTRONICS... a leader in trailing-edge technology. 

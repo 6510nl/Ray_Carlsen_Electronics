@@ -1,0 +1,10 @@
+Short:        3 programs to manipulate 24-bit images
+Author:       Dallas Hodgson
+Architecture: m68k-amigaos
+Source:       Fish collection
+
+Three conversion programs to manipulate 24-bit images.  IFF24To8 converts
+24-bit IFF images to 8-bit IFF images, Pro2BMP converts 24-bit
+3D-Professional format images into 24-bit ".BMP" files that Microsoft
+Windows can understand, and Pro2IFF converts 24-bit 3D-Professional format
+images into the more useful 24-bit IFF format.  

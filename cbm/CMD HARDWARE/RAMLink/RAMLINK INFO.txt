@@ -1,0 +1,105 @@
+             SERVICING THE CMD RAMLINK... my first experience
+                latest updates and/or corrections 3-4-2020
+
+     Until I was asked by a friend to repair his CMD RAMLink, I had no
+experience with those devices... never even saw one up close. Turns out he
+actually had five of them, three older and two newer versions, and they all
+ended up on my repair bench for evaluation. He mentioned that one of them (a
+later version) had a problem of losing data stored on the RAM after it was
+on awhile. Rather than trying to dig into that one right away, I thought I
+should first get as familiar with a working one as I could.
+     Starting from scratch on any electronic device, I try to get all the
+information I can before I even open the case. Bad information is difficult
+to un-learn. Fortunately, the owner had the original user manual and a
+utilities disk, so I found out how to properly connect the device to the
+computer and how to use it. A user needs both the book and the disk. I
+believe there are copies on the Internet. One source I found for a pdf of
+the later spiral bound manual is from Daniel Mackey. As of this writing:
+http://ftp://n2dvm.com/Commodore/Programs/Misc/Ramlink-manual.pdf It's a 50 Meg
+file and took over an hour to download on my 1.5M DSL.
+     My next step as a servicer, like a doctor, is to examine the "patient".
+Taken completely apart, I found two of the early models had poor solder
+connections on the 4 pin DIN PS input jack (main board). They were bad from
+the factory, and I had to scrape the pins a bit to get solder to properly
+flow around those connections. All early models should be checked for that
+shortcoming as it could cause intermittent operation or an outright failure.
+
+POWER REQUIREMENTS AND EXTERNAL CONNECTORS:
+
+     The early version RAMLink uses a 1581/1541-II power supply. It has a
+four pin DIN power connector and puts out two voltages: +5VDC at 1 Amp and
++12VDC at 0.5A. NOTE: A smaller version of that same PS was sold by Commodore
+but which probably should not be used with the RAMLink because its 5V output
+is only 0.75A (750mA). Those specs are printed on the PS. A coaxial or
+"barrel" type of connector is there for the backup battery, if used. The
+battery is rated at 6 volts, 6.5AH and is used to keep the RAM alive in the
+event of a power failure or if the RAMLink is moved to another location and
+the data on it must be maintained.
+
+     The later version RAMLink uses a single 9 volt DC "wall wart" AC to DC
+adapter rated at 1 Amp. The DC input connector on that later RAMLink is
+therefore different: a single coaxial or "barrel" type. The plug on the PS
+is about 10mm long, 5mm outside diameter, and it mates with a socket center
+pin diameter of approximately 2.5mm. The backup battery connector on the
+later version RL is a mini-phone rather than a coaxial (barrel) type. The
+connector is essentially the same as the older mono earphone type. The
+polarity of that connector is tip=positive, ring=negative. I didn't need a
+backup battery for my tests but I understand a fully charged battery should
+hold the memory for 6 to 8 hours, depending on how much RAM is installed
+and the state of charge of the battery. It's slowly "trickle" charged by
+the RL and so it would take a lot of time (several days) to fully charge a
+low battery.
+
+NOTE: If you didn't get an original Commodore power supply for the later
+version RAMLink, most important is the polarity of the PS output: the
+center pin is positive and the barrel is negative. Using a supply with a
+reversed voltage output could damage the RAMLink and/or the PS!
+     I should mention one other thing here. I never like using a mini-phone
+plug as a battery connector. The exposed ends of the plug could short out
+if that plug touches metal. Also, there are many manufacturing variations of
+that plug and its jack. The wrong combination could potentially short out
+the battery when the plug is inserted or removed, or it just will not fit. 
+It's best to plug or unplug that connector only when the battery itself is 
+disconnected from its wires. A shorted battery could explode or at the very 
+least burn its wiring.
+
+     One connector common to both versions of the RAMLink is the large
+circular 14 pin DIN parallel port. It's used to connect a CMD hard drive to 
+the RL with the appropriate cable and HD DOS version in the drive.
+
+RAMLINK INTERNALS
+
+     The main (bottom) board in the two RAMLink versions is, of course,
+different. They use some different IC's although both have a date stamped
+on that board of 1990. The plug-in RAM board situated on top of that bottom
+board appears to be the same (can be marked either 1990 or 1992) except
+for a very early one that doesn't have a real time clock. RAM boards should
+be interchangeable between versions of the RAMLink. If the RAM is to be
+upgraded, a jumper must be cut on that sub-board (see appropriate users
+manual for details). In the units I examined, there were four RAM module
+sockets filled with DRAM strips for a total of 4 Meg in the early units and
+16 Megs in the later ones. Total BYTES FREE in the early units was 16064,
+and 65216 in the later ones.
+     The one RL (later version) that was defective was found to have had a
+liquid spill onto the internal boards. I disassembled that unit, scrubbed
+the boards with Windex and an old toothbrush, rinsed with water and dried
+with a hair dryer. I replaced a corroded IC socket and a burned resistor
+(R49, a 5.1 ohm 1/4 watt flameproof) but that RL still didn't work reliably.
+Swapping chips back and forth between the good and bad units, I finally
+found the DOS 27512 EPROM had part of its code corrupted. As stated, that
+unit would initialize but couldn't reliably hold its partition and program
+data. I was able to "clone" a copy of the DOS from the good RL onto a fresh
+EPROM and replace the bad one. All the other socketed chips in those
+RAMLinks are GALs, programmable chips I don't presently have the hardware
+with which to "burn" replacements. I clearly got lucky with this one. One
+last thing... I noticed that some of these RL's would not always show up
+with the JiffyDOS opening screen when the computer was booted. I cleaned
+the two toggle bypass switches on the case top by spraying control cleaner
+in the openings at the base of the paddles and working the switches back
+and forth a few times. That took care of it.
+     The paper stickers with the factory part numbers were glued to the
+chips in these RAMLinks but they were all loose and falling off, so I
+glued the ones I found back on. All the labels are on programmed socketed
+chips only, namely the DOS EPROM and GAL's.
+
+Ray Carlsen 

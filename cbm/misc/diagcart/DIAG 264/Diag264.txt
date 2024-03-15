@@ -1,0 +1,39 @@
+New release of Diag264, v0.94beta
+
+After a lot of prevaricating, I'm finally pushing a new semi-official
+release of Diag264 - v0.94 beta.
+
+http://www.inchocks.co.uk/commodore/Diag264
+
+(If one of the admins here want to update the software/hardware links to
+Diag264 on P4W, that would be much appreciated)
+
+If you haven't come across it before, it's the C16/Plus/4 equivalent of
+the various Commodore produced diagnostic cartridges for the C64. There is
+both a kernal based version that you can directly replace your kernal ROM
+with, which give the lowest level of diagnosis a bit like the 64 dead test
+cartridges ,or you can use the low-ROM version which you can put on a
+cartridge or use in place of the Function-Low ROM in a Plus/4.
+
+Since I released the first version in 2012, I've been regularly tweaking
+it and it's finally got enough extra functionality to be worth announcing.
+Since then it's got much better address bus testing, better RAM testing
+using a decent pseudo random number generator, TED latch testings, fixed
+numerous small bugs, and added the ability to better diagnose I/O port
+issues.
+
+To get the most value, you would also need the loop-back plugs. I don't
+make these for sale, but various ebay sellers have sold them and there's
+full instructions on building your own in the documentation.
+
+There is a download link at the top of the page where you can find the
+binaries for kernal/low-ROM and PAL/NTSC combinations. It doesn't matter
+so much whether you use the PAL or NTSC version as it will try and
+auto-detect from the installed kernal if you use the low-ROM version, and
+if you use the kernal version, you can force the video mode by holding
+down 'P' or 'N' as you power on. Otherwise full instructions are in the
+link.
+
+0.94 is considered beta, so if there's any bugs or other feedback, please
+PM me or email the address in the document and I will try to help, time
+allowing.

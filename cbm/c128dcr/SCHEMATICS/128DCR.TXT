@@ -1,0 +1,11 @@
+     From FUNET.FI:
+These are the schematic diagrams of the Commodore 128DCR main board 
+(metal case C128D with built-in 1571CR floppy controller). The 
+diagrams were scanned from a 64'er Sonderheft, and they appear to 
+be a copy of schematic 252451.
+     According to Nicolas Welte, there was an error on the right 
+half of page 5. The 74LS14 hex Schmitt-trigger inverter U113, 
+pin 13 is connected to WPRT* (misprinted WTRT* on U105), which 
+doesn't make any sense. Obviously it should be connected to STP1 
+instead, which is three lines more to the right! 
+NOTE: This FDD.GIF file is a corrected page. Ray Carlsen 7-04

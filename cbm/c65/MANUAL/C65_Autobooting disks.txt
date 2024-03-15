@@ -1,0 +1,7 @@
+AUTOBOOTING DISKS 
+
+Making a autobooting disk is a quite easy job
+
+Just take a PRG file (standard binary executable or basic file) and call it 'autoboot.64dx', that's all. Next time you start up or reset your C65 with your disk inside, it will automatically start your program.
+
+Tip: Put the following little basic program as autoboot.64dx on your work-disks: '10 dir'. This way you will see the inventory of the disk inside your floppy-drive at power-on.

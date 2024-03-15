@@ -1,0 +1,18 @@
+Short:    C64 graphics format conversion package
+Author:   albert@cs.tut.fi (Pasi 'Albert' Ojala)
+Uploader: albert@cs.tut.fi (Pasi 'Albert' Ojala)
+Version:  1.5
+Type:     misc/emu
+Replaces: misc/emu/C64Gfx1_2.lha
+
+C64Gfx 1.5 (24.4.99)			Pasi 'Albert' Ojala
+					albert@cs.tut.fi
+					http://www.cs.tut.fi/~albert/
+
+This package contains programs which are used to convert portable
+pixmap (ppm) files to C64 graphics formats (FLI, koala, BFLI) and back
+under AmigaOS. The package includes ANSI-C source codes for the programs,
+so they are also compilable in any environment with an ANSI compliant
+C-compiler. Includes pre-compiled Amiga executables.
+
+C64 viewer programs and some examples are also included.

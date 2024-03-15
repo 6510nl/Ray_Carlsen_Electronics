@@ -1,0 +1,90 @@
+> i recently bought an approximately 10 yrs. old commodore 1084s (pal)
+> monitor for cutting video. the device is working fine except for having
+> slightly too much green in the signal (using the video composite input -
+> connected directly from my video board). i wonder if there is any
+> possibility to adjust the intensity of each of the primary colours, in
+> order to achieve a neutral display.
+
+Sascha,
+     There is a way to adjust that monitor. The setup procedure is
+sometimes called color balance, white balance, CRT tracking, or just
+greyscale adjustment. Video monitors are similar enough that this
+generic information can be used with most of them. If you somehow mark
+the controls before you make any adjustments, you can return them to the
+starting point just in case you get "lost". A dab of ink from a marker
+pen works well, but whatever you use, don't get any inside the control
+itself. 
+     If you've never adjusted a monitor before, keep in mind there are
+dangerous voltages inside. The most obvious is the high voltage on the
+picture tube, but you're not likely to lift the cap on the CRT during
+your setup adjustments, so don't worry about that. The not-so-obvious
+danger is that monitors and TV sets are "line operated" devices. That
+means that the chassis is "hot" to ground at all times and poses a
+lethal potential between chassis parts and other grounded objects around
+it. Technicians use a 1:1 isolation transformer to reduce the risk of
+shock and damage to equipment in the event of an accident. You can work
+in reasonable safety if you keep other grounded objects (computer,
+drives, etc.) away from your work area. Touch only with one hand (put
+the other hand in your pocket... a habit I got into long ago) to reduce
+the risk of electrical shock. Now, down to business...
+     There are two sets of controls (usually three per set, but some
+monitors have only two "drive" controls) to set the picture highlights
+and lowlights separately. These controls set the voltage levels that
+appear on each of the three color "guns" of the picture tube or CRT. The
+highlights or bright areas of the image are set with the "background" or
+"drive" controls, and the lowlights are set with the "screen", "cutoff"
+or "G2" controls. Each manufacturer has their own names for these
+controls, and of course each model has the controls in different places
+physically. Some will place all controls on the CRT neck board (the
+board that plugs directly onto the picture tube), and some will have
+some or all on the main chassis, usually along the rear panel for easy
+access. They are normally adjusted by use of a small, flat blade
+screwdriver with an insulated (plastic) handle.
+     To prepare the monitor for adjustments, turn the color level
+(intensity) control all the way down. You don't want any color from the
+video to offset the adjustments you are trying to make. All other
+controls are set at normal viewing levels. Feed a video signal from a
+video game or computer into the monitor so you have a fixed stable image
+with an average of highlights and lowlights. A moving image from a TV
+station is not a good choice because the forground/background levels
+keep changing. As an alternative, don't connect a video signal, but just
+use the brightness control on the front panel to run the "raster" (blank
+screen) brightness up and down and make the adjustments for low and high
+levels that way. It's not as "obvious", but it works.
+     For only a minor correction of CRT greyscale, inspect the image to
+see which areas of the picture are not neutral grey or white. If it's
+the dark areas (low brightness off-color), use the "cutoff" control for
+the predominant color (green in your case) and back that control down
+until the screen looks grey. Adjustment of the other two cutoff controls
+may be necessary to get it looking just right, but don't adjust any
+control more than a few degrees. The adjustments are rather coarse and a
+small control movement is all that's normally necessary. Color balance
+offset in the dark areas will show up more than a similar offset in the
+highlights, and some "drift" is normal as the monitor ages.
+     If the white areas of the image are affected, back down the drive
+control of the predominant color or raise the others to match so you
+have a neutral white in the highlights. You may have to make minor
+adjustments to both sets of controls so all levels of brightness are
+neutral grey when you're done. Run the front panel user brightness up
+and down to see if the raster "tracks" properly (doesn't change color
+off neutral grey). 
+     Some monitors have an internally adjustable brightness control that
+sets a normal range for the front panel control and/or limits the
+maximum brightness you can get without overloading the HV circuits. It's
+normally located on the main board and may be called "sub-bright" or
+"bright limit". It is normally set to produce a good picture with the
+front panel brightness control set in the middle ("detent" position) of
+it's range. 
+     One last setting you might need to make at some point is the master
+screen or G2 adjustment. It's a -very- coarse adjustment that sets the
+overall level of brightness. As a tube ages, the G2 may need to be set
+higher to compensate for a low-brightness problem. If this control is
+set too high, the image may be too bright and/or take on a milky
+appearance with faint diagonal "retrace" lines in the picture. If set
+too low, you will not have enough brightness even with the front panel
+brightness control at maximum. This master screen is on the flyback
+(line output) transformer, the large black plastic block usually located
+at the right rear of the main chassis. For identification purposes, note
+the thick (usually red in color) wire that runs from the flyback to the
+top of the picture tube. The two controls on the flyback are the focus
+(top control) and master screen or G2 (bottom control). 

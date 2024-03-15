@@ -1,0 +1,61 @@
+         CHANGING A 1541 FROM DEVICE 8 TO DEVICE 9, 10, or 11
+
+             Latest additions & corrections: 9-11-13
+
+     There were at least three versions of the 1541, each with a 
+different PC board, and two types of drive mechanisms. The following is 
+the procedure for modifying a 1541 to enable a different device number.
+     All drives were shipped from the factory as device #8, with no
+jumpers cut. The jumpers, by the way, are two tiny silver half-circles
+with a "dash" in the center. They resemble a fat letter H. To open a
+jumper, cut the dash with a sharp knife. If you accidently cut the wrong
+one, you can apply a blob of solder to re-connect the two half-circles, or
+just lay a small bit of wire across it and solder it. Don't heat it for
+more than a few seconds or you will lift the trace off the board. Jumpers
+are usually marked 1 (or A) and 2 (or B). To change the device number from
+the factory setting of #8 to device #9, cut the jumper marked 1 or A. For
+device 10, cut the one marked 2 or B. If you cut both jumpers, you have
+device 11. These two jumpers represent grounds going to a 6522 VIA chip. 
+Jumper 1 (or A) is pin 15 of the chip, and 2 (or B) is pin 16. You can
+remove that IC, lift one or both pins, then re-insert it into it's socket
+to change the device number (for example, lift pin 15 for device #9) but
+it is best to cut the proper jumper... the chip pins will break off if
+bent more than a few times. 
+     By installing a device 8/9 switch (a SPST toggle switch that opens
+and closes jumper #1), you can easily switch back and forth between drive
+8 and 9 without opening the drive. Each terminal of the added switch is
+wired to one side of the cut jumper. The solder pads are so tiny that,
+unless you are proficient with a soldering iron, it is best to leave that
+work to a technician. Obviously, the modification should only be done with
+the drive turned off and all plugs disconnected. The most convenient place
+to mount the switch is on the front right-hand side of the drive. The
+spacing is tight behind the front panel... make sure you drill the hole
+with enough room behind it for the body of the switch. Solder the wires to
+the switch before you mount it... it's easier. 
+     Facing the front of the drive with the case top and shield removed,
+the drive select jumpers are located as follows for the various models: 
+The early VIC-1541 (sometimes called the 1540) in the white case had the
+long board and used the ALPS drive mechanism with the push-down door. The
+drive select jumpers, marked 1 and 2, were near the rear of the board,
+right next to the 6522 chip UAB1. Cut jumper 1 for device #9, jumper 2 for
+device #10, and both for 11.
+     Next came the shorter board 1541 in the standard brown case. It used
+the ALPS (push-down) mechanism and a silver colored metal shield. The PC
+board number was 1540050. Some of those board's drive select jumpers were
+marked A and B, some 1 and 2, and some were unmarked.  The jumpers were
+located 2" from the front of the board and 2 1/4" from the left side. They
+are positioned between electrolytic capacitor C46 and transistor Q3. 
+Jumper 1 (or A)  would be closest to the transistor.  Again, cut 1 or A
+for device #9, etc. as above.
+     A later version 1541 (sometimes called the 1542) had a shorter board
+(PCB #251830 or 251777), and used the Newtronics drive exclusively. The
+metal shield was gold in color. This drive was apparently the most common.
+Drive select jumpers are 1.5" from the front of the board and 2" from the
+left side. The jumper pads marked 1 and 2 are between transistors Q4 and
+Q5. Jumper #1 is closest to transistor Q5.
+     The latest version was the 1541C (PCB# 251854) and used the
+Newtronics mechanism in a off-white case. That's the only one with the
+photo-sensor to detect track zero, but it was disabled by Commodore, so
+the drive head still bangs like the earlier drives. The drive select
+jumpers are called J1 and J2, and are located 1 3/4" from the front of the
+board and 1/2" from the left side (near plug P1). 

@@ -1,0 +1,100 @@
+  INSTALLING A FAN IN A C128DCR (USA model in metal case)    11-17-99
+
+     Although there is a place cut and drilled for a fan on the inside
+rear panel of the metal-cased C128D, few (if any) were sold with the fan
+installed. The benefits of forced-air cooling should make it a priority
+for anyone who owns one of those models to install a fan. Unlike the
+"flat" C128, the DCR doesn't have the metal shield that touches the chips
+to draw the heat away, so convection cooling is all there is. The box was
+designed for the fan to pull air through the front of the computer (vent
+holes in the lower front panel), over the chips and out through the rear
+panel opening. Fans are usually marked with two arrows to indicate the
+directions of rotation and airflow. If your fan is not marked, a temporary
+hookup to the fan will tell you "which way the wind blows". You want it
+directed out the back of the computer. Since the case was designed that
+way, the effect of drawing air out of the computer case has a minimal
+effect of drawing dust into the internal disk drive. Still, it's a good
+idea to check it at least every six months... and more often if you live
+in a very dusty area. It's easy to blow the dust out with compressed air.
+     Since the C128D's internal power supply puts out both +5 volts and
++12 volts DC, either of those voltages could be used for a fan. Although a
+120VAC type would work as well as a low voltage one, I couldn't find any
+120 volt fans that small, and the 5 volt versions are more expensive.
+Connecting any of the three types of fans to the computer is easy. You
+only need to know where to tap off the power. I'll give you instructions
+for connecting a 12 volt fan since it's the most common type and is
+readily available.
+     The maximum size of the opening is 2.5" high by 2.5" wide by 1.5"
+deep. The spacing of the four mounting holes is exactly 2" center to
+center. A "standard" fan case size is 2.36" square by about an inch deep.
+It makes sense to buy a fan that exactly fits, rather than trying to
+modify the opening for something else.
+      Mouser Electronics 1-800-346-6873) has three fans that will fit the
+opening: part numbers 432-31432, 432-31434, and 432-31436 at $12 each.
+They are all 12 volt ball bearing models and differ only in the amount of
+air they move (called CFM, or cubic feet per minute). The higher (part)
+number is the higher CFM rating, by the way. Of course the faster the air
+flow, the noiser the fan, but because of where it's mounted, noise
+shouldn't be a problem. You'll get used to a bit of noise if you know it's
+cooling those precious chips! Mouser has a WEB page for those interested:
+www.mouser.com. They are an industrial supplier and maintain a good stock
+of parts, so you shouldn't have to wait long for your order.
+     Allied Electronics Inc. @ 1-800-433-5700 is another outlet that has a
+good selection of suitable fans that range in price from $8.50 to $20.
+Their WEB page is: www.allied.avnet.com. They have more than a hundred
+outlets Nationwide, so you might find one near you. Some fan part numbers
+from their catalog: 592-0750, 592-0760, 592-0770 selling for $8.50 each.
+Note that the -lower- numbers are for the higher CFM (and noise) rating.
+Low cost fans are sleeve types rather than ball bearings, but even the
+"cheapies" will last for many years. Ball bearing equivalents of the above
+numbers are: 592-0690, 592-0700, 592-0710 selling for $11 each. Here
+again, the lower numbers are the higher CFM and noise rating fans. Allied
+Electronics also has a pretty good selection of standard and mini DIN
+plugs used in Commodore computers.
+     Jameco Electronics @ 1-800-831-4242 (www.jameco.com) also sells fans,
+and has a small selection of Commodore IC chips available as well. I
+counted seven fans in their latest catalog that would fit the 128D case
+that sell for under $10 each, such as: part number 75352 for $7.95.
+     If you want to order one, what you need to specify is: 2.36" square,
+12 volts DC, the type of bearings (ball or sleeve), and the CFM rating. I
+would go with the highest CFM rating to get the most cooling. The noise
+only reminds me that it's working! Most fans have 12" lead wires, but some
+will come with only 5" of wire, so you may have to "pigtail" extra wire to
+make it reach... no big deal. Insulate any bare wires to keep them from
+shorting to each other or anything else.
+     The cover of the C128D must be removed to do the fan installation.
+Remove two screws along the side bottom front edges and three more on the
+sides and top of the rear panel. The top cover must then be slid back
+about 3/4" and lifted up and off.
+     The fan and case mounting holes will accept four standard 6x32 by
+1.25" long machine screws. 4x40 screws will work if you use washers on the
+smaller diameter hardware. Don't overtighten the screws or it could damage
+the plastic fan housing. A dab of glue on the screw threads will keep them
+from loosening up over time. Mounting the fan with screws and nuts
+requires that you first remove the power supply from the 128D. As an
+alternative, a thin bead of silicon rubber sealer can be used to "glue"
+the fan in place, and you will not need mounting hardware or need to
+remove the power supply. Silicon rubber takes about an hour to "set up"
+and is fully "cured" in about 24 hours. Don't get any sealer on the blades
+or it may cause the fan to stall, or vibrate from the imbalance.
+     To connect the fan to the power supply 12 volt DC source: locate the
+short wire bundle that goes between the power supply and the motherboard.
+There are six wires in that bundle. The brown and white wires are the
+9VAC, the red wire is +5 volts, the two black wires are ground, and
+lastly, the yellow wire is +12 volts DC... the one you want for the fan.
+The polarity of the fan hookup is important. Most fans come with two
+wires, one black (-) and one red (+). Connect the red fan wire to the
+yellow wire of the C128D power supply, and the black fan wire to either of
+the black power supply wires. You can pull back the insulation a bit on
+the power supply wires (or trim a little insulation away with a knife) and
+just wrap the bare ends of the fan wires around them if you want. If you
+make a good electrical and mechanical connection, you don't need to solder
+it. Make sure your added wires don't short to each other or any other
+wires or metal. Wrap electrical tape around exposed wiring if necessary.
+If you unplug the power supply from the motherboard for any reason, make
+sure you get it back in the right way. If you reverse it, you will damage
+the computer. Note that one black wire of the bundle goes to pin 1 of
+socket CN7 on the motherboard... pins 1 and 6 are marked on that board.
+
+Ray Carlsen CET 
+Carlsen Electronics 

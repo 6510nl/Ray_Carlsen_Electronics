@@ -1,0 +1,59 @@
+                 REPAIRING THE B128 POWER SUPPLY
+      Latest updates, additions and/or corrections: 1-17-2021
+
+     I've only worked on two B128 power supplies so I don't have much 
+experience with them and there are no schematics I know of. It is a 
+switch mode type and, as old as these are, I expected to find some 
+electrolytic caps dried up and failing. Not so. They all checked OK. 
+     #1 PS was intermittent... it would come on and go off at random, 
+sometimes "flickering" between states with an audible buzz or clicks. 
+The computer didn't work at all. No burned parts and fuse was OK.
+#2 was dead... no output and input fuse not blown. 
+     Note that many old switchers will not run properly or will self
+destruct without some kind of a load on them; at least 10 percent of
+a full load is recommended. Early PC supplies were like that. For this 
+one, I used an old automobile tail-light bulb as an artifical load. I 
+put the heavier filament on the +5VDC (about a 2 Amp load), the lighter
+filament (about 500mA) on the +12 and a small grain-of-wheat lamp on
+the -12 just to verify it's working. It's important to meter all outputs
+to ensure the PS regulates properly after repairs are done.
+
+     #1. I suspected the main switcher transistor, a Motorola TO-220 NPN 
+type with nothing but a "house" number on the case: 3821-2. That number 
+didn't cross to anything in my data books or online sources. It helped 
+that the PS was at least partially working so I could measure the 
+waveform on the collector. It would peak at over 900 volts so I knew 
+that standard switcher replacement devices wouldn't hold up. I found 
+a generic replacement in a different case style (larger) that was 
+normally used as a horizontal deflection output transistor or "HOT" in 
+a tube type color TV set. Its generic number is BU508A. It's an 
+equivalent to the Sylvania ECG 2300 (or Philips TCG 2300). 
+     Because it is physically larger, the transistor would not mount
+on the old heat sink. I drilled a hole just above the original one and 
+mounted the new transistor with a mica washer (to isolate the transistor 
+collector/case from the sink) and added heat sink grease. The transistors 
+leads didn't easily fit the holes, so I cut them off near the body of the 
+transistor and wired connections from the stubs to the board. The new 
+transistor has a higher voltage and current rating and so should work well 
+in this application. 
+
+     #2. There were no burned parts and the fuse was good so I knew this 
+PS just failed to start up. The problem was traced to a shorted Q1 
+transistor, a 2N5190. That crossed to an ECG184 which I had in stock. That 
+supply worked fine after repair.
+     I decided to reverse-engineer the swicher side of this PS and drew a
+schematic to aid anyone who must repair one. It's usually the input side 
+of a switching supply that fails anyway. I listed the component ID's that 
+were shown on the board but many of them cover the board markings... a 
+stupid thing for the factory to do. 
+     Bad filter caps or regulators on the secondary side can be easily 
+checked if the supply works but only one output source is low or down. 
+The secondary side of this supply is what I would describe as an 
+e-plumbers nightmare. I didn't even try to make a schematic of that side.
+I felt myself growing older just looking at it. 
+
+The PS specs are as follows: +5VDC @ 5.5A, +12VDC @ 0.4A, -12VDC @ 0.3A
+Pin 1 of the power connector is shown as "50/60 Hz" but without a 
+schematic, I don't know what its source is inside the PS. 
+
+Ray Carlsen

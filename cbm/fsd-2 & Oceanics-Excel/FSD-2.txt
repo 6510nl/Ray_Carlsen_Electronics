@@ -1,0 +1,40 @@
+										
+                       THE FSD-2 SINGLE FLOPPY DISK DRIVE
+     "GOLDEN IMAGE" OCEANA ELECTRONICS CORP. TAIWAN  FCC ID: GLB339OC-118  
+                   UPDATES AND/OR CORRECTIONS AS OF 9-10-2022
+
+     I don't have a schematic for this drive. It apparently goes under several
+other names such as the Excelerator+Plus and the Oceanic OC-118N. It is a clone 
+of the Commodore 1541-II REV 4 as it uses the same Commodore DOS ROM code in a 
+single 16K ROM. However, two of the pins (D3 pin 15 and D4 pin 16) were swapped 
+and the original Commodore code was altered accordingly, presumeably in an 
+attempt to circumvent Commodore copyrights. The DOS ROM is the only socketed IC, 
+a 27128 equivalent 16K PROM which has a checksum of 9677. A Commodore DOS ROM 
+IC will work in this drive if pins 15 and 16 are physically interchanged. One 
+way to do that is to cut the pins of the replacement chip close to the body of 
+the IC, leaving enough stubs to solder to, then connecting wires from the socket 
+to the correct IC pins. JiffyDOS is available for this drive, but a 1541-II JD 
+chip will work if the two IC pins are swapped, as above.
+     The Excelerator uses a twist-door mechanism similar to a Newtronics. 
+However, there was no indentification info on mine, so I can't tell who 
+manufacturered that mechanism. The drive has 2 device select switches on the 
+bottom, similar to the ones on the rear of the 1541-II. It is factory set as 
+device 8 with both switches up (on). 
+     The drive uses an external power supply that provides two voltages: 5VDC 
+at 1 Amp and 12VDC at 0.5A. Its PS is like the one for the 1581/1541-II but the 
+connector may be one of two types, a five pin DIN or four pin DIN as used on a 
+1541-II. I didn't get a PS with my 5 pin Excelerator drive so I "pigtailed" 
+a 5 pin plug onto the end of my 1581 PS. 
+
+The power connections are as follows, shown facing the rear of the drive:
+
+    +12VDC -----0             0----- +5VDC
+
+      ground -----0         0----- ground
+                       0----- no connection
+
+
+
+       +12VDC -----O         O----- +5VDC
+
+         GROUND -----O     O ----- GROUND

@@ -1,0 +1,39 @@
+retropeti / Berlin
+
+Hallo Leute,
+
+zum Verkauf steht heute ein sehr gut erhaltener Commodore 65 Prototyp, auch als C65 oder DX64 bekannt. Insider, die sich für diesen Computer interessieren  werden, wissen um welches Gerät es sich hierbei handelt. Ich verzichte deshalb auf eine tiefgehende Beschreibung der technischen Einzelheiten. Im Netz können diese Informationen auf diversen Seiten ausführlich nachgelesen werden. Ich gehe lieber auf dieses spezielle Gerät mit der SERIAL NO. 000097 ein.
+Das Gerät ist in einem sehr guten Zustand und wurde nur kurzzeitig benutzt, bzw. ausprobiert, keine Vergilbung, keine Gehäuserisse, Board befindet sich im Bestzustand. Das original C65 Netzteil ist neuwertig. Computer und Netzteil haben über die Jahre warm und trocken im Schrank gelagert.
+Auf dem C65  Board ist die ROM Version 910523 verbaut. Es handelt sich in diesem Fall um einen EPROM. Der EPROM hat keinen beschrifteten Aufkleber. Die Versionsnummern des Chipsatzes können den Fotos entnommen werden. Das Board hat die Bezeichnung C64 DX REV 2B. 
+
+Das Gerät ist funktionsfähig*. 
+Auf YouTube kann man den C65 mit der SERIAL NO. 000097 arbeiten sehen.
+
+
+ Link: https://youtu.be/1juYicrG0aU
+
+
+*Mit  funktionsfähig ist gemeint, der C65 ist im Rahmen des Entwicklungsstandes lauffähig. Das Gerät hat auch alle für diesen Entwicklungsstand  bekannten  „Macken“.  Wie zum Beispiel:  Externe Disk Drive Buchse fehlt - TV-Modulator nicht funktionsfähig -  Video Ausgang nur in schwarz/weiß -  kein finales Betriebssystem.
+
+Das Gerät wurde im Rahmen meiner Möglichkeiten von mir getestet. Da ich für den verbauten RGBi Ausgang (TTL) keinen passenden Monitor mehr besitze, habe ich einen TFT Bildschirm mit gebasteltem Adapter benutzt. Die Farben sind daher nicht original/ optimal dargestellt. Der Rechner bootet und zeigt den C64DX Startbildschirm mit blinkendem Cursor. Über die Tastatur lassen sich BASIC V10 Befehle eingeben, die dann abgearbeitet werden. Das Diskettenlaufwerk arbeitet, inclusive LED-Anzeige. Disketten können gelesen und geschrieben werden. Ebenfalls können Disketten umbenannt werden. Was mir nicht gelungen ist, ist das Formatieren von Disketten, dieses erzeugt einen DOS Fehler. Daher habe ich vorformatierte Disketten (.d81), die man mit einschlägigen PC-Programmen und Hardware herstellen kann, für das Testen verwendet. Im C65 Modus lassen sich die Inhaltsverzeichnisse der Disketten lesen und mit List-Befehl auf den Bildschirm bringen. Die wenigen im Netz verfügbaren DEMO-Programme/ Disketten aus der Entwicklungszeit sind leider nicht immer lauffähig, da sie vermutlich für andere ROM-Versionen/ Chipsätze/ RAM Erweiterung bestimmt sind. Für die ROM Version 910523 habe ich keine spezielle DEMO-Diskette gefunden. Relativ stabil läuft eine DEMO-Diskette für die ROM-Version 910610. Aber auch dieses DEMO läuft nicht immer sauber bis zum Ende durch. Der C64 Modus lässt sich mit dem Befehl GO64 starten und zeigt sich mit dem typischen blau/hellblauen Bildschirm. Ein von mir getestetes Grafik-Adventure, in Basic 2.0 programmiert, läuft anstandslos.
+
+
+Diese Auktion beinhaltet:
+Commodore 65 (C64DX) Computer mit SERIAL NO. 000097
+Original C65 Netzteil
+Transportkoffer
+
+
+Ich versende weltweit - soweit Ihr Land für diese Auktion zugelassen ist. 
+Da das Gerät einen erheblichen Wert darstellt, wäre eine Abholung empfehlenswert. Auf Wunsch werde ich das Gerät aber auch verschicken. Das Risiko für den Versandweg trägt der Käufer. Die Abholung oder Lieferung kann erst erfolgen wenn sich das Geld auf meinem Konto befindet.
+
+Ich akzeptiere nur Banküberweisung!
+Das Gerät wird in einem stabilen wasserdichten Koffer ausgeliefert. Dieser Koffer ist im Preis mit inbegriffen, so wie auch die eventuellen Versandkosten  bei Versand innerhalb Deutschlands. 
+
+Der Preis für den Versand außerhalb Deutschlands ergibt sich durch das Zielland, die gewünschte Versandart und Versicherung. Nach der Auktion kann die optimale Versandart vereinbart werden.
+
+Da dieses Gerät schon 25 Jahre alt ist, und es sich auch um einen Privatverkauf handelt, besteht kein Anspruch auf Garantie oder Gewährleistung.
+
+Die Rücknahme des Gerätes ist ausgeschlossen.
+
+Viel Erfolg bei meiner Auktion.

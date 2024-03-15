@@ -1,0 +1,69 @@
+                             TABLE OF CONTENTS
+
+          INTRODUCTION .................................. 1.1
+          TECHNICAL SPECIFICATIONS ...................... 1.2
+          
+          CHAPTER 1
+                Installation instructions ............... 1.1
+
+          CHAPTER 2
+                Operating Instructions .................. 2.1
+                Care of diskettes ....................... 2.2
+                Disk Drive Terminology .................. 2.3
+                Frequently Used Commands
+                  LOAD .................................. 2.5
+                  SAVE .................................. 2.8
+                  VERIFY ................................ 2.9
+                Utility Commands
+                  OPEN .................................. 2.9
+                  PRINT# ................................ 2.10
+                  INITIALIZE ............................ 2.11
+                  NEW ................................... 2.11
+                  SCRATCH ............................... 2.12
+                  COPY .................................. 2.12
+                  RENAME ................................ 2.13
+                  VALIDATE .............................. 2.13
+                  CLOSE ................................. 2.14
+                  DUPLICATE (SD-2 ONLY) ................. 2.14
+
+          CHAPTER 3
+                File Data Handling ...................... 3.1
+                Sequential Files ........................ 3.1
+                    OPEN ................................ 3.1
+                    PRINT# .............................. 3.2
+                    GET# ................................ 3.3
+                    INPUT# .............................. 3.4
+                Random Files ............................ 3.5
+                    OPEN ................................ 3.6
+                    BLOCK-READ .......................... 3.6
+                    BLOCK-WRITE ......................... 3.7
+                    BLOCK-ALLOCATE ...................... 3.7
+                    BLOCK-FREE .......................... 3.8
+                    BUFFER-POINTER ...................... 3.8
+                    USER1 ............................... 3.9
+                    USER2 ............................... 3.9
+                Relative Files .......................... 3.10
+                    OPEN ................................ 3.11
+                    PRINT ............................... 3.11
+
+          CHAPTER 4
+                Programming the Disk Controller ......... 4.1
+                    MEMORY-WRITE ........................ 4.2
+                    MEMORY-READ ......................... 4.2
+                    MEMORY-EXECUTE ...................... 4.3
+                    BLOCK-EXECUTE ....................... 4.3
+                    USER ................................ 4.3
+
+          CHAPTER 5
+                Changing the Disk Drive Device Number ... 5.1
+                Hardware Method ......................... 5.1
+                Software Method ......................... 5.2
+
+          APPENDICES
+                Appendix A. Disk Command summary ........ A.1
+                Appendix B. Error Messages .............. B-1
+                Appendix C. BASIC 4.9 Commands .......... C.1
+
+          SD1 / SD2 WARNINGS (FCC REGULATIONS)
+
+          WARRANTIES

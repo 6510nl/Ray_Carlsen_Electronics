@@ -1,0 +1,21 @@
+   CBM MPS802 and 1526 Dot-matrix Printers... some notes on troubleshooting
+                    latest updates and corrections  9-6-05
+
+I own three of these printers but only one is working because of chip failures 
+in the other two. By swapping chips around, I have at least nailed down what is
+wrong with them even if I can't repair them at the moment... not without a 
+source of parts.
+
+A bad CPU (U7D, a 6504) will make the printer appear dead. The power LED will 
+not come on and the motors will not move. Two of my printers need CPU chips. I
+don't know of any other device that uses that IC. 
+
+A bad RIOT (RAM-I/O-Timer, a 6532) chip at U4D will cause the power LED to blink 
+continuously at a one-per-second rate. There are two RIOT chips and they are
+interchangeable. I understand one of the PET computers also used that IC, but I
+have not confirmed that. 
+
+One of these printers prints an extra line over normal characters. This is either
+a bad printhead, or more likely a bad driver circuit that is turning on one pin
+at the wrong time. If the pin were stuck, it would likely tear the paper. I once 
+had a printer do that.

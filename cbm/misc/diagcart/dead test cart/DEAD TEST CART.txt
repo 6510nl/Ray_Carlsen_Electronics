@@ -1,0 +1,50 @@
+
+     USING THE DEAD TEST CART 781220
+
+
+BIT  FLASHES   C64   SX   C128-B0  C128-B1
+
+7	1      U12   UA4   U45       U53
+
+6	2      U24   UB4   U44       U52
+
+5	3      U11   UA5   U43       U51
+
+4	4      U23   UB5   U42       U50
+
+3	5      U10   UA6   U41       U49
+
+2	6      U22   UB6   U40       U48
+
+1	7       U9   UA7   U39       U47
+
+0	8      U21   UB7   U38       U46
+
+
+     I heard somewhere that the C128 doesn't test RAM at bootup like the 
+C64 does. A RAM problem is more difficult to diagnose in the 128 because 
+it has two banks of 64K RAM, 16 RAM chips! In the C64 mode, it does test 
+bank 0 and that can be useful as a diagnostic. The RAM banks are accessed 
+via two CAS lines at pins 15 of all RAM chips. Resistors R29 and R30 feed 
+CAS signals to the two banks, so if those lines are swapped on the 128 
+motherboard (lift one end of each resistor and cross connect the ends to 
+the board), the computer will access bank 1 as bank 0 and vice versa. If 
+the computer will not boot in one mode but works OK or marginally in the 
+other, swapping the banks may help localize the fault. If the symptoms 
+change, you know you have a RAM problem. 
+
+     The Dead Test Cart was apparently designed for the C64 but its book 
+states it can be used on a C128 as well but the description of how it 
+works doesn't ring true. I had a C128 on the bench that would show a 
+blank 128 screen at boot and a garbage screen with border in the 64 mode.
+I ran the Dead Test Cart and got one blink indicating U45 was bad. OK so 
+far. Why, if the book is correct, did swapping the two banks of RAM by 
+lifting R29 and R30 and exchanging their CAS outputs allow the Dead Test 
+Cart to ignore the bad RAM? My conclusion is that the cart can only test
+one bank at a time, not both as the book states. 
+
+
+
+
+
+

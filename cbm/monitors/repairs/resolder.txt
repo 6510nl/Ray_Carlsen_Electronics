@@ -1,0 +1,112 @@
+
+                    REPAIRING YOUR COMMODORE MONITOR
+                Latest updates and/or corrrections 4-14-2012
+
+Commodore monitors fail most often due to poor solder connections. I've repaired 
+quite a few of them and have been asked by owners if they can do the job themselves 
+since shipping a monitor carries a significant risk of damage as well as being 
+rather expensive. For those who are handy with a soldering iron, this article is 
+intended to provide information necessary for the user to do their own repairs.
+     Problems related to poor solder show diverse symptoms such as intermittent 
+picture, or the monitor failing to come on when cold... or failing after warmup. 
+Sometimes bumping the monitor with your hand will cause it to fail, or to start 
+working again. Such intermittents are typical of poor PC board connections. 
+     Note that this article was written using a 1084/1902A monitor as a model. 
+Therefore, some variation will be noted with other Commodore monitors.
+
+HIGH VOLTAGE WARNING: Note the red wire that goes from the high voltage transformer 
+up to the picture tube cap. Under that cap is the high voltage connection to the 
+picture tube. Even with the monitor turned off and unplugged, the tube can still
+hold a charge. To discharge it safely, it's necessary to connect a wire from the
+black coating on the tube or to chassis metal, then to the connector under the cap 
+of the tube. I can do that with two screwdrivers, but a wire with a firm ground 
+connection is safer. One end of that wire needs to be slipped under the cup until
+it touches the connector underneath. You may hear a snap as it makes connection. 
+Leave it connected for several minutes to make sure the tube is fully discharged!
+Then it's safe to remove the cap from the tube. Lift up one edge of the cap and
+observe the spring-wire connector that holds it in place. Pushing the cap to the 
+side will allow one end of the spring clip to pop up and out of the connector. 
+Never use excessive force or try to pry it out! 
+
+DISASSEMBLY
+     Lay the monitor face down on a protective cloth to prevent scratches to the
+cabinet. The rear cover is usually held on with 4 or 5 screws. The ones at the case 
+top are recessed, so a long blade Philips screwdriver is necessary to remove them. 
+One more small screw near the rear panel connector is sometimes used and also needs 
+to be removed. As the rear cover is pulled up and off, the speaker cable connector 
+must be detached from the chassis inside. Don't hit the CRT board!
+     Most monitors have three separate circuit boards. The bottom, main board is 
+where most of the work needs to be done. The power supply board should also be
+checked for poor solder as well as the CRT board attached to the neck of the 
+picture tube. The main and PS boards will both slide rearward and as you do so, 
+notice the connectors that must be disconnected to free the chassis from the
+cabinet. Start with the PS board. Note the two silver braids that are soldered 
+to that board. One goes to the CRT board and the other to the main chassis metal
+shield on the bottom. Unsolder the one from the chassis bottom and the other 
+from the PS board. Unplug the connectors, then press in on the tab (there is a 
+square hole in the case bottom) and pull out the PS assembly. Unplug the CRT board 
+from the tube by grasping it at its edges and gently pulling it rearward and 
+rocking (NOT twisting!) it slightly until it unplugs from the tube. Set the monitor 
+upright on the table and slide the main board rearward until you can get to the 
+connectors on it, unplug them, and remove the main chassis. Make notes as you go 
+so you'll know where all the connectors go back, or put paper tags on them marked 
+with the necessary information. 
+
+MAIN BOARD BOTTOM, METAL SHIELD REMOVAL
+
+     Removing the metal shield from the bottom of the main board is perhaps the 
+toughest part of this work. It is soldered all the way around its perimeter and must 
+be unsoldered intact without damaging the copper board traces underneath. The best
+way to do that is to set the board on edge and work at each solder point to free 
+it up, then move to the next one. Having the board on edge allows any excess solder
+to drop onto the table (which should have a protective covering, by the way) rather 
+than onto the board. Solder splashes are to be avoided. Such a short anywhere on the 
+board can be disasterous. There are a few places on the board edge where the shield 
+is soldered along several inches of board copper. With the board on edge, I start at 
+the top and heat the metal with a larger iron tip than normal so the solder flows 
+downward, and as I heat it, separate the metal from the board... gently! It's often
+necessary to run the iron back and forth over the same spots to ensure they are 
+free. Once the shield is off of the board, clean it up to facilitate putting it back 
+once the PC board resoldering is done. Repair any traces lifted during the shield 
+removal process, if necessary. Be very careful you don't damage any of the controls 
+because their shafts stick way out of the board front and thus are vulnerable. 
+
+PC BOARD RESOLDERING
+
+     The main areas of interest are the high voltage transformer (also called a 
+"flyback" or "line output transformer" LOPT), the small H driver transformer, all 
+power transistors and diodes, and any resistor of 1 Watt or more. The connections to 
+the leads of the flyback often break loose from the board, and if you look carefully, 
+you may see tiny cracks in the solder around those leads. That is the source of
+the problem and it is corrected by resoldering -all- the leads, even the ones that 
+look OK, since the connections could be loose underneath the solder where you can't 
+see it. Always use fresh solder (I use 60:40 rosin core radio solder) to do this 
+rework. Never try to just reflow the old solder... it will not hold up. The rosin 
+in the new solder will completely reflow and secure the connection. 
+     Examine the board under strong light to see if there are any solder bridges 
+or areas that need rework. Changing the lighting often helps to find areas that 
+were missed before. If there are any cracks in the circuit boards, those need to 
+be repaired by lining the broken edges together, if necessary, and putting a few 
+small drops of super glue on the crack and allowing it to wick it's way into the 
+breaks. After the glue dries (give it at least an hour), the broken copper traces 
+can be repaired by scraping the copper clean on both sides of the break so it's 
+shiny, and then bridging the break with wire soldered to both sides. I use a single 
+strand pulled out of a piece of stranded hookup wire for my rework. The strand is 
+very thin and works well, especially if there are several broken traces side by 
+side. If so, it helps to stagger the solder points away from each other so they 
+don't overlap. Use a very small soldering iron tip for that work. 
+
+REASSEMBLY
+
+     The bottom metal shield can now be reattached. Make sure before soldering 
+that all tabs fit in their respective holes and no part of the shield shorts to 
+any part of the PC board. Reinstalling the chassis should be straightforward. 
+All the connectors are keyed so they can't be installed backwards. Hopefully 
+you made notes as to where they all went. Don't forget the speaker connection 
+as you're putting the rear cover back on. I've done that more times than I care
+to admit. After resoldering, your Commodore monitor will be much more reliable 
+from then on.
+
+Ray Carlsen
+CARLSEN ELECTRONICS
+

@@ -1,0 +1,41 @@
+                   APPENDIX A- THE CONTROL WORD
+
+
+       The control word determines the way the PROMENADE works
+   In dealing with a particular EPROM. The PROMOS 2.0 CW is
+  actually a 16 bit quantity. The low byte is particularly
+  important. The low eight bits control things as follows:
+
+       BITS 1,0           00- Set Vpp to 25 volts.
+                          01- Set Vpp to 21 volts.
+                          10- Set Vpp to 12.5 volts.
+                          11- Set Vpp to 5 volts.
+
+       BITS 3,2           00- Apply Vpp to pin 22.
+                          01- Apply Vpp to pin 1.
+                          10- Apply Vpp to pin 23.
+                          11- Set pin 1 low when Vpp is on.
+
+       BITS 5,4           00- PGM pulse at pin 27.
+                          01- PGM pulse at pin 22.
+                          10- PGM pulse at pin 20.
+                          11- No PGM pulse required.
+
+       BIT 6               0- No action at pin 20 on read.
+                           1- Invert pin 20 level on read.
+
+       BIT 7               0- Set standby level on pin 20 low.
+                           1- Set standby level on pin 20 high.
+
+       The upper byte works as follows:
+
+       BITS 5,4,3,2,1,0    Select particular page of page mode
+                           EPROM. Up to sixty four 16k pages.
+
+       BIT 6               0- Page mode indicator off.
+                           1- Page mode indicator on.
+
+       BIT 7               Not used.
+
+
+                              -22-

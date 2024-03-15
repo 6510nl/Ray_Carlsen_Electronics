@@ -1,0 +1,241 @@
+                    COMMODORE  PLUS/4 INFORMATION     1-15-05
+                      updates and/or corrections: 10-27-2021
+
+     I own a Commodore Plus/4 Computer, and was fortunate enough to get it
+with a working power supply and two books: The Users' Manual and the
+Integrated Software Manual. Most people who own one of those "orphan"
+computers inherit the keyboard only, and are hard pressed to make it work
+with little or no information and usually no peripherals or software. The
+Plus/4 came after the VIC-20 and the C-64 (about 1984), and is not
+software compatable with either of those computers, although it does share
+some hardware compatability. I decided to do a little digging inside my
+Plus/4 and share whatever information I could. As a repair tech, I'm more
+into hardware than software or programming and I have no software, but I
+hope this info is helpful to other owners of Plus/4s. Here we go.... 
+
+     The Plus/4 comes up in BASIC V3.5 with usable memory a little over
+"60K bytes free" (The C-64 comes up with about 40K). Commands are similar
+to the C-128 (DIRECTORY, HEADER, DLOAD, and COPY, for example) and such
+things as reprogramming Function keys is possible. Obviously the Plus/4
+requires software written for its version of BASIC, and memory locations
+are specific to this model. For example, screen memory goes from location
+3072 to 4071 (40X25 screen) and color memory from 2048 to 3047. BASIC
+starts at $8000. 
+     The Plus/4 has several built-in programs stored on internal ROMs.
+There is a Word Processor, File Manager, Spreadsheet, Graphics, and a ML
+Monitor called TEDMON. The internal programs are initiated from the BASIC
+startup screen by pressing the F1 key. A SYS number is displayed... hit
+<RETURN>. This starts the word processor. Hold down the C= key and press C
+to activate the Command mode, indicated by the "W>" prompt at the bottom
+of the screen. Type TF (To the File manager) and <RETURN> to go to the  
+"database". Similarly, typing TC (To the spreadsheet Command) and TW (To
+the Word processor) will move to those ROM programs. Most commands are
+two-letter combinations such as: LF (Load File) followed by <RETURN>.
+TEDMON is started from BASIC by typing MONITOR & <RETURN>, and exited by
+typing X <RETURN>. GRAPHICS is part of the spreadsheet and allows
+manipulation of charts and graphs. The GRAPHIC command entered from BASIC
+allows direct entry of HiRes graphics characters, drawing shapes and
+controlling color. Because they are integrated, data can be moved across
+the internal ROM programs. Obviously this is a simplified overview and is
+intended only to get you started if you don't have the books. To properly
+run these programs, you really need the Integrated Software Manual. Try
+www.funet.fi/pub/cbm/ for more information and schematics.
+     The Plus/4 has three voices (or rather two programmable tone
+generators and a noise generator). The first two output square waveforms
+and # three outputs noise for special effects. As an example, to enable 
+and play voice #2... 
+   10 VOL 7: REM sets volume level (0 is off) 
+   20 SOUND2,800,360: REM turns on #2, sets freq (about
+      500Hz), sets the on-time (about 2 seconds).
+
+     The RF (TV) output is the same as on the C-64. An RCA jack on the
+right side of the Plus/4 will connect, through an adaptor or switchbox, 
+to a standard Color TV set. There is a switch near the connector to 
+selectchannel 3 or 4. The color screen shows a 40 column display with 
+border. 
+     The Plus/4 serial port is identical to the C-64 and will work with
+drives such as the 1541, CBM printers etc., the ones that work with the 
+C64. 
+     The User port (RS-232) appears similar to the C-64 and uses 5 volt 
+TTL level input/output signals. It will work with the Plus/4 modem but 
+like the C-64, requires an adapter to interface true RS232 devices. CBM
+computers use a single-ended (+5VDC) TTL interface but true RS232 uses
++/- 12VDC sources, so some kind of adapter must be used to interface PC
+devices. 
+     The Memory Expansion Port (Cartridge port) is different from a C-64.
+The connector looks similar, but has a total of 50 pins compared to the
+C-64 which has 44. The SFS-481 Disk Drive and specific Plus/4 cartridges
+were made to interface this parallel port. I was unable to find the 
+pinout, but I believe the Programmers Manual has that information.
+     The cassette port is a 7 pin Mini-DIN type similar to the joystick
+ports but with a slightly different pin spacing. It works with the 1531
+Datasette, and the pinout is as follows It is a mini-DIN, unlike the 
+inline edge type connector of the C64 cassette interface. The pinout is
+shown facing the rear of the computer. It is important to get these pins 
+correct if you are going to make an interface cable for your computer. A 
+"mirror image" error in wiring will reverse power and ground connections 
+and will likely damage your datassette and/or computer. Note the blank 
+(unconnected) pin in the center of the connector. 
+
+                       _____ sense
+                      /     
+      ground-----7   6   5-----write
+               
+      read -----4   [ ]   3----- motor drive
+
+        +5VDC -----2    1----- ground
+
+************************************************************************
+
+     The power supply for the Plus/4 is the same as the C-64, namely the
+non-repairable "black brick" which outputs two voltages: 5 volts DC at
+about 1 Amp, and 9 volts AC. Although some Plus/4s were built with the
+round DIN type connector, most have a square 4 pin type, similar in
+appearance to the C-128 but not compatible. The pinout is as follows 
+(viewed facing computer): 
+               
+                 ---v--- 
+     9VAC ------|-0   0-|------ 9VAC
+                |       |
+    +5VDC ------|-0   0-|------ Ground
+                |_______|
+
+Note: you can use a standard power connector jack removed from a spare
+C64 motherboard to replace this unavailable square DIN type. It fits in 
+the same place on the Plus/4 board without modification. Then you can use 
+a standard C64 power supply, but as rare as the Plus/4 is, I would 
+recommend a more reliable power pack than the old Commodore black brick. 
+
+************************************************************************
+
+     The video port (8 pin DIN) is nearly the same as the later models of
+C-64, and monitors such as the 1702 (separated Y and C) will work with no
+modifications. As with the C-64, a standard 5 pin DIN plug will also work
+for monitors that accept only composite video and audio. The only
+difference in the Plus/4 is -two- audio outputs, whereas the C-64 has an
+audio -input- on one of those pins. The unloaded level on the second audio
+output line is over 1 volt (PP). The lower level output connects 
+internally to the RF modulator as in the C-64. The pinout is as follows 
+(facing rear of computer): 
+
+                          ________ Chroma Out
+                         |           
+                         |
+         NC ------8      |      7------ NC
+                         | 
+  Audio Out ------3      6      1--- Luminance & Sync Out 
+   (1VPP)                    
+             ------5           4------ Comp Video Out
+  2nd Audio Out          2
+     (.5VPP)              \________ Ground
+
+*********************************************************************
+
+The joystick connectors are a departure from the "standard" 9 pin "D"
+types that are used on the C-64 and the C-128. The 8 pin joy port
+connectors on the Plus/4 are called Mini-DIN and are the same as the
+joystick ports on the Commodore C16 and C116. Similar DIN plugs were 
+used for Apple (MAC) computers on their printer interface cables. 
+
+The following is a program to test the joystick ports of the Plus/4. 
+
+    10 PRINT "JOYPORT 1="JOY (1)
+    20 PRINT "JOYPORT 1="JOY (2)
+    30 FOR X=1TO500:NEXT
+    40 SCNCLR:GOTO10
+
+This BASIC program prints a pair of numbers on the screen. The numeric 
+values depend on which direction the joystick is moved. Each position 
+of the joystick or a pressed Fire button represents a contact closure
+of one or more pins of the joy port. For example, when the joystick 
+is moved to the left, the number on the screen will go to 7. If no 
+switches are closed, the output number will be zero.
+
+Output   Function
+------   ------------------
+  0      NO SWITCHES CLOSED
+  1      UP 
+  2      UP AND RIGHT
+  3      RIGHT
+  4      RIGHT AND DOWN
+  5      DOWN
+  6      DOWN AND LEFT
+  7      LEFT
+  8      LEFT AND UP
+ 128     FIRE (JOYSTICK #1)
+ 128     FIRE (JOYSTICK #2) 
+
+Here is the pinout for the mini-DIN Joystick ports. It is shown facing 
+the computer. Note the offset center pin! 
+ 
+                                _____ Ground
+                               |  ______ Right
+                               | |
+              SELECT ------8   7 | 6------ Fire
+                                 |
+              +5VDC ------5     4   3------ Left   
+                                   
+                  Down ------2   1------ Up   
+
+     Since Plus/4 joysticks are so rare, standard CBM and Atari types
+could be modified by cutting off the 9 pin "D" connector and installing
+the 8 pin Mini-DIN male plug, or just changing the cable for one with the
+Mini-DIN. Be careful with the wiring! There is a +5 volt source on those
+joyports. You could damage ICs in the computer if you accidently short the
+5 volts to ground. I would put a 100 ohm resistor on the ground-return
+side of the switches just to be safe. 
+
+NOTE: These joystick ports are not the same as a C64!!! 
+
+From Rob Clarke:
+     "One big big tip for your plus/4 is never use autofire joysticks 
+without a properly buffered interface. If you have a simple mini-din to 
+D-sub adapter, make sure it correctly wires /select (pin 8 ) to D-sub 
+GND and never use anything but simple 5-pole joysticks, or you will 
+eventually fry the latch on the TED."
+     "The plus/4 & C16 do not use the ground line (pin 7) for the 
+joysticks. If you look at the schematics, the up,down,left,right & fire 
+lines are connected together between the two ports. The machine 
+distinguishes between them by using a buffered data line (SELECT) instead 
+of ground, with d2 going to port 2 and d3 going to port 1 (commodore 
+never liked to make things simple.) This buffered data line is called 
+/select on the schematics and is put on pin 8 of the joystick port."
+     "If you do use ground, you *probably* will not damage anything but
+programs will not be able to tell which joystick is being moved. Two
+player games will just not work."
+
+AMIGAKIT information: If you already have an AmigaKit adapter cable, 
+you can modify it to allow for two-joystick operation. Remove the shell
+from the mini-DIN plug by pulling it back and note the way the internal
+components fit together when you disassemble the plug. There will be 
+some hot glue on the wires which must be removed enough to get to the
+wires. Desolder the yellow wire from pin 7 and connect it to pin 8 (the
+SELECT line). Since the +5VDC line is not used, you can disconnect it 
+but it doesn't connect to anything via pin 7 of the 9 pin D-sub plug
+as joysticks don't use that pin. When you reassemble the plug, make sure
+you fit the shell notch or "dimple" above the three inline pins which is 
+oriented upwards to insert the plug into the computer.
+     The mini-DIN is a VERY tight fit into the Plus/4 and it must be
+inserted completely to work properly. One or more functions will not 
+work if that plug is not fully seated. I found out the hard way. 
+
+*************************************************************************
+
+The proprietary IC chips used in the Plus/4 are apparently not used in
+any other CBM equipment, and I know of no sources for these parts. The
+rest of the chips are mostly LS TTL devices available anywhere. Here is
+a list of the the major ICs:
+
+U1         7360/8360   40 pin     TED
+U2         7501/8501   40 pin     CPU  (microprocessor)
+U3         8551        28 pin     ACIA (RS-232 interface)
+U5 & U27   6529B       20 pin     I/O  (single port interface)
+U19        251641-02   28 pin     PLA 
+U23        318006-01   28 pin     BASIC ROM 
+U24        318005-05   28 pin     Kernal ROM 
+U25        317055-01   28 pin     function low ROM  \___ 3+1
+U26        317054-01   28 pin     function high ROM /    software
+
+
+Ray Carlsen
+CARLSEN ELECTRONICS... A leader in trailing-edge technology. 

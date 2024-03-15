@@ -1,0 +1,120 @@
+REPLACING THE DRIVE IN THE COMMODORE SX WITH A STAND-ALONE 1541 MECHANISM
+
+           latest additions and/or corrections 9-22-04
+
+> I want to swap the drive from my SX64 and a 1541 stand alone.
+> When I took the drive out of the 1541 it had three white wire
+> connectors and one black. On the SX all the wires go into one white
+> connector and one black. What is the best way to fix this small
+> problem?
+
+     Simple question, complicated answer. ;-) It will take a bit of work to
+fit that replacement drive because the connectors -are- different although
+the drives themselves are essentially the same. Fortunately, the color
+coding of the wires is the same (with some exceptions, discussed later).
+Swapping a stand-alone drive mechanism into an SX involves changing the
+three connectors on that drive into one 15 pin plug that fits the FDD board
+connector. You can use the existing 15 pin plug from either drive as your
+replacement (see precautions later in this article). The black plug is for 
+the read/write head and it needs to be lengthened to reach the connector 
+on the PC board. You can cut the one from the old drive and splice it 
+onto the existing one when that plug is cut off. The four wires inside 
+the shield are color coded and must be spliced and insulated from each 
+other and from any metal around them. Note that one pin (2) on that black 
+plug is not used and that provides a "key" for proper orientation. The 
+"missing" socket pin should line up with the "missing" wire in the plug. 
+     If you carefully examine each white plug, you will see a number 1 on 
+one end. That identifies pin 1 and is how you know which way to wire up 
+and install the new plug. Mark each connector and board with a magic marker 
+or felt tip pen to identify pin one before you start rewiring. Another 
+important bit of information: the white plug on the SX and the white plug
+on a stand alone drive look identical until you turn them over. Notice 
+that the only way the replacement will fit on the SX connector is if it's
+reversed!!! So, if you're going to use the plug from the stand-alone 
+1541, all pins will have to be removed and refitted so that plug will fit 
+the socket and each wire is oriented to the correct position. It would
+be easier to just reuse the large white connector off the SX drive. 
+     Although it's quite a bit of work, I would replace an SX drive if the 
+existing one could not be easily repaired (bad R/W head, for example). 
+I took my own SX and three different stand-alone drives apart to verify 
+this information. That said, there are always unforseen problems with any 
+first-time project. I don't usually make disclaimers but I feel I must in 
+this case. Some of the wires are the same color, so it's easy to make a 
+mistake when rewiring the connectors. That's why I always rewire plugs
+one pin at a time. I make notes as I pull things apart and label each item.
+      Rather than cut and solder, it's easiest to remove each wire from the
+three white connectors by releasing them and pulling them out. The
+retainers can be seen if you look closely at the openings in one side of
+the connectors. Each pin has a tab on one side that needs to be pushed flat
+with a pointed tool so the pin can be pulled out by tugging gently on the
+wire. Don't use too much force or you'll bend the pins. To reinstall those
+pins, the tab will have to be pulled back up a little so the pin will snap
+into the new socket and not fall out. I prefer to use a small jewelers 
+screwdriver (but a large straight pin works fine too) to help slide the 
+pins out of the connectors. The same tool can be used to force the pins 
+tabs back open by pushing the point of the pin into the void under the tab. 
+Too much bending back and forth will break that tab, by the way... and the'
+pin will not stay in the connector. If that happens, the pin will have to 
+be replaced (another one soldered onto the wire). 
+     You will run into a few problems if you try to install a Newtronics
+drive in the SX. It will work, but there are mechanical differences between
+the existing ALPS drive and the later Newtronics mechanisms that make it a
+less than optimal match. Notice that the Newtronics twist-down door latch
+sticks out about 3/8" further that the ALPS push-down door. The Newtronics
+latch will hit the keys when the keyboard is fitted onto the front of the
+computer for storage or transport, but it looks like there is enough
+clearance. The only way to know for sure is to try it. A more difficult
+problem with the Newtronics mechanism is the metal plates that stick out on
+the sides of the case and prevent the SX mounting bracket from being easily
+installed. Compare the drives side by side to see the difference. One fix
+is to grind off the excess metal with a file (looks like a real grunt). If
+you add shims or washers to make the drive fit the SX plate, it will be
+difficult or impossible to remount that plate correctly in the computer.
+Not all the screws will line up with the base underneath unless you redrill
+the plate. Because of those problems, I would go for the ALPS drive as a
+replacement. They are more reliable in an SX because they don't run as hot
+as in a stand-alone 1541.
+     You will need the pinouts of the two types of drives. Note that the
+same wire colors are used more than once. That makes it necessary to trace
+each one back and find out where it originates so you know each one is
+re-wired correctly. To make tracing easier, you will probably want to cut
+the wire ties and free the wires from the bundles. Be careful you don't
+nick or cut any wires! Retie the wire bundles with string when you're
+finished. Note: NC below means no connection.
+
+1541 STAND-ALONE            SX 1541 INTERNAL DRIVE
+
+P5 (SPINDLE MOTOR)          P21 (SINGLE WHITE CONNECTOR)
+ 1  BLACK, common            13
+ 2  BROWN, +12V              12
+ 3  ORANGE, motor on/off     11
+
+P6 (SENSORS)
+ 1  YELLOW, wp ground        15 (note: the SX wire is blue)
+ 2  BROWN, wp LED +          14
+ 3  NC
+ 4  NC
+ 5  NC
+ 6  NC
+ 7  NC
+ 8  RED, activity LED anode  8
+ 9  BLK, activity LED cath   7
+ 10 NC
+ 11 NC
+ 12 ORANGE, wp sensor +      4
+ 13 GREEN, wp sensor ground  3
+ 14 NC
+ 15 NC
+
+P7 (STEPPER MOTOR)
+ 1  RED, +12V                9
+ 2  RED, +12V                10
+ 3  YELLOW, step 2           6
+ 4  ORANGE, step 0           5
+ 5  BLACK, step 1            2
+ 6  BROWN, step 3            1
+
+
+Ray Carlsen CET
+Carlsen Electronics... a leader in trailing-edge technology.
+

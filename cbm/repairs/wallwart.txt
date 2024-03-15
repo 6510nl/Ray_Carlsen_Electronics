@@ -1,0 +1,77 @@
+                 HOW TO FIX a "WALL WART"  12-20-2011
+
+          Repairing that little "throw-away" AC to DC adaptor
+
+NOTE: This article refers to the older style adapter (contains only a 
+transformer, diodes and filter capacitor) and not the newer type adapter 
+designed around a complex switching circuit. Older types are generally 
+larger and heavier because of the iron core transformer inside.
+
+     If the unit is completely dead and, assuming you have a multimeter, 
+check the primary of the internal transformer by measuring the resistance 
+across the prongs that go into the AC outlet. If it measures infinity, the 
+transformer is open and the device is probably not repairable. The 
+transformer usually opens because of an overload... either in the powered 
+device, or because the diodes or filter capacitor in the wart are shorted. 
+Transformers in larger warts sometimes have a fusable link or thermal 
+cutout under the plastic insulation. If you can get to the fuse without 
+destroying the transformer, replace it ONLY with the same part for safety. 
+That fuse represents the only protection against the transformer 
+overheating. Without it, a shorted transformer can get hot enough to start 
+a fire. Don't jumper it! If you measure some resistance across the AC input 
+terminals, the tranny is probably OK and the problem is somewhere else.
+     Warts are usually glued together. You can usually open it by smacking 
+it repeatedly at the place the two halves meet with the handle of a large
+screwdriver. Keep striking it until you hear it crack (makes a hollow
+sound, much like a coconut). Whack it all the way around until it starts
+to separate. Wedge a small knife edge in any place that will open far
+enough, and smack the remaining glued spots. If you try to pry it open, it
+will usually crack where you don't want it to. With a little practice, you
+can open one of those without leaving any marks on the outside. 
+     Now to the insides. Two very common problems with these devices are: 
+1. the wire inside the cable is broken, or 2. there are bad solder
+connections inside the box. Of course, there may be bad components, but
+we'll check the easy stuff first. Most wall warts consist of a small
+transformer, several diodes, and one or more filter capacitors. Voltage
+regulation is usually done in the powered device, not the wart. By the way, 
+some warts are made with only a transformer inside the box. Obviously, that 
+kind will only output an AC voltage. Rectifiers, filter capacitors and 
+regulators will all be in the powered device. 
+     The cable can break anywhere along its length, but is stressed the
+most at the ends (near the wart and near the connector). Note: the cable
+could be cut or "dog chewed" with breaks along its length. To check for
+breaks in the wire, plug in the adaptor and turn on the powered device,
+then bend, twist and push the cable towards the case (don't pull on it). 
+If the wire is broken inside the cable, it should make contact momentarily
+and the powered device will come to life. If the cable is broken near the 
+box, the fix is to unplug the wart, cut off the broken end, and re-splice 
+it into the box. You might have to drill out the strain relief grommet. The 
+cable is usually glued in there and, if so, is hard to remove. 
+     If the cable is broken at the connector end, the connector will have 
+to be replaced. They are usually solid molded plastic and can't be opened. 
+Be sure you get the polarity correct when you attach the replacement! 
+Reverse voltage to the powered device will almost certainly damage it and/or 
+the wart. Polarity may be indicated on the powered device with a small icon 
+that shows plus and minus to the pin and the shell of the connector. Use 
+your meter to find out which wires go to the + (positive) lead of the filter 
+capacitor and which to the negative. There will usually be a line or stripe 
+along the cable to indicate which wire is + or -. The connector center pin 
+is usually positive, but not always. 
+     Bad solder connections are easy to fix. Large electrolytic capacitors
+are not always tied down and the connections break loose due to vibration. 
+Sometimes the transformer and/or diodes are just not soldered properly. 
+Reflow (always add new solder) all the connections on the PC board if in 
+doubt. If the capacitor is bulging out of the top or sides, or is leaking 
+near the wire leads, replace it. The diodes can be checked with an ohmmeter 
+for opens or shorts. The cable wires can also be checked for continuity 
+(wiggle to check for intermittants) with the ohmmeter. 
+     After repairs are completed, a few spots of super glue or silicone 
+rubber sealer around the edges of the half-shells and the wart is back
+together. Tie a rubber band around it until the glue sets up. Hint: test 
+it -before- you glue it! Lastly, if you're testing one of those adaptors, 
+be mindful that it is connected directly to the AC power line! If the case 
+is open and it's connected to AC power, there is a risk of electric shock. 
+Use appropriate caution!!! 
+
+Ray Carlsen CET
+CARLSEN ELECTRONICS... A leader in trailing-edge technology.

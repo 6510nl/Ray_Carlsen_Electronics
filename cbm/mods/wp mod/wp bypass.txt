@@ -1,0 +1,220 @@
+                   1541/1571 WRITE-PROTECT MODIFICATION
+                latest updates and corrections: 9-13-2013
+
+     There is a way to safely disable the write protect circuit in the 1541 
+and 1571 disk drives. This modification would enable writing to or formatting 
+a disk that was write protected or one that was never punched to begin with, 
+such as the backside of a standard 5.25" floppy (sometimes called a "flippy"). 
+Although it's unnecessary to punch the other side of a 1571 disk used in 1571 
+mode with a C128, many users run 1571 drives in 1541 emulation mode with a 
+C64, so disk "flips" are sometimes used to access the reverse side. 
+     An unmodified drive senses whether a disk is write protected by shining 
+an invisible (infrared or IR) light from an LED through the left (notched) 
+edge of the disk to a sensor facing the LED. With no disk in the drive or a 
+if a notched disk is inserted, the write protect sensor (WPS) "sees" the 
+light from the LED. When an unnotched disk (or one with a write protect tab) 
+is inserted, the light to the sensor is blocked. This represents the two 
+logic states of the sensor: on and off. No disk or a notched disk produces a 
+logic low or zero volts out of the sensor and an unpunched disk or one with 
+the write-protect notch covered generates a logic high. The sensor is a 
+phototransistor with its output (in most 1541 drives) tied to connector P6 
+pin 12 (orange wire) and ground on pin 13 (green wire or, in some older 
+drives, violet). P6-12 goes to the input of an invertor IC UA1-5, a 74LS14. 
+That buffer IC outputs an inverted logic level on pin 6, and that is used to 
+"drive" the input of controller IC UC1-6 and VIA IC UC2-14 in most versions 
+of the 1541. Since it isn't the same in all drives, it's important to know 
+how to tap into the correct circuit for the drive you have. The explanation 
+given here will be for the most common versions of 1541, and the following 
+text will use that as a basis for instruction. Specific install information 
+will also be provided for different models such as the SX drive, the 1541C, 
+1541-II, etc.
+     The most obvious way to disable the write protect circuitry is to short 
+out the two wires going to the WP sensor (P6-12 shorted to P6-13 in a 1541) 
+inside the drive. That method will work, but has the disadvantage of also 
+disabling the disk change sense used by the drive to update the BAM when 
+another disk is inserted. If the disk change update is disabled along with 
+the write protect, the possibility exists of corrupting a disk when writing 
+to it. The drive, thinking it is still looking at the first disk, may not 
+update the BAM information before writing new information. At best, you will 
+get a "disk ID mismatch" error, assuming the disks ID numbers (the two digit 
+alpha-numeric information just after the diskname in the header) are 
+different. If they are the same, you can potentially corrupt a disk. There 
+are a few workarounds for that problem. One is to initialize the drive each 
+time you change disks. JiffyDOS makes that easy: @I and <RETURN>. Another is 
+a drive reset via a hacked reset switch to preserve the program in computer 
+memory. With either of those methods, you must remember to do it each time a 
+disk is swapped. 
+     Note what happens when you insert a disk into a 1541C or 1571... the 
+drive spindle motor runs. That "trigger" comes from the WPS circuit. Ideally, 
+any modification to a drive write protect circuit should still allow disk 
+change updating. With the cutting of one PC board trace and the addition of 
+three components (diode, resistor, and capacitor), a drive can be modified
+to allow writing to a protected disk without sacrificing disk change sensing. 
+     The buffer IC output line (UA1-6 in most 1541 drives) is opened by 
+cutting a trace (conductive PC foil) on the PC board. A 10uF 16 volt 
+electrolytic capacitor is installed across the cut trace ends with the 
+negative capacitor terminal going to UA1-6 and the positive lead to the cut 
+trace (actually to the next solder point on the board). Next, a 10K ohm 1/4 
+watt resistor is connected between IC UA1-6 and the +5 volt source (UA1-14). 
+Lastly, a diode is connected between the positive terminal of the installed 
+capacitor and the +5 volt supply, with the cathode lead (indicated with a 
+line or bar at one end) of the diode going to +5v (UA1-14). 
+     To easily disable the modification and return the drive to a normal 
+write protect mode, a SPST (single pole single throw) switch can be wired 
+across the capacitor and installed somewhere on the drive case. With the 
+switch closed, drive operation is returned to normal. When the switch is 
+open, the write protect only is defeated. These added components do not 
+upset normal circuit functioning. 
+
+How it works:
+     With the modification installed, the logic low signal out of the WPS 
+circuit becomes a logic low pulse... just long enough to trigger a re-read 
+of the BAM during the next drive access. The WPS line goes logic high again 
+as the capacitor charges up, allowing the drive to write with the sensor 
+blocked. The 10K resistor functions as a "pull up", necessary because TTL 
+outputs don't normally go above about 3.3VDC on their output lines. The 
+diode is a protection device for the downstream chips. It keeps the DC level 
+from the capacitor to the controller and interface chips from going above 5 
+volts. The resistor, by the way, can be any value from 2.2K ohms to 10K... 
+the value and wattage is not critical. The diode can be any standard silicon 
+type. I used a 1N914 for my drives, but a 1N2004 or equivalent power supply 
+diode will work as well. The capacitor is a small electrolytic, 10uF at 16 
+volts. The added circuit looks like this for all drives. The disable switch 
+is connected across the capacitor. 
+
+             _________________pin 14 (+5VDC)
+             |       |
+             /      |C| <---cathode end
+    resistor \      | | <----diode
+             /      |A| <---anode end
+    |\       |       |
+    | \      |  cut  |
+ ---| /0-----|---X---|--------> to VIA 6522 pin 14
+    |/       |       |          and motor control IC
+ existing    |--][---| <--- capacitor
+ buffer IC   | -  +  |
+             '--o/o--' <--- switch
+
+Installing the modification:
+     Most versions of the 1541 use a standard TTL 74LS14 hex invertor at 
+board location UA1 for the WPS buffer. Pin 6 of that chip is opened for the 
+modification. Newer 1541 drives include board numbers 1540049-1, 1540050, 
+251748, 251777, and 251830 (see NOTE 1). 
+     The WPS buffer IC is UC1 in the very early 1541 long board (includes 
+number 154008-02), and pin 8 is opened for the mod (see NOTE 2). 
+     The later 1541C short board 251854 (sometimes called a 1542) uses UB1 
+as the WPS buffer and pin 8 is opened for the mod (see NOTE 3). 
+     A 1541-II uses a 74LS04 (same IC pinout as 74LS14) for the buffer at 
+board location U9 and pin 8 of the chip is opened for the mod (see NOTE 4). 
+     The drive in the SX uses chip UE2 on the FDD board for the buffer and 
+pin 2 is opened for the mod (see NOTE 5). 
+     Lastly, the 1571 drive WPS buffer is U17 and pin 6 is cut for the mod 
+(see NOTE 6).
+     Obviously a 1581 drive needs no modification since the write protect 
+tab on the disks can be easily opened and closed by the user. 
+
+**********************************************************
+
+NOTE 1: For these newer drives, the buffer IC is located at the left rear of 
+the PC board nearest the serial port connectors. The trace off pin 6 is cut 
+and the added components are soldered to the bottom of the board. The chip 
+pinout and board trace appears as follows when viewed from below:
+
+                                       cut
+                    /-------------------X------0 <---
+     1  2  3  4  5  6  7                  solder pad near
+                                          pins 1 & 2 of
+                                          IC UC1
+     14 13 12 11 10 9  8
+
+***********************************************************
+
+NOTE 2: I don't own a very early version of the 1541, but the buffer IC 
+74LS14 is at board location UC1 (nearest connector P6), and the PC trace 
+to be cut comes from pin 8 of the IC. That line goes to UF5 pin 12 and to 
+UCD4 pin 14.
+
+***********************************************************
+
+NOTE 3. This late version short board 1541 has a metal shield on the bottom 
+of the PC board. There is no need to remove the board since all of the 
+modifications can be done on the top. Board trace (conductive foil) from UB1 
+pin 8 runs under the IC, comes out between pins 6 and 7, and goes to a 
+solder pad. Cut the trace near that pad and solder the components to the IC 
+legs and the foil pad as indicated. The view from above is as follows:
+
+     14  13  12  11  10  9  /8
+                           |  
+     >                     |  
+                           |  
+     1   2   3   4   5   6 | 7
+                           |
+                           X <-- cut
+                            \
+                             0
+                       solder pad 
+
+***********************************************************
+
+NOTE 4: There are two ways to do this modification. Both require removing 
+the mechanical deck from the drive to access the PC board underneath. 
+Option 1: The trace (conductive foil) to cut goes from a solder pad under 
+IC U11 to another pad under IC U10 on the bottom of the board. The exposed 
+trace is cut (remove board to access that trace) and the added components 
+are soldered on the top of the board directly to the chip pins. The 
+components need to be mounted close to the board so they don't touch the 
+underside of the mechanical drive when it is reinstalled. 
+Option 2: remove the PC board and -carefully- cut pin 8 of IC U9 (74LS04) 
+off the board, leaving enough pin stub on the IC for soldering. 
+     With either option, you can mount all the components on the back of 
+the switch instead of on the PC board, then run three wires from the switch 
+assembly to the board. See photos. 
+
+***********************************************************
+
+NOTE 5: The SX drive controller FDD board will have to be removed from the 
+case to access the buffer chip UE2. Cut the line from IC pin 2 and install 
+the components on the top side of the board. Make sure they don't contact 
+any other parts or wires when the board is reinstalled. 
+
+***********************************************************
+
+NOTE 6: A 1571 WPS mod requires removal of the mechanical drive to access 
+IC U17. The mod can be installed on the top of the board without removing 
+it from the case. Use a 22uF capacitor instead of the 10uF specified above. 
+Note that the PC board trace starts at pin 6 of IC U17, goes under (but 
+doesn't connect to) transistor Q7 and on to a solder pad on the board 
+between resistor R18 and ferrite bead FB6. Viewed from above, the trace to 
+be cut appears as follows:
+
+     14 13 12 11 10 9  8
+     |                 |
+     >   U17  74LS14   |
+     |                 |
+     1  2  3  4  5  6  7
+                    |
+                    X <--- cut
+                    |
+                    |
+                    |
+                    |
+                    0 <--- pad
+
+**********************************************************
+
+     I mounted the bypass switch on the front panel of all the drives I 
+modified. I prefer to use the lower half of the case to keep the switch 
+wires from interfering with removal of the case top during cleaning. 
+However, if other drive mods have already been done such as installing a 
+drive reset switch, you may not have that option. Switch locations really 
+depend on how you use your equipment, desktop space, etc. A bypass switch 
+on the rear of a drive makes it harder to accidently "bump" it, but is not 
+easily accessible if your drives are recessed in an enclosed space or are 
+on a shelf away from the workspace. I believe a switch to select normal or 
+bypassed write protection should always be clearly visible on the front of 
+the drive so you always know the WP status when you insert a disk. 
+
+PLEASE let me know if you find any errors or omissions here. 
+
+Ray Carlsen CET
+Carlsen Electronics... a leader in trailing-edge technology.

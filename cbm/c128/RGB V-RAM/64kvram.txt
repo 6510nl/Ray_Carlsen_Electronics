@@ -1,0 +1,52 @@
+       UPGRADING THE C128 FROM 16K TO 64K OF VIDEO RAM    06-06-06
+
+     There used to be an easy-to-install piggyback board made by Chip 
+Level Designs (Lawrence Hiler) back in the 1980s. You would pull the VDC 
+chip, install the board, then plug your chip into it. It had the upgraded
+video RAM chips on it and required no soldering. Unfortunately, that board
+has not been available for years. If you have the skills (or know someone 
+who does), you may be able to make your own board using the info on my 
+site. It shows the CLD PC board layout and photos of the parts used. 
+
+     Upgrading the VRAM on your own involves unsoldering the two original 
+4416 (16K X 4) RAM chips (probably marked something like: MB81416-12) 
+inside the tin can in the middle of the motherboard. The two chips are at 
+board locations U23 and U25 and are very likely soldered in. It's tight in
+there and desoldering chips is a pain anyway, not to mention risky if you
+accidently break a foil trace and don't repair it before installing the new
+chips. You end up covering up your mistake rather well. As a tech, I always
+desolder the original and put in a socket. That way, I have the option of
+putting the old ones back if the upgrade doesn't work for some reason. You
+never want to solder on the board more than once if you can help it.
+Sockets are cheap. An alternative to desoldering the whole chip is to cut
+off all the pins close to the body of the IC, then desolder each pin and
+clean out the holes with wick or a solder sucker so the new chip (or
+socket) will fit. That's much easier on the board, but obviously destroys
+the chips. Not a big deal... they usually end up in the garbage anyway. 
+     So, you'll need two 4464 (64K X 4) RAM chips. Jameco Electronics @
+1-800-831-4242 has them, but you'll need to add $5 for orders under $25,
+then shipping on top of that. They have a WEBsite: www.jameco.com. The
+Jameco part number for the chip is 41582 or 41574 or 41611. Those three
+numbers represent the same chip, but at different speeds, 120ns, 100ns, and
+80ns respectively. All will work and cost less than $3 each. Jameco has the
+sockets too. Order # 38113 or 112230 socket (18 pin DIP single or double
+contact) for less than $0.25 each.
+     For desoldering, you'll want an iron of about 25 watts. Don't be
+tempted to use your 30 year old soldering gun... it will eat that board.
+Make sure you mount the new chips exactly the way the old ones came out.
+There is a notch at one end so you shouldn't get them in backwards. Use a
+marking pen to indicate where the notch goes if necessary. After the new
+sockets/chips are installed, carefully inspect your work for solder
+splashes or bridges between traces, etc. If all is well, put it all back
+together.
+     Power up the computer and observe the opening screen. You might notice
+that just -before- it comes up, the screen looks different than it used to. 
+When the opening screen appears, it should look the same as before. One way
+to tell if you have the upgraded VRAM is with a little BASIC program typed
+in 80 column mode: 
+POKE DEC("D600"),28:POKE DEC("D601"),63:SYS DEC("FF62"):SCNCLR <RETURN>
+If the screen says: READY and looks normal, you have 64K of VRAM. If you
+have only 16K, the screen will fill up with zeros. 
+
+Ray Carlsen CET
+Carlsen Electronics

@@ -1,0 +1,54 @@
+          And we can represent numbers of any size:
+
+                     11110000                F0             240
+                     11111111                FF             255
+                    100000000               100             256
+                1111111111111              IFFF            8191
+            11101000101011010             1D15A           119130
+
+          And so on. It is common to see a '$' sign affixed to a
+      hexadecimal number so that the reader will not take it to be
+      an ordinary decimal quantity. Or sometimes a following 'h'
+      does the same thing. So $1234 or 2345h are to be considered
+      hexadecimal numbers. In this manual, all numbers are in
+      'HEX' unless specifically stated otherwise.
+
+      EPROM's
+
+          Now, consider for a moment the diagram of Figure 1. It
+      shows the 'pinout' of several commonly used EPROM'S. In use,
+      the pins marked O0 through O7 are connected to the data bus.
+      The EPROM, when enabled to do so, outputs data on these pins.
+      Since there are eight output pins, the EPROM can output an
+      entire byte at a time. An EPROM is a 'byte-wide' device.
+          The pins marked A0 through A15 are address pins. The
+      computer imposes a binary address on these pins to specify
+      which-location in the EPROM the data is to come from. The
+      lowest address is, of course, $0000- all address lines low.
+      The highest EPROM address depends on how many address pins
+      there are. The capacity of an EPROM Is usually specified as
+      a certain number of 'KILOBYTES'. A kilobyte is two to the
+      10th power or $400 bytes. (1024 decimal).  A '1k' EPROM like
+      the 2758 must therefore have 10 address pins. The following
+      table gives the maximum EPROM address for several common
+      types.
+
+              TYPE      CAPACITY     HIGHEST ADDRESS
+
+              2758         1k                3FF
+              2716         2k                7FF
+              2732         4k                FFF
+              2764         8k               1FFF
+             27128         16k              3FFF
+             27256         32k              7FFF
+             27512         64k              FFFF
+
+         When the PROMENADE programs an EPROM, the desired EPROM
+     address is applied to the address pins, the data to be
+     programmed into the EPROM at that address is applied to the
+     data pins, and various signals and voltages are applied to
+     other pins as required.
+
+
+                                   -4-
+

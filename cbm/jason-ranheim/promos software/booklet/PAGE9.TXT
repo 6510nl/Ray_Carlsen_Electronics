@@ -1,0 +1,54 @@
+      BO or just B
+
+   Example:
+
+      B1:R2000,5FFF,0,6:B0
+
+  Here, we combine the bank select commands and the read
+  command. First we switch to bank 1 RAM; then we read a
+  27128A into the range 2000 through 5FFF in bank 1; then we
+  switch back to bank 0 RAM.
+      In 128 mode, BASIC starts at 1C01 in bank 0. If no BASIC
+  program is being used, useable RAM in bank 0 starts at 1300.
+
+  HOW BIG A RANGE?
+
+      The question arises: How large must the memory range in
+  the read command be to insure that each and every byte on the
+  EPROM is included? Earlier, we presented a table showing the
+  largest EPROM address for EPROMs of various capacities. If
+  we start at address 0 on the EPROM and read each address to
+  and including the highest address, then we know we have read
+  them all. A little reflection will show that all one has to
+  do is add this highest EPROM address to the chosen computer
+  RAM start address to obtain the necessary computer RAM end
+  address. Some examples:
+
+      We want to read all of a 2732 (4k) EPROM into RAM
+  starting at C000. Since the EPROM address runs from 0 to
+  FFF, the required read command Is:
+
+      RC000,CFFF,0,E0
+
+      A 27256 (32k) is to be read into RAM starting at 4000:
+
+      R4000,BFFF,0,E6  does the job. 4000+7FFF=BFFF.
+
+      A 27128 (16k) is to be read into RAM starting at 3840:
+
+      R3840,783F,0,5  is what is needed.
+
+  THE M COMMAND- Display computer memory.
+
+      This is the command to use to view and alter computer RAM
+  data. To illustrate its use we execute the following:
+
+      MA000
+
+      And there appears:
+
+  >A000 3E 41 00 A9 20 FE 84 D0
+
+
+                             -9-
+

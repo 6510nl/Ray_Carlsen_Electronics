@@ -1,0 +1,53 @@
+       {}2000,3FFF,0,30
+
+       Use the M command to change the data in RAM as you wish
+   it to be. Now program the revised data into the 2764A:
+
+      P2000,3FFF,0,6,7
+
+   PROGRAMMING ERRORS
+
+       While programming an EPROM, PROMOS checks to see that the
+   job is being done correctly. If an error is detected,
+   programming is stopped and you are advised what happened by
+   messages on the screen. For suggestions on determining the
+   source of the trouble, see the section on troubleshooting.
+
+   THE V COMMAND- Verify EPROM data.
+
+       The V command compares the data on an EPROM with data In
+   computer memory. It has two forms: the long form, with
+   parameters exactly the same as in the R command; and the
+   short form which is just V alone with no parameters at all.
+   The short form uses the parameters from the most recent R or
+   P command. The EPROM addresses of all discrepant locations,
+   the checksum and the hashtotal are printed on the screen.
+       Some examples:
+
+       V2000,3FFF,0,6
+
+       Here, we compare data from 2000 through 3FFF with the
+   data on a 2764A.
+
+       P4000,BFFF,0,E6,6:V
+
+       Here, we have programmed a 27256 with data from 4000
+   through BFFF and have followed with the short form of the V
+   command.
+
+   COPYING EPROMS
+
+       The PROMENADE is a very efficient piece of production
+   equipment. One can quite easily program 250 2764's in an
+   hour. The usual procedure is to read an EPROM MASTER into
+   RAM using the R command, then program the duplicates using
+   the P command. It isn't necessary to type a new P command
+   for each copy. Just move the cursor up to the P command line
+   and press RETURN.
+       Here's a simple example of a command that programs
+   2764A's, verifies the data, keeps track of the number of
+   copies that have been made and prints it on the screen:
+
+
+                             -14-
+

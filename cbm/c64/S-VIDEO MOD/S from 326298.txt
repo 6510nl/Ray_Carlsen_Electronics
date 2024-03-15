@@ -1,0 +1,37 @@
+> I have a C64 with a 326298 Rev A. mainboard. As you know, this
+> particular mainboard has the 5-pin A/V connector. What I would like
+> to do is get S-Video output from this machine. 
+
+Hi Larel,
+     There are two ways to do it. The easiest is to use the composite
+signal pin 4 for chroma, and luminance out of pin 1. The b/w signal
+on pin one is wide band in the early board same as the later ones.
+The quality of the display depends on the monitors ability to filter
+the chroma out of composite but I've seen some pretty good results
+with that method.
+     A more professional way is to separate out the chroma directly
+from the VIC chip at pin 14 and use a cap and resistor to tie it to
+one of the A/V pins. I went whole hog and changed the socket on my
+old board to an eight pin and used one of the two top pins as a tie
+point to mount the resistor and cap. I had to snip the solder lugs
+off the new connector so it would fit the old board and put a shim
+underneath to insulate the stubs from the board.
+     The connections are as follows... luminance is pin 1. Chroma
+is taken off the VIC chip at pin 14, that line routed over to the
+A/V socket (now an 8 pin) and connected to one of the top unused
+pins at the rear of the socket. From that pin, connect a 0.1uF cap
+and 330 ohm resistor in series with the final connection to the
+middle pin of the socket, pin 6.
+     With the above arrangement the socket will still work with a
+five pin A/V connection for composite but will now work with an S
+monitor such as a 1702, 1902 or 1084. To run the S output to a TV
+with an S input jack, you need to make an adapter cable with the
+eight pin DIN on one end and a four pin mini-DIN on the other. I
+would add two RCA cables to tie the mono-audio to both TV speakers.
+     Lastly, although the eight pin socket can be salvaged from an
+old dud C64 board, eight pin plugs are hard to get. I use an eight
+pin circular DIN plug (the original A/V plug is U shaped) and I
+removed the two top unused pins so it would fit the new A/V socket.
+Rather than cutting the pins, use a soldering iron to heat them
+from the solder side and just pull them out... much easier on your
+cutters. ;-)

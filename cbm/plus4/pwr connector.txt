@@ -1,0 +1,103 @@
+
+      WHAT TO DO ABOUT THAT SQUARE POWER PLUG ON THE PLUS/4 
+            Latest updates and corrections  02-22-99
+
+     The Plus/4 square power connector is not available anywhere, so if 
+you don't already have the power pack that came with the computer, you 
+only have a few options to make your computer work. 1. fabricate a 
+connector yourself by poking some wires into the computer and soldering 
+to them, 2. modify an existing connector so it will fit the Plus/4 socket, 
+and 3. change the socket on the computer so it can use a standard C64 
+power supply. I have considered these alternatives and will give you the 
+information I have for each. Let me say now that if you value that 
+computer, you should be using a better supply than the old C64 black 
+"brick". 'Nuff said about that.
+     1. The quickest way to get "up and running" is cut the plug off a 
+C64 power pack and attach some heavy buss wire to the four wires so they 
+will fit the Plus/4 socket. You need to know which wires go to which pins. 
+Commodore didn't make the job easy. I have several CBM power packs and 
+each has different colored wires inside the power cable. To determine 
+which is which, you will need a volt-ohmmeter to test the power pack. 
+Since there are only four wires, it's not too difficult. First, with an 
+ohm-meter (and the power supply unplugged from the wall outlet!), find 
+the two wires that show a low resistance (less than 10 ohms). Note the 
+color(s) of those wires. Those are the two wires for the 9VAC output. 
+They go to the two upper terminals of the computer socket (seen facing 
+the rear of the computer). Next, with a voltmeter and the power pack
+connected to the wall outlet, measure the 5 volts DC output. Be careful 
+not to short any of the pins together when the supply is running! The 
+plus or positive meter lead (usually red) will go to the positive 5 volt 
+wire of the supply, and the negative meter lead (usually black) will go 
+to the negative of the 5 volt supply. The polarity is correct if the 
+meter pointer deflects upward (or in the case of a digital meter, it will
+indicate positive voltage). If the meter deflects backwards (or the 
+digital meter shows negative voltage), reverse the leads to the meter. 
+Now you know the polarity of the 5 volts DC output of the supply. Those 
+two wires will be different colors. Write down the information for 
+reference. Again, facing the rear of the Plus/4 computer, the +5VDC
+(positive lead) of the supply goes to the bottom left terminal of the 
+socket, and the - (negative lead) of the supply goes to the bottom right 
+terminal. By the way, if the power supply measures over +5 volts DC, 
+don't use it. That would indicate the regulator IC in it is failing. It 
+would damage the computer.
+     2. There are two types of existing DIN connectors that can be 
+modified to fabricate a working plug for the Plus/4. Actually, that 
+computer was made with one of two types: the four pin square beast that 
+is not available anywhere, and the same seven pin DIN that Commodore 
+also used for the C64. The power packs are identical for both. Note that
+although the computer power socket has seven pins, only four of them are 
+actually used. Most power packs only have four pins installed in the plug. 
+The users manual for my Plus/4 shows the seven pin DIN, but my computer 
+is the square four pin type. With a bit of experimentation, I found that 
+the pin spacing for the two types is identical if several of the pins are 
+cut off the 7 pin, leaving four pins. The following diagram shows what I
+mean:
+
+    O         O           O         O          O        O
+
+  O             O       X            X  
+
+    O         O           O         O          O        O
+         O                     X
+
+   C64 PS PLUG       X INDICATES PINS CUT     PLUS/4 SOCKET
+
+That doesn't mean you can just take a C64 supply and cut some pins off 
+and make it work. The pinout for the Plus/4 is slightly different. Here 
+are the pinouts for the C64 and the Plus/4 for comparison:
+
+ 9VAC ---7           6--- 9VAC   9VAC--- 3         4 ---9VAC
+
+        3             1             
+
++5VDC ---5           4          +5VDC ---1         2 ---GROUND
+     GROUND ---2                                       
+
+        C64 POWER SOCKET             PLUS/4 POWER SOCKET
+
+Notice the pinout is offset by one pin. Another obvious problem is that 
+the 4 pin connector is square. Fitting a round one to the Plus/4 requires 
+cutting the front half of the outer shield off. This exposes the pins, so 
+you must be careful not to allow them to short if the connector is not 
+plugged into the computer but the supply is connected to the AC outlet. 
+Without some kind of shell on the modified plug, it's possible to connect 
+it incorrectly since there is now no keyway to prevent it.
+
+     3. Probably the best way to fix the problem of the four pin square 
+DIN connector on the Plus/4 is to replace it with a standard 7 pin DIN, as 
+is used on the C64. Then, a standard C64 supply will plug right in. Since 
+some versions of the Plus/4 already have the 7 pin DIN socket, I examined 
+my four pin version and discovered that the board will accept either type 
+of connector with no modifications. 
+     If you can find an old dead C64 motherboard, you can rob the power 
+connector from it. If not, those 7 pin DIN right angle sockets are still 
+available from several sources. One is: http://www.digikey.com. There are 
+several Digikey part numbers (because of different vendors) that you can 
+use to order the 7 pin DIN 270 degree sockets:  CP-2370ND, 275-1021-ND, 
+CP-7070ND, and 275-1026-ND. Each costs about US $1.50. Changing the socket 
+requires removing the Plus/4 motherboard from the case and removing the 
+bottom shield (unsoldering). It's similar to the C64 in the way it is put 
+together. 
+
+Ray Carlsen CET
+Carlsen Electronics

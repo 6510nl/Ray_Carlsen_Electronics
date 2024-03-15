@@ -1,0 +1,101 @@
+                                                                      
+           REPLACING THE POWER SWITCH ON A COMMODORE MONITOR
+               Latest updates and corrections: 7-17-2014
+
+     The standard CBM 1084 series and 1902A monitors made by Philips 
+have a separate power supply board mounted on a slide-in plastic tray. 
+The power switch is fastened with two screws to the front end of that 
+tray so it sits just behind the front panel push button assembly. Four 
+wires connect the switch to the chassis. Note the position of the color 
+coded wires and install them the same way on the new switch. It's best
+to remove the old switch but leave it's wires connected, then mount the 
+new switch and transfer the wires one at a time so you don't make any 
+wiring errors. There are other monitors made by a different company and 
+their switch mounts are different. Check the photos to see which one 
+matches your monitor.
+
+MONITOR DISASSEMBLY     
+
+     Position the monitor face down on a cloth or newspaper to prevent 
+scratches on the front panel or tube face. Be mindful that the 
+fold-down door on the bottom front panel is easily broken! Five screws 
+must be removed to pull the rear cover off the monitor. Disconnect the 
+speaker plug (two on stereo monitors) from the upright sub-board 
+as you remove the rear cover. If you fail to do that, it may break the 
+connections to the speaker(s). 
+     For the Philips monitors: To replace the switch, you need to
+remove the power supply board tray from the cabinet. Unsolder the two 
+braided ground straps from the bottom metal shield on the main board. 
+The release tab for the tray is inside a small square cutout underneath. 
+Push the release in slightly with a small screwdriver as you pull the 
+tray rearward. As you are sliding the tray out, unplug any connectors 
+that keep the board from being pulled all the way out. The tray may 
+snag on its wiring, so work carefully. Other monitors such as the 1084D 
+and S-D mount the switch to the front panel, making that switch easier 
+to replace. 
+
+REPLACING THE SWITCH (Philips)
+
+     The mounting holes of the replacement switch may be misaligned 
+with the holes in the plastic tray by a fraction of an inch. If so, 
+the holes in the tray may be trimmed (elongated) outward slightly 
+with a thin sharp knife or a tiny round file so the switch will fit. 
+Although the new switch is designed for machine screws, the original 
+self-tap screws will work fine. Depending on the switch you use, you 
+may need to also trim some of the tray plastic so the switch will 
+fit into that space without binding on the plastic. Cut the wires, 
+one at a time, from the old switch close to its terminals and solder
+them to the new switch. You will probably need to cut the plastic 
+strain relief holding the AC cord to the plastic tray and the other 
+one that bundles the wires. Re-fasten the cord to the tray after the 
+wires are soldered to the new switch. Note that the cord must fit back 
+down into the slot in the tray when it's slid back into place. 
+Reconnect any plugs your removed earlier to the PS board as you slide 
+the tray forward into place. Dress the wiring out of the way if the 
+tray snags or binds. With the tray in place, try the switch a few times 
+to make  sure it latches and unlatches properly before going any 
+further. If it's OK, resolder the shield braids to their previous places. 
+As you reattach the rear cover, don't forget to reconnect the speaker 
+plug... and don't bump the board on the back of the CRT (picture tube)!
+
+THE CBM 1902 (non-A model) AND 2002
+
+     These monitors were made by Fujitsu and have a different layout 
+for the power switch than a 1084. It mounts directly to the front 
+panel (two screws) and uses only two wires. Place the monitor face 
+down on a cloth. Six screws must be removed to pull the rear cover 
+off the monitor. Raise the cover slightly and disconnect the speaker 
+plug by squeezing/pulling the connector, then remove the cover. Note 
+how the original power switch is mounted and how the wires are 
+connected with a small PC board. That board can be discarded along 
+with the switch and the two wires soldered directly to two terminals 
+of the new switch. The other two terminals of the switch are unused.
+     The original installation didn't use the switch mounting holes 
+but just two large washers as clamps at the edges of the switch. The 
+new switch can be mounted in a similar fashion. However, a slightly 
+longer switch actuator may not allow it to release properly when 
+turned off. If so, you can use extra washers underneath the edges as 
+spacers or you can trim a small amount off the end of the switch 
+shaft, no more than 1/8"! I prefer shims because once you trim the 
+plastic off the switch, you can't put it back if you took too much. 
+
+THE AMIGA 1080, CBM 1084S-D and similar models
+
+     This monitor uses a completely different Daewoo (Korea) chassis. 
+The power switch mounts on the front panel, similar to the 1902 and 
+2002 versions. The small PC board must be left in place as it also 
+connects to the front panel power indicator LEDs. The switch wires 
+will be cut off and soldered directly to the terminals of the new 
+switch. As before, you can use a few washers as shims if the switch 
+actuator is too long and it doesn't release all the way when turned 
+off. An alternative would be to trim no more than 1/8" off the end 
+of the switch shaft. If you cut off too much, you'll have to fix it 
+somehow, i.e. lengthen it to make it work. A bit of stiff sleeving 
+slid onto the actuator shaft should work for that. Note that only 
+two switch terminals are used on some monitors although the switch 
+itself has four. Other monitors use all four switch terminals. I 
+have included some photos of the various switch replacements. One 
+of them should match what you have. 
+
+Ray
+     

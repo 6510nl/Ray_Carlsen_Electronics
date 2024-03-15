@@ -1,0 +1,53 @@
+   SPECIAL EPROM's
+
+       There are EPROM's the PROMENADE can read and program but
+   which require special methods. Among these are the 27512,
+   the 27513 and the 27011. We now consider each of these in
+   turn.
+       The 27512 is the standard 64k byte EPROM. It has 16
+   address pins as can be seen in FIGURE 1. The 16th address
+   bit is applied to pin 1. The PROMENADE cannot use pin 1 as
+   an ordinary address pin. Rather, it is normally pulled high
+   by a pull-up resistor. Some other means must be used to
+   bring this pin low for reading and programming the lower 32k
+   of the 27512.
+        A crude, but simple and effective way to do this is to
+   take a short length of 22 gauge stranded hook-up wire and
+   ground one end by securing it under one of the PROMENADE
+   cover mounting screws. To access the low 32k addresses on
+   the 27512, insert the free end of your grounding wire into
+   the programming socket along with pin 1 of the 27512. (Pin 1
+   is the one closest to the operating lever.) To read or
+   program the upper 32k, simply remove the grounding wire.
+      Jason-Ranhein Company can install a switch to handle
+   this more conveniently for a nominal charge. Contact our
+   sales department.
+      The 27513 and the 27011 are 'page-addressed' EPROMs.
+   They have an internal bank switching register which selects
+   one 16k 'Page' of the EPROM at a time. The 27513 looks to
+   the outside world like four 27128A EPROM'S; the 27011 looks
+   like eight.
+      To read or program the 27513, use the control word 4XE2
+   where you substitute for X the number from 0 to 3 of the page
+   you wish to read or program. For example:
+
+      R2000,5FFF,0,40E2
+
+   will read the lowest 16k page of the 27513 into RAM. Another
+   example:
+
+      P4000,7FFF,0,43E2,6
+
+   will program page 3 of the 27513.
+      The 27011 works the same way. Use the control word 4X06,
+   where X is the number from 0 to 7 of the page you wish to
+   read or program.  For example:
+
+      P8000,BFFF,0,4506,6
+
+      This command programs page 5 of a 27011 with data from
+   computer RAM from 8000 through BFFF.
+
+
+
+                            -17-

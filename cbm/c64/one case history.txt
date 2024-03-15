@@ -1,0 +1,56 @@
+               EVEN FOR A TECH, THE JOB ISN'T ALWAYS EASY     9-11-2014
+										
+     Here are some case notes from an actual repair job. One C64 pulled off the 
+shelf had an unknown history. It wouldn't boot (blank screen) and so was stored 
+away for when I had time to dig into it. The only obvious problems it had were
+a bad power switch (sometimes didn't do anything) and a blank screen at bootup.
+     The board was a common 250407. I replaced the switch and tried my DEAD TEST 
+cart on it... nothing. I have a meter on my power supply to indicate how much 
+current the board is drawing, but this one was within the normal range for a C64, 
+namely 700 to 900mA. I felt all the chips to see if any were getting hot (shorted 
+chips will often get very hot quickly). Again, no evidence of a problem there. 
+The only socketed IC was the VIC, so I swapped it into a good board to verify it. 
+I always try the easy stuff first, even if the symptoms lead me elsewhere. 
+     The next step was to narrow the search, so I thought of which IC's fail 
+most often and I replaced the PLA. Flicking the power switch this time produced
+a "garbage" screen... random characters all over. That usually indicates a RAM 
+problem so I plugged in the DEAD TEST cart again, and this time it flashed 8 
+times. I pulled the respective chip and installed a socket. Re-running the test 
+with a replacement RAM produced another series of flashes, this time different. 
+I did that until all eight RAM chips were replaced. Still, the cart flashed bad 
+RAM! Powering up the computer without the cart would sometimes produce a garbage 
+screen, so I checked the address and data lines but they all had pulses on them. 
+What now? I made sure the PLA I replaced was indeed bad by testing it in another 
+board. It was dead.
+     I noticed the pattern of the "garbage" on the screen was not totally random 
+but appeared as a series of horizontal bars of repeating characters. That pointed 
+me to the two RAM interface chips U13 and U25. They were both bad! Replacing one 
+gave me an opening screen but with less than 38911 bytes free, and the other swap 
+gave me a normal opening screen. Now it was time to test the RAM chips I pulled 
+to see if any were actually bad. Nope. They all worked fine when re-installed. 
+So, the DEAD TEST cart is not exactly foolproof (and neither am I) and this board
+now has ten more sockets. As to why both RAM interface chips failed, I can only 
+guess but they were both MOS 7708 chips and those Commodore MOS "clones" of 
+standard TTL chips do seem to have a higher than normal failure rate. The standard 
+TTL version is a 74LS257AN or 74LS257APC. Note that a 74LS257PC will not work.! 
+There is something about that version of the IC that just doesn't work correctly 
+in a C64 or SX64. 
+     So there you have it... another working board, but it took about three hours 
+and ten sockets to get there, and eight were not necessary. Not all repair jobs 
+are this convoluted but the "blank screen" symptom is always a challenge. When I 
+encounter more than one bad IC, I always suspect a failing power supply, but in 
+this case, multiple chip failures was just bad luck. If I had found several bad 
+RAM chips, that does indeed point to a bad PS because those TTL IC's are 
+particularly vulnerable to higher than normal supply voltage. The black brick C64 
+supply can and does do that sometimes. Even if load tested to make sure its normal 
+regulated +5VDC output stays at 5 volts and doesn't creep up after it warms up,
+I don't trust them at all now!
+     I should mention something else here... the very next dead C64 that I worked 
+on was just as crazy. After replacing the bad PLA, I had a "garbage screen" that
+was not a memory chip problem. It turned out to be one of the small logic chips 
+(U27), a 74LS08. Again, the Commodore version of that IC (MOS7712) failed. I am 
+now suspicious of all MOS replacements for small logic chips. 
+
+Ray Carlsen
+CARLSEN ELECTRONICS... a leader in trailing-edge technology
+

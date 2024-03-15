@@ -1,0 +1,876 @@
+------------------------------------------------------------------------
+                         LHA Version 2.55E Manual
+                                               Ver 2.55  Jan. 04, 1996
+------------------------------------------------------------------------
+                          Haruyasu Yoshizaki   SDI00506@niftyserve.or.jp    
+                           		       pcs02846@asciinet.or.jp
+                         		       FEM12376@pcvan.or.jp
+------------------------------------------------------------------------
+Translated and Edited by: Hitoshi Ozawa        h_ozawa@bekkoame.or.jp
+                          homepage:  http://www.bekkoame.or.jp/~h_ozawa/
+------------------------------------------------------------------------
+
+0. Liability
+-----------------
+    The author and the developer of this software will not take
+    responsibility for any damage that may result from the use of this
+    software.  The files contained in LHA255.EXE are distributed "as is"
+    and without any expressed and implied warranties.  The user assumes
+    the entire risk of using the software.
+
+1.  Introduction
+-----------------
+     LHarc, a precursor to the LHA file utility, became one of the
+     standard file compression/extraction utility in Japan despite its
+     slowness. I am also pleased that some overseas users have taken
+     to using this tool.
+
+     I, however, have continued on my research for a new compression
+     algorithm even after releasing LHarc to the public. The fruit of
+     my two years of research is incorporated in the new utility, LHA
+     which I would now like to make public.
+                                              (Feb. 24, 1991 Yoshizaki)
+     Differences between LHA and LHarc:
+     ----------------------------------
+     Improvements:
+     - Higher compression
+       LHA offers a higher compression rate than LHarc especially when
+       compressing large files. On the other hand, compression rate is
+       worse for files smaller than few hundred bytes.
+     - Faster file extraction
+       Extraction algorithm was changed to static Huffman algorith from
+       dynamic Huffman algorithm to decrease file extraction time.
+       Nevertheless, compression time did not decrease as much as I
+       expected.
+     Degradation:
+     - Increased memory usage
+       LHA requires more memory. Use caution when executing LHA from
+       another program or in a child process. When LHA detects memory
+       shortage, it will try to continue by decreasing compression rate.
+     - Only upward compatible with LHarc
+       Files compressed by LHA can not be extracted by LHarc. However,
+       files compressed by LHarc may be extracted by LHA.
+
+2. Copyright
+-----------------
+     LHA is copyrighted by Haruyasu Yoshizaki.
+
+     Microsoft is a registered trademark and MS-DOS is a trademark of
+     Microsoft Corporation in the United States of America and other
+     countries.  Other brand and product names are trademarks or
+     registered trademarks of their respective holders.
+
+3. Simple Usage Examples
+-------------------------
+  To extract files with directories:
+     lha x [archive file name]
+     NOTE: Extension should be specified with archive file name.
+     Example: lha x temp.lzh
+               The above command extracts all files contained in archive
+                file TEMP.LZH.
+  To archive files to an archive file:
+     lha a [archive file name] [file name]
+     NOTE: Do not specify archive file name extension. Archived files
+           are created with extension LZH.
+     Example: lha a temp test1.txt test2.txt
+           The above command compresses files TEST1.TXT and TEXT2.TXT
+           and creates an archive file TEMP.LZH.
+  To convert an archive to to self-extraction format:
+     lha a [archive file name]
+     NOTE: Do not specify file extension. Self-extracting file with EXE
+           extension is created from archive file with LZH extension.
+     Example: lha s temp
+           The above command creates self-extracting file TEMP.EXE with
+           files contained in archive file TEMP.LZH.
+
+4.  Usage
+---------
+  A.  General Format:
+  ==================
+  Å@LHA <command> [-<option>[-+012|WDIR]...] LZH [[DIR\] [FILE]...]...
+
+    <command>: One or more command listed in section B.
+               When omitted, displays quick LHA help
+    <option>:  one of options below:
+               LZH:       archive filename
+               DIR:       base directory name
+               FILE:      compression/extraction file name
+                          (may include path)
+               WDIR:      working directory name
+  B.  <command>
+  =============
+   a (Add)     Add file to an archive file
+               File(s) specified by FILE are compressed and added to the
+               archive file (LZH file). If the archive file does not
+               exists, it will be created. If the file already exists
+               in the archive file, it will be overwritten. (Refer also
+               to u (Update) and m (Move) commands.)
+     < Example 1 >  LHA a ex *.exe
+               Compress all files with extension EXE in the current
+               directory and add to (or create) a EX.LZH archive file. 
+
+   u (Update)  Add/Update file in an archive file
+               File(s) specified by FILE are compressed and added to the
+               archive file (LZH file). If the file already exists in
+               the archive file, the file will be added to the archive
+               only when the modification date of the file is more
+               recent than the one in the archive file. (Refer also to a
+               (Add) and m (Move) commands.)
+     < Example 2 > LHA u ex *.c
+               Compress all files with extension C in the current
+               directory and add/update to a EX.LZH archive file.
+               If the file already exists in the archive file, the file
+               will be added to the archive only when the modification
+               date of the file are more recent than the one in the archive.
+
+   m (Move)    Move file to an archive file
+               File(s) specified by FILE are compressed and moved to the
+               archive file (LZH file). If the file already exists in
+               the archive file, the file will be added to the archive
+               only when the modification date of the file is more
+               recent than the one in the archive file. All files
+               (including those that were not actually updated to the
+               archive file) will be deleted.
+               Specify the -c option to override the date comparision
+               and update all specified files.
+      < Example 3 > LHA m ex *.c
+               Similar to Example 2, but delete all files with extension
+               C in the current drive after updating the archive file.
+               Have the same result as executing the following 2
+               operations:
+                  LHA u ex *.c
+                  del *.c
+
+   f (Freshen) Replace file in an archive file
+               Similar to the u (update) option but only update the file
+               that already exists in the archive file. Files that do
+               not already exist in the archive files are not added to
+               the archive.
+               Specify the -c option to override the date comparison and
+               replace all specified files.
+     < Example 4 > LHA f ex lha.doc
+               Replace file LHA.DOC in the archive file EX.LZH if the
+               modification date is more recent than those in the
+               archive file.
+
+   d (Delete)  Delete file from an archive file
+               File(s) specified by FILE are deleted from the archive
+               file (LZH file).
+     < Example 5 > LHA d ex lha.doc
+               Deletes file LHA.DOC from the archive file EX.LZH.
+
+   e (Extract) Extract file from the archive file
+               File(s) specified by FILE are extracted from the archive
+               file (LZH file). If FILE is not specified, all files
+               in the archive file are extracted.
+               If the file to be extracted already exists in the current
+               directory, the file will be extracted only when the
+               modification date of the file is more recent than the one
+               in the current directory.
+               Specify -c option to override the date comparison and
+               extract all specified files.
+               Files compressed by LHarc (-lzs-, -lz4-, -lz5-) may also
+               be extracted.
+     <Example 6 > LHA e ex
+               Extract all the files included in the archive file
+               EX.LZH.
+     < Example 7 > LHA e ex *.com
+               Extract all the files with extension COM from the
+               archive file EX.LZH.
+
+  x (eXtract)  Extracts directory with files from the archive file
+               File(s) specified by FILE are extracted with their
+               corresponding directory from the archive file (LZH file).
+               If the directories does not exist, they are created.
+               If FILE is not specified, all files in the archive
+               file are extracted.
+               Same as executing LHA E -x1m1.
+      < EXample 8 > LHA x ex
+               Extract all the files included in the archive file
+               EX.LZH with their directories. If file \BIN\CG86.EXE is
+               included in the archive file EX.LZH, BIN directory is
+               created in the current directory and CG86.EXE file is
+               extracted to this sub-directory.
+
+   p (Print)   Print content of an archive to the standard output
+               File(s) specified by FILE are extracted and their
+               contents are printed to the standard output. If FILE is
+               omitted, contents of all files in the archive file is
+               printed to the standard output.
+     < Example 9 >  LHA  p ex lha.doc
+               Extracts file LHA.DOC from the archive file EX.LZH and
+               displays its contents on a screen.
+     < Example 10 > LHA p ex lha.doc > prn
+               Extracts file LHA.DOC from the archive file EX.LZH and
+               print it out to a default printer.
+
+   l (List)    Lists file names
+               Information corresponding to file(s) specified by FILE
+               are printed to the standard output. If FILE is omitted,
+               information concerning all files in the archive file is
+               printed to the standard output.
+               To display the full path name with the file names,
+               specify x option. Files with path are displayed with a
+               '+' prefixed to their names.
+     <Example 11> LHA l ex
+               Information concerning all files in the archive file
+               EX.LZH are displayed on the screen.
+
+   v (View)    View file information
+               Same as l -x1.
+
+   t (Test)    Execute CRC test on the archived file
+               CRC (cyclic redundancy check) test is  executed on
+               file(s) specified by FILE.
+               This option is also used to check for the originality of
+               the distributed LHA.EXE file. The original LHA.EXE
+               displays "This file seems to be ORIGINAL distributed
+               from H.Yoshi." when LHA t lha.exe is executed.
+               It may not make too much sense testing itself, but
+               testing if the new copy of the LHA.EXE program for
+               originality may prevent unsolicited problems.
+               LHA is not able to test files that have been altered by
+               LEXEM, DIET, PKLITE, and LZEXE and files compressed by
+               LHarc.
+     < Example 12 > LHA t ex
+               Test integrity of all files contained in file EX.LZH. 
+     < Example 13 > LHA t lha.exe
+               Test if the file LHA.EXE is the original file distributed
+               by Haruyasu Yoshizaki.
+
+   s (Self-extract)
+               Convert archive file (LZH file) to self-extracting
+               format (SFX file). Two types of self-extracting files
+               may be created. The default option, -x0, which is assumed
+               when type if not specified, creates a small model file
+               that may only self-extract to the current directory.
+               Size of a file created by this option is smaller than
+               the file created by the large model, but sub-directories
+               may not be recreated nor files executed during file
+               extraction.
+               The second type, the large self-extracting model, is
+               able to recreate subdirectories and execute programs
+               during file extraction but the archive file is larger
+               then those created by the small model.
+     < Example 14 > LHA s ex
+               Convert archive file, EX.LZH, to small model
+               self-extraction file, EX.EXE.
+     WARNING:  It is necessary to first create an archive file that is
+               to be converted to a self-extracting format. 's' option
+               does not create a self-extracting file directly a regular
+               file.
+
+  C.  <-option>
+  =============
+               Options may be specified to more fully customize file
+               manipulation operations. Generally, options are specified
+               with numericals 0, 1, 2, or 3, but some commands do not
+               distinguish between 1 and 2. For some options, it is
+               possible to toggle between values 0 and 1 by specifying
+               '+' and '-'. Additionally, options may also be prefixed
+               by a '/' instead  of a '-' to conform to the MS-DOS
+               command syntax.
+
+     -x[0|1]   Use eXtended file names
+               When -x1 is specified as a file compression option, path
+               name is saved along with the file name.
+               When -x1 is specified as a file extraction option, files
+               saved with directory information are extracted to their
+               corresponding directories. If a directory does not exist,
+               they are created.
+               When -x0 is specified, only file name is save to the
+               archive file and files are extracted to the current path.
+
+               If file tc\include\sys\stat.h is compressed to an
+               archive file with its path, -x0 option compressed only
+               file name STAT.H to the archive file while -x1 saves
+               the complete path tc\include\sys\ with the file name.
+               When extracting from the created archive, -x0 extracts
+               STAT.H file to the current directory while -x1 creates
+               directories tc\include\sys in the current directory
+               and extracts STAT.H file in created directory.
+               When -x0 option is specified with the -l option, only
+               file names are listed with their attributes while
+               -x1 option lists directory names with files names.
+
+     -p[0|1]   Distinguish files by Path names
+               When -p1 is specified as a file extraction option, files
+               with a same name in different paths are distinguished.
+               When a numerical is omitted after the 'p', 1 is assumed.
+
+               If files stat.h and tc\include\sys\stat.h is compressed
+               to an archive file, TC.LZH:
+                  LHA e TC.LZH stat.h
+                      tries to extracts both file stat.h and file
+                      tc\include\sys\stat.h to the current directory.
+                      (Only the one most recently modified file is
+                       extracted.)
+                  LHA e -p TC.LZH stat.h
+                      extracts only the stat.h file without the path
+                      name in the current directory.
+                  LHA e TC.LZH sys\stat.h
+                      extracts only the file stat.h file in the
+                      tc\include\sys\ directory to the current
+                      directory.
+
+     -c[0|1]  (ignore file modification day/time)
+               When -c1 is specified with 'u', 'f', 'e', or 'x' command,
+               file modification time check is not executed. This
+               option may be used to restore the old copy of a file
+               from the archive file.
+               When a numerical is omitted after the 'c', 1 is assumed.
+
+     -m[0|1|2]  (do not display query Messages)
+               When -m1 or -m2 is specified as an option, all query
+               messages (eg. Overwrite? [Y/N]) are answered with a
+               Y(es).
+               -m1 and -m2 differs in the following ways when extracting
+               files from an archive:
+                  -m1 Overwrite a file only when last modification
+                      date/time of archive file is more recent.
+                  -m2 Extract all files regardless of modification date.
+                      Affix consecutive number from 000 to 999 as file
+                      extension when file with the same already exists.  
+                                    
+     -a[0|1|2] (ignore file Attributes)
+               When -a1 or -a2 is specified, file attribute is ignored
+               when compressing files (ie. system and hidden files are
+               also compressed) and file attributes are preserved when
+               extracting files from an archive file.
+               Compression:
+                 -a0 (default setting)
+                     System and hidden files are not compressed to an
+                     archive file. However, files with read-only
+                     attribute are compressed with their attribute
+                     intact in the archive file.
+                 -a1 Compress all files with their attributes
+                 -a2 Compress all files with their attributes but also
+                     keep directory name when specified with -r2x1
+                     option (same as -d1 option). Directory name is
+                     listed with -lhd- attribute when archive is listed.
+                Extraction:
+                 -a0 System and hidden files are not extracted from the
+                     archive file. Read-only files are extracted, but
+                     files attributes will not be preserved.
+                 -a1 All files are extracted with their attributes
+                     intact.
+
+     -r[0|1|2] (Recurse operation)
+               When -r1 or -r2 is specified, a command is executed 
+               recursively in specified subdirectories.
+                 -r0 Do not search sub-directories. (default option)
+                 -r1 File name specification mode
+                     Path name is extracted from the FILE name, and
+                     command is executed recursively in its
+                     subdirectories. Used to apply command all files
+                     with matching files names in different directories.
+                 -r2 Directory specification mode
+                     Apply command recursively to all files in a
+                     specified directory and its subdirectories.
+                 WARNING: LHarc actually replaced -r with -x when
+                          extracting files. However, LHA treats -x
+                          and -r differently. Be sure to use the proper
+                          option.
+     < Example 15 > LHA a -r1 source.lzh \source.c \source\*.h
+              Compress files with extensions C and H from directory
+              \SOURCE and all its subdirectories.           
+
+     < Example 16 > LHA a -r2x1 a:\*.*
+              Compress all files in drive A and all files in its
+              subdirectories with their directories intact.
+     Frequently Asked Questions
+        (1) How do I backup disk A: ?
+                        LHA a /r2x1 temp a:\
+            where temp is the name of the archive file
+        (2) How do I extract all directories and files to drive b:?
+                        LHA x arc.lzh b:\
+            where ARC.LZH is the name of the archive file.
+
+     -w[0|1|<Directory name>] (assign Working directory)
+              Specify directory where temporary files are created.
+              When -w is followed by a directory name, temporary files
+              are created in the specified directory. If only -w1 is
+              specified without a directory, temporary files are created
+              in the current directory.
+              When -w option is entirely omitted, temporary files are
+              created in the same directory as the archive file and this
+              temporary file is renamed to an archive file name at the
+              end of the operation.
+              Additionally, when environmental parameters TMP or TEMP is
+              set, the specified directory is used.
+              'w' option may be benefitial in the following situations:
+                 1. When there are not enough free space in the
+                    directory (drive) where the archive file resides.
+                 2. To speed operations by creating temporary files on
+                    devices with faster I/O access time such as RAM
+                    disk or hard disk instead of fds.
+     < Example 17 > LHA a -wd:\  arc.lzh *.*
+               Create temporary files on drive D: to compress all files
+               in the current directory to archive file ARC.LZH.
+
+     -t[0|1] (update Time stamp)
+               When -t1 is specified, modification date and time of the
+               archive file is set to the most recent date/time of files
+               contained in the archive.
+               When -t0 (default) is specified, modification date/time
+               of the archive file is set to date/time when the archive
+               file was created or modified.
+
+     -z[0|1|2] (Zero compress file to archive)
+               When -z1 or -z2 is specified, files are archived to an
+               archive file without being compressed.
+                 -z1 Do not compress all files that are to be archived.
+                 -z2 Do not compress files with extension ARC, LZH, LZS,
+                     PAK, ZIP, and ZOO. Compress other files.
+                 -z3<extension>
+                     Beside files with extension specified with -z2
+                     options, do not compress files with extension
+                     <extension>.
+                     Wildcard characters '*' and '?' may be used to
+                     specify <extension>. (Refer to section F for
+                     further information on wild card characters.)
+                     Extension separator '.' is ignored. It may be
+                     included in <extension> or excluded.
+                     To specify files without any extension, specify
+                     '-z.' as an option.
+                     Multiple extensions may be specified by
+                     sequentially defining extensions to be
+                     uncompressed.
+                     (eg. -zexe -zcom)
+     < Example 18 > LHA a -zcom -zexe archive.lzh *.*
+               Archive all files in the current drive to file
+               ARCHIVE.LZH but do not compress files with extension COM
+               and EXE.
+
+     -o[0|1] (use Old compression algorithm)
+               When -o1 is specified, files are compressed in an format
+               that can be extracted using LHarc ver1.xx. -h0 option
+               is automatically specified when -o1 is specified.
+               Using this option with LHA creates archive file that is
+               more compressed than using LHarc.
+
+      -h[0|1|2] (select Header format)
+               Select header format of the archive file. The default
+               setting is -h1.
+ 
+      -i[0|1] (do not Ignore case)
+               When -i1 is specified, file(s) specified by FILE are
+               treated case sensitivity.
+               Some OSs are case sensitive to file names. Thus, files
+               contained in an archive file may contain files names with
+               upper and lower case characters. Use -i1 option to
+               extract files from these archives.
+               NOTE: File names of files archieved from MS-DOS are all
+                     converted to upper case letters.
+
+               a. When manipulating files in an archive file
+                  (commands f, d, s, e, x, t, p, l, v)
+                 -i0 Do not distinguish between upper and lower case
+                     file names.
+                 -i1, -i2
+                     Distinguish between upper and lower case file
+                     names.
+               b. When compressing files to an archive file
+                  (commands a, u, m)
+                 -i0 Convert all file names to upper case letters.
+                 -i1 Convert all file names with wild card characters
+                     ('*' and '?') to upper case letters.
+                 -i2 Convert all file names with wild card characters
+                     ('*' and '?') to lower case letters.
+                (Refer to section F for further information on wild
+                 card characters.)
+     -n[0|1|2] (do Not display progress report)
+               When -n1 or -n2 is specified, file compress/extraction
+               progress are not displayed.
+                 -n0 Display progress report.
+                 -n1 Do not display ooo..... progress report.
+                 -n2 Do not display ooo..... progress report and
+                     file names.
+
+     -l[0|1|2] (display Long file name)
+               When -l1 or -l2 is specified, path name is displayed with
+               file name.
+                 -l0 Display only file name.
+                 -l1 Display path name to be/save in archive file with
+                     file name. Used to display where in the archive
+                     file the file is being archived.
+                 -l2 Display path name of accessed file name with file
+                     name. Used to display where the files being
+                     archived is located.
+               Note:When -l1 or -l2 is specified, each file is displayed
+                    in 2 rows.
+     < Example 19 > LHA a -r1x1l2 link.lzh c:\link.*
+               Archives all files named 'link.' in all directories
+               below C:\ and display path name of file being archived
+               with the file name.
+
+     --[0|1|2] (allow file name starting with option switch indicator)
+               When --1 or --2 is specified, file name may start with
+               a LHA option switch indicator, '-' and '@'.
+               (Refer to Section E for information on file starting with
+                '@'.)
+                 /-0 Do not allow file name to start with '-' and '@'
+                 -l1 Allow file name to start with '@'.
+                 -l2 Allow file name to start with '@' and '-'.
+              WARNING: Do not use --0. LHA will mistake it for a
+                       file name.
+
+     -s[0|1] (Do not display Skipped file message)
+                When -s1 is specified, 'Skipped <Filename>' message is
+                not displayed. LHA by default displays a skipped message
+                and do not archive/extract files if a file with the same
+                name but with more recent modification date already
+                exist.
+                 -s0 Display skipped file message.
+                 -s1 Do not display skipped file message. Used when LHA
+                     is executed from a batch file.
+
+     -d[0|1] (save Directory name)
+                When -d1 is specified, all files (including system and
+                hidden files) and all files in all subdirectories are
+                archived.
+                NOTE: Same as specifying -r2x1a2 option.
+
+    -f[0|1] (Forcefully write files without checking free disk space)
+                When -f1 is specified, files are archived/extracted
+                without first checking for free disk space.
+                Specify this switch when an error occurs executing LHA
+                on some networked computers.
+
+  D.  Base Directory
+  ==================
+     Base directory may be specified to compress files from and to
+     extract files to several different directories.
+     Base directory may be specified instead of moving to another drive
+     and directory to archive/extract files. Furthermore, several
+     different directories may be specified in one statement.
+     NOTE: When fd drive (eg. A:) is specified, LHA uses the current
+           drive. (Current drive may be displayed by changing to the
+           drive.)
+
+  < Example 20 >
+     A>LHA x program c:\bin\ *.exe *.com c:\temp\ *.man *.doc
+                     ~~~~~~~             ~~~~~~~~
+
+     The above statement is equivalent to executing the following
+     set of commands:
+
+             A>C:
+             C>CD \BIN
+             C>LHA x d:\program *.com *.exe
+             C>cd \temp
+             C>LHA x d:\program *.man *.doc
+
+     To extract a single file to several directories, it is necessary
+     repeatly extracted to each directory.
+
+     WARNING: When several extract to directories are specified to
+              extract a single file, the file is only extracted to the
+              first specified directory.
+
+  E.  MS-DOS Redirection and Batch File
+  =====================================
+     MS-DOS file redirection and pipes and LHA batch file are used to
+     compress/extract many files.
+     MS-DOS restricts number of characters on a single command line.
+     This restriction limits length of a LHA command disallowing many
+     files to be compressed/extracted with a single command.
+
+ a.  Batch File
+     Batch files contains command, options, and parameters  to be
+     executed.
+       1. Batch files name are refered by prefixing the file name with
+          with a character '@'.
+       2. A command may extend across multiple lines. A carriage return
+          is replaced with a space when batch file is executed.
+     WARNING: Batch file may not be called from within another batch
+              file.
+              File name starting with a '@' within a batch file is 
+              treated as a regular file starting with character '@'.
+
+ b.  Pipes and Redirections.
+     A regular text file with content obeying LHA batch file guidelines
+     (refer to a. above) may be piped or redirected to LHA.EXE.
+     However, a batch file may be specified from this text file.
+
+     < Example 21 >
+         C> LHA l /n1 parts > files.txt
+         C> LHA a newparts @filess.txt
+     The first command line writes contents of archive file, PARTS.LZH,
+     to a textfile FILES.TXT.
+     The second command line takes the content of this FILES.TXT and
+     creates a new archive file named NEWPARTS.LZH.
+     Optional parameters may be added to the first command line to
+     create a new archive file containing files selected from the
+     original archive file, PARTS.LZH.
+
+     < Example 22 >
+         C> dir /b | sort | lha a all
+     This command line makes a list of files in a current directory
+     (excluding system and hidden files) without displaying file
+     attributes, sort this list, and create an archive file, ALL.LZH,
+     containing these files.
+     Thus, ALL.LZH file will contain files in the current directory
+     in alphabetical order.
+
+  F. Wild Card Characters (supported after Ver.2.54)
+  ==================================================
+     Along with the regular MS-DOS wild card character set, LHA supports
+     wild card character supported by LSI C. LHA supports the following
+     set of wild card characters:
+         ?  replace with one other character excluding '.' character.
+         *  replace with text string excluding '.' character.
+            (may be null string)
+         +  replace with text string including '.' character.
+            (may be null string)
+         [] replace with a character within the parenthesis. Able to
+            specify range using '-' character. (eg. [a-z] to specify
+            all lower case characters between 'a' and 'z'.)
+
+     < Example 23 >
+         FLABO[_~][1-9A] matches with files FLABO_1 through FLABO_A, 
+                         FLABO~1 through FLABO~A but does not match with
+                         FLABO_ and FLABO..
+         FLABO[_~]*      matches with all files except FLABO..
+         FLABO[_~]+      matches with all files.
+
+  G.  Environmental Variables
+  ===========================
+     Environment variables are usually set in MS-DOS in the AUTOEXEC.BAT
+     file. Use a text editor to set the following variable in this file.
+ a.  LHA and LHARC
+     Set whether to use LHA.EXE or LHARC.EXE. The default setting is
+     LHA.EXE.
+
+ b.  TMP and TEMP
+     Set working directory (directory where temporary files are created).
+     When omitted or when the specified directory could not be found,
+     working directory is set to the current directory.
+     When both TMP and TEMP are set, working directory is set to the
+     directory set by TMP. (Refer also to -w option.) 
+
+ c.  TZ
+     Set the time zone (eg. EST, PST). Used to adjust time when archiving
+     with -h2 option or when extracting files archived by -h2 option.
+     If time zone is not set correctly, file version control supported by
+     LHA may not work properly, and files may not be updated.
+     To set to the Eastern Standard Time (US), SET TZ=EST+5. To set to
+     Japanese time zone, SET TZ=JST-9.
+
+  H.  Return Codes
+  ================
+     LHA returns the following return codes after execution. They may be
+     used in batch files or in other programs to detect errors.
+
+     Code  Description
+      0    Normal termination (No error).
+      1    File extraction error. CRC error, not enough free disk space,
+           or file not found when extracting files from archive.
+      2    Fatal error.  Process terminated without modifying archive
+           file.
+      3    Failed to convert temporary files to an archive file.
+           Temporary archive files named LHTMP???.LZH, created in the
+           working directory, may manually be renamed to an archive file
+           (extension LZH).
+
+  I.  Temporary File Names
+  ========================
+     LHA finds the first available file name with LHTMPxxx.LZH (where
+     xxx is a consecutive number between 000 and FFF) in the working
+     directory to use as a temporary file. It is usually not necessary
+     to know about this file during normal LHA execution.
+
+5. Self-Extracting Archive File (SFX)
+-------------------------------------
+      General Extraction Format:
+         <Self-extraction file> [-x] [-!] [-eDIR] [DIR]
+           /x: do not create new directory.
+           /!: auto-execution batch enable.
+           /a: restore file attributes.
+           [/eDIR],[DIR]; specify directory to extract.
+
+     Self-extraction files are executable archive files (with EXE
+     extension) that extract files within itself when executed. They may
+     also be extracted using LHA tools. Example of a self-extracting
+     file is the LHA file that this file was archived in.
+     LHA is only able to convert archive files created by LHA utility
+     to a self-extraction file. It is not able to convert archive files
+     created by LHarc.
+     Specifying either -x0 and -x1 options creates small model and large
+     model self-extracting files respectively. LHA self-extracting files
+     also have the following features:
+       A.  Telop
+       =========
+          When files are self-extracted from a LHA archive, file named
+          '!' is extracted in a memory and its contents is display on a
+          screen instead of being extracted to a file on a disk. After
+          displaying the content of a file, user is prompted with [Y/N].
+          If 'Y' is entered, process is continued. If 'N' is entered,
+          process is terminated.
+       B.  Directory Specification (effective only when self-extracting
+       =========================== archive file was created with -x1
+                                  option. i.e. large model self-
+                                  extraction files.)
+          Directory where files in a large model self-extracting archive
+          file are to be extracted may be specified.
+     < Example 24 >
+         LHA255.EXE c:\user
+         Extracts files in self-extracting archive file, LHA255.EXE to
+         directory C:\USER. Files may also be extracted to a directory
+         using LHA with the 'e' command:
+                LHA e -x0 lha255.exe c:\user
+       C.  Auto Execution (effective only when self-extracting
+       =================== archive file was created with -x1 option.
+                           i.e. large model self-extraction files.)
+         A batch file named !.BAT in the archive may automatically be
+         executed after extracting files from large model
+         self-extraction file by specifying -! option. !.BAT file is
+         always extracted to the current directory even when extraction
+         directory is specified. If a file named !.BAT already exists in
+         the currently directory, it will be over written. Furthermore,
+         !.BAT must be included in the archive file. A file named !.BAT
+         in the current directory will not be executed after files are
+         self-extracted.
+
+     There are 2 types of LHA self-extracting files, small and large.
+     They are created by specifying -x0 and -x1 options when converting
+     an archive file to a self-extracting format.
+
+ a.  Small Model (Default)
+     Creation command format: LHA s -x0 <archive file> 
+     Small model self-extracting files only contains file name
+     information and do not contain directory information. Even if
+     archive file to be converted contains directory information,
+     created self-extracting file will not. Thus, small model self-
+     extracting files can only be extracted to the current directory.
+     Furthermore, !.BAT file will not be executed when small model file
+     is extracted. However, telop files are extracted in memory.
+     Finally, LHA small model self-extraction file does not have archive
+     file limitation as is imposed with LHarc.
+
+ b.  Large Model
+     Creation command format: LHA s -x1 <archive file>
+     Large model self-extracting files has an advantage of supporting
+     all functions described above. Additionally, if archive file that
+     was converted contained directory information, large model files
+     creates necessary directories when files are extracted. To stop
+     directories from being created, specify the -x option when
+     invoking self-extraction.
+
+6.  Compatibility between LHA and  LHarc
+----------------------------------------
+     LHA is upward compatible with LHarc but much has been changed.
+     Followings are only some of the differences between these two
+     tools and is not a comprehensive list.
+     Files are not sorted
+        The major difference between LHA and LHarc is that LHarc sorts
+        files when creating a new archive file while LHA does not.
+        To archive file in sorted order, use an utility such as dsort,
+        ordir, and fd to sort the files in the directory before
+        archiving them. Files in an archive file may also be sorted
+        by executing a following command line:
+            C> dir /b | sort | lha a all
+        This command archives all files excluding hidden and system
+        files to ALL.LZH in ascending sorted order.
+     -x option must be explicitly specified with -r option
+        -r option is supported to extract files in LHA. Therefore,
+        -x option is no longer activated with -r option. 
+     Support x command
+        x command is supported in LHA to create subdirectories and
+        extract files. x command is equivalent to 'e -x1m1' command.
+     Self-extraction file changes
+        LHA executes !.BAT file in the self-extracting file while LHarc
+        executes AUTOLARC.BAT file. Furthermore, -! option must be used
+        to execute a batch file, and keyword may not be used in LHA to
+        stop execution.
+     Internal date/time convension
+        LHA keeps track of date/time by recording time difference
+        measured in seconds between 1970-01-01 00:00:00 UTC and current
+        date/time. If erroneous date/time is specified, LHA is unable
+        to record them.
+
+7. Acknowledgments
+------------------
+     Following software were used to develop LHA:
+        A-MACROS /Structured Assembler Macros, from AMSCLS.INC
+                  (c) Hortense S. Endoh 1986,1987 ver.2.10.
+       Thank you very much for offering this excellent software.
+
+     Furthermore, following software were used to develop LHA ver.2.55:
+       1. LSI C-86 ver 3.30b  by LSI Japan
+
+     I was just content that I thought that I was able to contribute to
+     improvement in data compression algorithm and influence tools such
+     PKZIP and PAK, but I would like thank people who have further
+     encouraged me to continue with my research to make this version
+     possible.
+          I would like to express my sincere gratitude to Haruhiko
+        Okumura and members of SIG Science on PCVAN BBS (Japan) for
+        the assisting in improving compression algorithms.
+          To K. Miki who provided me with an place to hold a research
+        in archiving and also for offering an opportunity to introduced
+        archiver tools to the public.
+          To K.Okubo who introduced and supported LH113c on overseas
+        networks such as CompuServe and GEnie.
+          To the late Irvin Hoff, CP/M sysop Compuserve, who reviewed
+        the English version for spelling, grammar, and phrasing
+        correctness while struggling with cancer.
+          To the members of FHONYAKU forum in Nifty Serve who prepared
+        the original English LHA manual.
+          Finally, I would like to offer the deepest gratitude to all
+        LHarc and LHA users.
+
+8. Distribution
+-------------------
+        LHA may be freely distributed if the following conditions are
+        obeyed: 
+        1. Copyright notifications must not be altered in any way.
+        2. All documentation files must be included with the
+           distribution file.
+        3. If any modification is made to any of the files, part that
+           was modified must be explicitly stated with the name and
+           contact address (Email, street address, or phone number) of
+           the person who made the modification.
+	4. Make it apparent that LHA is FREE SOFT.
+	   It is necessary to state this in the program description.
+	5. If this program is to be mentioned or included in any
+           publication, it is necessary to state LHA copyright
+           information.
+        6. LHA must be distribution on a medium that is not
+           copyprotected.
+     If all of the above conditions are satisfied, it is not necessary
+     and even discouraged to send the author a mail to obtain a
+     distribution permission.
+
+     Lastly, all files have have been compressed (including self-
+     extraction files) using LHA may be distributed without any
+     notification.
+
+9.  Support
+-------------------
+     LHA is supported in FLABO forum on Nifty Serve BBS (Japan).
+     To users who do not have accesss to Nifty Serve, support for LHA
+     is provided by internet E-mail. 
+     Please send all bug report, questions, opinions, suggestions, or
+     any other comments to:
+
+     Haruyasu Yoshizaki   SDI00506@niftyserve.or.jp    
+                          pcs02846@asciinet.or.jp
+                          FEM12376@pcvan.or.jp
+     
+     Hitoshi Ozawa        h_ozawa@bekkoame.or.jp
+                          homepage:  http://www.bekkoame.or.jp/~h_ozawa/
+10.  References
+-------------------
+  1.  Knuth, D.E., "Dynamic Huffman Coding", J.Algorithms, 6:163-180.
+  2.  Kurita, T.,  "Hard Disk Cook Book", 1987, Shoeisha,Tokyo.
+  3.  Kurita, T.,  "Tool Box of Computing", Huffman Coding, BIT,
+                    70:100-101,1988.
+  4.  Okumura,K.,Masuyama,K.,Miki,K., "Practice and theory of Data
+      Compression",  The Basic, 70(March):1-65,1989.
+  5.  Fiala,E.R., and Greene,D.H., "Data Compression with Finite Win-
+      dows", Communication ofACM, 32:490-595,1989.
+  6.  Okumura,H., and Yoshizaki,H.,  "Introduction to Compression
+      Algorithm", C Magazine 3:1:44-68,1991.
+
+                              - end -

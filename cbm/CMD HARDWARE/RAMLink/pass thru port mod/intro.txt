@@ -1,0 +1,19 @@
+                                                                         from Internet: 2-7-2016
+
+CMD RAMLink
+
+    The RAMLink is a large cartridge with two onboard cartridge slots. The first, “RAM Port”, provides battery backup for another RAM cartridge (typically a Commodore 17xx REU). The second, “Pass-Thru Port”, is not battery backed and is intended for another (non-RAM) cartridge. The RAMLink also includes a parallel port for faster communication with a CMD HD-series hard drive.
+
+    The RAMLink contains built-in JiffyDOS 6.01 KERNALs for both C64 and 128. When equipped with the optional “RAMCard”, the RAMLink can be expanded internally to 16MB of battery-backed RAM using 30-pin SIMMs. The RAMLink provides full CMD DOS support for this large RAM area. It can be partitioned and used much the same as a CMD HD.
+
+    RLDIRECT and Pass-Thru Port Modification
+
+    When the RAMLink is placed in “direct” mode, the $DExx page (IO1) chip select is disabled on the RAMLink’s pass-thru port. The reason for this is for compatibility with RAM cartridges like GEORAM, BBGRAM, and RAMDrive that use the IO1 page. A consequence of this for Commodore REU owners is that you cannot use a 17xx REU in its fast DMA mode while installed in the RAM port, and at the same time use a cartridge such as the SwiftLink/Turbo232 that uses the IO1 page.
+
+    This can be fixed, at the expense of compatibility with those other RAM cartridges, by installing a chip called RLDIRECT from CMD (no longer available) or by performing a small hardware modification described in Commodore World issue 8.
+
+    Pass-Thru Port Modification is shown in the .pdf. 
+
+**********************************************************************************************************
+
+Ray's addendum: Shaun Kleckner wanted to know if a switch could be installed to make the mod reversable. It would appear the upper jumper could be left and only one of the cut traces need be closed with the switch to return to factory operation. In addition, the bottom jumper could be opened with the same switch in the opposite direction. So, a DPDT switch would work. 

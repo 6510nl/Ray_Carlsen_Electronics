@@ -1,0 +1,123 @@
+                          latest updates and corrections 1-31-2020
+
+THE LUMAFIX, INSTALLATION AND SETUP
+
+     This module is a plug-in device that goes between a C64 VIC chip
+and its socket... unplug the VIC chip (it's always socketed) and plug
+the module into the motherboard, then plug the VIC chip into the
+module. Note the orientation of the board and IC with the notches on 
+one end. With three on-board controls, the user can reduce or in most 
+cases eliminate the vertical lines when the computer is used with a 
+high resolution monitor, such as the S-video input of an older TV. 
+These lines are almost invisible when viewing an original Commodore 
+monitor such as a 1702 or 1084 so Lumafix may not be needed. 
+     There are a few things not mentioned in the original instructions
+for the Lumafix module. First and most important is that the original
+heat sink for the VIC chip must be removed to install the module but
+nothing is said about how to replace it. The chip and module sits up
+much higher and the original heat sinks cannot be put back. In all 
+but the latest version (true C, short board 250469) of the C64, the 
+VIC chip will overheat and eventually burn out without a heat sink! 
+Some means of replacing the original must be found to keep that chip 
+from overheating when the Lumafix is used. Even if the original VIC
+socket is removed and the Lumafix is soldered directly, it still sits
+up too high for the original heat sink to be put back. 
+     The two early boards (326298 and 250407) have a metal cover over
+the VIC area and that cover has an internal metal tab that presses
+against the VIC chip to draw away its waste heat. Several other chips
+run very hot normally and fail more frequently because they have no 
+heat sinks. Later boards (250425 and 250466) have a factory metal 
+shield with half a dozen tabs for all the chips that need cooling 
+including the VIC. Note: there are two versions of that metal shield.
+Depending on which shield you have, there are different ways for 
+implementing a VIC heat sink. See photos.
+     Note the latest version C64C (250469) uses a different "family" 
+of chips (85xx series) and those IC's don't need heat sinks. The shield 
+can be removed and safely left off that board or the area around the 
+VIC can be cut out of the shield to allow space for the Lumafix module. 
+     One other point that should be made is about how the Lumafix must 
+be adjusted to clear the screen of vertical lines. When the module is 
+first installed the screen appears much worse than without it. Because
+of this, some have assumed the module must be bad... but it's normal. 
+To adjust the three multi-turn pots for a clear picture they must be 
+turned many times with a jewelers screwdriver. They have no mechanical 
+stops to indicate end of travel unlike standard controls, and it's
+difficult... the screwdriver slips out of the slots repeatedly. Turn
+many times one way and if no correction is seen, start turning the
+other way until the distortion is minimized with that control. 
+     I always start with the center control, minimze the picture lines,
+then go to the far end pot and continue, back and forth until the 
+image is clear. The third control is for color adjustment. You may not
+see any problem unless you're using an S-video cable into a high res
+TV or monitor. Then the color distortion (checkered pattern) error 
+appears and adjusting the color level control should correct it. 
+
+LUMAFIX AND HEAT SINKS
+
+First, some basics... Semiconductors (diodes, transistors, IC's) all
+generate some heat in normal operation. Large complex IC's like the
+VIC and MPU will get hot. It's not just the heat that destroys them 
+but the thermal cycling of heating and cooling that does it. To keep
+the extremes of heat under control, waste heat is transfered to the
+heat sink and into the surrounding air. Since there is little air 
+flow inside a closed c64 case, it's important that the heat sinks are 
+adequate... bigger is better to reduce "hot spots". The best way to
+tell if a heat sink is working: run the computer for 5 minutes with 
+the case closed but case screws removed, then power down and quickly 
+open it and feel the center of the IC or sink. It should NOT be hot 
+but just warm if the sink is doing its job. 
+     There are several basic versions of C64 boards. As mentioned, the 
+two early boards usually have a tinfoil/cardboard shield. That "shield" 
+is good at holding -in- waste heat and not very good at blocking RF 
+interference from the computer. It's best to just remove and discard 
+it. When the metal VIC cover is removed to install the Lumafix, some
+means must be found to replace the VIC heat sink. Without one, in all 
+but the latest board, that IC will get hot enough to burn you after 
+5 minutes running time. For a replacement heat sink in those boards, 
+I propose a metal strip bent into a U shape fitted over the IC and 
+contacting the base metal in the VIC area. That draws waste heat away 
+and into the surrounding metal. That metal strip can be fastened to 
+the metal base with epoxy or some other glue so it can't fall off and 
+short something out if the computer is moved. The first one I ever
+installed was soldered to the base metal but that makes it more 
+difficult to remove the VIC if replacement was needed. Aluminum is 
+easier to work with but can't be soldered and so must be anchored with 
+some type of adhesive such as epoxy. If you use strips of tin or steel, 
+they can be soldered to the shield or the ground foil of the board. 
+     The later version C64 boards with their metal shield must either
+have that shield modified or a portion of it cut out to install the new
+module. Regardless, a heat sink must be used for the VIC. If the 
+shield is not put back, individual heat sinks must be attached to the 
+VIC and other chips that run hot normally: the SID, PLA, MPU and Kernal 
+ROM. Notice those chips are frequent failure items.
+     I don't like the peel-and-stick adhesives as they don't transfer 
+heat very well. I usually use fast set epoxy (JB KwikWeld) to attach
+heat sinks. Once set it's very difficult to remove so if an IC goes 
+bad, the sink goes with it. I make my owns sinks... no great loss.
+     The most difficult computers to work with are the white case C64C
+versions long boards. This is because of the low profile of the white 
+case. That keyboard sits lower, closer to the motherboard, making 
+installation of a proper heat sink for the Lumafix VIC more difficult. 
+Any sink on that assembly will have little airflow around it, so a sink 
+that contacts the original shield is best. As mentioned before, the 
+250469 C64C short board doesn't really need heat sinks on its chips but
+I'm a perfectionist, so I do whatever I can to implement one. 
+     One photo shows a bit of white plastic foam on top of a heat sink. 
+Since the keyboard is so close, that foam can be used to press down on 
+the sink for better contact with the IC when the keyboard is put back 
+in place. With a Lumafix installed inside a white case 64, there is 
+only a few millimeters between the top of the chip and the bottom of 
+the keyboard. The underside of the keyboard acts like a shroud and
+doesn't allow much airflow around it. That makes an effective VIC heat 
+sink more important. Conventional ones with big "ears" will not fit.
+     My photos show some ideas for new VIC heat sinks. They can be
+attached to the chip with epoxy or at least some thermal paste for a 
+good bond, and to the shield or base with epoxy so it will not fall 
+off. If not securely attached somehow, that sink could short something 
+in the computer. 
+     If anyone wants me to install a Lumafix module, they will also get 
+the best heat sinks I can fabricate for all the chips that need it. As 
+always, I welcome questions and comments!
+
+Ray
+

@@ -1,0 +1,75 @@
+ C128, DCR & 1084S: Picture distortion (or no picture) in 80 columns
+              latest updates and/or corrections 02-21-2024
+
+     This problem and solution requires a rather lengthy explanation.
+Through a series of lucky "accidents", a bit of intuition plus user
+input :-) and half a day of digging, I found the cause of this fault. 
+For me, it showed up with the combination of a C128DCR and a 1084S 
+monitor. Since I don't have a 1084S, I tried all the other monitors I 
+have with my three DCR's. 
+     One of my DCR computers hooked up to my CBM 2002 (made for the
+Amiga, just like the 1084S is) produced exactly the symptoms described!
+At low background brightness levels, the picture was almost normal with
+just a bit of horizontal bending in some of the characters. As the
+background (or character) level was increased, the picture would start
+tearing horizontally. Higher levels would blank out the picture
+completely! See the photos pic distort.jpg & pic distort 2.jpg in the
+C128DCR directory.
+     Since only one of my 128DCR computers would produce the fault, I
+decided to look at the signal waveforms going to the monitor on my
+oscilloscope. The horizontal sync signal was reduced from a normal 3.2
+volts peak to peak down to less than 1.5 volts, and it was contaminated
+with "garbage" from the video. The vertical sync signal was normal. I
+tried another RGB cable (one I had made up) and the distortion in H
+sync went away. But if the other cable were faulty somehow, why did it
+work with the other computers? It also worked fine with other monitors
+and the "faulty" 128DCR. What was going on here?
+     I pulled out the schematics and compared the RGB output circuits
+of a C128 (that never showed a problem) with the 128DCR (only one of
+which showed a problem). The circuits use the same "buffer" chip
+between the RGB video controller chip and the monitor outputs. Could
+the chip be marginal? I swapped it out and, although the waveform
+looked only slightly better with the replacement chip, the monitor now
+worked just fine!
+     Summery: This "problem" has many factors that worked together
+perfectly to confuse a technician (me) and a few Commodore users:
+1) Different monitors vary on how much of a "load" they put on the 
+RGBI signal and sync outputs of a computer. 2) Some monitors are more
+sensitive than others about the "quality" of the synchronizing signals
+they get. 3) A computer is designed to drive a "normal" load such as a
+monitor within a certain set of specs. 4) Cables are not all created
+equal!!! In this case, the cable I was using was a 6 foot
+straight-through (pin for pin) extention with a 9 pin D connector on
+each end. It is fully shielded inside. The one I made was not shielded,
+was shorter (about 3 feet long) and worked without distorting the H
+sync signal at all. I must assume that the internal capacitance of the
+shielded cable was too much for the computer output to drive. In
+addition, that particular monitor is sensitive to H sync distortion.
+My other monitors (1084, 1902A) are not. My guess is that the 1084S &
+the 2002 share the same sensitivity when it comes to marginal H sync.
+As for the one 128DCR that showed the fault... after I changed the
+driver chip (U24, 74LS244), that computer would drive the "marginal"  
+monitor with the "bad" cable. The chip was not bad, but in this
+particular application, it was somehow not good enough. This is the
+kind of fault that gives technicians and users alike prematurely grey
+hair (too late in my case). I would expect to see this same problem in
+the plastic C128 as well. In both models, the chip is next to the big 
+80 column VDC chip inside the tin can in the middle of the motherboard. 
+Fortunately, there is plenty of room around the chip to do the 
+replacement "operation".
+
+My recommendation for users that suffer from this problem: the easiest
+thing to do is change the cable. Go for the shortest one you can find
+and try one that's unshielded if you can. Digital signals are hard to
+"contaminate" from external sources. The next best thing... go for a
+replacement 74LS244. They are cheap... only a few bucks at places like
+Jameco Electronics (www.jameco.com) in the USA. It's a generic TTL chip
+and should be available worldwide. Cut the old one out by snipping each
+pin close to the IC body, remove the stubs one at a time and clean the
+holes. Desoldering a chip intact is a pain, and you can do damage if 
+you lift a trace or get the board too hot. Don't feel too bad if you 
+do accidently lift a trace. I did when I was making this investigation. 
+Just make sure you fix it before you install the new chip or socket.
+
+Ray Carlsen CET
+CARLSEN ELECTRONICS... a leader in trailing-edge technology.

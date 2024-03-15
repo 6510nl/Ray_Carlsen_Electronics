@@ -1,0 +1,290 @@
+
+                        1541 CHIPS VS SYMPTOMS
+                latest additions or corrections: 1-1-2016
+
+     This list represents the most common versions of the 1541 in the 
+standard brown case with PC board numbers 1540050 (early ALPS push-down 
+door mechanism) and the 251830 and 251777 (Newtronics twist door 
+mechanism).
+     Although the very early "long board" (white case) 1541 is not 
+represented here, major chip functions are of course similar. That drive 
+used more TTL (so-called "glue logic") chips that were later "integrated" 
+into a single motor control IC. Although functionally identical, newer 
+drives such as the 1541C and 1541-II integrate more functions into fewer 
+more specialized IC's, making some repair parts even harder to find.
+      Although most of the chips in the different versions of the 
+standard brown case 1541 are the same, board layout and some chip ID 
+numbers may be different. To minimize confusion, I will list the two 
+major versions of the drive separately. 
+     In another article (fix1541.txt) I will offer some troubleshooting 
+tips. Included is how the drive should behave during normal operation 
+and what is likely to cause a particular fault. Before suspecting any 
+IC chips, don't overlook more common causes of problems such as a dirty 
+read/write head or sticky rails. Always check the "easy stuff" first 
+such as clogged R/W head and swapping out socketed chips. 
+
+  *****************************************************************
+
+1541 CHIPS VS SYMPTOMS 
+PCB# 1540050 (early version) with ALPS drive mechanism (1982) 
+
+UA1 74LS14 LOGIC
+  Partial failure common cause of "FILE NOT FOUND" error or fail to 
+reset when computer is turned on. Total failure: when drive powered up, 
+red LED stays on and spindle motor runs continuously (check also UB4, 
+UC2, UC4, UC5, UC6, UD3, and UD5). 
+
+UB1 7406 (M53206P) LOGIC
+  Partial failure most common causing "SEARCHING FOR" (also check UC3), 
+computer lockup or "DEVICE NOT PRESENT". Total failure: drive may power 
+up normally, but will not reset when the computer is turned on. 
+
+UB2 TMM2016AP-10 16K SRAM  also TMM2116AP-15 or MB8128-15
+  When drive powered up, motor runs continuously and red LED flashes
+slowly (about 1 flash per second). 
+
+UB3 325302-01 DOS ROM 1
+  When drive powered up, red LED flashes 2 or 3 times repeatedly. 
+
+UB4 901229-03 or -05 DOS ROM 2
+  When drive powered up, red LED stays on and spindle motor runs
+continuously. DOS ROM is a common failure. Check also UA1, UC2, UC4,
+UC5, UC6, UD3, and UD5.
+
+UC1 325572-01 MOTOR CONTROLLER
+  When drive powered up, red LED comes on and goes out, but spindle
+motor does not turn. When LOAD attempted, spindle does not turn, red
+LED flickers, screen displays "FILE NOT FOUND" and red LED flashes. 
+Can also cause spindle to run when drive not accessed.
+
+UC2 6522 VIA (MOTOR CONTROL INTERFACE) 
+  When drive powered up, red LED stays on and spindle motor runs
+continuously. Check also UA1, UB4, UC4, UC5, UC6, UD3, and UD5.
+
+UC3 6522 VIA (SERIAL INTERFACE) 
+  Drive powers up and resets normally. When LOAD attempted, screen
+may indicate "SEARCHING FOR ...", but no motors run and red LED does 
+not light. Computer will be locked up until reset or turned off.
+
+UC4 6502 MPU
+  When drive powered up, red LED stays on and spindle motor runs
+continuously. Check also UA1, UB4, UC2, UC5, UC6, UD3, and UD5. 
+
+UC5 74LS04 (74LS14) LOGIC
+  When drive powered up, red LED stays on and spindle motor runs
+continuously. Check also UA1, UB4, UC2, UC4, UC6, UD3, and UD5. 
+
+UC6 74LS00 LOGIC
+  When drive powered up, red LED stays on and spindle motor runs
+continuously. Check also UA1, UB4, UC2, UC4, UC5, UD3, and UD5. 
+
+UC7 74LS42P LOGIC (DECODER) 
+  When drive powered up, motor runs continuously and red LED flashes
+slowly (about 1 flash every 2 seconds). Red LED may stay on and/or
+motor may stop. 
+
+UD1 7406 (M53206P) LOGIC
+  When drive powered up or reset, spindle motor runs momentarily, 
+but red LED doesn't come on. When LOAD attempted, screen indicates
+"SEARCHING FOR ..." but red LED does not light, spindle runs
+continuously, and screen shows "FILE NOT FOUND"  error. Partial 
+failure: no read, no stepper movement or just buzzes or chatters.
+
+UD2 7407 or 7417 (M53207P or M53217P) LOGIC (R/W CONTROL BUFFER) 
+  When drive powered up or reset, red LED comes on and goes out, but
+spindle motor does not turn. If LOAD is attempted, red LED comes on,
+stepper moves slightly, spindle doesn't turn, "FILE NOT FOUND" and 
+red LED flashes. One failure causes motor to run all the time but 
+the drive otherwise works normally. This IC can corrupt formats.
+
+UD3 74LS86 LOGIC
+  When drive powered up, red LED stays on and spindle motor runs
+continuously. Check also UA1, UB4, UC2, UC4, UC5, UC6, and UD5. 
+
+UD4 9602 (8602) LOGIC (MMV) 
+  Drive powers up and resets normally, but if LOAD is attempted,
+spindle motor runs with red LED out. Screen displays "SEARCHING FOR
+..." and stepper does not move. Check also UE6.
+
+UD5 74LS197 (74177) LOGIC (TIMER) 
+  When drive powered up, red LED stays on and spindle motor runs
+continuously. Check also UA1, UB4, UC2, UC4, UC5, UC6, and UD3. 
+
+UE4 LM311 COMPARITOR (READ LOGIC)
+  Powers up normally. When LOAD attempted, spindle turns and red LED
+comes on, but "FILE NOT FOUND" and red LED flashes. Check also UF3
+and UF4.
+
+UE6 74LS193 LOGIC (BINARY COUNTER) 
+  Drive powers up and resets normally, but if LOAD is attempted,
+spindle motor runs with red LED out. Screen displays "SEARCHING FOR
+..." and stepper does not move. Check also UD4.
+
+UF3 NE592N READ PREAMPLIFIER
+  Powers up normally. When LOAD attempted, spindle runs and red LED
+comes on, but "FILE NOT FOUND" and red LED flashes. Check also UE4
+and UF4.
+
+UF4 NE592N READ AMPLIFIER
+  Powers up normally. When LOAD attempted, spindle runs and red LED
+comes on, but "FILE NOT FOUND" and red LED flashes. Check also UE4
+and UF3.
+
+VR1 UA7812KC (LM340KC-12) +12 VOLT REGULATOR
+  Drive powers up "normally", but motors run slowly or not at all. 
+If that happens, drive access will produce a flashing red activity
+LED and errors "file not found" or "drive not ready" on the error 
+channel. Also suspect an overload (shorted C15) on the supply line.
+
+VR2 UA7805KC (LM340KC-5.0) +5 VOLT REGULATOR
+  Green (power) LED dim, flickers, or does not come on at all, but
+spindle may run continuously and red LED may be dark.
+
+CR1  2 AMP 200V BRIDGE RECTIFIER (FOR +12V) 
+  Drive appears to power up normally, but motors do not run. Should 
+get warm only if the drive is being accessed (motors running). 
+
+CR3  2 AMP 200V BRIDGE RECTIFIER (FOR +5V) 
+  On power up, green and red LED's are dim or dark and spindle motor 
+runs continuously. May be intermittant and "die" after warmup. Part 
+runs very hot normally and is a common failure in this model.
+
+******************************************************************
+
+1541 CHIPS VS SYMPTOMS PCB# 251830 or 251777 with Newtronics drive
+mechanism (1984)
+
+UA1 74LS14 LOGIC
+  Partial failure common cause of "FILE NOT FOUND" error. Total
+failure: when drive powered up, red LED stays on and spindle motor 
+runs continuously (check also UB4, UC2, UC4, UC6, UC7, UD3, and UD5). 
+
+UB1 7406, 7416, M53206P or 7707 LOGIC
+  Partial failure common cause of "SEARCHING FOR" (check also UC3)
+and "DEVICE NOT PRESENT" errors. Total failure: drive powers up OK, 
+but does not respond to computer... no reset or disk access. One 
+failure can lock up computer until it is reset. 
+
+UB2 TMM2016AP-10 16K SRAM  can be TMM2116AP-15 or MB8128-15
+  When drive powered up, spindle motor runs continuously and red LED
+flashes about once per second. 
+
+UB3 325302-01 DOS ROM 1
+  When drive powered up, red LED flashes 2 or 3 times repeatedly. 
+
+UB4 901229-03 or -05 DOS ROM 2
+  When drive powered up, red LED stays on and spindle motor runs
+continuously. DOS ROM is a common failure. Check also UA1, UC2, UC4,
+UC6, UC7, UD3, and UD5.
+
+UC1 325572-01 MOTOR CONTROLLER
+  When drive powered up or reset, red LED comes on and goes out, but
+spindle motor does not turn. When LOAD attempted, spindle does not
+turn, red LED flickers, screen displays "FILE NOT FOUND" and red LED
+flashes. This IC can cause spindle to run without drive access.
+
+UC2 6522 VIA (MOTOR CONTROL INTERFACE) 
+  When drive powered up, red LED stays on and spindle motor runs
+continuously. Check also UA1, UB4, UC4, UC6, UC7, UD3, and UD5.
+
+UC3 6522 VIA (SERIAL INTERFACE) 
+  Drive powers up and resets normally. When LOAD is attempted, 
+screen may indicate "SEARCHING FOR ...", but no motors run and red 
+LED doesn't light. Computer is locked up until turned off or reset.
+
+UC4 6502 MPU
+  When drive powered up, red LED stays on and spindle motor runs
+continuously. Check also UA1, UB4, UC2, UC6, UC7, UD3, and UD5. 
+
+UC6 74LS04 (7713) LOGIC
+  When drive powered up, red LED stays on and spindle motor runs
+continuously. Check also UA1, UB4, UC2, UC4, UC7, UD3, and UD5. 
+
+UC7 74LS00 LOGIC
+  When drive powered up, red LED stays on and spindle motor runs
+continuously. Check also UA1, UB4, UC2, UC4, UC6, UD3, and UD5. 
+
+UC8 74LS42 LOGIC
+  When drive powered up, spindle motor runs continuously. Red LED 
+may stay on, or flash three times and go out. 
+
+UD1 7406 (M53206P) LOGIC
+  When powered up, spindle motor runs momentarily, but red LED
+doesn't come on. When LOAD attempted, screen indicates "SEARCHING 
+FOR..." but red LED does not light and spindle runs continuously.
+Partial failure: no read, stepper doesn't move or just buzzes or 
+chatters. 
+
+UD2 7407 or 7417 (M53207P or M53217P) LOGIC (R/W CONTROL BUFFER) 
+  When drive is powered up or reset from computer, red LED comes 
+on and goes out, but spindle motor does not turn. When LOAD is
+attempted, stepper moves slightly, spindle doesn't turn, and error
+message on screen is "FILE NOT FOUND" with flashing red LED. One 
+failure causes motor to run continuously but drive works normally.
+This IC can cause good reads but corrupted formats.
+
+UD3 74LS86 LOGIC
+  When drive powered up, red LED stays on and spindle motor runs
+continuously. Check also UA1, UB4, UC2, UC4, UC6, UC7, and UD5. 
+
+UD4 9602 (74123) LOGIC (MMV) 
+  Drive powers up and resets normally, but when LOAD is attempted,
+screen indicates "SEARCHING FOR ..." red LED does not light and
+spindle runs continuously. Check also UE6. 
+
+UD5 74LS197 (74177) LOGIC (TIMER) 
+  When drive powered up, red LED stays on and spindle motor runs
+continuously. Check also UA1, UB4, UC2, UC4, UC6, UC7, and UD3. 
+
+UE4 LM311 COMPARITOR (READ) 
+  Drive powers up and resets normally. Spindle motor runs, stepper
+moves slightly, but "FILE NOT FOUND" error, and red LED flashes.
+Check also UF3 and UF4. 
+
+UE6 74LS193 (BINARY COUNTER) 
+  Drive powers up and resets normally, but when LOAD is attempted,
+screen indicates "SEARCHING FOR ..." red LED does not light and
+spindle runs continuously. Check also UD4. 
+
+UF3 NE592N (LM592) READ PREAMP
+  Drive powers up and resets normally. Spindle motor runs, stepper
+moves slightly, but "FILE NOT FOUND" error and red LED flashes. 
+Check also UF4 and UE4. 
+
+UF4 NE592N (LM592) READ AMPLIFIER
+  Drive powers up and resets normally. Spindle motor runs, stepper
+moves slightly, but "FILE NOT FOUND" error and red LED flashes. 
+Check also UF3 and UE4. 
+
+VR1 UA7812KC (LM340KC-12) +12 VOLT REGULATOR
+  When powered up, green power LED comes on and red LED comes on and
+goes out normally, but motors do not run (or move slowly). Drive 
+access will produce a flashing red activity LED and error messages 
+"file not found" or "drive not ready" on the error channel. Note 
+that a shorted Tantalum capacitor C15 can drop the +12V line! 
+
+VR2 UA7805KC (LM340KC-5.0) +5 VOLT REGULATOR
+  Green (power) LED dim, flickers, or does not come on at all. Drive
+appears dead, but spindle motor runs continuously. 
+
+CR1  2 AMP 200V BRIDGE RECTIFIER (FOR +5V) 
+  Drive appears dead, but spindle motor runs continuously with both 
+green and red LEDs dim or dark. May be intermittant and fail after 
+warmup. This part normally runs hot.
+
+CR3  2 AMP 200V BRIDGE RECTIFIER (FOR +12V) 
+  Drive appears to power up normally, but motors do not run. Should 
+get hot only if drive is accessed (motors running) continuously. 
+
+Notes:  UC2, UC3, UB4, and regulators VR1 and VR2 run warm normally
+and bridge rectifiers CR1 and CR3 can run very hot if drive is being 
+accessed. Otherwise, only CR1 (the 5V source) will get hot.
+
+Newtronics drives (twist type door latch) normally run a bit noiser
+(stepper chatter) than earlier ALPS (push down door) types. That 
+mechanism also suffers a high failure rate (open) of the R/W head!
+
+Ray Carlsen CET
+CARLSEN ELECTRONICS... a leader in trailing-edge technology.
+Questions and comments are welcome, especially if you spot a mistake
+here. Thanks!

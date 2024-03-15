@@ -1,0 +1,11 @@
+                        A BETTER WAY TO REPLACE DCR RAM   
+                       updates and corrections 9-27-2021
+
+     One of my least favorite jobs as a repair tech is extracting and replacing RAM chips in a computer. Over the years I've done my share of extracting chips, cleaning the holes and installing sockets for new RAM. It's unpleasant work which, depending on the number of chips, can take several hours to complete and my cost for the parts alone might be over $20. 
+
+     There are now small modules sold in Canada by Francois Leveille <eslapion@videotron.ca> that are designed to replace all RAM at one time. It's SRAM based and so draws less current than CMOS dynamic RAM chips. A single SaRuMan-DCR module easily replaces all four 4464 DRAM chips in The C128DCR! There are photos of one such install in the DCR directory. 
+
+INSTALLATION ON A C128DCR MOTHERBOARD
+
+     For this, my first DCR installation, I used my test DCR motherboard which already had sockets for the four DRAM chips. The module is placed over board IC locations U39 and U40 (clean those holes) after all four original RAM have been extracted or snipped out. The new module directly connects all eight address lines, /CASRAM1, /RAS/, /WE, data lines, +5V VCC and ground. The one remaining unconnected /CASRAM line to the top module is then connected with a short jumper wire to pin (open hole) 16 of U38. That's all there is to it. 
+

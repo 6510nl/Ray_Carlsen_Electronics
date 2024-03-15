@@ -1,0 +1,74 @@
+Short: Conversion utils for C64 FLI and Koala formats
+Type: gfx/conv
+Uploader: po87553@cs.tut.fi
+
+TITLE
+
+     C64Gfx - C64 Koala and FLI to/from ppm converters
+
+VERSION
+
+     1.2 - a full-featured freeware version
+
+AUTHOR
+
+     Pasi 'Albert' Ojala	Internet: po87553@cs.tut.fi OR
+					  albert@cc.tut.fi
+
+DESCRIPTION
+
+     The C64Gfx package contains programs which are used to
+     convert portable pixmap (ppm) files to C64 graphics formats
+     (FLI and koala) under AmigaOS. The package includes ANSI-C
+     source codes for the programs, so they are also compilable
+     in any environment with an ANSI compliant C-compiler.
+
+     In addition to this package you need e.g. PBMPlus to convert
+     Amiga ilbm files to ppm first. And of course some way to
+     transfer files between the machines.
+
+
+NEW FEATURES
+
+     Better dithering algorithm
+
+     Can output to stdout (used with pipes)
+
+     NTSC version of the FLI viewer program (for C64)
+
+
+SPECIAL REQUIREMENTS
+
+     LhA to unpack the archive
+
+     Any C64 to view the results
+
+     Ansi-C compiler to use the converters without Amiga
+
+
+SUGGESTED ENVIRONMENT
+
+     Amiga with A64 or XT with x1541.exe to transfer the files
+     between systems.
+
+
+PRICE
+
+     Freeware - no donations expected (but of course accepted :-)
+
+
+DISTRIBUTABILITY
+
+     The package can be freely distributed, provided that the
+     contents of the files in the archive are not changed. It
+     is allowed to add example files and documentation to the
+     package. The author reserves all rights to the sources and
+     C64 executables.
+
+
+OTHER
+
+     See C=Hacking Issue 4 for more information about the basic
+     operation of FLI. (ccosun.caltech.edu:pub/rknop/HACKING.MAG/)
+
+

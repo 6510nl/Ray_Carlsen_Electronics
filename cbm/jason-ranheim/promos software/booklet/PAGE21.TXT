@@ -1,0 +1,45 @@
+       Here's a BASIC statement that converts a DECIMAL address
+   (DA) from 0 to 65535 into the necessary NUMERIC VARIABLE
+   equivalent (NV%):
+   100 NV%=DA+65536*(DA>32767)
+
+   WHERE'S PROMOS?
+
+       As you use the M command to browse through memory, you
+   come across nothing resembling a sizeable machine language
+   program. So where's PROMOS? It's tucked away in RAM under
+   the Kernal at E000. Operating from there, it leaves
+   everything else available to you. There are a few bytes of
+   code well down on the stack which take care of switching
+   things in and out. In 64 mode, PROMOS hooks in through
+   IGONE. In 128 mode, ICRNCH is taken over as well.
+
+   TROUBLESHOOTING
+
+       The frustrations that can arise programming balky EPROM's
+   can often be avoided by making sure of a few things:
+
+       Make sure your EPROM is erased. Use the D, A or E
+   commands for a quick check.
+
+       Make sure your EPROM is seated properly in the socket and
+   is making contact at all pins.
+
+       Make sure your programming command Is correct.
+   Especially check the CONTROL WORD. If you use an incorrect
+   one you can destroy your EPROM.
+
+       Make sure your PROMENADE is making good contact with the
+   user port connector. The board-edge surfaces may need
+   cleaning. An easy way to do this is to go over them lightly
+   with a pencil eraser.
+
+       Make sure your power supply is in good shape. Commodore
+   64 power supplies have a tendency to get tired after a while.
+
+       You may wish to try a modified programming method that
+   turns off Vpp during read-back as discussed in Appendix B.
+
+
+
+                            -21-

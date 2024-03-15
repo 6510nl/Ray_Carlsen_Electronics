@@ -1,0 +1,135 @@
+                      A TESTER FOR THE C64 POWER SUPPLY      
+                  latest updates and/or corrections 7-7-05
+
+     If you have some experience with a soldering iron and have a multitmeter, 
+you can make a tester to safely evaluate a Commodore "black brick" power supply 
+without risking damage to your computer. You need a 7 pin female DIN connector, 
+some hookup wire and a couple of lamps to use as an artificial load for the 
+supply. If you have a junked C64 board laying around, remove the power connector 
+from it and wire it to a pair of 12 volt car bulbs. I use #1003 12 volt lamps, 
+one each for the two outputs: +5V and 9VAC. The lamps each draw under one Amp. 
+An artificial load is recommended to keep a failing supply from damaging your 
+computer. Connect it to the computer only after tests show it's working OK.
+     Run the supply with the lamps connected for about half an hour or until the 
+case of the supply gets warm. Monitor the 5 volt supply with a DC voltmeter to 
+see if the voltage is too low or (and here is what to really look out for) too 
+high! It should measure almost exactly 5 volts. Low voltage (4.7VDC or less) will 
+cause problems like a blank screen and program crashes with the computer. Less 
+than 4.9 volts usually means the capacitors in the supply are failing. A failing 
+supply may still read 5 volts if not properly loaded! On the other hand, if the 
+voltage starts rising, going up past about 5.2 volts (loaded or not), it means 
+the regulator chip in the supply is failing. Excessive voltage can and will 
+damage the computer. I've seen bad ones that would always work when cold, then 
+fail when they warmed up. The lamp on the 5V line will get very bright if the 
+regulator shorts because the output voltage will rise to about 11 volts. RAM 
+chips in the computer are "TTL" devices and seem the most sensitive to 
+overvoltage. Their "absolute maximum rating" is 6 volts. A leaky regulator may 
+cause the voltage to rise slowly, so you need to monitor it with the voltmeter 
+as the supply warms up. Also check the 9VAC, which will either be there or not. 
+Loss of the 9VAC will produce a blank screen on early C64s even though the red 
+LED is on and the +5 volts is normal. Because the circuitry inside the later 
+C64C is different, loss of the 9VAC or an open fuse inside the  C64C will still 
+allow the computer to work! However, you will not have sound, the cassette will 
+not work, and there will be no TOD clock source for the CIA chips, so some 
+programs may not work. Loss of the 9 volts AC will not damage the computer.That 
+voltage will never be high or low... it's there or it isn't. 
+     Although you could use large resistors for the tester, I prefer lamps
+because they give me a constant visual indication of what's happening. Both
+voltages should be nice and steady. If either lamp flickers, goes out, or goes
+up in brightness, time for a new supply. Since the brick is potted with epoxy,
+it is considered unrepairable. Resistors can be substituted for the lamps, as
+follows: a 5 to 8 ohm, 20 watt resistor for the 5 volt line, and a 10 to 15 ohm
+20 watt for the 9VAC line. Keep in mind both lamps and resistors will get hot
+after a few minutes. Don't set them on any surface like plastic that could be
+damaged by heat, or on metal that could cause a short.
+     The pinout for the connector is as follows (taken from a C64 schematic)
+shown facing the right side of the computer.
+
+         9VAC -----7           6----- 9VAC
+
+      ground -----3             1----- ground
+
+         +5VDC -----5         4----- +5VDC or no connection
+                         2----- ground
+
+Note: although only four pins are actually used, the power connector is a 7 pin
+DIN, as shown. Use pin 5 for +5 volts and pin 2 for ground or minus. The 9VAC
+output is on pins 6 and 7. 
+
+C64 BLACK BRICK POWER SUPPLY... ADDITIONAL INFO:
+
+     Most electronic equipment nowadays is designed around "switching" type power 
+supplies which are smaller, lighter, and are more efficient and so produce less 
+waste heat in normal operation. The original Commodore 64 "black brick" power 
+supply is a simple analog type, that is, it uses a transformer, series regulator 
+and filter capacitors. It is inadequate to supply external devices such as RAM 
+expansion units. It is internally "potted" with epoxy and therefore is unrepairable 
+when it fails. The internal components are cooled by convection through the case... 
+not a very efficient way to do that. The internal supply regulator IC runs hot and 
+fails, sometimes taking chips in the computer with it due to overvoltage on the 5 
+volt line. Anything you can do to keep the PS case cool while the computer is 
+running is a good idea. For example, put the supply down near the floor where the 
+air is cooler and where air is free to circulate around it. 
+     There are actually several ways the original C64 brick can fail. The most 
+common is that the computer simply will not turn on... no red LED indication on 
+the C64. That means the +5V from the supply is low or missing. Strangely enough, 
+sometimes such a failed power supply can be made to work by leaving it connected 
+to the computer with the computer turned on, then disconnecting and reconnecting 
+the AC plug of the supply. If the computer comes up, you know the supply is on its 
+way out. Bad capacitors or an open regulator are possibilities, but since the 
+supply cannot easily be opened for repairs, knowing what failed doesn't help much. 
+     One other way the supply can fail is by overvoltage. If the supply regulator 
+shorts out, that can put almost 12 volts on the 5 volt line. Since most of the chips 
+in the computer can't take much over 5.5 volts, they are almost instantly destroyed 
+by overvoltage. The problem is, you will not know the supply caused the failure. 
+It's a silent killer. RAM chips in the computer seem most sensitive, and if you find 
+one or more have failed (blank screen) and the chips are getting hot quickly, 
+suspect a failed power supply as the cause. Whatever you do, don't connect a 
+suspected bad PS to another computer until you get it tested. Keep in mind a failing 
+supply may not produce overvoltage until it gets warmed up, but it can and will 
+damage every computer connected to it! 
+     If you have only the original black (or white) brick to work with, consider 
+using "the computer saver", a protection circuit you can build yourself. It is 
+designed to open the 5 volt line to the computer before the voltage goes high 
+enough to damage chips. Until that happens, the saver is inactive. The saver can 
+be constructed "stand alone" with DIN connectors on each end to be used inline 
+between computer and PS, or the circuit can be built into the C64. I prefer the 
+latter method because the computer can then be used safely with any compatible 
+supply, and you don't need to hunt around for DIN connectors which are getting 
+hard to find. The "saver" article is on my home website, and photos of typical 
+installations are found along with schematic diagrams of the computer on my other 
+site.
+     After-market C64 power supplies were designed "beefier" with heavy duty 
+regulators and larger internal air-cooled heat sinks. Some supplies are not much 
+larger than the CBM brick, and the better ones were made with metal enclosures. 
+If the regulator IC is mounted on the metal case, waste heat is radiated directly 
+into the air... a much better way to do it. All of those units kept the "analog" 
+or "linear" design and so were large and heavy. Building such a unit from scratch 
+is not too difficult if you can find a power transformer with two 9 volt secondaries 
+that can carry at least 1.5 Amps each. As an alternative, two transformers can be 
+used, but of course the final product will be that much bigger and heavier. The more 
+power required, the bigger the transformer and regulator needed. Other components 
+such as filter capacitors remain the same. Note that a beefier supply means the +5 
+volt output can supply more current. The 9VAC has the same 1 Amp spec for all 
+versions of the C64 and C128. The C64 supply 5 volt output is rated at 1.5 Amps 
+maximum. The supply for the 128 has a 4.5 Amp rating, but because it is a switcher, 
+it is not that much larger than the C64 brick. 
+     A new Commodore REU (RAM Expansion Unit) came packaged with an upgraded power 
+supply to safely run it and the computer. The new supply was a switching type much 
+like the C128 power pack which can safely take the heavier load. The REU supply is 
+rated at 2.5 Amps for the 5 volt supply and 1 Amp for the 9VAC, and its power 
+connector fits the C64. If you buy an REU and it doesn't come with a power supply, 
+a C128 supply can be modified to work by changing the connector to fit your C64. 
+Even better, a "pigtail" arrangement (leaving the original 128 connector and 
+attaching a C64 power connector along side it) would allow either computer to be 
+used with the same supply, but not at the same time, of course. 
+     Building your own switcher is not recommended. The design of such supplies is 
+very complex and demanding of its components, and just finding the correct parts 
+would be difficult. Places like DigiKey (www.digikey.com) and Mouser Electronics 
+(www.mouser.com) sell ready-made, small, high current +5 volt switcher supply 
+"modules" cheaper than you could buy the parts to build one. One of those plus a 
+9 volt 1 Amp transformer and a case would get you a better supply than you could 
+ever build. That's how I would do it if I were starting from scratch.
+
+Ray Carlsen CET
+CARLSEN ELECTRONICS

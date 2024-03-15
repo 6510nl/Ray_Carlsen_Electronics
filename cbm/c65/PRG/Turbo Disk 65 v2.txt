@@ -1,0 +1,121 @@
+                     Anleitung zu TURBO DISK 65 V2
+
+Allgemeines
+Das Programm ist vollständig in BASIC geschrieben und ermöglicht
+alle normalen Diskettenoperationen sowie einige Sonderfunktionen.
+Alle diese Funktionen werden mit den hinter den Menüpunkten ange-
+gebenen Tasten aufgerufen. Das Programm wurde auf einem C65, ROM-
+Version 910111, entwickelt. Für die Lauffähigkeit auf anderen ROM-
+Versionen kann daher keine Garantie übernommen werden.
+
+
+WICHTIGER HINWEIS!
+Das Programm ist eine Public Domain Software, das heißt, es darf
+frei kopiert und weitergegeben werden. Der kommerzielle Verkauf
+ist aber unzulässig.
+
+Die Funktionen im einzelnen:
+
+Formatieren (A)
+Nach einer Sicherheitsabfrage wird der Diskettenname (maximal 16
+Zeichen!) und danach die ID-Nummer (2 Zeichen!) eingegeben. Die
+Diskette wird formatiert. Nach dem Formatierungsvorgang wird das
+Inhaltsverzeichnis der Diskette  ausgegeben. Vorsicht! Eventuell
+auf der Diskette vorhandene Daten werden überschrieben.
+
+Inhaltsverzeichnis (B)
+Das Inhaltsverzeichnis der Diskette wird auf dem Monitor ange-
+zeigt.
+
+Programm löschen (C)
+Das Inhaltsverzeichnis der Diskette wird zunächst angezeigt. Da-
+nach kann man den Namen der Datei, die gelöscht werden soll, ein-
+geben. Vorsicht! Das Programm ist dann für immer von der Diskette
+gelöscht. Sollte dieser Menüpunkt einmal versehentlich aufgerufen
+worden sein, genügt es, einfach keinen Programmnamen einzugeben.
+Nach der Meldung "Name fehlt" springt das Programm in das Menü zu-
+rück.
+
+Bereinigen (D)
+Alle nicht geschlossenen Dateien werden gelöscht und der Speicher-
+platz auf der Diskette wieder freigegeben. Danach kehrt das Pro-
+gramm in das Menü zurück. Vorsicht! Bei älteren ROM-Versionen wer-
+den alle Blocks der Diskette freigegeben. Bei späteren Speiche-
+rungsvorgängen könnten die Daten auf der Diskette eventuell über-
+schrieben werden.
+
+Name ändern (E)
+Nach der Ausgabe des Inhaltsverzeichnisses kann man zuerst den al-
+ten und dann den neuen Namen des Programms eingeben. Sollte die
+falsche Diskette eingelegt worden sein, kann man, wenn man keinen
+Namen eingibt, ins Menü zurückkehren.
+
+Programm laden (F)
+Mit dieser Funktion ist es möglich, direkt ein anderes Programm zu
+laden und zu starten. Das Programm, das geladen werden soll, muß
+mit RUN gestartet werden können. Das Programm TURBO DISK 65 V2
+wird dabei beendet.
+
+Initialisieren (G)
+Das Laufwerk wird auf die eingelegte Diskette initialisiert.
+
+Kommando (H)
+Mit dieser Funktion ist es möglich, alle anderen Floppykommandos
+zu senden. Es können alle Befehle, die sonst mit umständlichen
+Open-Close-Befehlen gesendet werden müßten, benutzt werden. Wenn
+Sonderzeichen, wie Doppelpunkt oder Komma, verwendet werden sol-
+len, muß das gesamte Kommando in Anführungszeichen stehen.
+
+TURBO DISK speichern (T)
+Das Programm TURBO DISK 65 V2 speichert sich selbst auf Diskette
+ab.
+
+ASCII Code (J)
+Mit dieser Funktion ist es möglich, den gesamten ASCII-Code eines
+beliebigen Programms auszugeben. Dabei wird das Programm byteweise
+geladen und jedes Byte auf dem Bildschirm ausgegeben. Einige Bytes
+ergeben allerdings Steuerkommandos für den Computer, die sich in
+verschiedenen Bildschirmdarstellungen bemerkbar machen. Leider ist
+es nicht möglich, derartige Bytes abzufangen. Zum Schluß wird die
+Programmlänge in Bytes und Blocks ausgegeben.
+
+Programmlänge (L)
+Das Programm wird analysiert und die Programmlänge in Bytes und
+Blocks ausgegeben. Das kann bei längeren Programmen einige Zeit
+dauern.
+
+Dez - Hex (M)
+Mit dieser Funktion ist es möglich, Dezimalzahlen in Hexadezimal-
+zahlen umzuwandeln und umgekehrt.
+
+F-Tasten belegen (N)
+Das Programm wird beendet und die F-Tasten werden mlt den wichtig-
+sten DOS-Befehlen und anderen Kommandos belegt. Die Belegung wird
+auf dem Bildschirm angezeigt.
+
+C64-Modus (O)
+Der Computer schaltet in den C64-Modus; das Programm wird beendet.
+
+Ende (P)
+Das Programm wird beendet.
+
+                              VERTRIEB
+ 
+Das Programm kann direkt bei mir bestellt werden. Dazu ist erfor-
+derlich, eine 3,5"-Diskette an mich zu senden. Bitte vergessen Sie
+nicht das Rückporto und die Angabe Ihrer genauen Adresse. Falls
+Sie keine Diskette zur Hand haben, können Sie auch 2,- DM (evtl.
+in Briefmarken) beilegen. Die Zusendung des Programms erfolgt dann
+umgehend.
+
+
+Einsendungen bitte an folgende Adresse:
+
+                                   Oliver Biasin
+                                   B1ütenstr. 38
+                                   91220 Schnaittach
+
+
+Noch ein Hinweis an alle C 128-User: Das Programm ist auch für den
+C 128 erhältlich. Gegen Einsendung einer 5,25"-Diskette erhalten
+Sie die C 128-Version.

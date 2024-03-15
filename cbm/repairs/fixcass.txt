@@ -1,0 +1,83 @@
+                  REPAIRING AUDIO/DATA CASSETTES
+            latest updates and/or corrections 6-17-07
+
+First of all, don't force anything... it will just chew up the tape.
+Lets start with the worst case: a reel that will not turn. Examine the
+cassette and see if the tape is somehow snarled and jamming the reel.
+If so, you will probably have to open it up to find out what happened
+and hopefully, fix it. If the shell has screws holding it together...
+it's easy to get it open. If it has no obvious screws, it's probably
+glued together. You can still open it if you're careful, but you may
+have to transfer the tape to another shell if the original is broken by
+forcing it open. Make notes of the position and location of the tiny
+parts inside as you work! If it's an important tape you're trying to
+save, first open another one for practice. At some point, you'll want 
+to turn the reels to advance the tape one way or the other. You can 
+make a tool that fits the reel hubs from a pencil wrapped with enough 
+Scotch tape to give it a snug fit. 
+    
+Cassettes are made up of two half-shells. To open a glued shell, take
+a small knife and find a spot in the case along the seam that the knife
+edge can penetrate. Normally the front of the cassette (careful of the
+tape) provides such a starting point. While prying slightly with the
+knife, tap around the edges of the shell with the handle of a small
+screwdriver. As you work the knife forward, tap just ahead of it to
+crack the seal. Don't force it or the plastic will crack sideways
+instead of along the seal. Keep working forward until you get the shell
+open. If you get stuck in one spot, try working the other direction.
+The combination of applying force with the knife edge while smacking
+the case at the seam will open it all the way around.
+     Once it's open and you correct the problems, you can put it
+back together and glue it in a few spots with a -tiny- amount of super
+glue or plastic cement. CAUTION: super glue tends to wick it's way
+-everywhere- and will get on the tape if you're not careful! It's best
+to only apply the glue to the sides and rear of the shell... stay away
+from the front. Use small strips of Scotch tape to hold the shell
+together until the glue sets up, or use the tape alone to hold the
+shell together long enough to copy the tape over to a new one. If you 
+use superglue, as a precaution, make sure the tape is wound all the way 
+to one end so if any glue does get on it, it's only on the leader and 
+not the tape.
+     With regards a cassette that is just "sticky" or sluggish... the
+most common reason is that the tape is unevenly packed. You can see
+that by looking at it. The reel pack will look bumpy, not smooth. 
+Sometimes you can free it up by rapping it flat against a table top, 
+first on one side, then the other. When it starts turning more freely, 
+stick it in a player and wind it to the end, then back all the way to 
+the beginning to repack it. It should then work normally again. Note 
+that some machines will shut down while playing or winding "sticky" 
+tapes because it requires too much torque from the machine. The player 
+thinks it is seeing "end of tape" and shuts off.
+     Cassette tapes are most difficult to splice because they're so
+small. If the tape is damaged, you may have no choice but to edit out
+the bad area. Be aware that audio tapes are not as critical as video
+tapes as far as wrinkles going over the heads. If intact (not badly
+stretched or torn), even if badly wrinkled, leave it alone... it should
+still play although the sound may be a bit muffled.
+     If the tape is torn, broken or stretched so badly it will not
+play, try to find some splicing tape (Radio Shack has a kit with tape
+and a splicing block in it) to do the job correctly. If you only want
+it to last long enough to dub it over, go ahead and use scotch tape.
+Trim the broken tape ends if necessary to make a neat splice. Do not
+overlap the ends, but rather butt them close together and put the tape
+over the two ends on the back side of the tape (so it will face away
+from the heads in the machine). If you're not using a splicing block,
+make sure the tape is straight when the splice is done. If it's
+crooked, it will skew in the machine and may be damaged further. Redo
+the splice if necessary until you get it right. Use tweezers to hold
+the tape so you can cut off the excess splicing tape with scissors. If
+the splice is too wide, it may stick in the guides of the player.
+     One other common problem with "bad" tapes is the infamous "half
+twist". When playing such a tape, you may suddenly find the voices
+muffled and playing backwards. If there is a half twist in your tape,
+there is another one in there somewhere! The tape must be pulled out
+and rewound by hand until the second twist is found.... not fun! A full
+twist means that the tape has somehow jumped over one of the reels. The
+cassette will have to be pulled apart and the reel flipped over to
+correct it. As an alternative, run it to the end (by hand) and redo the
+end splice to the leader. It's a slow and tedious process, but I've
+done it. I used to repair audio tapes (talking books) for the local 
+library.
+
+Ray Carlsen 
+CARLSEN ELECTRONICS... a leader in trailing-edge technology.

@@ -1,0 +1,97 @@
+
+           TROUBLESHOOTING THE COMMODORE 1802 MONITOR 
+            Latest updates and corrections  9-14-2020
+
+This information is for technicians only...
+
+     One very common problem with this monitor is a shorted deflection yoke. 
+The yoke is the set of coils that sit on the neck of the CRT up against the 
+bell of the tube. Normally a yoke rarely fails, but I've seen quite a few 
+1802 monitors where the H sweep windings have corroded due to the glue the 
+factory used becoming corrosive and "eating" the copper yoke wires. You 
+can't see the damage until you pull the yoke and examine the windings. One 
+other source of corrosion comes from the little black plastic wedges they 
+used to stabilize and cushion the yoke on the bell of the tube. Without the 
+wedges, the yoke would tilt (usually downward) and that misalignment affects 
+the convergence at the edges of the screen. So, if you remove them for an 
+exam, put them back in another spot (keeping the same yoke orientation) and 
+reattach them to the tube with silicone rubber sealer (aka bathtub caulk). 
+I like to use black electrical tape as an insulator between the wedges and
+the yoke when they are re-installed. 
+     The glue that causes problems in many older electronics devices is 
+tan or light brown in color when new. As it ages, expecially when near a 
+source of heat, it turns dark brown, then black. At that point, any copper
+near or under it will be eaten away... copper board traces, component 
+wires, anything. The reason is, when the glue fails like that, it becomes
+hygroscopic (absorbs water out of the air) and that's what corrodes the 
+copper. All such glue should be removed and the damage it caused repaired. 
+I have included a few photos of how that glue appears and one of a yoke 
+that was being repaired.
+     If the yoke windings are arcing or shorted, the symptom will be a 
+shrunken image on the screen or no picture at all. The yoke windings will 
+get hot (small burned area... you might smell it) along with the H.O. 
+Transistor running very hot. Don't run the monitor that way for more than 
+a few minutes at a time or you'll burn out the transistor. 
+     One quick test you can try to diagnose a shorted yoke is is to unplug 
+it and see if the high voltage comes up without it. If you do power up the 
+monitor with the yoke unplugged for test purposes, keep the brightness 
+control all the way down, or better yet, remove the CRT board from the tube 
+beforehand so you don't burn a spot on the tube face. Without horizontal or 
+vertical sweep, a single very bright spot will appear on the tube face and 
+that will burn it instantly and permanently! You only need to verify that 
+the high voltage comes up with the yoke unplugged to know it's bad and 
+loading down the H sweep and HV circuits. You will feel the static on the 
+tube face with the back of your hand as soon as the monitor is powered up. 
+     You might affect a repair of a shorted yoke (I've done it a few times) 
+by removing it from the tube and carefully digging out the burned area, 
+then isolate the bare wires from each other and splice them as needed.
+Afterward, try it again. Once you verify the burned area is no longer 
+arcing when the power is applied, the repair is done and the next step is
+to temporarily install the yoke on the tube and see if the picture is 
+normal again (no crossed wires in the repair). If OK, you can go ahead and
+apply some silicon sealer to act as insulation and keep the area free of 
+further corrosion. It's OK if some of those wires are folded around a bit, 
+just so they don't touch each other or the tube when the yoke is put back 
+on the tube. Before you remove the yoke, note the -exact- position of all 
+the components on the tube neck. It's -very- important to get it all back 
+on exactly the way it was. I routinely mark those components and the glass
+neck with a felt tip pen beforehand. 
+     If you have no picture and the H. O. transistor is getting hot, there 
+are several possibilities besides the yoke. A downstream overload can be 
+caused by a shorted diode. Check all the scan-derived voltage sources for 
+a short. Find all the diodes running off the flyback (line output 
+transformer) and measure their resistance from cathode to anode. If there 
+is excessive loading downstream, i.e. something is loading it down such as 
+a shorted Vertical output circuit, that circuit must be isolated and 
+repaired.
+      Check to see if there is sufficient drive to the horizontal output
+transistor. Low drive will make it run hot because that will not allow
+the transistor to saturate. That wastes power and creates heat. The H
+driver collector should measure about 100VPP 15kHz square wave. Make
+sure the solder connections to the H output transistor are good from the
+driver transformer to the H output. Resolder all connections to make
+sure. Any resistance in that circuit will reduce the drive. Of course, 
+an oscilloscope is necessary to measure these circuit waveforms.
+      If the overall condition of the monitor indicates it hasn't gotten
+much use, I doubt the flyback is bad. Still, run it for five minutes if
+it's safe to do so, then feel the flyback to see if it also gets warm
+anywhere. It may take several minutes afterward for the temperature
+change to migrate outward enough to feel. If a diode inside the fly is
+shorted, that could do it. That kind of short usually produces a lot of
+ringing instead of a nice 12uS pulse on the HO collector. Unplug the
+anode cap and see if there is RF (AC) instead of HV DC with a HV
+probe. You've seen the difference a high frequency AC arc makes that's
+different from DC. AC on that anode lead indicates a bad diode inside 
+the flyback.
+
+     A frequent cause of "no color" can be an open resistor R255, a 5.1K 
+1 Watt. It has a pretty hefty pulse on it and runs hot normally. Use a two 
+watt as a replacement. 
+     One repair was for a vertical problem, slightly reduced scan at the
+top and "foldover" with retrace lines in the middle of the picture. The 
+cause was a leaky cap, C308 (100uF @ 35VDC). It measured normal capacitance 
+but was electrically leaky.
+
+Ray
+     
+

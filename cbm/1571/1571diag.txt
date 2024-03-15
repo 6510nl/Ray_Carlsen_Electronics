@@ -1,0 +1,394 @@
+     THE 1571 (and 1571 in the DCR) * COMMON PROBLEMS AND SOLUTIONS 
+       includes chips vs symptoms for the stand-alone 1571 drive
+               latest changes and corrections  9-19-2022
+
+I TAP ON THE DISK, THEN IT WORKS...
+     This is such a common complaint, I put it here at the top of the 
+list. Some users indicate that they must "tap on the disk after inserting 
+it and closing the drive door" to get the drive to work properly. Some 
+report that they can hear a "click" when they do that and then the drive 
+works fine. This problem can be caused by: 1. a sticky lifter mechanism, 
+(see HEAD LIFTER) or 2. the ejector mechanism is not latching properly 
+(see DISK EJECTOR). 
+
+DOOR LATCH: The twist down latch has a pin that eventually works loose and
+can fall out. That's what has happened if the latch flops around and will
+not move the mechanism. Hopefully, it's still in the drive (rattling
+around?) and can be recovered. If allowed to float around in there, it can
+short something out and cause damage. It's a round silver metal shaft,
+about 3/4" long and about 1/16" in diameter. If you can't find it after
+taking the drive apart, the correct sized nail can be cut to fit and
+installed as a replacement pin. The original, if still there, can be
+reinserted and secured with a dab of superglue or contact cement...  just
+enough to keep it from sliding back out. It should be inserted just far
+enough to engage the white plastic part of the latch mechanism... too far
+forward, and it will scrape the metal part of the latch. Lube the
+metal-to-metal parts of the latch while you're at it.
+     Another part of the door latch I've had problems with is the shaft 
+of that mechanism pulling out of the assembly. When the door knob is 
+pulled off, the shaft comes out with it! If that happens, you'll need to 
+see what a properly assembled latch mechanism looks like to put it back
+together. I use a dab of superglue to hold it in place after assembly. 
+Let it dry completely before you re-install it or some glue residue may 
+migrate onto the rear plate and not allow the shaft to turn. 
+
+HEAD WIRES: The top head moves up and down when a disk is inserted and the
+door latch is turned. The 5 connecting wires on the top head must be free
+to move, but such movement will cause them to break eventually. Some drives
+will have a bit of epoxy where the wires are soldered to act as a strain
+relief. Note: wires can still break -inside- the insulation where it can't
+be seen. If you pull -gently- on each one with tweezers, the broken ones
+will be loose and pull apart easily. Looking down on the drive head, with
+the front of the drive facing you, the color code of the wires is as
+follows, from left to right: green, red, white, yellow, black. If any of
+these wires are broken, the drive will still work in the 1541 mode (bottom
+head only is used), but in 1571 mode, the top head will not function
+properly. If any wires are broken, you will need to trim off some
+insulation from each wire and resolder it. Because the repaired wires will
+be a bit shorter, you should cut the ties holding the cable to allow more
+freedom of movement for the remounted wires. Form a small loop in the wires
+for maximum flexibility. Add a dab of epoxy or silicon sealer to the wire
+ends to allow them to flex without breaking again. Loosely tie the cable
+back to the head assembly. Open and close the drive door with a disk
+inserted to see if the wires have enough slack to allow complete head
+motion. If the wires are too tight, the head will not come all the way down
+to the disk surface, and you will create intermittant read/write problems.
+Also, if there is not enough slack in the wires, they will break again in a
+short time. When you complete the repair to the wires, tie the cable bundle
+back to the head with thread or string and a dab of glue.
+
+HEAD MOUNT: In a 1541 disk drive, the disk is pressed against the single
+read-write head by a felt pad. That spring-loaded pad is lowered onto the
+disk when the door latch is pressed down. In the 1571, when you insert a
+disk and lower the door latch, a head lifter mechanism releases, and the
+spring-loaded top head is gently lowered down onto the disk. Both heads
+thereby remain in intimate contact with both sides of the disk. The top
+head is mounted by means of two thin flexible metal strips. The metal is
+rather fragile and can be damaged by rough handling. Notice that the head
+has only one "finger" (on the left side) to allow the lifter mechanism to
+keep it raised. If shipped without a transit card or disk in place, the
+head mount can be subjected to excessive twisting force because all the
+weight of the head is on the finger. A downward shock can twist the head
+mount and can possibly break it. The top head must sit straight and line up
+with the bottom head. If the mount is bent or torn, the head will not sit
+straight. You may notice that a spinning disk makes more noise than it
+should... that's the sound of the top head scratching it. Depending on the
+severity of the misalignment, the drive may not be able to read the top
+side of a disk (blocks over 664), the drive may not work even in 1541 mode,
+and/or disks may be damaged. If the head mount is only slightly bent, it
+should be possible to straighten it by -gently- bending it back into proper
+alignment.
+     Some users put weights (like a penny) on the top head, or increase the
+tension of the spring to provide more force. This is to be avoided... it
+will cause increased head and disk wear. It will not solve whatever problem
+it was meant to, and can cause further damage. Better to find out what is
+actually wrong, and fix that. See HEAD LIFTER
+
+HEAD LIFTER: This mechanism prevents the top head from lowering except: 1)  
+when a disk is inserted, and 2) the door latch is down. It's there to keep
+the two heads from banging into each other. When a disk is inserted, it
+pushes a small lever with a brass cone-shaped end (at the left middle side
+of the drive) out from under the head lifter and allows the head to come
+all the way down and press on the disk. The brass cone should slide forward
+on the tab of the metal plate above it when a disk is inserted all the way,
+and should move completely out of the way when the door latch is closed.
+     If the cone does not move far enough or if the metal plate is sticky,
+the lifter will prevent the top head from being lowered all the way down to
+the disk. The result may be intermittant operation of the drive in all
+modes, but especially in the 1571 double-sided mode, when data is accessed
+on the top side of the disk. It may take longer to read disks (the drive
+will try several times until it gets a good read), or you may encounter
+errors on that side of the disk.
+     See if the cone-lever is sticking by pushing on it with a toothpick 
+while lifting up on the lifter plate. The cone lever has a spring return 
+and is hidden under the metal lifter plate when no disk is there. When you 
+insert a disk and close the door slowly, see if the cone is pushed all the 
+way back out of the way by the downward pressure of
+the spring-loaded plate. If not, see if the plate is free to move down by 
+itself. Insert a disk, move the cone lever back out of the way and pull up 
+on the plate with your finger, then gently release it. It should drop all 
+the way down and release the head. If not, the lifter plate probably needs 
+lube (oil) on both ends of the shaft. It's less likely, but the cone lever 
+may need cleaning and/or lubrication if the lever itself is sticky, or it 
+needs lube at the contact point of the cone and the tab. I prefer Molytone 
+grease, available at electronics supply houses bit it's best if that cone 
+is free of any kind of lube. I routinely lube the lifter plate hinge when 
+I get a 1571 on the bench, whether it needs it right then or not. 
+      If someone tried to "adjust" the cone lever or the plate, one or both
+may be bent, and bending may be necessary to straighten them again. I would 
+only try bending parts as a last resort!!! The cone should be pointing 
+straight up and should be shiny with no burrs on it. The tab above it 
+should likewise be clean. Examine its underside (the contact point for the 
+brass cone) for burrs or rough spots. A pencil eraser works well as a 
+polishing tool. If the drive has been "adjusted" by repair attempts, you 
+may need to compare it to a working drive to see how everything -should- 
+line up.
+     Before you even think about bending anything in an attempt to fix your
+drive, consider this: the drive worked for years from the factory the way
+it was designed. Find out why it doesn't work and repair it correctly. An
+easy way to tell if the head is hanging up on the lifter is to observe the
+black plastic "finger" on the left side of the top head. With a disk in the
+drive and the door closed, that finger should -not- be touching the lifter
+mechanism at all. NOTE: some disks may be slightly smaller and not push the 
+cone lever far enough. That's rare but it can happen. If more than one disk 
+does that, suspect a problem with the mechanism. If it's marginal and the 
+cone lever is not sticky, you can make an adjustment of the tab on the rear 
+of the eject mechanism L-shaped slide plate. There are several small screws
+holding that plate and the mounting holes are elongated to allow for an 
+adjustment. 
+
+OPTICAL SENSORS: The 1571 has three infra-red activated sensors. If these
+sensors become contaminated with dust or smoke residue, it can cause the
+drive to malfunction. The TRACK ZERO DETECTOR is located at the right rear
+of the drive head assembly. It is used during disk Formatting, Initialize,
+and whenever the drive seeks track zero. If out of adjustment, contaminated, 
+or defective, it may cause the drive to "chatter" like a 1541 when the 
+stepper hits the mechanical head stop. Another failure mode allows the head 
+to go all the way forward, chatter and stay there. The INDEX DETECTOR (just 
+to the left of the spindle collar) checks the disk for the index hole.
+Although not needed on a Commodore GCR drive, this sensor maintains
+compatiblity with the MFM standard when the drive is used in that mode (the
+index hole conincides with sector 1). The WRITE-PROTECT SENSOR at the left
+front side of the drive senses disk change and write-protect status. It
+should be checked and/or cleaned if the drive will not format or write to a
+disk, but otherwise works normally. Don't forget to check for a write
+protect tab that may have fallen off a disk and got stuck at the sensor.
+     Sensors can be cleaned with compressed air (to remove dust) and/or a
+Q-tip moistened (not wet) with alcohol (to remove residue from cigarette
+smoke). Do not remove the mounting screws to gain access to the sensors...
+you will upset their alignment. The index and write protect sensors are
+accessable through the drive door area with the front cover removed from
+the drive. The zero stop sensor is a tight fit. Remove about half the
+head from a Q-tip and it will work. You'll need to move the head forward 
+to get to the sensor.
+
+DISK EJECTOR: This mechanism should automatically eject the disk when you
+open the drive door. Normally, when a disk is inserted, it pushes a
+spring-loaded slide plate back which locks in place. When the drive door 
+is latched down, it triggers the release mechanism, and the plate remains
+fixed in place until the drive door is opened again. The slide plate then
+releases, the spring forces it backwards and it ejects the disk for the
+user to grasp. You can hear each one of these actions if you listen
+closely. If the drive does not automatically eject disks, check for a 
+bent, misadjusted or sticking slide lever, or a missing, broken, or 
+dislodged spring. 
+     Sometimes the lever releases prematurely when the drive door is 
+closed. If that happens, you may hear a scraping sound as the spinning 
+disk rubs the inside edge of the disk jacket. This problem can also cause 
+a failure to read properly and can be "cured" by tapping on the disk after 
+insertion and closing the door. You may hear the click of the ejector 
+latching again. If the ejector is the problem, you can bend the slide 
+plate down a bit at the spot where the tang on the slider engages the 
+lower fixed plate. Don't bend it too far down or the slider will bind 
+and disks will not eject at all. 
+
+CLEANING AND LUBRICATION: The heads and stepper rails should be cleaned
+periodically, especially if the drive is running in a smoky or dusty
+atmosphere, or if old disks are used (shedding oxide onto the heads). Dust
+can be blown out with compressed air. Since the upper head is on a rather
+delicate swivil mount, a minimum of force should be used to clean it. Pull
+the top head up gently (it will not go very far before it hits the stop),
+just enough to get a Q-tip moistened with alcohol between the two heads.
+Rotate the Q-tip between your fingers to wipe the heads. The easiest access
+point is between the rails on the right hand side of the drive. 
+     A really stubborn head clog will require more effort to clean. One
+trick I use is a strip of white paper about 3/4" wide and 6" long. The 
+upper head will not go all the way down unless a disk is in the drive
+because of a spring-loaded cone-lever, so that must be moved out of the
+way so the top head will drop all the way for cleaning. See HEAD LIFTER 
+above. Position the paper strip between the heads, push down gently on
+the upper head and draw the paper out. If you see a smear on the paper,
+that was some residue that came off one or both heads. Note: if a 1571 
+format only works on one side of a disk, the upper head is suspect and
+may need cleaning. 
+     Alcohol works OK for heads, but a stronger solvent should be used on 
+the stepper rails, especially if they are contaminated and/or sticky with 
+old grease. I use WD40 as a solvent, but caution must be used not to get 
+any solvent on plastic parts as it may attack the surface. Swab down the 
+rails and move the head assembly gently back and forth (drive turned off, 
+of course) to reach further into the tight spots. Alternate between 
+swabbing and moving the assembly several times until the rails are clean. 
+You can't get everywhere, but with solvent on the rails, just moving the 
+stepper back and forth will dislodge the dirt and old grease that can 
+then be wiped off. Let the solvent dry throughly. Although it's really 
+not necessary, you can relube the rails using a small amount of silicone 
+or graphite lube, or just run them dry. Don't use oil... it will attract 
+dirt and get sticky again. 
+
+ROM BUG: If your stand-alone (not the 128DCR drive) 1571 takes a long time
+to access a 1541 formatted disk, suspect the early version drive ROM 3.0
+(CBM # 310654-03) as the reason. If you're on the fence regarding adding 
+JiffyDOS to your system, here is one more reason... it corrects that bug.
+If you want the original upgraded CBM ROM (although it still shows as
+version 3.0 when quiried) and have access to a burner, the part number is 
+310654-05. The one used in the USA C128DCR (metal case) is version 3.1 
+with CBM part number 318047-01. There are differences between the two ROMs 
+(1571 and 1571DCR) and they should not be used interchangeably, but I have 
+for test purposes only. 
+
+POWER SUPPLY: The power pack inside the 1571 uses a switching type of
+supply. It runs cool and rarely fails. If it does malfunction, it can be
+replaced easily (one plug-in connector) or repaired by a competant
+technician. If you disconnect the power supply, make sure you note how the
+connector is oriented. If it is installed backwards, it will cause severe
+damage to the supply and/or the drive electronics package. The four-pin
+plug of the supply goes to a motherboard socket: CN1. Pin # 1 is marked on
+the board. The correct orientation of the PS plug is: pin 1 = black, pin 2
+= brown, pin 3 = black, pin 4 = red. It's wise to somehow mark any
+connectors you remove to prevent mistakes when you put them back.
+
+OTHER PROBLEMS: Because it runs cooler than a 1541, the 1571 rarely fails
+because of chip problems. In the rare event of a malfunction, one thing you
+can try is reseating the only socketed chip in the drive: the DOS ROM, a
+310654-03 at board location U3 on the drive controller board (under the
+power supply). The power supply (metal can) can be moved out of the way
+(four screws) without disconnecting it. It will just fold up and over the
+drive mechanics, but be mindful that the power connector may be unplugged
+when you do that. Make sure you know how it goes back... don't get it
+backwards! If any other chips are socketed (perhaps because the drive was
+repaired before), try reseating them too. Make sure the connections between
+the drive and motherboard are properly seated when you're finished. Remove
+and reinsert them to clean the contacts. The mechanism for the stand-alone
+1571 and for the internal drive in the 128D are the same, although I've
+heard that some will require cutting a bit of the cabinet at the drive
+latch because it rubs on the latch shaft. Drives can be interchanged if
+necessary as a diagnostic or to salvage a working mechanism from a bad
+drive.
+
+        Added notes for the 1571D (drive inside the USA C128DCR):  
+
+     The socketed DOS ROM in the 128DCR is under the drive mechanism on the
+motherboard at location U102. It's different than the version 3.0 in the 
+stand-alone 1571 and in the European C128D (plastic case). The one in the 
+USA DCR drive electronics is DOS version 3.1. That's important if you want
+to get JiffyDOS to replace the DOS ROM. 
+     If there is a problem with the drive in the C128DCR, you may get
+"dumped" into the built-in monitor at boot time (when it tries to autoboot).
+If that happens, the screen will show something like: U1:13 0 01 00. If you
+are having problems with internal drive access, as a diagnostic, or to use
+an external drive as device 8, you can disable the internal drive by
+disconnecting the ATN line, pin 1 of IC U113 (74LS14). That will make the
+internal drive "invisible" to the computer. That IC is under the drive
+near the right front edge of the computer. If you cut the IC pin, leave
+enough of a stub so that you can solder it back if necessary (cut it close 
+to the motherboard).
+
+                          CHIPS VS SYMPTOMS
+
+     A normal startup sequence is as follows: with drive disconnected from 
+computer, power up shows a continuous red power LED, and the green status 
+LED comes on and goes out within about 1 second. The spindle motor runs for 
+about three seconds and then stops. The stepper moves the head slightly 
+back and forth, then stops. Note that the spindle motor may continue to 
+spin if the computer is connected but turned off... that's normal because 
+it holds the reset line. Also normal is spindle running about 10 seconds 
+after disk reads. When the drive startup sequence or other operation is not
+normal, this information might help nail the problem down. I assume you 
+have already checked the power supply for its +5 and +12 volt DC outputs. 
+Note: when connected to a 128, the drive will attempt to auto-boot only if
+the drive is set to device 8!
+
+U1 (DCR U101)	MPU				6502
+  Green LED on steady and spindle motor runs all the time, no movement of 
+the stepper at turn on. No drive access, locks up computer.
+
+U2 (DCR U102)	DOS ROM			310654-03 (upgrade -05 or DCR #318047-01)
+  Green LED on steady and spindle motor runs all the time, no movement of 
+the stepper at turn on. No drive access, locks up computer.
+
+U3 (DCR U103)	SRAM				M2128-xx or TMM2016
+  When powered up, green LED flashes once per second continuously. No drive 
+access, locks up computer.
+
+U4 (DCR U104)	VIA, SPINDLE MOTOR CTRL	6522 
+  Green LED stays dark at power up and spindle motor runs continuously. No 
+drive access, locks up computer.
+
+U5	MASTER OSC			251829-01
+  Drive powers up normally but no read, DRIVE NOT READY error.
+
+   (DCR U105 GATE ARRAY)
+
+U6	CONTROLLER			251828-01 OR HD61J215P
+  Green LED on steady and spindle motor runs all the time, no movement of 
+the stepper at turn on. No drive access, locks up computer.
+
+   (DCR U106 6522, VIA SERIAL INTERFACE)
+
+U7	HEAD AMP & STEPPER CTRL		251853-01 or M36A2U57
+
+   (DCR U107 CPU 5710)
+
+U8	logic				7406
+  Normal looking startup (LEDs and motors) and computer resets drive but no 
+access, 74 DRIVE NOT READY error.
+
+   (DCR U108 HEAD AMPLIFIER, CX20185 SURFACE MOUNT IC)
+
+U9	VIA				6522
+  Normal looking startup (LEDs and motors) but no drive access although 
+computer resets drive when turned on or reset, locks up computer. 
+
+   (DCR U109 STEPPER DRIVER uPA2003C)
+
+U10	logic				74LS74
+  Normal looking startup (LEDs and motors) and read OK but no write or 
+format.
+
+U11	DISK CONTROL		WD1770 or WD1772
+  Normal looking startup (LEDs and motors) but when computer boots, drive 
+can't read disk and stepper moves head to track zero. Subsequent disk 
+access shows 74 DRIVE NOT READY error and green LED flashes rapidly. 
+NOTE: this bad IC can corrupt disks!
+
+U12	logic				74F32
+  Green LED on steady and spindle motor runs all the time, no movement of 
+the stepper at turn on. No drive access, locks up computer.
+
+    (DCR U112 7606 SERIAL INTERFACE LOGIC)
+
+U13	logic				74LS266
+  Green LED on steady and spindle motor runs all the time, no movement of 
+the stepper at turn on. No drive access, locks up computer.
+
+U14	logic				7407
+  Normal looking startup but no read in 1571 mode, reads in 1541 mode but 
+no write or format (21 READ ERROR). Can also cause disk ID mismatch after 
+disk swap.
+
+    (DCR U114 74LS14 SERIAL INTERFACE LOGIC)
+
+U15	logic				74LS14
+  Green LED on steady and spindle motor runs all the time, no movement of 
+the stepper at turn on. Computer locks up.  
+
+U16	logic				7406
+  Normal looking startup but spindle doesn't run. Although computer resets 
+drive, access shows DEVICE NOT PRESENT error.
+
+U17	logic				74LS14
+  Green LED on steady and spindle motor runs all the time, no movement of 
+the stepper at turn on. Computer locks up.
+
+U18	logic				74LS175
+  Green LED on steady and spindle motor runs all the time, no movement of 
+the stepper at turn on. No drive access, locks up computer.  
+
+U19	logic				74LS241
+  Normal startup but 1541 mode only (read, write, format OK), no 1571 mode.
+
+U20	CIA				6526A or 8521
+  No 1571 mode but normal startup, read, format and write in 1541 mode only. 
+
+U21	RESET GENERATOR		T520D
+
+U22	logic				74LS123
+  Normal startup and read/write but format fails and locks up computer.
+
+Y1	XTAL OSC			TCO-745A
+
+
+Ray Carlsen
+Carlsen Electronics 
+Questions and comments are welcome, especially if you spot a mistake here.
+Thanks!

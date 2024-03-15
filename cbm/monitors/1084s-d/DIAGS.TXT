@@ -1,0 +1,33 @@
+                COMMON PROBLEMS AND DIAGNOSTICS
+
+1. If you see a blinking power LED on the front panel and hear a 
+ticking sound coming from the monitor but it will not start up, 
+suspect an open capacitor in the power supply. C111 is a 1uF 50V
+electrolytic that can cause that problem. The fuse F101 (4A) will 
+not blow. Also check or just replace C110 (10uF 50V). 
+
+2. Dead monitor, no front panel LED indication. If you find 
+resistor R106 (1 ohm 2 Watt) open, the main switching IC (I101) 
+is probably shorted. This usually blows the input fuse F101 (4A). 
+Change the above two electrolytic caps along with the IC and 
+resistor before you power up the monitor, and check the resistance 
+of the supply lines on the secondary side of the supply to see if 
+there are any overloads there. Clean off the heat sink and apply 
+fresh heat sink grease to the IC before you mount the new part. 
+     If the 110VDC supply line reads low or shorted (measure D103
+cathode to ground resistance), check the H output transistor Q202.
+If it's shorted, check all the solder connections (or just resolder
+to be sure) in the H sweep circuit, especially the H driver 
+transformer T201 and all solder connections on the flyback (line 
+output transformer) T202. 
+
+3. Vertical collapse (just horizontal line across the screen). 
+Check the solder connections on I301 or just resolder all the pins.
+Always use fresh solder... don't just reflow the old. If that 
+doesn't fix it, check resistor R238 (1 ohm 1 Watt) to see if it's
+open. If so, check diode D211 for shorts. 
+     If the picture is stretched or shrunken vertically, check (or
+just replace) all the small electrolytic caps in the vertical 
+circuit. Don't try to adjust out a fault like that... it will not
+fix the problem and running it that way could cause a major 
+failure like the vertical IC. 

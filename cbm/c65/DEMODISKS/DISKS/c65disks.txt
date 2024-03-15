@@ -1,0 +1,341 @@
+     This information file is written to accompany the 6 different Commodore
+C65 demo/utility disks archived and uploaded by myself on 30 November '94.
+(The C65 was a computer that CBM was designing, but never brought to market. A
+limited number were made available to the public in 1994 due to CBM's money
+woes).  The disks were made available to me for copying by Dennis Jarvis, who
+was one of the systems engineers under contract to Commodore in the late '80's
+and early '90's, prior to the bankruptcy/receivership (outcome still in doubt
+at the time of this writing) of CBM Int'l.  My understanding is that he was the
+person primarily working on the DOS for the C65.
+
+     At the present time I have not had a chance to run any of these disks or
+contents on my C65's.  I accept no responsibility for the use of this material,
+being merely a means for public distribution of them.  I believe there are a
+few files on them that refer only to the C64 and/or C128, but did not want to 
+take the time to "weed" out any extraneous material.  I have no idea exactly 
+who is responsible for which files, but I'm sure that much credit must go to
+Fred Bowen and also to Dennis.  There also appears to be material duplicated 
+from one disk to the next, but I did not wish to change the contents of any
+from its' "original" state.
+
+     The disks were archived using CS-DOS128, due to the mix of program and
+sequential files that I felt would present problems if archived using a 
+mode under a different system such as MS-DOS or Unix.  I include the original
+directory listings and descriptions of the actual labels on the disks as a
+means of keeping the information somewhat intact over time, and to help
+determine which version of the C65 will work with which disk. Please format
+and label your copies in keeping with this.  And don't ask me about what's on
+them.  What you see is what you get, and it's exactly what I got, and I don't
+know what it is yet! (grin).
+
+     The "-----------" at beginning and end of each "label" are merely to mark
+the beginning and end of the label, and were not on the original label.
+Numbers such as 910416 refer to the date the file or disk was originally done 
+(91 is year-1991, 04 is month-April, 16 is day in this example).
+******************************************************************************
+
+The following refers to the file named "c65disk1.lha".
+
+The original handwritten (in ink) label reads as follows:
+----------------------------------
+  C65 demo disk #2
+    version 910107
+
+Put in drive, turn system
+on to boot autoboot.c65*
+
+(the other programs have not been
+converted to ver 0.9A + DMA chip)
+
+910124 FAB
+-----------------------------------
+(the fab I assume to be Fred Bowen's initials-gp)
+
+Following is the actual directory prior to archiving.
+
+1 "c65 demo 900907 " fb 3d
+4    "iff demo"         prg  
+2    "iff demo.bin"     prg  
+193  "kingtut.iff"      prg    
+193  "gorilla.iff"      prg    
+193  "city1.iff"        prg    
+193  "iris.iff"         prg    
+193  "paintcan.iff"     prg    
+193  "dreamhouse.iff"   prg    
+193  "redporsche.iff"   prg    
+193  "spaceship.iff"    prg    
+193  "waif.iff"         prg    
+193  "venus.iff"        prg    
+193  "bunny.iff"        prg    
+193  "planets2.iff"     prg    
+1    "----------------" prg  
+3    "regina demo"      prg  
+129  "regina.0"         prg    
+129  "regina.1"         prg    
+4    "regina.p"         prg  
+1    "---------------"  prg  
+3    "dp demo"          prg  
+128  "dp.0"             prg    
+128  "dp.1"             prg    
+4    "dp.p"             prg  
+4    "mouse.bin"        prg  
+1    "pointers.bin"     prg  
+1    "--------------"   prg  
+3    "fb demo"          prg  
+128  "fb.0"             prg    
+128  "fb.1"             prg    
+4    "fb.p"             prg  
+5    "demo all"         prg  
+5    "iff demo.8e"      prg  
+4    "iff demo.bin.8e"  prg  
+6    "iff ss"           prg  
+14   "autoboot.c65.9a"  prg   
+1    "demo.9.bin"       prg  
+1    "rs232"            prg  
+2    "ms-dos boot test" prg  
+0 blocks free.             
+*********************************************************
+
+The following refers to the file named "c65disk2.lha".
+
+The original PRINTED label reads as follows:
+-----------------------------------
+         C64DX
+
+c 1991 Commodore Electronics, LTD.
+
+     DEMO DISK #2
+
+        910501
+
+Requires ROM version 910415
+-----------------------------------
+On the back of the disk in pencil is the note "backup d0 to d1 910416".
+
+Following is the actual directory prior to archiving:
+
+1 "sector skew 7   " 77 1d
+32   "autoboot.c64dx.2" prg   
+1    "demo.9.bin"       prg  
+193  "kingtut.iff"      prg    
+193  "gorilla.iff"      prg    
+193  "city1.iff"        prg    
+193  "iris.iff"         prg    
+193  "paintcan.iff"     prg    
+193  "dreamhouse.iff"   prg    
+193  "redporsche.iff"   prg    
+193  "spaceship.iff"    prg    
+193  "waif.iff"         prg    
+193  "venus.iff"        prg    
+193  "bunny.iff"        prg    
+193  "planets2.iff"     prg    
+128  "dp.0"             prg    
+128  "dp.1"             prg    
+4    "dp.p"             prg  
+128  "fb.0"             prg    
+128  "fb.1"             prg    
+4    "fb.p"             prg  
+129  "regina.0"         prg    
+129  "regina.1"         prg    
+4    "regina.p"         prg  
+29 blocks free.             
+*********************************************
+
+The following refers to the file "c65disk3.lha".
+
+The original handwritten (in pencil) label reads:
+-------------------------------------------------
+C64DX DEMO DISK #2D
+
+Use with ROM v910624
+         VIC 4567R7
+         DMA F018A
+
+Dennis-to use on your system,
+with old DMA chip, remove 3 0's
+from DATA 73-77 and change
+81 from 5*12 to 5*9.
+
+To use with RAM-DOS, protect bank 8-
+change 8 to 9 in lines 20 + 93
+--------------------------------------------------
+
+Following is the actual directory prior to archiving:
+
+1 "c65 demo 910610 " 04 1d
+33   "autoboot.c64dx.4" prg   
+1    "demo.9.bin"       prg  
+193  "kingtut.iff"      prg    
+193  "gorilla.iff"      prg    
+193  "city1.iff"        prg    
+193  "iris.iff"         prg    
+193  "paintcan.iff"     prg    
+193  "dreamhouse.iff"   prg    
+193  "redporsche.iff"   prg    
+193  "spaceship.iff"    prg    
+193  "waif.iff"         prg    
+193  "venus.iff"        prg    
+193  "bunny.iff"        prg    
+193  "planets2.iff"     prg    
+128  "dp.0"             prg    
+128  "dp.1"             prg    
+4    "dp.p"             prg  
+128  "fb.0"             prg    
+128  "fb.1"             prg    
+4    "fb.p"             prg  
+129  "regina.0"         prg    
+129  "regina.1"         prg    
+4    "regina.p"         prg  
+1    "demo.10.bin"      prg  
+1    "demo.10.1400"     prg  
+26 blocks free.             
+**********************************************
+
+The following refers to the file named "c65disk4.lha"
+
+The original label (just black marker on disk) reads:
+
+------------------------------------------
+      910923
+   Demo disk
+------------------------------------------
+
+Following is the actual directory prior to archiving:
+
+1 "c128 basic      " 04 3d
+188  "0000-007d.zp"     seq    
+126  "ram/rom.ex.final" seq    
+217  "007f.zp"          seq    
+213  "012b.zp"          seq    
+64   "appendix.d"       seq   
+7    "table 1.3.3.1.1"  seq  
+4    "ram exp. demo"    prg  
+16   "keyon/keyoff.s"   prg   
+4    "keyon/keyoff.b"   prg  
+1    "keyon/keyoff.o"   prg  
+1    "color ram demo"   prg  
+8    "variable dump.b"  prg  
+49   "variable dump.s"  prg   
+2    "variable dump.o"  prg  
+3    "data generator"   prg  
+11   "edma routine.s"   prg   
+1    "edma routine.o"   prg  
+2    "new edma example" prg  
+2243 blocks free.             
+*****************************************
+
+The following refers to the file named "c65disk5.lha"
+
+The original label (in ink) reads:
+
+------------------------------------
+C65 DOS TEST PROGS
+
+
+
+
+
+12/89 1581 fmt
+------------------------------------
+
+Following is the actual directory prior to archiving:
+
+1 "c65 dos         " 99 3d
+3    "rdxwt.bas"        prg  
+2    "format.o.00"      prg  
+1    "read-write.o"     prg  
+2    "format.o"         prg  
+3    "read"             prg  
+4    "trk"              prg  
+3    "dos.bin"          prg  
+5    "dos.bas"          prg  
+59   "fred.o"           prg   
+2    "crc.bas"          prg  
+1    "crc.1c00"         prg  
+3    "newformat"        prg  
+5    "foo.bas"          prg  
+3    "foo.bin"          prg  
+4    "fmt.1c00"         prg  
+6    "newfmt.obj"       seq  
+3    "newfmt.bin"       prg  
+7    "newfmt1.obj"      seq  
+3    "newfmt1.bin"      prg  
+4    "newfmtx.bin"      prg  
+7    "newfmt2.obj"      seq  
+3    "newfmt2.bin"      prg  
+9    "newdos.obj"       seq  
+9    "newdos.obj1"      seq  
+5    "newdos.bas"       prg  
+1    "step80"           prg  
+4    "newdos.bin"       prg  
+5    "newdos1.bas"      prg  
+9    "newdos1.obj"      seq  
+4    "newdos1.bin"      prg  
+1    "readfmt"          prg  
+56   "jdos120889.bin"   prg   
+1    "status"           prg  
+1    "status1"          prg  
+9    "newdos2.obj"      seq  
+4    "newdos2.bin"      prg  
+5    "newdos2.bas"      prg  
+5    "d3.5"             prg  
+5    "d5.25"            prg  
+4    "5.25 512.bin"     prg  
+5    "d5.25 512.bas"    prg  
+1    "hello"            seq  
+2884 blocks free.             
+********************************************
+The following refers to the file "c65disk6.lha".
+
+The original label (just a plain white address label in ink) reads:
+
+-------------------------------------
+C65 IFF DEMO REEL #1
+
+FC65  (filecopy)
+         hack
+-------------------------------------
+
+Following is the actual directory prior to archiving:
+ 
+1 "iff demo reel #1" fb 3d
+12   "old demo"         prg   
+140  "dreamhouse.pic"   prg    
+62   "iris"             prg   
+70   "paintcan"         prg   
+1    "split.1200"       prg  
+7    "iff.bin6d"        prg  
+142  "xcar"             prg    
+169  "family.640x200"   prg    
+112  "faces"            prg    
+102  "kingtut"          prg    
+148  "gorilla"          prg    
+79   "city2"            prg   
+95   "city1"            prg   
+242  "regina"           prg    
+11   "pic256"           prg   
+67   "bully.pic"        prg   
+120  "waif"             prg    
+44   "disksalv.pic"     prg   
+192  "boat"             prg    
+109  "spaceship"        prg    
+228  "sparks"           prg    
+91   "bees"             prg   
+184  "storm"            prg    
+14   "dp.64x20"         prg   
+135  "venus"            prg    
+74   "saturn"           prg   
+81   "planets2"         prg   
+82   "bunny"            prg   
+77   "iff&dos.6d"       prg   
+12   "demo2"            prg   
+7    "iff.bin6e"        prg  
+149  "eye"              prg    
+57   "redporsche.pic"   prg   
+17   "fc65"             prg   
+1    "fc65.bin"         prg  
+12   "demo"             prg   
+15 blocks free.             
+
+
+There you go-have fun!

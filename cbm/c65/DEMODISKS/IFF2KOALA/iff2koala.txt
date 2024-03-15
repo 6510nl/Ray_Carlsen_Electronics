@@ -1,0 +1,59 @@
+Short:    Convert an iff-pic to c64-koala
+Author:   blacky@caiw.nl
+Uploader: blacky@caiw.nl
+Type:     gfx/conv
+
+
+
+This package converts a 320x200 with 16 grays ILBM to a C64 koala picture.
+
+
+The way you go about this is described below:
+
+1- make sure the iff picture is 320x200 (if not, use DPAINT or ADPRO)
+2- make sure the iff picture has 16 grays (if not, use ADPRO)
+3- make sure the grays are in the following order : $000 $111 $222 $333
+   $444 $555 $666 $777 $888 $999 $aaa $bbb $ccc $ddd $eee $fff (if not,
+   use DPAINT)
+4- use ilbmtoraw to convert the iff to a raw-format picture
+   example : ilbmtoraw picture
+   a file called 'picture.lo.320x200x4' should be created, this is the raw-
+   format file.
+5- use raw2koala to convert the raw-format picture into a C64 koala picture.
+
+   There are 2 ways in which raw2koala can convert the raw-picture:
+
+   The hyper conversion method uses a pattern-dithering method to construct
+   the missing grays on the C64, this method is somewhat slower but leaves
+   you with a large amount of grays.
+
+   example hyper-mode : raw2koala picture.lo.320x200x4,koalapic,2
+
+
+   The simple conversion method uses no dithering of any kind, this method
+   is somewhat faster, but leaves you with a small amount of grays and less
+   detail.
+
+   example simple-mode : raw2koala picture.lo.320x200x4,koalapic,1
+
+
+
+
+That's all folks...
+
+
+
+
+
+                    ####   #        #    #####  #   #  #   #
+                    #   #  #       # #   #   #  #  #    # #
+                    ####   #      #####  #      ###      #
+                    #   #  #      #   #  #   #  #  #     #
+                    ####   #####  #   #  #####  #   #    #
+
+
+             *****  *****    *    ****   ****   *   *  *****  *****
+             *        *     * *   *   *  *   *  *   *  *        *
+             *****    *    *****  ****   *   *  *   *  *****    *
+                 *    *    *   *  *  *   *   *  *   *      *    *
+             *****    *    *   *  *   *  ****   *****  *****    *

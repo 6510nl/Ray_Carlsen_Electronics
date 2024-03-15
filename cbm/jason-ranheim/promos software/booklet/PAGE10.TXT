@@ -1,0 +1,52 @@
+       Execution of this N command causes the computer to
+   display the specified address followed by eight hexadecimal
+   byte values- the data from locations A000 through A007. To
+   display a memory range, from 2000 through DFFF, say, type:
+       M2000,DFFF
+
+       The screen fills and then scrolls rapidly as the data is
+   printed. To stop the display at any point, press the
+   RUN/STOP key. To begin the display again at the point where
+   you stopped, type M alone and a carriage return.
+       Notice the 'M' command displays RAM data, not ROM or IO
+   devices which may overlay a particular address.
+
+   CHANGING RAM DATA
+
+       Suppose you want to change the data In memory somewhere.
+   Just use the M command to display that area, move the cursor
+   into the display to the desired location, type in the new hex
+   value(s) and press RETURN on each altered line.  RAM data is
+   changed accordingly.  You can also change the address field.
+   In this way you can quickly copy data from one area of RAM to
+   another.
+
+   THE I COMMAND- Display ASCII data.
+
+       This command works the same way as the M command except
+   that the display shows printable ASCII characters rather than
+   hex data. Thirty two characters appear on each line.
+
+       For example:
+
+       I6000,7FFF
+
+   Displays ASCII characters In the range 6000 through 7FFF.
+   You canNOT alter an ASCII string by over-typing and pressing
+   RETURN.
+
+   THE F COMMAND- Fill computer RAM.
+
+      This command fills a specified range of memory with a
+   specified data byte. For example:
+
+      F2000,DFFF,FF
+
+      This command fills memory from 2000 through DFFF with FF
+   characters.
+
+   THE T COMMAND- Transfer RAM data.
+
+
+                            -10-
+

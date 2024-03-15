@@ -1,0 +1,12 @@
+This is the directory listing of the J. R. Promos 2.0 disk:
+
+0 "PROMOS 2.0       " JR 2A
+1     "PB"               PRG
+23    "PROMOS 2.0"       PRG
+2     "AUTOBOOT-D"       PRG
+2     "PTM4-128"         PRG
+2     "PTM4-64"          PRG
+2     "PTM2"             PRG
+2     "64 CCSZBOOT"      PRG
+2     "128 CCSZBOOT"     PRG
+628 BLOCKS FREE

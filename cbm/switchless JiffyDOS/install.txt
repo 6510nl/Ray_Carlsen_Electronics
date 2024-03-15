@@ -1,0 +1,103 @@
+									
+              SWITCHLESS JIFFYDOS... how to install it yourself
+                 latest updates and/or corrections 9-13-2020
+
+     JiffyDOS is well known as a computer and disk drive enhancement chipset.
+One drawback of a standard installation is the need for a bypass switch to
+enable the original Kernal code in the computer. There are some programs that 
+conflict with JiffyDOS, so a way to bypass it without drilling holes in the 
+computer case is preferred by many users.
+     With the addition of a single IC and some soldering, an external switch 
+can be eliminated and the JD/normal selection can be done via the RESTORE 
+keyboard button at bootup. The boot defaults to JiffyDOS but if the RESTORE 
+key is held down at boot, a normal C64 Kernal is selected. 
+     There is a plug-and-play version of switchless JiffyDOS available via
+Ebay and Facebook. The builder is known by several names: Coprolite Computer
+By-Products, AAASCRAPDOGSUNLIMITED and BOULDERDASH. The module he makes has 
+JiffyDOS in it so it just plugs into the socket where the C64 Kernal was 
+installed. If soldered in, that IC must be removed and a socket installed.
+The module has two wires with color coded clips to attach to two points in 
+64 or 128 computer, namely the reset and restore lines. Instructions indicate 
+where the wires are to be connected. Switchless JD for the Plus/4 has only 
+one clip wire to attach.
+
+NOW FOR THOSE WHO LIKE TO "ROLL THEIR OWN"...
+
+     A professional JiffyDOS module with switch is available from Jim Brain 
+(Retro Innovations). He also sells just the code which I buy and use to 
+program my own EPROMs when I install switched or switchless JiffyDOS for
+users during repairs or upgrades. Notice the generic EPROMs in all my photos.
+     The additional IC used is a common TTL chip 74LS74 available at any parts 
+house. One supplier I use frequently is Jameco Electronics. Only one of the 
+two gates in this IC is needed for the installation. Other than power and 
+ground, three connections to the IC are used: reset, restore and a line to 
+the JD module. Placement of the added IC is not critical and any convenient 
+spot close to all the connections needed is preferred. Rather than a circuit 
+board, for something this simple I used to attach the IC upside down on the 
+motherboard with Superglue so all the pins are sticking up which allows easy 
+access for soldering. I now use a "piggyback" arrangement: mounting the new 
+IC on top of the EPROM. It's important that the install doesn't interfere with 
+any possible future work needed on the computer. The first installation I ever 
+did was in my own C128 and since in all versions of the 64.
+     The diagrams show how the IC is wired. Note that each computer is a bit 
+different in where the connections are found for power, ground, reset and 
+restore. Photos show the different PC motherboards and where the connections 
+are located. Before mounting the IC, mark pin 1 so there is no confusion after 
+it's glued down. See photos.
+
+SWITCHLESS JD FOR THE 128 USING THE CAPS LOCK KEY contributed by Jason McCarver
+
+     One possibility with the C128 is to use the Caps Lock key to disable
+JiffyDOS instead of the Restore key. Using the Restore key has the disadvantage
+on the C128 of being quite awkward to hold down while also having to hold the
+C= key when booting into C64 mode. Using the Caps Lock key avoids this and
+makes it easy to diable JiffyDOS. I mounted the 74LS74 near the bottom right
+of the board near the keyboard connector with hot glue. Power, Ground, Reset,
+and Caps Lock are all easy to pick up close to this area: see photo capslock.jpg
+
+     +5V       - lower side of R38
+     GND       - vias right below the keyboard connector
+     Caps Lock - right most pad of J7
+     Reset     - Left of CIA 6526 at U1 between pins 7 & 8
+
+SWITCHLESS JD FOR THE PLUS/4, A BIT TRICKY TO IMPLEMENT...
+
+     Because the Plus/4 keyboard matrix is different than a C64 or 128 keyboard,
+a few changes to the standard switchless circuit must be made. First, there are 
+no keys similar to RESTORE as on the other computers, so a source must be found 
+that is suitable but that will not upset the existing keyboard circuits. There 
+are pulses on all the keyboard lines which must be filtered out so only a logic 
+level change is detected. One NPN transistor, two resistors and a cap form a
+filter, buffer and inverter to feed the 74LS74 D input. The reset line is easy, 
+an IC nearby has that pulse on it. If you'd rather not solder to an IC pin, run 
+the reset line over to the left side of R21 or to the center pin of the serial 
+port, pin 6. 
+     Operation of switchless JiffyDOS in the Plus/4 is a bit different than in 
+other computers for this arrangement of added components. When the computer is 
+powered up or reset, JiffyDOS is selected. Subsequently, if either CONTROL key 
+is held down at power up or RESET, the OEM Plus/4 Kernal is selected. Note that 
+holding down any key will work to select the Plus/4 Kernal but the control key 
+doesn't affect a normal boot screen such as holding the spacebar would do. 
+     There is an alternate way to control JiffyDOS in the Plus/4 by setting the 
+added IC to "toggle" between the normal Kernal and JD, so the transistor circuit
+is not needed. When powered up, the computer may come up in either mode and a
+reset switches between normal and JD. Of course this method is easier to 
+implement since it only requires the reset line and no other components. The 
+keyboard is not used to control it. 
+     Since space under the reattached keyboard is minimal, the added components
+must be low enough to clear the underside of the keyboard (which is metal) with
+components and wires on it. Keep all parts as low to the board as possible. 
+Shine a light down into the case as the keyboard is being put back to see if
+there is adequate clearance and no shorts are possible. Two physical arrangements
+are shown for the added 74LS74 switch IC. One is mounted on the motherboard and 
+the other is Superglued right side up onto the top of a home-made JiffyDOS EPROM 
+after the pins are cut short. 
+
+SWITCHLESS JIFFYDOS FOR THE SX-64...
+
+     This one would be easy except working on the SX is difficult as everything 
+is packed into a small space and boards must be removed to do just about anything.
+The switchless JD IC is mounted on the I/O board and lines run from it to the 
+Kernal and drive JD modules. The photo tells all. 
+
+Ray

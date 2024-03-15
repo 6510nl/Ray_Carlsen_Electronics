@@ -1,0 +1,43 @@
+
+       THE VIC20 RF CONVERTER: A COMMON PROBLEM AND ITS SOLUTION
+             Latest updates and/or corrections 1-14-2014
+
+I own several of those little boxes but never actually used one until 
+recently when I discovered most of them didn't work. The TV screen 
+showed only a white screen with some diagonal lines running through it. 
+I have seen only two versions of that metal box, one made in Japan and 
+the other made in China. Strangely enough, the ones made in China both 
+work fine. They are of a different design. The Mitsumi modules inside 
+the ones made in Japan were now somehow defective after all these years 
+of just sitting unused. They all suffered this same problem. 
+     Inside the metal box, there is another tin can which contains the 
+converter module, and a small switch. The outer cover is held with one 
+small screw. Remove that cover by sliding it sideways and off. The 
+module inside must be removed from the box (two small screws) and the 
+wires to the switch disconnected to gain access to the module. It can 
+be opened by prying off the covers on both sides. Note that one of them 
+may have some solder holding it down. After removing the covers, I 
+found that two small electrolytic capacitors (10uF @ 16V) inside the 
+module were starting to leak electrolyte onto the reverse (solder) side 
+of the board. That corrosion must be cleaned off and the two capacitors 
+replaced. Those bad caps are the cause of the converter failure. See 
+the photos. 
+     Because of the corrosion, if the solder will not stick to the 
+copper pads where the old caps were removed, follow the copper traces 
+to the next solder points and attach the wires there. Once that's 
+done, the module covers can be put back, the module reinstalled and the 
+wires to the switch reconnected. Put the outer cover back on and you're 
+done. 
+     Note: the video level adjustment in the computer can be advanced 
+to give you a better picture if you're using a direct A/V connection 
+via the DIN connector on the rear of the computer. However, if you're 
+using the RF converter and a TV set to view the computer, turning the 
+video level control higher than normal will overload the converter and 
+corrupt the image. It will appear as a negative image with a bar 
+running through it. If that's the case, turn up the control enough to 
+get a bright picture but not so high that it distorts. 
+
+Ray Carlsen
+CARLSEN ELECTRONICS
+     
+     

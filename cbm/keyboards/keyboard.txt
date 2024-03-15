@@ -1,0 +1,378 @@
+                        COMMODORE KEYBOARDS           
+  Troubleshooting and maintenance of C64 and C128 (including C128DCR) 
+               Latest updates and/or corrections: 11-17-2015
+
+     Sooner or later with use, computer keyboards show their age. The most
+common first sign of a problem: some frequently used keys require more
+force to make them work, or they don't work at all. The Shift keys,
+Spacebar, and commonly used letters such as E and A are the first to show
+symptoms. To anyone who is proficient at the keyboard, it quickly becomes
+intolerable to have to stop and restrike a key that didn't work the first
+time. The most common way to overcome the problem, at least temporarily,
+is to strike the keys with more force. Very soon after, even that becomes
+useless... the keys do not respond no matter how much force is used, and
+the keyboard needs to be repaired. Other keyboard problems take a bit of
+detective work to diagnose and solve. 
+     The design of a Commodore keyboard is simple and elegant. It works
+well and lasts a long time. When keys do become unresponsive, it can be
+from several causes. If only one or two are not working (or require a lot
+of force to make them work), it's usually because those internal keypads
+are worn or dirty. Sometimes dirt can work it's way into the internals of
+a keyboard. A bit of dirt, hair or <ooops> a liquid spill can render the
+key(s) inoperative if such debris gets between the conductive rubber
+keypad and the underlying PC board. If many keys are not working (a whole
+row, for example), the cause is normally either a failing CIA (keyboard
+interface) chip in the computer, or a bad connection between the keyboard
+and the motherboard. No problem with the keyboard itself will prevent the 
+computer from displaying the startup screen, by the way. The keyboard can 
+even be unplugged from the motherboard for diagnostic purposes, and the
+computer will still display the opening screen. 
+     Electronically, pressing a key connects a matrix "row" (one of eight)
+with a "column" (one of eight) and provides "keyscan" data input to a chip
+called a CIA (Complex Interface Array). The coded 8 bit data output of
+that chip tells the microprocessor which key was pressed. Some of those
+keyboard data lines are "shared" with the joystick inputs. One key that
+doesn't go to the CIA is the RESTORE key. It simply grounds an input line
+to a timer chip. Two more inputs in a C128: the 40/80 switch, and the Caps
+Lock switch are likewise not part of the rows/columns inputs. 
+
+IF YOU MUST PRESS HARD TO MAKE KEYS WORK
+
+     Fortunately, most keyboard problems are of the "I have to step on
+this key to make it work" variety. Commodore keyboards are easy to pull
+apart and clean. That is sometimes all that's needed to make them work
+again. At worst, the little rubber keypads deteriorate and must be
+replaced, either with new ones or swapped with ones from seldom used keys.
+The pads are attached to "plungers" under each keytop... normally the
+plunger (with keypad attached) is swapped out as a unit, but you could
+remove just the rubber pad... it comes off the plunger easily. Very worn 
+pads will look "shiny". If failing because they have been used a lot,
+unresponsive key pads don't benefit much (if at all) from cleaning... 
+they must be replaced.
+
+CLEANING THE c64 KEYBOARD
+
+ Cleaning the keypads and PC board will correct non-functioning keys
+-if the problem is dirt or other debris-. After removing the board 
+(lots of tiny screws and one soldered switch) from the keyboard top, 
+wipe the dust off the PC board with a clean cloth, if necessary. Don't 
+rub or scratch the conductive spots on the board. They normally have a 
+coating to prevent corrosion and oxidation of the copper underneath. 
+If there is some corrosion that you must remove from a -copper- clad 
+board, rub the spots -gently- with a pencil eraser, then clean the 
+board with alcohol and wipe dry. Clean fingerprints from the board 
+contact areas. Oil and moisture from your skin can cause problems. 
+The contact areas should be shiny copper.
+
+NOTE: some boards (the SX for one) have black conductive paint over the 
+contact areas rather than copper. Unless you encounter a liquid spill 
+that needs to be cleaned off, it's best to leave those areas absolutely 
+alone. If the black conductive coating is rubbed off, the board will 
+become unserviceable!!!
+
+Blow any dust out with compressed air or vacuum, and remove any hair or 
+fibers left behind from the Q-tip or cloth. The first and least invasive 
+restoration attempt of the conductive rubber pads should be done by 
+pulling a clean strip of paper across each one. The rubber pads are thin 
+and flexible, so be careful you don't tear or dislodge them. With one 
+hand, use a finger to hold each key down and press the paper gently 
+against the pad with your thumb while pulling the paper across the pad 
+with the other hand. You'll have to do one side of the board (two or 
+three rows of keys) and then turn the board around and do the other rows. 
+Don't touch the keypads with your fingers, but if you do accidentally, 
+make sure you clean off the oil with alcohol or other solvent before 
+reassembly. Never use abrasives on the board or keypads in an effort to 
+clean them. It only makes matters worse and may render the entire board 
+unserviceable. If contaminated from a spill, the rubber keypads can be 
+cleaned with alcohol on a Q-tip. It's best not to spray anything inside 
+the keyboard. The spray goes everywhere and just attracts dirt.
+
+CLEANING VS REPLACEMENT
+
+     I did some experiments with good and bad keypads. I tried various
+kinds of cleaners including solvents, and rubbing with paper and emory
+cloth. After all this, I have come to the conclusion that for a key worn
+out by normal use, cleaning is useless. The conductive rubber itself
+deterioriates and cannot be "rejuvinated". A new key will measure less
+than 1000 ohms (1K ohm) across the two ends of the rubber keypad. If used
+a lot and starting to fail, it will measure more than 10K ohms. At that
+point, the user will notice that it takes a lot of force to make that key
+work. Nothing I tried would make a bad key better (unless the problem was
+dirt or contamination of the PC board), and interestingly enough, nothing
+I could do (including sandpaper and solvents) would increase the
+electrical conductivity (and therefore the pressure needed for proper key
+response by the user) of a good key. The good ones stayed good and the bad
+ones stayed bad, no matter what I did. So, with that in mind, if cleaning
+doesn't help (or you don't want to have to open the box again), just
+replace failing keypads or the entire plunger with pad attached.
+
+REPLACEMENT OF KEYPADS
+
+     The quickest way to repair a keyboard if you have no spare parts on
+hand is to swap heavily used keys for ones not often used. The Shift keys,
+Spacebar, and letter keys like E and A for example, represent ones most 
+used by the average user. Such keys as the Up Arrow, Back Arrow and pound
+key could be used as a "source of parts" for a quick keyswap. If you have
+an old C64 or VIC20 laying around, it could be used as a parts source for 
+another similar computer. Many parts are interchangeable between computers 
+and all keys are the same inside. To make sure you have a good one to 
+install, either measure it with an ohmmeter across the two protrusions of
+the pad, or just examine it closely. Worn pads will look shiny... good
+ones will have a dull looking surface. New pads will measure between 100
+and 1000 ohms (1K ohms). When they start to require more pressure to make
+them work, the resistance of the pad will be up around 10K ohms or more. 
+If the resistance is too high, the computer does not sense a keypress.
+
+STUCK KEY SYMPTOMS
+
+     A stuck key can produce some rather confusing symptoms, depending on
+which key is stuck down. If the keyboard has ever suffered a liquid spill,
+one or more keys can get "sticky" from days to months later. Of course a
+broken key can stick down as can one with a missing spring under the 
+keytop. You can see it if you examine the keyboard as it will be lower 
+than the other keys. If one letter appears on the command line of the 
+startup screen with a flashing cursor after it, or it starts printing a 
+letter repeatedly on the screen at startup, suspect that key of being stuck 
+down. If the key feels OK, there might be some debris on the underlying PC 
+board that simulates a key being held down (shorted contact on the PC board. 
+Unplug any mice or joystick(s) if used and try it again. If suddenly none 
+(or only a few) of the keys work, check to see that none are stuck. Press 
+each one and see if the "feel" of the key is right. A sticky one will not 
+come back up like the others. A missing spring under a keytop can produce 
+intermittant or "stuck key" symptoms. That's usually easy to spot just by 
+looking. Beyond that, stuck keys or whole rows or columns that don't 
+respond may be due to a failed CIA interface chip in the computer. If 
+unplugging the keyboard doesn't resolve a "stuck key" symptom, that's 
+another indication of a failing CIA.
+
+REMOVAL OF KEYTOPS
+
+     Removal of the keytops must be done with great care so as not to
+damage the top or break the plunger underneath. The tops are a press fit 
+onto the plungers that stick up through the plastic housing. A spring under 
+each top makes the key come back up when not pressed. You might be tempted
+to use a knife or screwdriver to remove a keytop, but that's not a good 
+idea. The top must be pulled -straight- up and off. If you twist or bend 
+it to one side, you may break the plunger, keytop shaft or both. Prying 
+against another key will likely mar or scratch it. 
+     You can make a simple tool that will pop those keytops off easily. 
+Here's how to do it: With a pair of tin snips or metal shears cut a strip 
+of metal from a tin can (I used the top cut out of a dog food can) about 
+2 1/2 to 3" long and about 1/2" wide. Bend the ends over at a right angle 
+with pliers to form a tiny lip (1/32" or less) at each end of the strip. 
+Bend the strip into a U shape that fits over the keytop. The tool should 
+be big enough so your finger will fit inside over the keytop. 
+
+               ________
+             /          \
+            |            |
+            |            |
+            |            |
+            |            |
+            |            | 
+            |            |
+            |            |
+            |_          _|              
+
+The lip at each end must be small enough so the tool will fit between
+keys, but large enough to grab the underside of the keytop. Note: the 
+cut ends of the tin strip are very sharp! Wrap tape around the strip if
+necessary for protection. Now, press the tool over the keytop and,
+squeezing the sides gently to hold it in place, pull up on the tool and
+the keytop will come off easily. When it pops off, don't lose the spring
+underneath. Don't remove more than a few tops at a time unless you know
+where they go back. It's easy to get confused with keys that are not often
+used. (Ask me how I know.) It's best to have the PC board in place (held
+by a few screws, if necessary) so the plungers don't fall out when the 
+keytops are removed. Plungers are removed from the bottom of the assembly.
+     If you have a broken keytop and no spare parts handy, the shaft can
+be glued back on with SuperGlue, but first you have to extract the broken 
+stub from the plunger. Don't be tempted to just glue it back without 
+removing the broken stub from the plunger! If you do, you'll never get 
+that keytop off again, ever. Also, that glue tends to wick its way into
+other areas. So, you'll probably end up with a key that's stuck forever. 
+Make the extra effort and extract the broken stub of the keytop shaft out 
+of the plunger, I use a paperclip with one end bent into an L shape small 
+enough to fit into the small hole in the shaft. Insert the tool into the 
+hole and pull it out quickly. It may take several tries, but that trick 
+usually works and doesn't damage anything. Now, orient the broken shaft 
+bit over the bottom of the keytop so it sits straight. Note the position 
+and prepare to glue it back on. To reinforce the mend, trim a wooden 
+toothpick or the wooden shaft of a Q-tip to tightly fit the tiny hole in 
+the shaft and the broken stub. Force it into the bottom of the keytop 
+and then the broken shaft down over it until it fits snug. When you are
+satisfied it sits straight and is a good tight fit, remove the stub from 
+the stick and apply the glue, then press the stub back over the stick. 
+Immediately wipe away any excess of glue that is pressed out with a Q-tip. 
+Let the repair set at least an hour before you try to use it. Trim off 
+any wood sticking out of the hole if necessary. The repaired keytop 
+should now work when pressed into place.  
+     A broken plunger (actually more common) is not usually repairable. 
+If it's cracked along the side and the keytop will not stay on, no 
+repair I've ever tried was reliable... it would break again or the mend 
+was "sticky" in the hole. 
+
+DISASSEMBLY / REASSEMBLY... C64 Computer
+
+     Remove three philips screws along the underside of the front edge of
+the computer. Lift up the top half-shell and unplug the keyboard and power
+indicator connectors. The keyboard connector may be hard to remove. Grasp
+the ends and gently rock it back and forth slightly while pulling straight
+up on it. Don't pull on the wires! Note that there is a blank pin on one
+end. That makes it difficult (but not impossible) to put the plug in
+backwards. The power LED connector will go either way... it doesn't
+matter, because it will work either way. The top half-shell can then be
+removed from the lower half. The rear fasteners are sometimes very tight
+and will "pop" when the top is folded back. That's normal. 
+     Rest the top (keyboard) face down on a cloth or cushion to keep from
+scratching the keys. Unsolder the ShiftLock switch wires: heat the
+connection and just pull the wire out quickly when the solder melts.
+Remove 23 tiny philips screws holding the PC board to the keyboard
+assembly. The assembly need not be removed from the cabinet top, by the
+way. Lift the PC board up and out. Examine it for dirt or liquid spill
+residue, and inspect the rubber keypads for contamination or wear. Clean
+or replace pads as necessary. To remove a keypad, the keytop must be
+removed. (See REMOVAL OF KEYTOPS). With the keytop removed, the spring and
+plunger (with rubber keypad attached) will fall out. Make sure you don't
+lose anything! The plunger should slide out from underneath easily. If it
+doesn't, look for residue or cracks in the plastic. If it's broken or worn
+out, the plunger/keypad must be replaced. A plunger will fit in any
+slot... they are all the same. When installing a new plunger, don't forget
+the spring under the keytop. Temporarily install the PC board when you're
+ready to press the keytop back on. It gives the plunger something to push
+against, since you must apply pressure to the keytop to get it to "snap" 
+back on. Don't use your finger to hold the keypad... oil from your fingers
+will contaminate the pad. 
+     When you're finished cleaning/repairing the assembly, reinstall the
+PC board and put the tiny screws back in. Don't forget to resolder the
+wires to the ShiftLock switch: heat the connection and poke the wire in
+when the solder melts. Plug the keyboard back into the motherboard, and
+plug the LED connector back in. Lay the back of the two half-shells
+together and fold the top back down. It helps to squeeze the cabinet
+together at the rear to seat the fasteners. Put the three screws back in
+the cabinet and you're done. 
+
+DISASSEMBLY / REASSEMBLY... C128 Computer
+
+     The procedure is very similar to the C64, but the C128 has three 
+keyswitches to unsolder. These switches are plastic and can melt from 
+too much heat on their terminals... desolder them quickly!
+     On the "flat" 128: remove six screws (standard philips or Torx) from
+the bottom of the 128 case. Note: the 128 may have special screws holding
+the cabinet together. The newer star-shaped type is call Torx. The screws
+require a special T-10 size driver to remove them, but a small flat blade
+screwdriver can be used if you're careful... just make sure it fits
+tightly in the screwhead. Lift the top half-shell, starting at the front
+edges. Two small plastic "snaps" hold the case together on each side, and
+so may make it difficult until you press in slightly on both sides near
+the top row of keys on each side to pop it open. With the top shell loose,
+lift up on the left side of the top shell, reach under and remove the
+power LED plug from the motherboard. Now grasp the top half with both
+hands and shift it to the left to expose the wiring (still connected)
+between the top and bottom shells. You need to remove the keyboard
+connnector and a small philips screw. The keyboard plug is usually very
+difficult to remove. Because it is recessed, you can't get enough of a
+grip on it to remove it with your fingers. Instead, grasp -all- of the
+wires tightly between thumb and forefinger as close to the plug as you
+can and pull up, gently rocking back and forth to loosen the plug from
+the socket. Next, disconnect the ground strap held to the motherboard on
+the right hand side with a small philips screw. You can now remove the 
+top half-shell and set it face down on a cloth or padded surface. 
+     Unsolder the wires to the three keyswitches. They are plastic and
+will melt if the soldering iron is held on them too long! So, desolder
+quickly! The easiest way is to get under each connected wire and when the
+solder melts, lift the wire -gently- with the iron. If it's wrapped too
+tightly, you will need to unwrap it from the switch while the solder is
+molten. All I can say is: work quickly and carefully. I use tweezers to 
+move the wires while the solder is molten. You can cut the wires but may
+not have enough to resolder them when it's time to reassemble the keyboard. 
+There is no need to re-wrap them around the switch terminals when you 
+solder them back on. "Tack" soldering is good enough... just let the wire
+touch the switch terminal and solder the two together.
+     Remove the 27 tiny philips screws and lift up the PC board. Notice
+the tiny spring off to one side... don't lose it! It will fall out if you
+turn the panel over. That spring provides a ground connection between the
+metal frame of the keyboard and the PC board. It's there to discharge
+static electricity safely and harmlessly to chassis ground. You will not
+see any difference in normal operation without it, but leaving it out can
+open the computer CIA chips to possible damage from static electricity. 
+     Clean and replace parts as needed. The assembly is similar in design
+to the C64, but parts are not interchangeable between the two. Additional
+note: there are two versions of keyboards for the flat C128 but they look
+identical, and the PC board has the same CBM part number: 310401-01.
+The difference in the two versions is the length of the plungers under 
+the keytops. In one version, green and white plungers are 3/8" long and 
+in the other, blue and black plungers are 7/16". They are therefore not 
+interchangeable. A longer plunger might fit and work as a replacement for 
+a shorter one, but that keytop will stick up higher than all the others. 
+Follow the previous instructions as far as parts replacement and cleaning.
+Reassemble in reverse order of disassembly. The keyboard connector will
+only go back one way. Be gentle. It's possible to bend pins over if you're
+not careful. The power LED plug will fit and will work either way. Don't
+forget the ground shield at the right side of the motherboard and don't
+overtighten any of the screws. The plastic can't take much torque before
+it strips out. 
+
+DISASSEMBLY / REASSEMBLY... C128DCR COMPUTER KEYBOARD
+
+     Unlike the keyboard in the C128, the 128DCR keyboard is inside of its 
+own housing. It only requires the removal of six philips screws to get to 
+the internals, but the screws are hidden beneath the rubber "feet" on the 
+bottom of the keyboard. Those feet are held with double-sided tape and are 
+easy to remove. I like to permanently remount them close to but not 
+covering the access holes. That makes it easier the next time I need to 
+open the case. Rather than "peel and stick" tape, I use Superglue to remount 
+the rubber feet near the original spaces but not covering the screws again.
+     As with the 128 keyboard, there are 27 tiny screws that hold the PC
+board to the assembly. The interconnect cable is soldered to the board and
+a plastic wire tie secures that cable to the board. The board can be opened
+and cleaned without cutting that tie. Before you disassemble the keyboard,
+it's a good idea to blow the dust and debris from the top. Lint and hair
+may be trapped under the keys, so if there is a lot of it that doesn't
+respond to blowing it out with an airhose, you may need to remove some of
+the keytops to get at it. If you do that before you remove the board, the
+plungers will not fall out when keytops & springs are removed. Wide keys
+such as the ENTER key have a wire clip that is rather difficult to put 
+back correctly. Note how it comes off, and work carefully so you don't
+break the plastic retainers that hold the clip in place. If a keyboard is
+really gunked up, I remove the key assembly from the PC board and spray 
+Windex all over the keytops, then wipe them with a soft paintbrush. That 
+will loosen most of the dirt and gunk under the keys. A flush with hot 
+water washes away all the debris. I shake the assembly to eliminate most 
+of the water and set the assembly aside to dry. A small fan blowing on 
+the assembly will speed drying. After that, I then rub each pad with 
+a sheet of paper (see above) to "polish" the contacts. 
+     The keys are all part of an integrated metal and plastic subchassis, 
+and if that main deck is damaged, it may not be repairable. However, most 
+of the time failures are due to bad contacts, a broken plunger or a broken
+keytop. The plastic subchassis is mounted over a "motherboard" where each 
+plungers conductive pad touches the corresponding board contacts when a key 
+is pressed. Don't use abrasives or rub on the conductive surfaces when
+cleaning the PC board. Those contacts are just a carbon powder coating and 
+are easily damaged. Use a mild cleaner such as Windex or rubbing alcohol 
+on a cloth to clean up any spills on the board but -don't- rub hard. Wipe 
+dust and debris off with a dry cloth or just use compressed air.
+     The three keyswitches (Caps Lock, 40/80, & Shift Lock) wires connect 
+to the board and must be unsoldered carefully (see instructions above). As 
+with a C128 keyboard, all keypads wear out with use and then require 
+increased pressure on the keys to make them work. If cleaning doesn't 
+restore normal operation, replace the pad. If you don't have spares, swap 
+the pad or the entire plunger with one from another key that isn't used as 
+often. The pads just snap onto the bottom of the plunger but that requires 
+removing the plunger from the subchassis. 
+     Note that plungers and springs under the keytops are interchangeable 
+with some C128 keyboards (there are two versions of flat 128 keyboard, each 
+with a different length plunger). Although they look identical, C128DCR 
+keytops have a longer shaft to fit their plungers, so not all C128 keytops 
+will work. DCR keytops may therefore fit some C128 keyboards. My DCR keyboard 
+is a Mitsumi and uses the longer keytops. 
+
+THE SX KEYBOARD: 
+     Because of the unique design of the SX-64 keyboard, I wrote a separate 
+article for that computer hardware. Look in the SX directory for it.
+
+Ray Carlsen CET
+CARLSEN ELECTRONICS
+
+If you have questions or comments, or more importantly if you spot any 
+mistakes here, please let me know. Thanks!

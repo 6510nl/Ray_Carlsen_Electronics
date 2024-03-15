@@ -1,0 +1,33 @@
+									
+Here are some instructions on how to operate this multifunction monitor.
+
+Press in the top center of the trap door under the screen to open it and 
+press in again to close it (it latches). With the door open, the inside 
+preference controls from left to right are: BRIGHTNESS, CONTRAST, COLOR 
+LEVEL, COLOR TINT, 3 POSITION MODE SELECTOR SWITCH, AND VOLUME. The 3 
+screwdriver adjustments are for service only. There is an attached 
+"pocket" on the right side of my monitor case which was there when I 
+bought it. I presume it is just a storage pouch for a mouse. 
+     The A/V cable I got with the monitor looks like an original Commodore 
+but it's not. This apparently very common after-market one has four wires 
+as opposed to the original CBM versions of two or three. Also, the color 
+coding of the wires and connectors is different than a Commodore. Since 
+the cable has a five pin DIN, it can't do separated Y/C, just composite.
+To enable use of this kind of cable, You have to determine which ones
+are composite and audio. The 3rd and 4th are luminance and audio in.
+     One important difference about this cable is that it has an audio 
+INPUT connection. No Commodore cable ever had this connection. It could
+be used to input line level audio and pass it through the SID for audio
+filtering. One important proviso when using the audio input connection:
+NEVER connect or disconnect this wire with the computer running! I once
+allowed the input plug wire to touch metal (ground) with the computer on
+and it instantly destroyed the SID chip. To prevent accidental damage, I
+put a piece of tape over that (yellow on my cable) connector. 
+     A true Commodore cable has an 8 pin DIN on one end. The other end
+has three normal outputs: Luminance (B/W information), chroma (color) and 
+audio from the computer. I prefer S-video because it displays a sharper 
+image on the screen. The three plugs color matches ones on the monitor.
+     This monitor is also capable of monochrome operation via a single 
+jack (bottom row of sockets) and produces a high resolution green screen. 
+Set the preference switch inside the front panel to the right (MONO).
+

@@ -1,0 +1,15 @@
+correct lopt for a 1084s-p1 is a hr7533
+
+correct hot transistor is a BU508AF(mentioned in the service manual) or D1577,if you get one with a metal tab use a sil pad to insulate between transistor and heatsink or itl blow the fuse in a short
+
+
+thats 100% info
+
+
+1084S-P which is the earlier model,uses a HR7506 and uses the BU508A and D1577 hot transistor
+
+
+all you have to do to find out is read the label on the rear as a identifier for the chassis
+
+
+the HR6489 is for a very early model,this has a separate screen and focus unit on the tube neck assembly(neck boards can be the same as used for the hr7506),it can be identified by the square outline on the pins on the underside of the pcb instead of a U shaped pin config,they are not interchangeable

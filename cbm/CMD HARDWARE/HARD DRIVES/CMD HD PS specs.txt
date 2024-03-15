@@ -1,0 +1,12 @@
+I have two original power supplies from CMD. One of them came with the CMD HD 
+that I bought directly from CMD in the 90’s, the other came with another CMD 
+HD that I bought secondhand. Both supplies are identical. The outside of the 
+supply identifies it as an Autec “UPS 30-V20P” and the board inside is an 
+Autec “UPS40-2002”. The supply has universal AC input and provides 5VDC @ 2.0A 
+and 12VDC @ 1.5A.
+
+The output connector of the supply uses the same 4-pin DIN configuration as the 
+1541-II and 1581, with a small difference. The Commodore supplies have one GND 
+and one NC (no connect) pin but the CMD HD supply has GND on both pins.
+
+http://mikenaberezny.com/hardware/c64-128/cmd-hd-series/  CMD hard drive info

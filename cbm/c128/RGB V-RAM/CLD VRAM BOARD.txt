@@ -1,0 +1,58 @@
+
+          16K to 64K VRAM UPGRADE "PIGGYBACK" BOARD FOR THE C128
+                     latest information 6-5-2011
+
+     Ordinarily, to upgrade the video (RGB) RAM in the C128, you would
+remove (desolder) the two original 16K RAM IC's (generic 4416 inside
+the metal can on the 128 motherboard) and replace them with 64K (4464) 
+chips. That would be difficult for most people to do themselves. An 
+easier way was produced using a small plug-in board that anyone could 
+install themselves. That board was built by Chip Level Designs back in 
+the late 1980s and, unfortunately, is no longer available. To install 
+that upgrade board, the original RGB chip was removed, the "piggyback" 
+board inserted into the RGB socket, and the RGB chip installed in the 
+piggyback board. The original RAM chips in the computer are then 
+bypassed and do not need to be removed. If you ever come across one of 
+those boards, it's easy to do THE VRAM upgrade in your C128 computer.    
+     When this board is installed in a C128, the 4" X 6" metal cover 
+that clamps over the RGB and VIC area will not fit back down all the 
+way. The RGB chip sticks up higher because of the modification. As 
+long as the metal "fingers" that touch the chips still do, the cover 
+will work as intended as both a shield and a heat sink for those two 
+chips. The metal shield that covers the motherboard will of course 
+stick up a bit higher too. Just bend the fingers down a bit before 
+installing it so all will be contacting their respective chips when 
+the cover is reinstalled. 
+     
+     To those who might want to duplicate this board, I took some 
+digital photos before and after I removed the components to show the 
+board layout underneath them. There were two 4464 RAM chips and two 
+24 pin sockets (the 8563 RGB chip is a 48 pin IC). The low profile 
+socket pins stick through the 1/32" thick piggyback board far enough 
+for the pins to be used as a header plug. Note the size of the holes 
+in the bare board. The sockets used have a large round metal surface 
+that protrudes out of the bottom about 1/32". Those stubs are what 
+is soldered to the PC board. The pins that protrude from those stubs 
+are what are plugged into the computer socket, and they are fragile! 
+If any pins are bent, they will break off, and the socket must be 
+replaced. Note that some of them are cut off because the RAM chips 
+on the piggyback board bypass the ones on the computer motherboard. 
+Pins 1 through 33, 37, and 43 through 48 are left intact. The ones 
+removed are pins 34 through 36 and 38 through 42. The board holes 
+are plated-through ensuring a connection from board top to bottom. 
+The tiny surface-mount component on the back side of the board is a 
+capacitor, a 0.022uF bypass filter across the supply line. Note the 
+black dots I put on the bare board. Those indicate IC pin 1 for each 
+of the chips.
+     
+     If I were going to build a board like this, I would change a few 
+things to make fabricating the PC board easier. I would have the header 
+pins offset from the IC socket so any low profile socket could be used. 
+A single-sided board would require reconfiguring the layout and using 
+jumpers, but it would eliminate the need to use plated-through holes. 
+Header pins could be just bits of solid hookup wire soldered into the 
+holes. Such wires would be flexible, and if accidently bent, could be 
+straightened without breaking. If one or more did break off, they 
+could be replaced easily. 
+
+Ray Carlsen

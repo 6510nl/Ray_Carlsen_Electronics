@@ -1,0 +1,9 @@
+COPYING FILES 
+
+I decided to attach a second floppy drive to the C65 in order to file-copy some of the C65-files onto a 5 1/4" floppy. There are two basic-commands to copy a whole disk (backup) or a file (copy), but both are quite useless, because they need a dual drive and can't copy from one unit to another.
+
+After i connected one of my 1541/II floppys i was able to reproduce the fact that a serial device with unit 9 will not work on a C65, but after configuring it as unit 10 everything worked fine. Trying to use FC65, a copy-tool wich is on one of the demo disks (disk number 2, i think), to copy some files from unit 8 to unit 10 gave me the message 'file exists, replace?', going into a endless loop.
+
+Having a look into the basic code i soon discovered that modyfiing line 3040 to '3040 GOTO 3100' made me able to copy the files from 3 1/2 to 5 1/4 using FC65.
+
+If you own a C65 but no serial floppy drive such as 1541, 1571 or 1581 (unlikely), you still have the chance to use the monitor to 'l' and 's' the files. I do not think that using C64 copy tools in 64-mode will work, i just tested one program (dreamcopy), wich didn't work for me.

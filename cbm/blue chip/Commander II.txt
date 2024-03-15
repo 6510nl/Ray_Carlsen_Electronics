@@ -1,0 +1,7 @@
+There are apparently two revisions, later F board seems the same but with 
+one EPROM, and instead of integrated IC it was used several TTL's (seems 
+that several clones used same schematics)
+
+http://blog.worldofjani.com/?p=2232
+
+http://blog.worldofjani.com/?p=2378

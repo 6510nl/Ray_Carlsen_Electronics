@@ -1,0 +1,53 @@
+              PROMENADE C1 with PROMOS 2.0 Operating System Software
+
+                   TABLE of CONTROL and PROGRAM METHOD WORDS
+
+       EPROM         PGM         CONTROL            PROGRAM METHOD WORDS
+       TYPE        VOLTAGE        WORD          STD     1#1      I#2     1#3
+
+       2758          25            28            3       7        A       E
+       2516          25            28            3       7        A       E
+       2716          25            28            3       7        A       E
+       27C16         25            28           43      47       4A      4E
+       2716B         12.5          2A           NR      46       4A      4E
+       2532          25            18            3       7        A       E
+       2732          25            E0            3       7        A       E
+       2732A         21            E1            3       7        A       E
+       2732B         12.5          E2           NR      46       4A      4E
+       2564          25            14            3       7        A       E
+       2764          21             5            3       7        A       E
+       27C64         21             5            3       7        A       E
+       2764A         12.5           6           NR       6        A       E
+       27128         21             5            3       7        A       E
+       27128A        12.5           6           NR       6        A       E
+       27256         12.5, 21      E6, E5 *     NR       6        A      NR
+       27C256        12.5, 21      E6, E5 *     NR       6        A      NR
+       27512         12.5          E2 **        NR       6       NR      NR
+       27C512        12.5          E2 **        NR       6       NR      NR
+       27513         12.5        4XE2 **        NR       6       NR      NR
+       27011         12.5        4XO6 **        NR       6       NR      NR
+       68764         25            30           NR      46       4B      4F
+       68766         25            30           NR      46       4B      4F
+       68769         25            30           NR      46       4B      4F
+       2815          21            39            3       6        B       F
+       2816          21            39            1       7       NR      NR
+       X2804A        21            39            1      NR       NR      NR
+       X2816A        21            39            1      NR       NR      NR
+       X2864A        21             7            1      NR       NR      NR
+       48016         25            28            2       5        9       D
+       5133          21             5            3      NR       NR      NR
+       5143          21             5            3      NR       NR      NR
+       5213          21            39            2       4        9       D
+       52B13         5              7           NR       4       NR      NR
+       52B23         5              7           NR       7       NR      NR
+
+       NR- NOT RECOMMENDED.
+       *-  Be SURE to use the CORRECT CW corresponding to the PGM
+           VOLTAGE required by your EPROM.
+       **- Requires special programming. See manual for details.
+
+       Jason-Ranhein Company periodically updates this list. Send
+       a stamped, self-addressed envelope to receive the latest
+       revision.
+
+                         -inside back cover-

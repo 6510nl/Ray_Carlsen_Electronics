@@ -1,0 +1,67 @@
+                    COMMODORE DATASSETTE RECORDER REPAIRS
+                  Latest updates and corrections  5-18-2012
+
+     With such a simple design, there is not a lot to go wrong with the CBM datassette 
+recorder. It is essentially an audio recorder with special amplifiers to allow digital 
+input and output signals that a computer can communicate with. Commodore outsourced the 
+construction of its datassettes and there are several different physical and electrical 
+designs, but all conform to the same standards for tape handling and computer interface 
+characteristics. The CBM 1531 used with the Plus/4 & C16 computers is essentially the 
+same as the more common C2N datassette but the former has a mini-DIN connector instead 
+of the edge connector used with a C64.
+     The most common problems that I've encountered when working with these recorders 
+are 1. dirty R/P (record/play) head, 2. dirty capstan and pinch roller, 3. slipping 
+belts, 4. intermittent record/play switch. I've heard a lot about alignment issues but 
+in my experience, like the 1541 disk drive, actual alignment problems are rare. 
+     Cleaning should be done on a regular basis if the recorder is used a lot. The tape 
+door doesn't open far enough to get a good look at the heads (R/P and Erase) or the 
+capstan and pinch roller so I use a dental mirror. If the heads and rollers are very 
+dirty, I elect to remove the chassis from the case to allow full access. Tape oxide 
+residue (not dirt) is what contaminates those surfaces, and solvent on a Q-tip is all 
+that's needed for a good cleaning. Alcohol works fine, but if other, stronger solvents 
+are used, be aware that many of them "eat" plastic, so you must be careful how you use 
+it. Rub across the heads to remove any residue and be sure to clean the capstan (the 
+silver pin that pulls the tape through the machine in play and record) and the black 
+rubber pinch roller (that presses the tape onto the capstan) of tape oxide residue. If 
+heavily contaminated, the roller can be "scrubbed" with an emery (fingernail) board. 
+The roller should have a dull appearance. If it's shiny, the surface is probably glazed 
+from use and must be resurfaced (emery board or sandpaper) or replaced. 
+     The main rubber belt should grip well so the mechanism doesn't slip (motor turns 
+but mechanism doesn't move). Belts can be cleaned with solvent to improve their grip 
+but if very loose, they must be replaced. A quick check I use to test the main belt for 
+grip is to put the machine in fast forward or rewind without a tape, and try to stall 
+the motor by grasping the respective supply or take-up reel with my finger. Experience 
+will tell what amount of "pull" is normal and when it's time to replace the main belt. 
+The replacement must have the same (or -slightly- smaller) circumferance and thickness. 
+A thicker belt will not work properly... it may cause faulty operation since it pulls 
+harder against a spring loaded mechanism. The smaller counter belt can be pretty loose 
+and still work fine... it's not critical. 
+     Lastly, the record/play switch is a small rectangular block that is soldered to the 
+PC board. It normally sits in PLAY mode until pressed by a lever when the mechanism is 
+put into RECORD. When the contacts inside that switch get a bit of oxidation on them, 
+the switch can become intermittent or the machine may not work at all. To clean the 
+switch, you'll need to disassemble the datassette (three or four case screws) and remove 
+the board (two screws) for access to the switch itself. For cleaning, give it a quick 
+shot of contact cleaner (I use Caig Deoxit) into either end and work the switch back and 
+forth with your finger a dozen times. Do that before you clean the belts because droplets 
+from a spray can often go where you don't expect. Whatever contact cleaner you use, be 
+aware that some can contain harsh solvents. Use one that is safe for plastics.
+     Another switch is used to turn on the motor when buttons are pressed. It's a leaf 
+switch on the bottom of the mechanism. The easiest way to clean that switch is with a 
+sliver of white paper wedged between the contacts and pulled out as the switch is pressed 
+together gently with tweezers. Any residue on the contacts will rub off on the slightly 
+abrasive paper. You can see the results on the paper if the contacts were dirty. 
+     Now about alignment... the head tilt (called azimuth) adjustment is normally set at 
+the factory and the tiny screw on one side of the head mount is secured with a dab of 
+glue or paint. Unless that adjustment screw has been turned (breaking the glue bond), 
+it's unlikely the alignment will be offset. Don't adjust it if you don't have to. 
+Realignment requires an oscilloscope to measure the head high frequency output, which 
+must be optimised with an alignment tape. 
+     Some repair tests requre that the datassette be powered, and it's safe to run it 
+while it's apart using a C64 for power. The motor will run in all functions with the 
+computer on, but be aware that it will not run if you have JiffyDOS installed. JiffyDOS 
+firmware bypasses the datassette port, so just turn off JD before you power up the 
+computer. 
+
+Ray Carlsen 
+CARLSEN ELECTRONICS

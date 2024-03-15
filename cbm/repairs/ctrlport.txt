@@ -1,0 +1,428 @@
+        C64/128 Control (joystick) Ports - Diagnostics and Repair
+                  latest updates or corrections 8-22-2015
+
+When a mouse or joystick doesn't work, it's not always obvious where the 
+problem lies... in the device or the computer. Unless you have several 
+input devices to cross-check, it's difficult to determine, but with a 
+few simple tests, a small BASIC program and your VOM (volt-ohmmeter), 
+you can run diagnostic tests yourself. It's helpful to know how a device 
+functions when it's working normally, so that's where I'll begin with 
+this article. Later, I'll explain how to test the joystick, proportional 
+mouse, graphics tablet, and game paddles. But first, let's examine the 
+computers control ports...
+     The two control ports on the right side of a C64/C128 are 9 pin male 
+D subminature connectors. They contain two separate sets of inputs, five 
+digital or switch inputs and two analog or variable voltage inputs. One 
+pin is +5 volts from the power supply and one pin is ground. Each device 
+uses different input lines. The ports, as viewed facing the computer 
+connectors, look like this:
+
+    .---------------.
+    \ 1  2  3  4  5 /
+     \             /
+      \ 6  7  8  9/
+       '---------'
+
+ 1 joy 0 (UP)
+ 2 joy 1 (DOWN)
+ 3 joy 2 (LEFT)
+ 4 joy 3 (RIGHT)
+ 5 POT X (proportional mouse or graphics tablet UP-DOWN, paddle input)
+ 6 joystick fire button, left mouse button or light pen (port 1 only)
+ 7 +5VDC from computer power supply
+ 8 ground or negative
+ 9 POT Y (proportional mouse or graphics tablet LEFT-RIGHT, paddle input)
+
+     Pins 1 through 4 and pin 6 go directly to one of the CIA chips and 
+share data lines with the keyboard. Therefore, a problem with one, such 
+as a shorted switch or stuck key, can interfere with the other. That 
+information is useful when trying to determine if a problem is in the 
+computer or not. The keyboard is a matrix (pulses pass through it when a 
+key is pressed) and doesn't ground data lines like a joystick does. 
+One exception is the RESTORE key on the C64. 
+     Signals from the two analog input pins 5 and 9 go through a "switch" 
+IC and on to the SID chip POT inputs where they are converted to digital 
+signals. The name POT refers to one way those inputs can be used, namely 
+with potentiometers (mechanically adjustable resistors) found in game 
+paddles. Potentiometers were commonly used for such things as the volume 
+control in TV and radio before microprocessor controlled circuits 
+eliminated the need for them. 
+     Since there are two ports and two analog inputs per port, that's a 
+total of four inputs, but there is only one SID chip with its two POT 
+lines. To allow for four inputs, the two ports are "time shared" (switched 
+back and forth) by the computer via the 4066 analog switch IC, U28 in the 
+C64 and U2 in the C128. 
+     Pin 6 of control port 1 can also be used as an input for a light pen. 
+It is a device with a sensor in its tip that is placed against the TV or 
+monitor screen to detect when the electron beam passes under it. With the 
+proper software, the pen can be used for computer control using the screen 
+as a "touch panel". That obviously requires holding your arm up to the 
+screen... perhaps the reason lightpens never really caught on. Some games 
+used a "pistol" to capture the light from the TV screen as input. 
+
+CONTROL PORT TEST PROGRAMS
+     Not all joystick functions or key presses produce a character on 
+the opening screen. You need some way to test all joystick functions.
+The following C64 BASIC program can be used to test the joystick inputs 
+of both control ports. It first clears the screen, then repeatedly PEEKs 
+two memory locations that represent the two ports and prints the results 
+on the screen. The two numbers that appear reflect which function is 
+activated by a joystick in both ports. I have included the port input 
+pins driven and corresponding keyboard keys that should produce the same 
+numbers on the screen. The dual entries (example: Commodore key & F3) 
+indicate two simultaneous key-presses which is the same as joystick UP. 
+Example: with this program, pressing the 1 key on the keyboard will 
+display the same screen number as joystick UP in joystick port 1.
+
+ 10 PRINTCHR$(147)
+ 20 PRINT"PORT 1:"PEEK(56321),"PORT 2:"PEEK(56320)CHR$(19):GOTO20
+
+ PIN  FUNCTION      CONTROL PORT 1         CONTROL PORT 2
+
+       NONE          255                    127
+  1    UP            254 (1)                126 (C= & F3) 
+  2    DOWN          253 (LEFT ARROW)       125 (C= & S)
+  3    LEFT          251 (CTRL)             123 (C= & F)
+  4    RIGHT         247 (2)                119 (C= & H)
+  6    FIRE          239 (SPACEBAR)         111 (C= & K)
+
+
+     A more complex machine language program is needed to check the 
+POT inputs, and BASIC is not recommended because it's inaccurate.
+However, since we only want to verify whether they work or not, I 
+chose BASIC for troubleshooting purposes. The following program tests 
+all inputs of the two control ports and prints the results on the 
+screen. It works on the C64 and the C128 in 64 mode...
+
+ 10 PRINTCHR$(147):REM CTRL PORT TEST PGM
+ 20 PRINT"JOYSTICK PORT 1:"PEEK(56321)
+ 30 PRINT"JOYSTICK PORT 2:"PEEK(56320)
+ 40 PRINT:POKE56333,127:POKE56320,64
+ 50 PRINT"PORT 1 POT X:"PEEK(54298)
+ 60 PRINT"PORT 1 POT Y:"PEEK(54297)
+ 70 POKE56320,128
+ 80 PRINT"PORT 2 POT X:"PEEK(54298)
+ 90 PRINT"PORT 2 POT Y:"PEEK(54297)
+ 100 POKE56333,129:PRINTCHR$(19):GOTO20
+
+     The first line clears the screen. Then, as in the first program, 
+two memory locations (joystick) are PEEKed and printed to the screen. 
+The keyboard is turned off in line 40 so it doesn't interfere with 
+the POT lines, the next poke switches the POT lines to read from 
+control port 1, then those memory locations are PEEKed. Line 70 is 
+used to switch to control port 2 so those POT lines can be PEEKed.
+Line 100 reactivates the keyboard, shifts the cursor back to the
+top of the screen, then the program loops and re-reads all the lines.
+The screen should look like this with the program running and nothing 
+plugged into the ports...
+
+ JOYSTICK PORT 1: 255
+ JOYSTICK PORT 2: 127
+
+ PORT 1 POT X: 255
+ PORT 1 POT Y: 255
+ PORT 2 POT X: 255
+ PORT 2 POT Y: 255
+
+     For those wishing to test the 3 voices of the SID chip, I'll
+include a BASIC program to do that:
+
+ 5 REM C64 SID 3-VOICE TEST PROGRAM
+ 10 FORL=54272TO54296:POKEL,0:NEXT:POKE54296,15:GOSUB60
+ 20 POKEW,17:POKEA,9:POKEHF,15:POKELF,35:POKES,128:GOSUB50:GOSUB70
+ 30 POKEW,17:POKEA,9:POKEHF,20:POKELF,40:POKES,128:GOSUB50:GOSUB80
+ 40 POKEW,17:POKEA,9:POKEHF,25:POKELF,50:POKES,128:GOSUB50:GOTO10
+ 50 FORX=1TO2000:NEXTX:RETURN
+ 60 W=54276:A=54277:HF=54273:LF=54272:S=54278:RETURN
+ 70 W=54283:A=54284:HF=54280:LF=54279:S=54285:RETURN
+ 80 W=54290:A=54291:HF=54287:LF=54286:S=54292:RETURN 
+
+     Line 10 resets the SID and POKEs maximum volume to the three voices.
+Line 20 POKEs values to voice 1 and plays a note for a few seconds. Line
+30 adds voice two and plays a note mixed with voice 1 for a few seconds.
+Line 40 adds the third voice to the first two for a few seconds, then the
+program loops back to the beginning. The parameters for the three voices
+are in the subroutines in lines 60, 70 and 80. The subroutine in line 50
+adds a delay so each voice can be monitored as the program advances. If 
+any/all of the voices are missing or sound "muddy", suspect a bad SID. 
+
+************************************************************************
+
+JOYSTICK:
+     Control port pins 1 through 4 and pin 6 normally measure +5 volts 
+all the time unless "pulled low" by an external switch connected to 
+ground (pin 8). That's what a simple joystick is doing when you move the 
+stick in any direction or press the fire button. With no movement of the 
+stick or fire button, all switches are open circuit. Note that those 
+switched lines are also used as inputs for the computer keyboard. Note 
+also that two switches at once can be activated by diagonal movement of 
+the joystick. That provides a total of eight possible combinations not 
+including the fire button. The two analog input pins 5 and 9 are not used 
+by the joystick nor is the +5V supply line needed because unlike most all 
+the other input devices a Commodore computer uses, the joystick is a 
+"passive" device. Commodore and Atari used the same pinout for joysticks.
+
+1350 MOUSE:
+     Not a true mouse, and sometimes called a "rolling joystick", the 
+Commodore 1350 looks just like a 1351 but has no identification number 
+on it as the 1351 "proportional" mouse does. This device uses pins 1 
+through 4 as inputs by "pulsing" them repeatedly as the mouse is moved. 
+For example, if the mouse is moved forward, a negative-going 20 
+millisecond pulse (electrically called a "logic low") is generated by 
+the mouse which "grounds" pin 1 for that length of time. That's the 
+equivalent of tapping a joystick handle forward once. A continuous 
+forward movement of the mouse is equivalent to holding the joystick 
+handle forward because it keeps the line grounded as long as the mouse 
+is moving. Similarly, movement in other directions creates pulses on 
+the other joystick lines. Diagonal movement creates a logic low on two 
+lines at once, just as a joystick does. 
+     The left "fire" button grounds pin 6 and functions the same as on 
+a joystick. The right mouse button grounds one analog input pin 9 (reason 
+unknown, unless to keep some kind of compatibility with a 1351), same as 
+the 1351 in joystick mode. The POT lines are otherwise unused by a 1350.
+
+1351 MOUSE:
+     The 1351 has two modes of operation: true proportional mode and 
+1350 joystick emulation mode. If a 1351 is connected and the right mouse 
+button is held down as the computer is powered up, the mouse switches to 
+"joystick" mode and operates exactly as a 1350. This is useful for some 
+games that do not work with a proportional mouse or mouse driver software 
+is not available. In joystick mode, the left mouse button grounds pin 6 
+(FIRE) when pressed. The right button grounds the POT line pin 9. The 
+1351 operators manual says this button "shall be ignored". (See 1350)
+     If the right mouse button is -not- pressed at computer power up, 
+the 1351 defaults to proportional mode. Electrically, a moving mouse 
+generates two signals called variable duty cycle square waves as inputs 
+to the POT lines. The computer interprets those signals as variable DC 
+voltages and uses them as direction control for such things as the 
+pointer in GEOS. The voltage variation on pin 5 is used for X axis 
+(forward/backward) movement and the variation on pin 9 is for Y axis 
+(side to side) movement. Diagonal movement generates signals on both 
+POT inputs. A DC voltmeter on those lines (mouse connected, of course) 
+will show a small voltage variation when the mouse is moved. The 
+computer requires mouse "driver" software to detect and process the 
+analog information from the POT lines. A driver is usually embedded in 
+programs that use the mouse for direction control. In proportional mode,
+the left mouse button grounds pin 6 (equivalent to the "fire" button on 
+a joystick) and the right button grounds pin 1 (equivalent to the "UP" 
+joystick function)... a bit different than 1350 joystick emulation mode.
+     
+GAME PADDLES:
+     These dual-paddle controllers share some features of both a mouse 
+and a joystick. There are two paddles, each with a cable that cross 
+connects and terminates in a single female 9 pin D plug. Some games 
+utilize two sets of paddles allowing four players at once. Each paddle 
+has a control knob which rotates an internal potentiometer or "pot", 
+and a single "fire" button. Each pot is wired to access one of the POT 
+inputs of the control port. Like a mouse, paddles require a software 
+driver to process their varible voltage inputs on the POT lines, but in 
+this case, the variation is derived from a simple voltage divider 
+comprised of the computers internal circuits and the external 470K 
+(K=1000) ohm pot wired as a variable resistor or "rheostat" inside the 
+paddle. Electrically, one end of a pot is wired to the +5V source (pin 
+7) and the slider contact to one of the two POT inputs (pin 5 or 9). 
+Turning the control changes the pot resistance from a maximum of 470K 
+ohms (at full counter-clockwise) to zero ohms (full clockwise). The 
+voltage on that corresponding POT line goes from about 1 volt DC at 
+maximum resistance to +5 volts at minimum resistance of the control. 
+The fire button grounds pin 6, the same as a joystick. Commodore and 
+Atari apparently used the same pinout for their paddles. I have taken 
+both apart and they are identical inside. 
+
+GRAPHICS TABLET:
+     One common product is called the Koala Pad. This input device is 
+similar to a mouse but uses a matrix of pressure sensitive contacts 
+under its surface panel to generate X and Y inputs on the POT lines 
+when the tablet surface is pressed with a finger or stylus. Similar to 
+a mouse, a Koala pad generates variable duty cycle square waves which 
+are interpreted by the computer to tell which part of the tablet has 
+been touched. 
+     Unlike a mouse or game paddle, the left and right buttons connect 
+respectively to pins 3 and 4 of the control port. A Koala tablet 
+therefore requires its own software to operate properly. There is both 
+a Koala software cartridge and software on floppy disk. Some commercial 
+software programs were written specifially to use a Koala and so have 
+embedded drivers. 
+
+***********************************************************************
+
+DIAGNOSTICS:
+     Now we get down to the "nuts and bolts", how to troubleshoot 
+equipment that's not working properly. A VOM (volt-ohmmeter) will be 
+necessary to check for continuity (a closed circuit or zero resistance). 
+If you don't already have one, now is the time to purchase a meter. Even 
+an inexpensive one is a good investment. It allows you to make passive 
+resistance checks of switches and cables, and lets you check AC and DC 
+voltage levels. Mechanical faults like bad switches or broken wires 
+(inside cables where it doesn't show) account for some failures. If 
+"static" (non powered equipment) resistance tests don't reveal any 
+problems, you can go on to voltage checks. Be careful when measuring at 
+the pins of the computer control ports while it's running. Accidently 
+shorting pins together can destroy ICs in the computer, especially the 
+CIA chip. Be especially careful of the +5V source at pin 7. Accidently 
+grounding that pin can destroy components in the computer. I suggest
+wrapping some electrical tape on your meter probes so only the very 
+tip is exposed to contact the connector pins. That should help prevent
+accidental shorts. Also, some devices like the Commodore 1351 mouse 
+have a metal shell on their 9 pin connector. If you attempt to plug 
+that in while the computer is running, you could accidently short port 
+pins together. I've done it myself in a moment of carelessness and 
+destroyed a SID chip. 
+     IMPORTANT NOTE: It's easy to get confused about the pinout of that 
+9 pin connector. The diagram above shows what it looks like facing the 
+computer or the -wire- end of the plug. However, when you're making your 
+resistance checks of a device like a joystick, you'll be facing the pins 
+of the plug, so you'll be looking at a mirror image of the connector. Be 
+careful! I always mark pin 1 with a dab of ink or paint before I begin 
+tests to eliminate that confusion.
+
+CONTROL PORT TESTS:
+     If you have no mouse or joystick to test the ports, run the BASIC 
+test program and use a 100 to 470 ohm resistor to ground each of the 
+joystick pins and watch the results on the screen. A resistor is 
+used to limit the current just in case you accidently touch the wrong 
+pin, so it will not do any damage. Pin 8 is the ground, so one end of 
+the resistor should be connected to that pin and the other end touched 
+to each of the joystick input pins, one at a time. The numbers on the 
+screen should change as indicated above. If more convenient, add a short
+length of wire to the resistor and use the metal frame of the computer
+at the rear panel as a ground connection. Don't stick it in any of the 
+other ports back there... just to the metal.
+     Measured with a voltmeter, you should find about +5VDC with respect 
+to ground on those five control port connector pins (1 through 4 and pin 
+6) when nothing is connected to the control ports. If any of the lines 
+measure low or zero, there is a short somewhere inside the computer. 
+Unplug the keyboard to eliminate that as a source of the low reading.
+If the short clears, troubleshoot the keyboard. If the short remains, 
+use your ohmmeter (system unplugged from power) to trace the reason for 
+the low resistance reading on that line... bad IC, leaky diode, shorted 
+bypass capacitor, etc. 
+     The unconnected POT input lines (pins 5 and 9) of the two control
+ports will normally measure 0.5VDC to 1VDC. They are "driven" higher by
+a mouse, tablet or paddle when one is connected. Use the test resistor
+to momemtarily connect pin 5 or 9 to the supply pin 7. The number on 
+the screen for that port input should change (to a lower number if 
+the test resistor is 470 ohms or lower in value). If one or both ports 
+don't respond, the switch IC and SID are suspect. 
+
+JOYSTICK:
+     A bad joystick is pretty easy to diagnose. It's just five switches 
+that are normally open circuit. To test, first unplug it and see if all
+the keyboard keys work properly. If so, see the above pinout diagram 
+of the control ports and prepare to use your ohmmeter to do some 
+resistance checks of the joystick itself (unplugged from the computer, 
+of course). If you push the joystick handle forward (the UP function), 
+it should press on one of the internal switches and close the contacts 
+which connects pin 1 (UP) to pin 8 (ground). For the rest of the switches, 
+connect your meter to the appropriate pins of the plug, move the joystick 
+and note if the meter shows continuity. 
+     It's important you don't damage those plug contacts by forcing 
+anything. The correct size wire should slide in easily. Two small metal 
+paper clips are just the right size and work well to attach your meter 
+after reshaping the clips to hold the meter probes. Note that you may 
+have to wiggle the paper clips gently in the holes to make good contact, 
+so don't mistake a poor connection here for a bad switch or cable. 
+     If one switch doesn't work and the switch doesn't feel or sound the 
+same as the others, that switch may be bad. The joystick will have to be 
+opened up for a visual inspection and tests of the switches. Depending on 
+the type of switch used, it may be repairable. If not, replace it. A 
+broken wire inside the cable is a possiblility, especially if the device 
+is used a lot. Wires usually break near the body of the joystick because 
+it's stressed the most there. Connect one probe of your meter to the 
+internal wire of the switch that doesn't work (don't forget to check the 
+ground wire if no switches work) and the other meter probe to the 
+appropriate plug contact. If you find one line open (or intermittant when 
+the cable is moved), the cable will have to be repaired. That's pretty 
+easy if the wire break is near the joystick. Just cut the cable, strip 
+the ends, route it into the joystick and splice the wires back to the 
+connections inside. Your cable will be a bit shorter, but it should work 
+fine once again. 
+     If you have a bad (intermittant) connection at the plug end of the 
+cable, you can try squeezing the plug with a pair of pliers to tighten the 
+contacts inside. If that doesn't work, you may have to replace the female 
+9 pin plug... if you can find one. Joystick connectors are usually molded 
+plugs that don't come apart. Each wire inside will be a different color, 
+so installing another plug requires matching all the pins correctly. Since 
+there are many different manufacturers, it's impossible to list the wiring 
+color code for all of them. However, with the pinout as a guide, plug 
+wiring can be determined by which switch is activated in normal operation.
+     OK, lets say you have tested all the joystick switches and they seem 
+fine but the computer doesn't respond to one or more joystick functions. 
+Examine the joystick port connectors on the computer to see if any of the 
+pins are bent, missing or pushed back and not making contact. If that's OK, 
+the next step is to check all the keyboard keys for normal function. Some 
+keys like the function keys will not produce a character on the screen but 
+you can tell a key has been pressed by carefully observing the flashing 
+cursor of the opening screen... it "flickers" slightly when those keys
+are pressed. 
+
+1350 MOUSE:
+     Since this is an "active" device, unlike a joystick, it requires +5 
+Volts DC from the computer to produce direction control pulses. Therefore, 
+static tests with an ohmmeter are limited to the left button switch. You 
+should measure continuity (zero ohms) between pins 6 and 8 of the connector 
+when the button is pressed. Use the BASIC test program to check the other 
+joystick emulated functions.
+
+1351 MOUSE:
+     This mouse needs a +5 volt source from the computer to generate 
+signals to the POT lines because it is an "active" device. Static tests 
+are limited to checking the left (connects pins 6 and 8 when pressed) and 
+right (connects pins 1 and 8 when pressed) mouse buttons. Test the mouse 
+in joystick mode by holding down the right mouse button for computer 
+powerup, then use the BASIC test program and observe the readings when 
+the mouse is moved and buttons pressed. Try the mouse again in 
+proportional mode... 
+
+     Problems with the 1351 include loss of direction control in one axis, 
+jittery or stuck GEOS pointer, or totally "dead" mouse. Mechanical problems 
+that make a mouse intermittant can be caused by dirt on the rollers that 
+the ball rotates when the mouse is moved, or by a broken wire inside the 
+cable. Note that a failed SID chip can affect mouse or graphics tablet 
+operation. 
+     To clean the mouse, remove the cover over the ball and let the ball 
+fall out onto your hand. Observe the rollers inside. They could be snarled 
+with hair, dirt or debris which must be cleaned to allow them to rotate 
+freely. Use tweezers to remove hair and a Q-tip (cotton tipped swab) 
+moistened with alcohol to clean the rollers. The ball can be washed with 
+soap and warm water, then dried and reinstalled. 
+     A dead/intermittant mouse can also be caused by a broken wire inside 
+the mouse cable. That usually happens near the body of the mouse where 
+the stresses of repeated movement are greatest. If wiggling the cable 
+causes the pointer on the screen to jump, the cable is likely broken inside 
+and will need to be repaired. The cable can be cut off at the break and the 
+wires spliced back into the mouse using the wire colors as a guide. 
+     If the rollers are turning and one axis doesn't work, there may be a
+bad sensor inside the mouse. It's usually the IR emitter that fails. As 
+with most electronic gadgets nowadays, exact replacement parts are hard
+to find. Your best bet for spare parts might be another bad mouse that
+has a different problem. 
+
+GAME PADDLES:
+     Although paddles require +5V from the computer to work, they are 
+essentially a passive device as there are no ICs or transistors inside. 
+Therefore, all the internals can be static-tested with an ohmmeter. The 
+control pots inside are 470K (K=1000) variable resistors. One paddle 
+control connects from pin 7 (the +5V source) to pin 5 (X POT input). The 
+other paddle control connects from pin 7 (+5V source) to pin 9 (Y POT 
+input). The fire button on one paddle connect pins 4 and 8 (ground), and 
+on the other paddle connect pins 3 and 8 (ground).
+     The most common problems with paddles are noisy controls and broken
+cable wires. A shot of spray control cleaner should fix the jitter caused 
+by the noisy control. For repair of broken cables, see the above info on
+repairing joysticks.
+
+GRAPHICS TABLET (KOALA):
+     As with the proportional mouse, this is an active device that 
+requires +5V from the computer in order to generate signals on the POT 
+lines. Static tests of the left and right buttons can be done with an 
+ohmmeter. The left button connects pins 3 and 8, and the right button 
+connects pins 4 and 8. 
+     Typical problems range from broken cables to unrepairable failure
+of the tablet if someone used too much force and damaged the surface. 
+
+Ray Carlsen CET
+Carlsen Electronics... a leader in trailing-edge technology.
+
+Email me if you find any mistakes here or have questions. I appreciate
+feedback of any kind. 

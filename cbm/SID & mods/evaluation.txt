@@ -1,0 +1,55 @@
+
+                  EVALUATING THE 6581 SID (SOUND) CHIP
+              latest updates and/or corrections: 7-15-2018
+
+     When I repair a C64 or 128 computer, it's often necessary to test or 
+just replace a bad or failing SID chip. Since I have no spare SIDs left, I 
+ask the owner of the computer to locate a replacement for that particular 
+IC to save them the expense of having me do it. However, when I get any IC 
+from an unknown source, I have to make sure it's working properly before 
+I install it and return the computer to the owner. I recently got some 
+unusual results when testing a pair of replacement 6581 SID chips. One 
+worked perfectly and the other garbled voices 2 and 3. I'm not talking 
+about the minor differences of voicing between versions of the SID. 
+     My most critical test for SID chips is the original Commodore Test 
+CART V586220. It came with an "octopus" cable that plugs into all the 
+external ports to do a complete evaluation of a C64 board. However, that 
+cable is not necessary to test all computer functions, one of which is 
+the SID chip. The SID test is the last one performed by the cart program.
+It checks all three voices with multiple tones and its noise output as 
+well as the SIDs A/D converter via the POT lines. If any of the tones it 
+plays are missing or garbled, the SID is suspect. Now the problem...
+     One of the two SID chips I tested seemed to be bad... voices two 
+and three were garbled. Listen to the audio clips of good and bad SIDs 
+to note those test results. I always use the same C64 board for tests 
+as all its chips now have sockets. Now, why did that "failing" IC work 
+-perfectly- in another board of the same type (both # 250407)? I could 
+only assume that the IC was marginal somehow, perhaps failing, but now 
+I just don't know. I thought back to my own experiments with replacement 
+PLA chips (using an EPROM) and that system timing is a factor that can 
+make such a replacement IC marginal or non-functional. Now I'm starting 
+to think the SID can suffer the same marginal operation because of system 
+timing differences between C64 boards. I tried that same SID in another 
+C64 board (same 250407) and it produced a less glitchy output, different 
+than my other test board. Lastly, because it worked perfectly in the 
+owners board, we agreed that the chip, although possibly marginal, would 
+be OK as a replacement. I ran the all-function test for over an hour to 
+make sure the board was stable. 
+     The SID is one of a few IC's in a C64 that runs hot and consequently 
+fails often. That's why I routinely install heat sinks on that IC, the 
+PLA and the CPU when I get one of those computers in for repair. 
+Commodore knew about the problem and installed a metal shield in their 
+later version C64's. The metal shield's "fingers" touch half a dozen IC's
+and act as heat sinks. For earlier boards, it's advisable to add sinks 
+to the the chips that run hot to make them last longer. See the article 
+on this site regarding heat sinks for the C64. Most people don't have 
+access to the test cart I use, so I wrote a simple BASIC test program 
+that will provide the user an alternate way to test their SID chip. It's
+not as inclusive of all faults but it will tell if the chip is working
+at all or not. The best dynamic test I found is the disk program: Music 
+Construction Set fo the C64. It will sometimes find a problem when all 
+other tests show OK including the Commodore diagnostic cart. I use this 
+program as a final test before sending a repair job out the door.
+
+Ray
+     

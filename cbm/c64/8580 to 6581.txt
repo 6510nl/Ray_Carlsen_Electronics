@@ -1,0 +1,31 @@
+
+> By the way, since I am a Commodore SID music enthusiast and I
+> require a Commodore 64 first series just for the 6581 SID, a C64C
+> with a 6581 would be just good enough for me. Is there a way to
+> install a 6581 on a Commodore 64C (I mean, those with the cost
+> reduced boards sporting an 8580)? I would be happy if you could give
+> me some directions
+
+     I would be happy to do that. You probably already know, but the
+white case C64C can have any one of three different motherboards
+installed, and to my knowledge, only the latest short board will have a
+8580 from the factory. The two SID versions are pin compatible but use a
+different voltage on pin 28, and two different filter capacitors for
+voicing. The capacitors go from pin 1 to 2 and from 3 to 4 of both SID
+versions. The 6581 has +12VDC on pin 28 and the two capacitors C10 and
+C11 are both 470pF. The 8580 has +9VDC on pin 28 and uses 22000pF
+(.022uF or 22nF) for capacitors C70 and C71.
+     Changing a C64C short board (250469) to fit a 6581 will require
+changing the zener diode CR7 from 9V to 12V to up the supply voltage
+from +9 to +12. The schematic for that board also indicates a resistor
+R8 (1K) should be removed (probably already done by the factory) for an
+8580 and installed for 6581. Changing the two voicing filter caps will
+complete the job.
+     To run an 8580 in an earlier board, a hack of sorts is necessary
+for the supply voltage changeover. 3 volt zener diodes are kind of rare
+so I would install a 9V regulator IC to feed the SID. Another difference
+between the two SID versions involves the 6581 and its "voltage leak"
+that enables a user to produce digital samples. To simulate that leak in
+an 8580, tie a 330K resistor from SID audio input pin 26 to ground. I've
+never tried to change an early board to an 8580 since those chips are
+even harder to find than the 6581.

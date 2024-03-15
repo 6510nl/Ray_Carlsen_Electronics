@@ -1,0 +1,105 @@
+                  REPLACING IC "CHIPS" IN COMMODORE EQUIPMENT    
+                      updates and corrections 12-19-2012
+
+     For the small "glue logic" chips such as the RAM in a C64, cutting the 
+pins off is probably the best way to remove them. Replacements are cheap and 
+you don't risk damage to the board. The new chip can be soldered onto the 
+stubs left from the old one or, for a neater job, you can remove the old 
+pins one at a time, clean the holes, then solder in the new chip or better 
+yet, install a socket. Just make sure you clean the pins of a removed chip 
+before you install it in a socket. If a blob of solder remains on a pin, it 
+can damage the socket by forcing the contact areas too far apart. Another 
+thing: NEVER solder a socket in place with a chip installed in it... any 
+solder on the chip pins will adhere to the socket contacts, and you'll never 
+get that IC out again!
+     The bigger and harder-to-get proprietary CBM chips such as the PLA and 
+SID in the C64 require a more cautious approach than casual snipping of pins. 
+Unless you're CERTAIN the chip to be removed is bad, it makes sense to 
+desolder it intact. After doing that much work on the board, I always install 
+a socket. If you're careful how you remove it, the old IC should be OK. It's 
+important to use the proper equipment for chip removal so you do not damage 
+the board or chips. I used to use a vacuum type of desoldering iron, but 
+they tend to clog easily thus requiring frequent cleaning unless you have one 
+of the very expensive models that has an electric vacuum pump and a chamber
+that holds the excess solder. Now I use a separate iron and solder sucker, 
+one called a Edsyn SoldaPullt. MCM Electronics (www.mcminone.com) sells 
+several equivalent types. I prefer the larger ones because of the higher 
+vacuum they create. That type is easier to keep clean inside than the 
+all-in-one vacuum desoldering iron.
+PLAESE READ, THIS IS IMPORTANT!
+     The PC boards in Commodore computers and drives are double sided (circuit 
+traces on both sides) with plated-through holes. The main problem with removal 
+of an IC is that the pins just barely fit the tiny holes in the board. Each 
+hole must be cleared of solder and all pins -must- be free before you attempt 
+to lift the chip out. Otherwise, the stuck pin(s) will break off and/or the 
+board will be damaged. A careful visual examination of the board and each IC 
+after removal is important. Unless you look closely, you may not even notice 
+a PC board trace is broken. The device will not work when you put it back 
+together, and you've just added a problem that's hidden -under- the new chip 
+or socket! <shudder> That damage is VERY hard to find!
+     The worst kind of board damage is destruction of the plated-through 
+holes. If you ever see a copper colored blob on a chip pin after removal, 
+that is the through-hole plating that has been torn off. That damage breaks
+the circuit from top to bottom of the hole and it must be repaired. Most 
+important is the connection at the top of the board... it will not be 
+connected since the solder is done on the other side. The fix is easy. I 
+use a single strand from a section of stranded hookup wire, poke it through
+the hole and solder it on both sides. It may be necessary to scrape away 
+some of the paint and coating to get down to bare copper. After that repair 
+is done, install the socket but don't apply any more heat than necessary 
+to that repaired hole or it will lift the repair you just did. 
+     Removing a chip is a "black art". After all these years, I'm still 
+learning and still make mistakes, especially if I've been at the bench for
+several hours. Each IC pin needs to be heated for about two seconds, or until 
+all the solder is molten on both sides of the board. Some have suggested using 
+an additional iron on the opposite side of the board, but that obviously 
+requires another set of hands... nice if you've got 'em. Before drawing the 
+molten solder out, I move the tip of the iron slightly to press each pin 
+closer to the center of the hole, then press the button on the vacuum plunger 
+to draw the molten solder away. If all goes well, the pin will then move 
+freely in the hole. If it's still stuck to the wall of the hole (it happens 
+frequently) and all the solder is gone, I free it by grasping with tweezers
+and wiggling it back and forth a few times, or by pressing sideways on the pin 
+from the top of the board (inwards, towards the chip). If done properly, I can 
+hear and feel it pop loose. If any solder remains in the hole, I add more 
+fresh solder and try to desolder it again. The worst places to desolder are 
+the larger areas of the board at the power and ground points, usually at the 
+ends of the chips. Those large copper areas tend to quickly draw the heat away 
+from the iron, so it's difficult to get them hot enough to get all the solder 
+molten on both sides of the board. For the really stubborn ones, I use high 
+quality Solder Wick and a larger soldering iron tip to desolder those pins. In 
+any case, I try not to hold the iron on the board for more than a few seconds 
+at a time. Too much heat will lift the pads (solder holes) and copper board 
+traces. The tendency is to press the iron into the solder, but too much force 
+will likewise do damage to the board. That's why it's wise to practice on an 
+old surplus board first.
+     Freeing up all the pins before extracting the chip is essential. I wiggle 
+each one with tweezers to make sure it's free. It's sometimes helpful to push 
+sideways on the top of a chip to force all the pins one way, then push the 
+other way, back and forth a few times. You can hear pins clicking as they 
+break free of the holes. When you're sure they are all loose, try prying up 
+one end of the chip with a small screwdriver... gently! If any pins appear to 
+be stuck, STOP. Free that pin and continue prying up one end, then the other.
+     If you are successful in getting the chip out of the board intact, by all 
+means install a good quality socket. That way, you will never have to touch 
+that area again with a soldering iron again. It degrades it each time, so it's 
+best to avoid resoldering if you can. After extraction of the old chip, 
+examine the board on both sides with a strong light and a magnifier. Look for 
+broken traces near the holes and solder splashes that may cause shorts between 
+pins. Repair any damage and clean any holes that have enough solder left to 
+prevent installing a socket. The easiest way to do that is to touch each hole 
+with a clean iron for half a second each. That causes any solder in the holes
+to mirgrate to the outer surface of the hole. As an alternative, you can poke 
+a large pin in the hole (gently) and wiggle it around. Solder is soft and will 
+be pushed out of the way. Hold the board up with a light behind it to see if 
+all the holes are clear. If it looks OK, install the socket and solder each 
+pin carefully. If you intend to reinstall a used chip you have previously 
+removed, clean all the pins by squeezing each one with a small pair of flat 
+needle nose pliers. Don't bend the pins any more than you have to. They will 
+break if flexed too many times. Assuming the worst happens and you break a pin, 
+if there is any stub left on the body of the IC, you can tack-solder a small 
+wire to the stub and cut it off in line with the rest of the pins. It's not 
+pretty, but it will work.
+
+Ray Carlsen
+CARLSEN ELECTRONICS... a leader in trailing-edge technology.

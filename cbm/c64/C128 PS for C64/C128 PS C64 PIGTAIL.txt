@@ -1,0 +1,66 @@
+
+             ADDING A C64 POWER CONNECTOR TO A C128 POWER SUPPLY
+                 latest updates and/or corrections 4-7-2013
+
+     A C128 power supply puts out the same two voltages as a C64 supply. 
+However, the 128 supply is more reliable and doesn't suffer the same bad 
+reputation as the C64 "brick". It can handle higher current on the 5V 
+line and will allow the 64 to run heavier loads such as a RAM Expansion 
+Cart which normally comes with its own beefier power supply. Of course 
+the C128 PS has a different type of connector which doesn't fit a C64. 
+However, with the addition of a "pigtail" cable and connector, that 
+supply can work with a C64. 
+
+NOTE: It's important that you make the proper connections to the wires 
+of your C128 supply. I've seen two alternate versions of that power 
+supply, one with the same wire colors and one with them reversed! One 
+way to identify the 9VAC source is that an ohm meter will read low 
+resistance when measuring across the transformer winding. A way to tell 
+the 5V source is that its wires will be heavier since that source can 
+supply more current. 
+     The most common C128 supply is made by Mitsumi, UL (Underwriters 
+Laboratories) number 47K4 stamped on the case bottom and a Commodore 
+part number of 310416-01. An alternate PS was made by Tokin, has a CBM 
+part number of 316416-07 but uses the standard wire colors and UL 79K7. 
+The one non-standard alternate PS I saw has -reversed- wire colors and 
+was made in Taiwan, CBM part number 310416-01 and UL 94H8. I don't know
+who made it but it has "DSP-128" stamped on the case.
+
+     You can either cut the cable off a defective C64 PS or buy a four 
+wire cable and DIN connector to do this modification. Wires must be 
+insulated from each other to prevent shorts between wires. It's best to 
+"stagger" or offset each of the four wires so, if the insulation breaks 
+down, they still can't touch each other. View the photos to see how it's 
+done. The color coding of the wires inside each cable will be different, 
+so the correct ones need to be identified and connected together. Note 
+that incorrect connections can damage the supply and/or the computer! 
+Below is the most common colors used an both 64 and 128 supply wires, 
+but be aware that each vendor of a power supply can use their own 
+wiring color code!!!. 
+
+Note: as an alternative to "pigtailing", you can cut or drill a hole in 
+the PS case and connect a long C64 cord directly to the inside of the 
+C128 PS. You will want to add some kind of strain relief so tugging on 
+the added cable doesn't cause eventual wire breakage and/or short 
+circuits. Don't cut the C128 cable off the supply even if it's not to
+be used. It has a sense line inside that monitors the supply output. 
+Whichever cable is not used, it's a good idea to cap the end so it 
+doesn't accidentally touch metal and cause a short. 
+
+                              STANDARD            ALTERNATE
+SOURCE  C64 POWER CABLE   C128 POWER CABLE     C128 POWER CABLE
+
+ + 5VDC     BROWN            RED                    BROWN
+ - GROUND   BLUE             BLACK                  WHITE
+ 9VAC       BLACK            BROWN                  BLACK
+ 9VAC       BLACK            WHITE                  RED
+ sense        NC             YELLOW                 YELLOW 
+ GROUND       NC             GROUND BRAID           GROUND BRAID
+
+
+
+Ray Carlsen
+Carlsen Electronics
+
+If you spot a mistake here, please let me know. Questions and comments
+are always welcome. Thanks!

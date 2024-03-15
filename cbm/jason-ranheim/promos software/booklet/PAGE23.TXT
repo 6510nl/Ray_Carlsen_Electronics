@@ -1,0 +1,53 @@
+                  APPENDIX B- THE PROGRAM METHOD WORD
+
+
+        The program method word tells PROMOS how you want the
+    programming done. You have some latitude. If you check the
+    TABLE of RECOMMENDED CONTROL and PROGRAM METHOD WORDS inside
+    the back cover, you'll see a 'standard method' and three
+    'intelligent' methods. We examine these in greater detail
+    here.
+
+    STANDARD PROGRAMMING
+
+        In standard programming, the programming pulse applied to
+    the EPROM is of constant duration, usually about 50 ms
+    (milliseconds). This is always a time-consuming method. A
+    2764 takes about 7 minutes to program this way. For PHW's
+    from 0 to 3, PROMOS uses Pulse durations as follows:
+
+             PMW                     PULSE DURATION
+
+               0                          6 ms.
+               1                         12 ms.
+               2                         24 ms.
+               3                         48 ms.
+
+    INTELLIGENT METHODS FOR PROGRAMMING
+
+        Intelligent methods for programming EPROM's have been
+    developed which can greatly reduce the time required. These
+    methods in effect 'test' the EPROM as the process goes on.
+    It works like this: The address and data are set up and a
+    short duration pulse Is applied. The EPROM is then read back
+    and the data is compared. If the data doesn't 'verify', then
+    another pulse is applied and so on. Programming time is
+    accumulated. At some point the data 'sticks' and a positive
+    verification is obtained.
+       At this point, another longer 'margin' pulse is applied
+    which is proportional in duration to the sum of the
+    preceeding pulses. The data is verified once again, and the
+    programmer then moves on to the next location.
+
+       Intelligent #1- Developed by Jason-Ranheim, this method
+    has been widely copied. It is the fastest way to program an
+    EPROM. Programming starts with a short .1 ms pulse which
+    doubles in duration with each failure to verify. The margin
+    pulse is equal in length to the sum of all preceding pulses.
+
+       Intelligent #2- In this method, short pulses of equal
+    duration are applied. The margin pulse is 3 times the total
+    accumulated pulse time. If after 25 ms of short pulses, a
+
+
+                                -23-

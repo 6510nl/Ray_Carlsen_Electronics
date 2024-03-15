@@ -1,0 +1,11 @@
+                                 7-26-2019
+
+     After flyback replacement, I had to replace a shorted transistor in the switching power supply of a Magnavox (same as Commodore) monitor. The original transistor was an SGS BU806 which I had seen before in those monitors. It and the HOT (horizontal output transistor, aka line output) normally run barely warm to the touch. Many replacements either run very hot and/or fail at full power. All LVPS transistors shown will run at reduced input AC voltage from a variac but the bad ones get hot quickly and fail at full power. 
+     There are apparently two reasons for these transistor failures:
+1. new replacements have slightly different characteristics than the originals, or 
+2. you can't know if the "new" transistors are made or sold as true manufacturer originals or are Chinese "knock-offs" that have been flooding the market for years. These re-badged transistors often look like the originals but some are obviously fakes. The bogus resellers wipe or scrape off whatever was on an original part and stamp new information that looks like a different device number and manufacturer. 
+     The photo shows four devices and only one of them works in this application. #1 is almost certainly a bogus part (I had several on my shelf, source unknown) and I suspect #2 is likewise. I bought #3 from a reputable dealer (Newark Electronics) and they claim it's from a good source, Multicomp, but it doesn't work. 
+     #4 is the only one that works at full supply voltage and normal load. I actually ordered five NTE 2315 from Vetco Electronics to find out if that transistor would work, but they sold me five ST BU806 equivalents. Fortunately they did work, so I was satisfied with the switch. I still don't know if any original NTE 2315 is suitable. I'll have to buy some to try in my own Commodore monitor PS. I find only two so far that work: ST and SGS brands... as long as they are true manufacturer and not bogus parts. 
+     Bottom line: I will not purchase or use any semiconductor unless I know the vendor and verify their product is suitable. I find lower prices on Ebay but don't trust them since I can't know the actual source of those parts. 
+
+Ray

@@ -1,0 +1,113 @@
+
+                       AMIGA 1080
+        latests updates and/or corrections 4-6-2015
+
+I just got a schematic for this Commodore monitor. The diagram was one
+of those gigantic fold-out ones that are very difficult to duplicate. 
+Through the efforts of a friend who owns the manual, I was able to piece
+it togther from several scans stitched together. Hopefully there are no
+missed spots or errors where the edges didn't align correctly. I did the 
+best I could to correct such mistakes. 
+     The 1080 was made by Toshiba and is unlike any other CBM monitor. 
+My other schematics will not substitute. Note that it is nearly identical 
+in outward appearance and features to Commodore monitor models 1902 (non-A 
+model) and 1084 made by NAP (Philips). However, the internal construction, 
+components and board numbers are completely different. I own a 1080, and 
+I have collected some information about it to assist those who might have 
+to repair one. The chassis number of my monitor is TAK8520. Although the 
+construction of this monitor makes troubleshooting difficult because of 
+crowded boards, all boards are silkscreened on both sides with component 
+identifier numbers. All internal controls are marked as well. 
+     Note that each section of the monitor is numbered, and that can be 
+used to locate components in each circuit. The following is viewed facing 
+the rear of the monitor with the back cover removed. The bottom main PC 
+board contains the Horizontal Sweep, HV, Vertical and low voltage power 
+supply circuits. The PC board designation for the H sweep section is 400 
+(example: H output transistor is Q404). The vertical sweep section is 
+designated 300. The power supply is 800. The left upright mounted PC board 
+is analog video and digital signal processing (100). The audio amplifier 
+(600) board swings away to the left (remove two screws) for better access 
+to it and the bottom board. The rear upright PC board is an A/V and RGB 
+connector interface and has both 100 (signal) and 600 (audio) components on 
+it. Lastly, the CRT board (500) mounted on the neck of the picture tube 
+contains the driver and output transistors for the CRT. The Low Voltage 
+Power Supply (LVPS): main switcher transistor is Q801, a 2SD1432. The line 
+fuse is a 3 Amp F801, and the B+ fuse is a 1.2 Amp designated F802. Both 
+fuses are on the bottom PC board in fuse clips. HV & Horiz Sweep: the 
+Horizontal (line) Output transistor is a 2SD1427 Q404 and the flyback (line 
+output transformer) T461 is a TFB5017AD, which appears to be a Panasonic part 
+number. The vertical circuit in this monitor uses descrete components (no 
+ICs). The output transistors are Q304 2SC2073 and Q305 2SA940. There is a 
+service switch in the center of the bottom board towards the left side. That 
+switch should be in the NORMAL position. If in SERVICE, the vertical sweep 
+will collapse to a single horizontal line, which is used for CRT setup 
+adjustments. 
+
+***************************************************************************
+
+The following is from an unknown poster on comp.sys.cbm:
+
+                      Amiga 1080 Monitor Modifications
+
+   A number of Amiga 1080 monitors were built by Toshiba. The people at
+   Toshiba could have done a better job in a couple of respects:
+
+   First, they did a poor job of extracting vertical sync pulses from the
+   video signal that comes from the Amiga. This produces an error in the
+   interlacing when the Amiga is used in 320x400 or 640x400 display modes.
+   When you look closely at the screen you see alternating line spacings. It
+   also gives characters a ragged look.  The modification described in the
+   dPaintII file reduces the interlace error by a factor of about 5.
+ 
+   While interlaced video isn't the nicest thing to read characters on, it's
+   neat to be able to put nearly all of a typewritten page on the screen. Most
+   of the Amiga outlets handle a neat thing called Jitter-Rid, or some such
+   thing.  It is a thick piece of smoked plastic that goes on your 1080
+   monitor. It enhances the contrast and attenuates the light from the screen
+   to keep your brain from rattling too badly from the flicker. Also, dark
+   characters on a light background seem to work best for me, anyway.
+
+   The second problem is a thing called crossover distortion. They did a dumb
+   thing that distorts the audio, even at very low volume levels. The Amiga
+   deserves better sound. Unfortunately, this mod takes 2 diodes and a
+   resistor, but it essentially eliminates the crossover distortion.
+
+   If you aren't afraid of working on the average modern TV set, the 1080
+   shouldn't prove to be much of a problem. Looking from the back, there are
+   four screws, one at each corner. You need a long Philips screwdriver for
+   those. There is a bottom plate that that also needs to come off. Finally,
+   there is a screw just above the RGB input connector. Now, if you place the
+   monitor face down on a soft towel, you can, with a little judicious prying
+   and tugging, lift the rear part of the case off. Watch out for the speaker
+   lead. You will have to unplug the connector before the back can come clear
+   off.
+
+  You will need to have something to support the neck of the CRT. A 1x4 about
+  3-4 inches long worked pretty well. The whole assembly is pretty limber, so
+  use reasonable caution. The main board on the bottom can be slid back along
+  with all of the front-panel knobs. This permits access to the controls - you
+  might as well squirt some contact cleaner in there while you are at it.
+
+  If you are looking at the bottom, with the face of the CRT on your right,
+  you will see a large IC that is the guts of the whole thing right in the
+  middle of the board. C304 is visible above and to the left of the centerline
+  of that humongous IC.
+
+  The board that contains the audio output amplifier is on the left side of
+  the 1080 if you are facing the screen. Looking at the underside of the
+  board, the components you are looking for to do the audio mod are on the
+  upper left corner.
+
+  Fortunately, the P.C. boards have component numbers screened on them, so it
+  isn't too hard to find the parts. I did the audio mod by lifting the
+  collector lead of Q605 out of the hole and wiring directly to it. In
+  retrospect, it probably would have been easier if I had just soldered an
+  insulated wire to it, brought the wire through the hole and done all of the
+  wiring on the backside of the board. If you are concerned about vibration
+  messing up the "air-wired" connections, a shot of hot glue or some similar
+  measure should put your mind at rest. The diodes are 1N914s from Radio
+  Shack, but most any small-signal silicon diode should do.
+
+
+
+

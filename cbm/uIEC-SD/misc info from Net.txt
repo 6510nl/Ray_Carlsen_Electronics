@@ -1,0 +1,996 @@
+Product Reviews
+
+    uIEC/SD worth every penny
+
+    Posted by Unknown on 25th Apr 2012
+
+    Purchased the uIEC/SD deluxe version, arrived well packaged and quickly. Got unit hooked up, did some research to find a fast loader,file browser and documentation for it as none was included. Within an hour I had set the default device set to 8, got a fast loader and file browser loaded and a bunch of disk images on an 8 GB card. A week into it and so far 90% of the disk images I tried run just fine, those that dont can be run by extracting the files out of the disk image. I am very pleased with my purchase and would recommend this to any Commodore 64 collector, next will be trying it on my Vic-20! Thanks to Retro Innovations for a great product at an very fair price.
+
+    The fast loader software i am using is called SJLOAD and the file browser is called File Browser (fb64.prg).Dont want to put links to theme here but Google will help you find them.
+    Amazing
+
+    Posted by Corey on 28th Mar 2012
+
+    I just got this yesterday -- the board is nicely done.
+
+    I set up my C64 which has been in a box for probably 15 years. Then I located the documentation on uIEC (mentioned in another review here) and I was up and running with some D64 images I had. The initial uIEC experience could be much improved with a small "Getting Started" introduction. ;-)
+
+    I have JiffyDOS which makes interacting with the uIEC really painless. And of course it makes everything load in a 'jiffy'.
+
+    I also bought the ZoomFloppy. We'll see what luck I have archiving my old floppies. Then I can use those images with the uIEC.
+
+    Thanks RETRO!
+    Nifty device
+
+    Posted by http://c64.berrydejager.com on 19th Nov 2011
+
+    I use the uIEC in conjunction with JiffyDOS, 1541U2, EasyFlash, 64NIC+ and it all works!
+
+    Especially the EasyFlash'ing make life much more easy as the uIEC has raw data access to the SD card and even allows you to go through directories and select a 1Megabyte .CRT file.
+
+    Please have a look at my blog: http://c64.berrydejager.com/?p=638
+    Wonderful
+
+    Posted by azog on 15th Sep 2011
+
+    Fantastic. Wonderful. Awesome. Insert any other effusive word you can think of. Worth every penny. Trouble-free installation and generally easy to use. Things like this keep the Commodore community alive. Keep up the great work!
+    This thing is AWESOME!
+
+    Posted by Jon Pulsipher on 1st Sep 2011
+
+    I just received my unit and plugged it into one of my 128s. Once I figured out it was device 10 by default it worked like a charm!!!
+    I was able to easily set it to default to device 8 and quickly got the hang of mounting the d64 images.
+    Very well built and well worth the cost.
+    About the only criticism would be that it didn't come with any docs and it was hard to find instructions at first.
+    Here are some helpful links:
+    http://www.c64-wiki.com/index.php/uIEC
+
+    http://sd2iec.de/cgi-bin/gitweb.cgi?p=sd2iec.git;a=blob;f=README;hb=HEAD
+
+    You won't regret picking this up!
+    And thanks for making it available, Jim.
+    Super Flexible! Super Fun!
+
+    Posted by Ed Miskho on 4th Apr 2011
+
+    I just got this unit and it is awesome! I have Jiffydos installed on my c128 and they work together like a charm. I added a power supply from an iomega zip drive, since it runs at a constant 5v. It was $1.99 at goodwill and they had stacks of them. Good build quality. Just buy one or two.
+    Store Your Whole C64 Library on one SD Card!
+
+    Posted by Paul Wilga on 24th Feb 2011
+
+    This little beauty works great on my beloved stock C64 computer! I can't say enough about this wonderful piece of hardware. I bought this after attending the Chicago Commodore show back in 2009 and it has been a joy to use. You can literally store your whole software library on one SD card (if you desire) and it is very, very easy to use. Using the micro SD device to store D64 images created by Jim Brain's new ZoomFloppy interface is one powerful combination!
+
+    This is the kind of innovative hardware that would make Commodore proud if they were still around today. Thanks to Jim Brain for keeping the hobby alive and continuing to provide the Commodore enthusiast with fun, easy to use hardware. Thanks for bringing my C64 into the 21st century!
+
+    Best HDD equivalent
+
+    Posted by Unknown on 21st Feb 2010
+
+    I got this unit over a year ago and adapted it to run from external power supply in a small hammond project case. It really is an excellent device. It can handle both D64 images used by emulators and normal commodore files directly so you can connect this directly to most commodore 8bits with little effort and start using it. Works with most if not all SD or SDHC cards. One note: if you decide to use an external power supply as I did you must ensure that it is regulated to ensure no more than +5Volts reaches the uIEC. You can contact Jim Brain about that directly.
+
+***************************************************************************************************
+
+FAQ
+[edit] Where can I find more information?
+
+    The Pictures of the Micro IEC Peripheral Page.
+    The sd2iec (firmware) Page.
+    The sd2iec Read Me (WARNING: Points to the most current development revision, so it can contain things that are not available in end-user releases yet.)
+    By joining the google group: http://groups.google.com/group/uIEC-users?hl=en. If one doesn't want to use the web interface, then subscribe to the µIEC mailing list by e-mailing to: uIEC-users+subscribe@googlegroups.com. 
+
+[edit] What is the default device number (device address)?
+
+The default device number is 10 when new or following a reset to defaults.
+[edit] How do I verify that the µIEC/SD unit is working?
+
+The red LED should remain on and the green LED should blink twice when power is supplied, as described below. To verify communications between Commodore and µIEC retrieve the current drive status as follows;
+
+    OPEN 15,10,15:INPUT#15,E,E$,T,S:CLOSE 15:PRINT E,E$,T,S
+    Or when using a DOS Wedge; @10
+    Using JiffyDOS: @"",10 
+
+The unit should return the drive status and current firmware revision; Something like 73,UEIC V0.10.1,00,00. A status of 00, OK,00,00 also means that the unit is functioning correctly.
+[edit] How do I change the device number (device address)?
+
+    OPEN 15,CD,15,"U0>"+CHR$(ND):CLOSE15 (CD = current device number, ND = (08)new device number) is supported, other U0 commands are currently not implemented. 
+
+        JiffyDOS users: Although JiffyDOS itself does not supply a special option for changing the device number, you can still do so with a generic disk command: 
+
+        @"U0>{Control-H}" for new device number 8, Control-I for 9, Control-J for 10 etc. 
+
+        There is also a program on the HD utils disk, but it's more work than the above. 
+
+    To make it permanent (as in "survives a power-cycle"), send the command "XW" to the new device number. If you use JiffyDOS, you can send it by using @"XW" (with quotes - otherwise it will error out). See the Extended commands section of the sd2iec Read Me 
+
+[edit] How do I update the firmware?
+
+    A bootloader is present that will read firmware binary files from the IDE/CF/SD card and update the AVR flash. See Software section for more infomation. 
+
+[edit] What do the µIEC/SD daughtercard buttons do?
+
+    S1 : Move forward in swaplist
+    S2 : Move backward in swaplist
+    Hold S1: Put unit into "sleep" mode
+    S1 held on boot: use default configuration
+    S3 = Reserved 
+
+[edit] What do the µIEC/SD LEDs mean?
+
+    RED  : Power
+    Green : Activity 
+
+The device will flash the green LED once when initializing the device and again for each directory found. If a firmware update is found the unit will flash the green LED 124 times (one on/off flash for each 1K of firmware). Following the upgrade the LED will flash once more when the device is again initialized.
+[edit] How do I speed up the initialization/boot process
+
+Try to minimize the number of files in the root directory. But simply deleting files from the root directory is not sufficient as the FAT filesystem does not remove the entries for deleted files and directories, it simply marks these as "deleted". So the directory scanning code has to loop through all the "deleted" entries in case there is a non-empty entry at the end. A quick format of the SD card (or use a new card) is necessary to minimize the number of "deleted" files and directories in the root directory.
+[edit] What are the pin assignments on the MicroIEC
+
+µIEC/IDE+CF CONN1 pinout:
+
+    1 GND
+    2 /SW2 (2.3 boards only)
+    3 RXD
+    4 TXD
+    5 IEC_SRQ
+    6 ACTIVITY
+    7 IEC_DATA
+    8 IEC_CLK
+    9 IEC_ATN
+    10 /CF DETECT
+    11 SD CARD SELECT
+    12 SD CARD CLOCK/IEC_SRQ (bug, should only be connector to SD CARD CLOCK, not IEC_SRQ on IEC jack)
+    13 SD CARD OUTPUT
+    14 SD CARD INPUT
+    15 /SW0 (FWD)
+    16 /SW1 * (BACK)
+    17 /IDE_ACTIVITY
+    18 /RESET (/IEC_RESET)
+    19 VCC
+    20 GND 
+
+µIEC/SD pinout:
+
+    1 GND
+    2 PWR
+    3 IEC_RESET
+    4 IEC_SRQ
+    5 IEC_CLOCK
+    6 IEC_DATA
+    7 IEC_ATN
+    8 SWITCH 0 (Move forward in swaplist / sleep)
+    9 SWITCH 1 (Move backward in swaplist)
+    10 SWITCH 2 (Reserved)
+    11 RS232 TXD (5V)
+    12 RS232 RXD (5V)
+    13 RESERVED 
+
+[edit] Software
+
+Bootloader
+
+    Reads firmware .bin file from IDE drive or CF card (FAT32, FAT16, and FAT12 supported) and updates ATMega flash if needed
+    On powerup, power LED is on. Activity LED will dim as bootloader scans root directory of partition #1 for new firmware file.
+    If an updated firmware is found, activity light blinks as each sector of firmware is loaded into the unit.
+    Firmware (.bin) needs to reside in the root directory or the first drives's primary partition. Only file size and signature have to match. 
+
+**************************************************************************************************
+
+gitprojects / sd2iec.git / blob
+? search: re
+summary | shortlog | log | commit | commitdiff | tree
+history | raw | HEAD
+diskchange, doscmd: Use a common code path for changing the directory
+[sd2iec.git] / README
+1 sd2iec - a controller/interface adapting storage devices to the CBM serial bus
+2 Copyright (C) 2007-2013  Ingo Korb <ingo@akana.de>
+3 Parts based on code from others, see comments in main.c for details.
+4 JiffyDos send based on code by M.Kiesel
+5 Fat LFN support and lots of other ideas+code by Jim Brain
+6 Final Cartridge III fastloader support by Thomas Giesel
+7 IEEE488 support by Nils Eilers
+8
+9 Free software under GPL version 2 ONLY, see comments in main.c and
+10 COPYING for details.
+11
+12 FIXME:This file still needs to be expanded. A lot.
+13 FIXME: sprinkle mentions of IEEE488 where appropiate
+14
+15 Deprecation notices
+16 ===================
+17 The following feature(s) will be removed in the next release:
+18 - M2I support
+19    M2I support has been redundant since the introduction of transparent
+20    P00 support. To continue to use your M2I-format software, convert
+21    your files to P00 format (e.g. with m2itopc64.c) and set your device
+22    to extension mode 2 (XE2).
+23
+24 Introduction:
+25 =============
+26 sd2iec is firmware, used in hardware designs like MMC2IEC, SD2IEC, or uIEC,
+27 that allows the Commodore serial bus to access removable storage devices
+28 (MMC, SD, CF) - think of it as a 1541 with a modern storage medium instead
+29 of disks. The project was inspired by (and uses a few bits of code from)
+30 MMC2IEC[1] by Lars Pontoppidan and once ran on the same hardware before it
+31 grew too big for the ATmega32 used there.
+32
+33 Currently, the firmware provide good DOS and file-level compatibility with CBM
+34 drives, but much work remains.  Unless specifically noted, anything that tries
+35 to execute code on the 1541 will not work, this includes every software
+36 fastloader.
+37
+38 [1] Homepage: http://pontoppidan.info/lars/index.php?proj=mmc2iec
+39
+40 Please note: Whenever this file talks about "D64 images" the text applies to
+41 all Dxx image types, i.e. D64/D71/D81/DNP unless specifically noted.
+42
+43 If you are the author of a program that needs to detect sd2iec for
+44 some reason, DO NOT use M-R for this purpose. Use the UI command
+45 instead and check the message you get for "sd2iec" and "uiec" instead.
+46
+47
+48 Supported commands:
+49 ===================
+50 - General notes:
+51   Any command not listed below is currently not supported.
+52
+53 - Directory filters:
+54   To show only directories, both =B (CMD-compatible) and =D can be used.
+55   On a real Commodore drive D matches everything.
+56   To include hidden files in the directory, use *=H - on a 1541 this doesn't
+57   do anything. sd2iec marks hidden files with an H after the lock mark,
+58   i.e. "PRG<H" or "PRG H".
+59
+60   CMD-style "short" and "long" directory listings with timestamps are supported
+61   ("$=T"), including timestamp filters. Please read a CMD manual for the syntax
+62   until this file is updated.
+63
+64 - Partition directory:
+65   The CMD-style partition directory ($=P) is supported, including filters
+66   ($=P:S*). All partitions are listed with type "FAT", although this could
+67   change to "NAT" later for compatibility.
+68
+69 - CD/MD/RD:
+70   Subdirectory access is compatible to the syntax used by the CMD drives,
+71   although drive/partition numbers are completely ignored.
+72
+73   Quick syntax overview:
+74     CD:_         changes into the parent dir (_ is the left arrow on the C64)
+75     CD_          dito
+76     CD:foo       changes into foo
+77     CD/foo       dito
+78     CD//foo      changes into \foo
+79     CD/foo/:bar  changes into foo\bar
+80     CD/foo/bar   dito
+81
+82   You can use wildcards anywhere in the path. To change into an M2I or D64
+83   image the image file must be named after the :, it will not be recognized
+84   otherwise.
+85
+86   MD uses a syntax similiar to CD and will create the directory listed
+87   after the colon (:) relative to any directory listed before it.
+88
+89     MD/foo/:bar  creates bar in foo
+90     MD//foo/:bar creates bar in \foo
+91
+92   RD can only remove subdirectories of the current directory.
+93
+94     RD:foo       deletes foo
+95
+96   CD is also used to mount/unmount image files. Just change into them
+97   as if they were a directory and use CD:_ (left arrow on the C64) to leave.
+98   Please note that image files are detected by file extension and file size
+99   and there is no reliable way to see if a file is a valid image file.
+100
+101 - CP, C<Shift-P>
+102   This changes the current partition, see "Partitions" below for details.
+103
+104 - C:
+105   File copy command, should be CMD compatible. The syntax is
+106    C[partition][path]:targetname=[[partition][path]:]sourcename[,[[p][p]:]sourcename...]
+107   You can use this command to copy multiple files into a single target
+108   file in which case all source files will be appended into the target
+109   file. Parsing restarts for every source file name which means that
+110   every source name is assumed to be relative to the current directory.
+111   You can use wildcards in the source names, but only the first
+112   file matching will be copied.
+113
+114   Copying REL files should work, but isn't tested well. Mixing REL and
+115   non-REL files in an append operation isn't supported.
+116
+117 - D
+118   Direct sector access, this is a command group introduced by sd2iec.
+119   Some Commodore drives use D for disk duplication between two drives
+120   in the same unit, an attempt to use that command with sd2iec should
+121   result in an error message.
+122
+123   D has three subcommands: DI (Info), DR (Read) and DW (Write).
+124   Each of those commands requires a buffer to be opened (similiar
+125   to U1/U2), but due to the larger sector size of the storage devices
+126   used by sd2iec it needs to be a large buffer of size 2 (512 bytes)
+127   or larger. The exception is the DI command with page set to 0,
+128   its result will always fir into a standard 256 byte buffer.
+129   If you try to use one of the commands with a buffer that is too
+130   small a new error message is returned, "78,BUFFER TOO SMALL,00,00".
+131
+132   In the following paragraphs the secondary address that was used
+133   to open the buffer is called "bufchan".
+134
+135   - DI
+136     In BASIC notation the command format is
+137       "DI"+chr$(bufchan)+chr$(device)+chr$(page)
+138
+139     "device" is the number of the physical device to be queried,
+140     "page" the information page to be retrieved. Currently the
+141     only page implemented is page 0 which will return the
+142     following data structure:
+143      1 byte : Number of valid bytes in this structure
+144               This includes this byte and is meant to provide
+145               backwards compatibility if this structure is extended
+146               at a later time. New fields will always be added to
+147               the end so old programs can still read the fields
+148               they know about.
+149      1 byte : Highest diskinfo page supported
+150               Always 0 for now, will increase if more information
+151               pages are added (planned: Complete ATA IDENTIFY
+152               output for IDE and CSD for SD)
+153      1 byte : Disk type
+154               This field identifies the device type, currently
+155               implemented values are:
+156                 0  IDE
+157                 2  SD
+158                 3  (reserved)
+159      1 byte : Sector size divided by 256
+160               This field holds the sector size of the storage device
+161               divided by 256.
+162      4 bytes: Number of sectors on the device 
+163               A little-endian (same byte order as the 6502) value
+164               of the number of sectors on the storage device.
+165               If there is ever a need to increase the reported
+166               capacity beyond 2TB (for 512 byte sectors) this
+167               field will return 0 and a 64-bit value will be added
+168               to this diskinfo page.
+169
+170     If you want to determine if there is a device that responds
+171     to a given number, read info page 0 for it. If there is no
+172     device present that corresponds to the number you will see
+173     a DRIVE NOT READY error on the error channel and the
+174     "number of valid bytes" entry in the structure will be 0.
+175
+176     Do not assume that device numbers are stable between releases
+177     and do not assume that they are continuous either. To scan
+178     for all present devices you should query at least 0-7 for now,
+179     but this limit may increase in later releases.
+180
+181   - DR/DW
+182     In BASIC notation the command format would be
+183       "DR"+chr$(bufchan)+chr$(device)
+184           +chr$(sector AND 255)
+185           +chr$((sector/256) AND 255)
+186           +chr$((sector/65536) AND 255)
+187           +chr$((sector/16777216) AND 255)
+188     (or "DW" instead of "DR)
+189     but this won't work on the C64 because AND does not accept
+190     parameters larger than 32767. The principle should be clear
+191     though, the last four bytes are a 32 bit sector number in
+192     little-endian byte order.
+193
+194     DR reads the sector to the buffer, DW writes the contents
+195     of the buffer to the sector. Both commands will update the
+196     error channel if an error occurs, for DR the 20,READ ERROR
+197     was chosen to represent read errors; for write problems
+198     during DW it sets 25,WRITE ERROR for errors and 26,WRITE
+199     PROTECT ON if the device is read-only.
+200
+201 - G-P
+202   Get partition info, see CMD FD/HD manual for details. The reported
+203   information is partially faked, feedback is welcome.
+204
+205 - P
+206   Positioning doesn't just work for REL files but also for regular
+207   files on a FAT partition. When used for regular files the format
+208   is "P"+chr$(channel)+chr$(lo)+chr$(midlo)+chr$(midhi)+chr$(hi)
+209   which will seek to the 0-based offset hi*2^24+midhi*65536+256*midlo+lo
+210   in the file. If you send less than four bytes for the offset, the
+211   missing bytes are assumed to be zero.
+212
+213 - N:
+214   Format works only if a D64 image is already mounted. This command will
+215   be ignored for DNP images unless the current directory is the root
+216   directory of the DNP image.
+217
+218 - R
+219   Renaming files should work the same as it does on CMD drives, although
+220   the errors flagged for invalid characters in the name may differ.
+221
+222 - S:
+223   Name matching is fully supported, directories are ignored.
+224   Scratching of multiple files separated by , is also supported with no
+225   limit to the number of files except for the maximum command line length
+226   (usually 100 to 120 characters).
+227
+228 - T-R and T-W
+229   If your hardware features RTC support the commands T-R (time read) and T-W
+230   (time write) are available. If the RTC isn't present, both commands return
+231   30,SYNTAX ERROR,00,00; if the RTC is present but not set correctly T-R will
+232   return 31,SYNTAX ERROR,00,00.
+233
+234   Both commands expect a fourth character that specifies the time format
+235   to be used, T-W expects that the new time follows that character in EXACTLY
+236   the format returned by T-R with the same format char. Do NOT add a space
+237   between the "T-W" and the time string.
+238
+239   The possible formats are:
+240    - "A"SCII: "SUN. 01/20/08 01:23:45 PM"+CHR$(13)
+241       The day-of-week string can be any of "SUN.", "MON.", "TUES", "WED.",
+242       "THUR", "FRI.", "SAT.". The year field is modulo 100.
+243    - "B"CD or "D"ecimal:
+244      Both these formats use 9 bytes to specify the time. For BCD everything
+245      is BCD-encoded, for Decimal the numbers are sent/parsed as-is.
+246       Byte 0: Day of the week (0 for sunday)
+247            1: Year (modulo 100 for BCD; -1900 for Decimal, i.e. 108 for 2008)
+248            2: Month (1-based)
+249            3: Day (1-based)
+250            4: Hour   (1-12)
+251            5: Minute (0-59)
+252            6: Second (0-59)
+253            7: AM/PM-Flag (0 is AM, everything else is PM)
+254            8: CHR$(13)
+255
+256       When the time is set a year less than 80 is interpreted as 20xx.
+257
+258 - U0
+259   Device address changing with "U0>"+chr$(new address) is supported,
+260   other U0 commands are currently not implemented.
+261
+262 - U1/U2/B-R/B-W
+263   Block reading and writing is fully supported while a D64 image is mounted.
+264
+265 - B-P
+266   Supported, not checked against the original rom at all.
+267
+268 - UI+/UI-
+269   Switching the slightly faster bus protocol for the VC20 on and off works,
+270   it hasn't been tested much though.
+271
+272 - UI/UJ
+273   Soft/Hard reset - UI just sets the "73,..." message on the error channel,
+274   UJ closes all active buffers but doesn't reset the current directory,
+275   mounted image, swap list or anything else.
+276
+277 - U<Shift-J>
+278   Real hard reset - this command causes a restart of the AVR processor
+279   (skipping the bootloader if installed). <Shift-J> is character code 202.
+280
+281 - X: Extended commands. If you use JiffyDOS, you can send them by using
+282   @"X..." - without quotes you'll just receive an error.
+283
+284   - XEnum    Sets the "file extension mode". This setting controls if
+285              files on FAT are written with an x00 header and extension or not.
+286              Possible values for num are:
+287                0: Never write x00 format files.
+288                1: Write x00 format files for SEQ/USR/REL, but not for PRG
+289                2: Always write x00 format files.
+290                3: Use SEQ/USR/REL file extensions, no x00 header
+291                4: Same as 3, but also for PRG
+292              If you set mode 3 or 4, extension hiding is automatically enabled.
+293              This setting can be saved in the EEPROM using XW, the default
+294              value is 1.
+295
+296              For compatibility with existing programs that write D64 files,
+297              PRG files that have D64, D41, D71, D81, DNP or M2I as an extension
+298              will always be written without an x00 header and without
+299              any additional PRG file extension.
+300
+301   - XE+/XE-  Enable/disable extension hiding. If enabled, files in FAT with
+302              a PRG/SEQ/USR/REL extension will have their extension removed
+303              and the file type changed to the type specified by the file
+304              extension - e.g. APPLICATION.PRG will become a PRG file named
+305              "APPLICATION", "README.SEQ" will become a SEQ file named "README".
+306              This flag can be saved in the EEPROM using XW, the default
+307              value is disabled (-).
+308
+309   - XInum    Switches the display mode for mountables files (i.e. disk images
+310              and M2I). num can be 0, in which case the file will be shown
+311              with its normal type in the directory or 1 which will show all
+312              mountable files as DIRectory entries (but they can still be
+313              accessed as files too) or 2 in which case they will show up
+314              twice - once with its normal type and once as directory.
+315              The default value is 0 and this setting can be stored
+316              permanently using XW.
+317
+318              It may be useful to set it to 1 or 2 when using software that
+319              was originally written for CMD devices and which wouldn't
+320              recognize disk images/M2I files as mountable on its own.
+321              However, due to limitations of the current implementation of
+322              the CD command such software may still fail to mount a disk
+323              image with this option enabled.
+324
+325   - X*+/X*-  Enable/disable 1581-style * matching. If enabled, characters
+326              after a * will be matched against the end of the file name.
+327              If disabled, any characters after a * will be ignored.
+328              This flag can be saved in the EEPROM using XW, the default value
+329              is enabled (+).
+330
+331   - XDdrv=val Configure drives.  On ATA-based units or units with multiple
+332              drive types, this command can be used to enable or reorder
+333              the drives.  drv is the drive slot (0-7), while val is one
+334              of:
+335                 0: Master ATA device
+336                 1: Slave ATA device
+337                 4: Primary SD/MMC device
+338                 5: Secondary SD/MMC device
+339                 6: (reserved)
+340                15: no device
+341
+342              Note that only devices supported by the specific hardware
+343              can be selected.  Unsupported device types will return an
+344              error if requested.  Also, note that you cannot select a device
+345              in multiple drive slots.  Finally, while it is possible to
+346              re-order ATA devices using this functionality, it is strongly
+347              discouraged.  Use the master/slave jumpers on the ATA devices
+348              instead.  To reset the drive configuration, set all drive slots
+349              to "no device".  This value can be permanently saved in the
+350              EEPROM using XW.
+351
+352     XD?      View the current drive configuration.  Example result:
+353              "03,D:00=04:01=00:02=01,10,01".  The track indicates the
+354              current device address, while the sector indicates extended
+355              drive configuration status information.
+356
+357   - X        X without any following characters reports the current state
+358              of all extended parameters via the error channel, similiar
+359              to DolphinDOS. Example result: "03,J-:C152:E01+:B+:*+,08,00"
+360              The track indicates the current device address.
+361
+362   - XS:name  Set up a swap list - see "Changing Disk Images" below.
+363     XS       Disable swap list
+364
+365   - XR:name  Set the file used for file-based M-R emulation.
+366     XR       Disable file-based M-R emulation.
+367              See "M-R, M-W, M-E" below. This setting can be
+368              permanently saved in the EEPROM using XW.
+369
+370   - XW       Store configuration to EEPROM
+371              This commands stores the current configuration in the EEPROM.
+372              It will automatically be read when the AVR is reset, so
+373              any changes you made will persist even after turning off
+374              the hardware.
+375
+376              The stored configuration include the extension mode,
+377              drive configuration and the current device address.
+378              If you have changed the device address by software,
+379              sd2iec will power up with that address unless
+380              you have changed the device address jumpers (if available) to
+381              a different setting than the one active at the time the
+382              configuration was saved. You can think of this feature as
+383              changing the meaning of one specific setting of the jumpers
+384              to a different address if this sounds logical enough to you.
+385
+386              The "hardware overrides software overrides hardware" priority
+387              was chosen to allow accessing sd2iec even when it is soft-
+388              configured for a device number that is already taken by
+389              another device on the bus without having to remove that
+390              device to reconfigure sd2iec (e.g. when using a C128D).
+391
+392   - X?       Extended version query
+393              This commands returns the extended version string which
+394              consists of the version, the processor type set at build time
+395              and the suffix of the configuration file (usually corresponds
+396              to the short name of the hardware sd2iec was compiled for).
+397
+398 - M-R, M-W, M-E
+399   When no file is set up using XR, M-R will check a small internal
+400   table of common drive-detection addresses and return data that
+401   forces most of the supported fast loaders into a compatible mode
+402   (e.g. 1541 mode for Dreamload and ULoad Model 3, disabled fastloader
+403   for Action Replay 6). If the address is not recognized, more-or-less
+404   random data will be returned.
+405
+406   Unfortunately GEOS reads rather large parts of the drive rom using
+407   M-R to detect the drive, which cannot be reasonably added into the
+408   internal table. To enable the GEOS drive detection to work properly
+409   with sd2iec and to allow switching between 1541/71/81 modes,
+410   file-based M-R emulation has been implemented. If a file has been
+411   set up as M-R data source using the XR command, its contents will be
+412   returned for M-R commands that try to read an address in the range
+413   of $8000-$ffff. The rom file should be a copy of the rom contents of
+414   a 1541/71/81 drive (any headers will be skipped automatically), its
+415   name must be 16 characters or less. When an M-R command is received,
+416   the file will be searched in three locations on the storage medium:
+417     1) in the current directory of the current partition
+418     2) in the root directory of the current partition
+419     3) in the root directory of the first partition
+420
+421   The internal emulation table will be used if the file wasn't found
+422   in any of those locations or an error occured while reading
+423   it. Please be aware that the rom file is ONLY used for M-R
+424   commands. Except for some very specific situations where drive
+425   detection fails (e.g. GEOS) it will probably decrease compatibility
+426   of sd2iec because most of the implemented fast loaders will only
+427   recognize the 1541 variation of the loader.
+428
+429   Memory writing knows about the address used for changing the device
+430   address on a 1541 and will change the address of sd2iec to the
+431   requested value. It will also check if the transmitted data
+432   corresponds to any of the known software fastloaders so the correct
+433   emulation code can be used when M-E is called.
+434
+435 Large buffers:
+436 ==============
+437 To support commands which directly access the storage devices support
+438 for larger buffers was added. A large buffer can be allocated by
+439 opening a file named "##<d>" (exactly three characters" with <d> replaced
+440 by a single digit specifying the number of 256-byte buffers to be
+441 chained into one large buffer - e.g. "##2" for a 512 byte buffer,
+442 "##4" for 1024 bytes etc. Unlike a standard buffer where the read/write
+443 pointer is set to byte 1, a large buffer will start with the r/w pointer
+444 pointing to byte 0 because that seems to be more sensible to the author.
+445
+446 If there aren't enough free buffers to support the size you requested
+447 a 70,NO CHANNEL message is set in the error channel and no file is
+448 opened. If the file name isn't exactly three bytes long a standard
+449 buffer ("#") will be allocated instead for compatibility.
+450
+451 The B-P command supports a third parameter that holds the high byte
+452 of the buffer position, For example, "B-P 9 4 1" positions to byte
+453 260 (1*256+4) of the buffer on secondary address 9.
+454
+455 No command is implemented at this time which uses large buffers.
+456
+457 Long File Names:
+458 ================
+459 Long file names (i.e names not within the 8.3 limits) are supported on
+460 FAT, but for compatibility reasons the 8.3 name is used if the long
+461 name exceeds 16 characters. If you use anything but ASCII characters
+462 on the PC or their PETSCII equivalents on the Commodore you may
+463 get strange characters on the other system because the LFN use
+464 unicode characters on disk, but sd2iec parses only the low byte
+465 of each character in the name.
+466
+467 Partition:
+468 ==========
+469 sd2iec features a multi-partition support similiar to that of the CMD
+470 drives. The partitions (which may be on separate drives for some hardware
+471 configurations) are accessed using the drive number of the commands
+472 sent from the computer and are numbered starting with 1. Partition 0
+473 is a special case: Because most software doesn't support drive numbers
+474 or always sends drive number 0, this partition points to the currently
+475 selected partition. By default, accesses to partition 0 will access
+476 partition 1, this can be changed by sending "CP<num>" over the command
+477 channel with <num> being an ASCII number from 1 to 255. "C<Shift-P"
+478 (0x42 0xd0) works the same, but expects a binary partition number as the
+479 third character of the command.
+480
+481 Software fastloaders:
+482 =====================
+483 Note: Using sd2iec without an external crystal or similiar precise
+484       clock source is not a supported configuration.
+485       If you try that anyway, be prepared to suffer from random
+486       data corruption. You have been warned.
+487       Some fastloader implementations will actively refuse to work
+488       if you use an unsuitable clock source.
+489
+490   Turbodisk
+491   ---------
+492   Turbodisk is detected by the CRC of its 493 byte long floppy code and
+493   the M-E address 0x0303. The same code seems to be used under various names,
+494   among them "Turbodisk" (both 2.1 and 2.2) and "Fast-Load".
+495   It is not known if there is an NTSC-compatible version of this fastloader.
+496
+497   Final Cartridge III
+498   -------------------
+499   Both the fast loader and the fast saver of Final Cartridge III are supported.
+500   The FC3 is both PAL and NTSC compatible.
+501
+502   The slightly different fastloader used for files freezed with the FC3
+503   is also supported.
+504
+505   EXOS V3 and The Beast System
+506   ----------------------------
+507   Both supported, the loader used by these kernals is very similiar to
+508   the FC3 fast loader.
+509
+510   Action Replay 6
+511   ---------------
+512   The AR6 reads a byte from the drive rom to check which fastloader it should
+513   use. When file-based M-R emulation is disabled sd2iec returns a value that
+514   should force the cartridge to use the standard kernal loader instead of its
+515   many fastloaders/-savers. This means that accessind sd2iec with
+516   file-based rom emulation enabled will fail because the cartridge
+517   will enable fastloader that will probably not be recognized.
+518
+519   Currently the only recognized AR6 fastloader and fastsaver are the
+520   ones for the 1581.
+521
+522   Dreamload
+523   ---------
+524   Dreamload uses direct track/sector access, so it is only supported
+525   on D64 or similiar disk image formats. As sd2iec has to wait for commands
+526   from the C64 constantly the disk change buttons may become unresponsive,
+527   try multiple times if you need to. Dreamload is a "captive" fastloader,
+528   sd2iec stay in Dreamload mode until it receives a "quit loader" command
+529   from the C64. To force sd2iec to resume normal operation, hold the disk
+530   change button until the red LED turns on (just like sleep mode).
+531
+532   Please note that Dreamload does not work with more than one device on the
+533   serial bus due to the way it uses the ATN line.
+534
+535   ULoad Model 3
+536   -------------
+537   ULoad Model 3 uses direct track/sector access, so it is only supported
+538   on D64 or similiar disk image formats. Currently there is exactly one
+539   supported variant of ULoad Model 3, which is the one used by
+540   Ultima 3 Gold. There are no other known variants at this time, but
+541   this may change.
+542
+543   If you are a coder and want to use ULoad Model 3 in your own program,
+544   either configure it to produce the same drive code as U3Gold or
+545   contact me so we can work out a way to trigger ULoad M3 support
+546   without uploading any drive code at all.
+547
+548   G.I. Joe Loader
+549   ---------------
+550   Said to be the most-ripped IRQ loader. Unfortunately this is a
+551   "captive" fastloader similiar to dreamload (but not restricted
+552   to disk images because it is file name-based) and there is no
+553   reliable way to detect if the computer has been reset to switch
+554   back to the standard protocol. To exit this loader, hold down
+555   the disk change button until the red LED turns on, just like
+556   sleep mode.
+557
+558   Epyx FastLoad Cartridge
+559   -----------------------
+560   ONLY the fast loader from this cartridge is supported, no
+561   disk editor/copier/whatever functions.
+562
+563   GEOS
+564   ----
+565   GEOS 2.0 can be booted from D64 images made from original disks
+566   as well as D41/71/81 images created using geoMakeBoot (make sure to
+567   Configure the system for a 1541/1571/1581 before using geoMakeBoot).
+568   When file-based M-R emulation is disabled, GEOS may detect sd2iec as
+569   a 1541 or 1581, depending on the version of Configure used. This may
+570   cause the system to fail to boot, e.g. if sd2iec is detected as a 1581
+571   while booting from a D64 disk image. It is recommended to set up file-
+572   based M-R emulation when using GEOS to avoid these problems.
+573
+574   GEOS 1.3 may or may not work - it boots, but wasn't tested in-depth.
+575   Gateway seems to work but was not tested beyond booting it from a D64
+576   image.
+577
+578   Using the buttons for changing the current disk image is supported,
+579   but do make sure that you only access disk images that the drive
+580   type that is selected in GEOS would support (i.e. D64 for a 1541,
+581   D64/D71 for a 1571 and D81 for a 1581).
+582
+583   Wheels
+584   ------
+585   Wheels can be booted from any disk image type it supports. The correct
+586   rom emulation file (XR) MUST be set, especially for CMD HD emulation.
+587
+588   Do not use the disk change feature to change disk images when HD emulation
+589   is in use - Wheels does not check for disk changes on that drive!
+590   For other drive types the restrictions on disk image type of GEOS also
+591   apply to Wheels.
+592
+593   ELoad Version 1
+594   ---------------
+595   This loader was made for EasyProg but may also be used in other programs.
+596   It detects and supports the sd2iec natively.
+597
+598 JiffyDOS:
+599 =========
+600 The JiffyDOS protocol has very relaxed timing constraints compared to
+601 Turbodisk, but still not as relaxed as the standard Commodore IEC protocol.
+602
+603 x00 files:
+604 ==========
+605 P00/S00/U00/R00 files are transparently supported, that means they show
+606 up in the directory listing with their internal file name instead of the
+607 FAT file name. Renaming them only changes the internal name. The XE
+608 command defines if x00 extensions are used when writing files, by
+609 default sd2iec uses them for SEQ/USR/REL files but not for PRG.
+610 Parsing of x00 files is always enabled even when writing them is not.
+611
+612 x00 files are recognized by checking both the extension of the file
+613 (P/S/U/R with a two-digit suffix) and the header signature.
+614
+615 Disk Images:
+616 ============
+617 Disk images are recognized by their file extension (.D64, .D41, .D71, .D81,
+618 .DNP) and their file size (must be one of 174848, 175531, 349696, 351062,
+619 819200 or a multiple of 65536 for DNP). If the image has an error info block
+620 appended it will be used to simulate read errors. Writing to a sector with
+621 an error will always work, but it will not clear the indicated error.
+622 D81 images with error info blocks are not supported.
+623
+624 Warning: There is at least one program out there (DirMaster v2.1/Style by
+625 THE WIZ) which generates broken DNP files. The usual symptom is that
+626 moving from a subdirectory that was created with this program back to
+627 its parent directory using CD:_ (left arrow) sets the current directory
+628 not to the parent directory, but to an incorrect sector instead. A
+629 workaround for this problem in sd2iec would require an unreasonable
+630 amount of system resources, so it is recommended to avoid creating
+631 subdirectories with this version of DirMaster. It is possible to fix
+632 this problem using a hex editor, but the exact process is beyond the scope
+633 of this document.
+634
+635 M2I files:
+636 ==========
+637 NOTICE: Support for M2I files will be removed in the next release, see
+638         the deprecation notices at the top of this file for advice.
+639
+640 M2I files are fully supported. sd2iec supports SEQ and USR files in this
+641 format in addition to PRG and DEL which were already implemented in MMC2IEC.
+642 For compatibility reasons the file type is not checked when opening files.
+643 Inside an M2I file the files are always shown as 0 (DEL) or 1 blocks
+644 because calling stat for every file was slowing down the directory listing
+645 too much. For compatibility with existing M2I files the data files do not
+646 use P00 headers even when the file type is SEQ or USR.
+647
+648 REL files:
+649 ==========
+650 Partial REL file support is implemented. It should work fine for existing
+651 files, but creating new files and/or adding records to existing files
+652 may fail. REL files in disk images are not supported yet, only as files
+653 on a FAT medium. When x00 support is disabled the first byte of a REL
+654 file is assumed to be the record length.
+655
+656 Changing Disk Images
+657 ====================
+658 Because some programs require more than one disk side there is support
+659 for changing the currently mounted disk image with a button connected
+660 to the disk change pin.
+661
+662 If your circuit doesn't have a disk change pin/button you might be able to
+663 add it yourself:
+664 - For the original MMC2IEC:
+665   Connect a button from PA4 to ground. PA4 is pin 36 on the DIL version
+666   of the controller or pin 33 on the surface-mount version.
+667 - For Shadowolf's MMC2IEC 1.x PCBs:
+668   Connect a button from PC4 to ground. PC4 is pin 23 on the DIL version
+669   of the controller or pin 23 on the surface-mount version.
+670 - Any other circuit without disk change pin on a convenient connector
+671   somewhere and no button dedicated to that function: Please check
+672   with the supplier of the board and read config.h in the sources
+673   to find out how to connect it.
+674
+675 To use this functionality, create a text file that lists the file
+676 names of all disk images you want to swap between, one per line.
+677 The file names are parsed in the same way as the CD command, so you
+678 can include a path to the image if desired. The swap list can
+679 use either ASCII or PETSCII character encoding. If it uses PETSCII
+680 encoding, the very first line must exactly be "#PETSCII"
+681 (in hex: 23 50 45 54 53 43 49 49). Blank lines are ignored,
+682 any combination of carriage return (0d) and line feed (0a)
+683 are acceptable as line ending.
+684
+685 Examples:
+686 === example 1 ===
+687 FOO.D64
+688 BAR.D64
+689 BAZ.D64
+690 === end of example 1 ===
+691
+692 === example 2 ===
+693 //NEATGAME/:DISK1A.D64
+694 //NEATGAME/:DISK1B.D64
+695 //NEATGAME/:DISK2A.D64
+696 //NEATGAME/:DISK2B.D64
+697 === end of example 2 ===
+698
+699 The swap list is enabled by sending "XS:filename" over the command channel
+700 with filename being the name of the image list you created, parsed
+701 in the same way as any other file name.
+702
+703 After sending XS the first image in the list is automatically
+704 mounted. To switch to the next image in the list, push the button
+705 which will be called NEXT from here on.
+706 If the new image was mounted successfully both LEDs will blink twice.
+707 When you've reached the last image in the list pushing NEXT will
+708 mount the first image again. All of this is completely compatible with
+709 normal image mounting/unmounting, so you can unmount the disk image
+710 any time you want and resume the mount cycle later by pushing the
+711 button.
+712
+713 Due to the way this feature is implemented you are not limited to a
+714 swap list containing just D64 images, M2I and even FAT directories
+715 will work too.  FIXME: Does that still work?
+716
+717 If you press the button when no list has been set before or when the
+718 previous list was cleared by sending XS the software will look for a
+719 file called AUTOSWAP.LST in the current (FAT-)directory and use this
+720 as the current swap list until you deactivate it or manually change
+721 the directory (otherwise an AUTOSWAP.LST in the new directory would be
+722 ignored until you send XS, killing the nice "it just works" feeling).
+723
+724 FIXME: Integrate the following into the preceding
+725
+726 The second disk change button (called PREV) is on
+727 - PA5 for LarsP
+728 - PC3 for Shadowolf's MMC2IEC 1.x
+729 - PC2 for Shadowolf's sd2iec 1.x ("Reserve" on the header)
+730 - PG4 for uIEC
+731
+732 Either of those buttons will trigger the use of AUTOSWAP.LST,
+733 mounting either the first (NEXT) or last (PREV) entry listed
+734 in the file.
+735 If a swap list is already active, the NEXT button will switch
+736 to the next image in the list, the PREV button will switch
+737 to the previous image in the list and pushing both buttons
+738 together will switch to the first image in the list.
+739
+740 The confirmation blink is red+green followed by
+741 green for "next", by red for "previous" and by
+742 red+green for "first".
+743
+744 Sleep Mode:
+745 ===========
+746 If you hold the disk change button down for two seconds, sd2iec will
+747 enter "sleep mode". In this mode it doesn't listen to the bus at all
+748 until you hold down the disk change button for two seconds again
+749 which resumes normal operation. Sleep mode allows you to keep
+750 sd2iec connected to the serial bus even when you load something
+751 from a different drive that uses a fast loader that doesn't
+752 work with more than one device on the bus.
+753
+754 While sleep mode is active, the red LED will be on and the green LED
+755 will be off.
+756
+757 Card detection test:
+758 ====================
+759 Because some SD slots seem to suffer from bad/unreliable card detect
+760 switches a test mode for this has been implemented on the units that
+761 have SD card support. If you hold down the PREV button during powerup,
+762 the red (dirty) LED will reflect the card detect status - if the LED
+763 is on the card detect switch is closed. Please note that this does not
+764 indicate successful communication with the card but merely that the
+765 mechanical switch in the SD card slot is closed.
+766
+767 On units with two sd2iec-controlled LEDs, the green (busy) LED will
+768 indicate the state of the write protect switch - if the LED is lit,
+769 the write protection is on. Due to the way the write protect notch
+770 works on SD cards, the indication is only valid when the card is fully
+771 inserted into the slot.
+772
+773 To exit from the diagnostic mode, power-cycle the device or push the
+774 NEXT button once.
+775
+776 Other important notes:
+777 ======================
+778 - When you hold down the disk change (forward) button during power
+779   on the software will use default values instead of those stored
+780   in the EEPROM.
+781 - File overwrite (@foo) is implemented by deleting the file first.
+782 - File sizes in the directory are in blocks (of 254 bytes), but
+783   the blocks free message actually reports free clusters. It is
+784   a compromise of compatibility, accuracy and code size.
+785 - If known, the low byte of the next line link pointer of the directory
+786   listing will be set to (filesize MOD 254)+2, so you can calculate the
+787   true size of the file if required. The 2 is added so it can never be
+788   mistaken for an end marker (0) or for the default value (1, used by at
+789   least the 1541 and 1571 disk drives).
+790 - If your hardware supports more than one SD card, changing either one
+791   will reset the current partition to 1 and the current directory of
+792   all partitions to the root drive. Doing this just for the card that
+793   was changed would cause lots of problems if the number of partitions
+794   on the previous and the newly inserted cards are different.
+795
+796 Compilation notes:
+797 ==================
+798 sd2iec requires avr-libc version 1.6.x.
+799
+800 sd2iec is set up to be compiled in multiple configurations, controlled by
+801 configuration files. By default the Makefile looks for a file named
+802 'config', but you can override it by providing the name on the make
+803 command line with "make CONFIG=filename[,filename...]".
+804
+805 An example configuration file named "config-example" is provided with
+806 the source code, as well as abridged files corresponding to the
+807 release binaries. If you want to compile sd2iec for a custom hardware
+808 you may have to edit config.h too to change the port definitions.
+sd2iec, an AVR-based C64 floppy drive emulator
+RSS Atom
+
+***************************************************************************************************
+

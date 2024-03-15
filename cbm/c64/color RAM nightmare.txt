@@ -1,0 +1,44 @@
+                      HOW TO FOOL A REPAIR TECH
+               or you can't always trust your test cart.  9-6-2017
+
+     The C64 was a PAL version which I don't often see on this side of the big
+pond. It came in with a blank screen, RAM chips running very hot and its input
+current nearly 3 Amps! A working board usually pulls less than one Amp. Normally
+when I encounter a board damaged by a failed power supply, I swap it out rather
+than trying to fix it. In this case, I didn't have another PAL board, so my only
+option was to repair it. A PAL computer will run on an NTSC monitor but there
+will be no color and the image appears to flicker since the screen refresh rate
+is lower. I don't have a PAL monitor but this is acceptable for diagnostic
+purposes. The board was a 250425.
+     After changing two chips that were getting hot, I still had a blank screen
+and the input current of the 5VDC source was still about 2 Amps. Rather than
+trying to diagnose RAM further, I decided to swap them all out. I cut the pins
+of each one near the IC then extracted the stubs and cleaned the holes. This
+board now has eight new RAM chips in sockets. The boot screen then came up
+normally but of course there was no color since I was running it on an NTSC
+monitor. I thought I was done.
+     I ran it up on my diagnostic cart and harness and to my surprise, half the
+RAM tested bad along with some other failures. What? The C64 automatically tests
+its RAM at boot and it was 38911 as it should be, so why was the cart test
+throwing errors like that? My Dead Test cart didn't blink but did indicate two
+bad RAM, and it stopped when it got to the color RAM chip. OK. I then ran the
+board up on a video to HDMI convertor that accepts PAL and got a normal color
+boot screen on that monitor. Back on the test cart, changing some chips like the
+Kernal (-o2 subbed for -03) or the CIA IC's made the screen blank out when
+running the cart. Different PLA substitutes did the same thing. Timing problems?
+What was going on here?
+     At this point, still trying to determine where the problem was, I resorted
+to what was known in the business as the "shotgun" diagnostic approach, replacing
+chips to find the bad one... more sockets and time wasted. After nearly all the
+chips were replaced with the same symptoms apparent, I went back to the test cart
+that indicated a bad color RAM chip and that was it! Installing that IC in my
+NTSC test board showed blinking color characters, so I knew that IC was bad. Why
+it should corrupt the data lines and produce RAM errors with the test cart is a
+mystery. Why it worked so well in a PAL computer, likewise. The user is happy to
+have his computer back and I'm glad to be rid of it but pleased I learned
+something new. My stumbling block was my own unfamiliarity with a PAL C64, so I
+missed some obvious clues along the way. I'll probably never see this fault
+again but I'll be paying closer attention in the future... hopefully.
+
+Ray
+     

@@ -1,0 +1,275 @@
+
+                          THE COMPUTER SAVER 
+ A PROTECTION DEVICE FOR THE COMMODORE 64, LATE VERSION VIC20 & PLUS/4
+             Latest updates and/or corrections  12-28-2019
+
+       Note the special instructions at the end of this article!!!
+
+     This over-voltage protection unit is designed to prevent damage to
+the Commodore 64 computer due to a failing power supply. One of the ways 
+the Commodore "brick" power supply can fail is from a shorted internal 
+5 volt regulator. That fault puts excessive voltage into the computer 
+and damages chips such as RAM very quickly... and silently. The Saver 
+protector is essentially a fast-acting electronic circuit breaker. It 
+functions to quickly cut off the 5 volt supply line to the computer if 
+the voltage exceeds about 5.4 volts. It is not a "crowbar" device but 
+opens the line from the supply to the computer before the voltage gets
+high enough to do damage. That's the safest way to do it. After-market 
+power supplies, even switching types, can fail at any time. Switchers 
+are more reliable and much less prone to catastrophic failures.This 
+Saver is designed mainly to protect any computer that uses the standard 
+Commodore "brick" power supply. Computers include all versions of the 
+C64, the later CR version of the VIC20, and the Plus/4. Because of the
+Plus/4 square power connector, a different external Saver is made to 
+work with its four pin square DIN connector.Since replacements are not 
+available, I make my own plugs. 
+     Built from readily available parts, this protection circuit is 
+installed in series with the 5 volt line between the power supply and 
+the computer. A protector module can be installed inside the computer 
+or can be purchased as a separate plug-in device that connects between 
+the computer and its supply. I make three models: an assembled and 
+tested module that can be installed by the user (or myself, if desired) 
+inside a C64, VIC20 or Plus/4, an assembled in-line cable (with module 
+inside) and a small box with the Saver inside. Each Saver version has 
+the trip point set and has a failsafe LED. The complete external cable 
+and plastic box Saver versions are plug-and-play ready. 
+    There are several ways to add this protection device to your system.
+One way is to install the components or a completed module inside the 
+computer. That way, it is protected from any supply plugged into it. If 
+you have more than one computer, a protector can be installed in each 
+one. To install the protector circuit inside a C64, it is necessary to
+open the +5 volt line on the circuit board. Input and output lines of
+the protector are wired to each end of the now-open circuit. If your
+C64 board differs from the pictures on my site, you will have to locate
+the correct area of your board to open the line and make the connections. 
+In all internal versions, the correct point is electrically between the 
+power connector and the power switch. There are at least five board 
+versions of that computer, each with a different PC board layout, and 
+the physical connections will be specific for each board. A Saver is 
+the best way to ensure the computer is safe if the brick PS must be used.
+     The most common board appears to be the 250407 version B, so I will 
+describe how to implement the modification of that board first because 
+it is the most difficult. A modification must be done to the bottom of 
+the board. Therefore, it's necessary to remove the board from the case 
+bottom. Rather than removing the entire bottom shield, you can unsolder 
+just one of the tabs at the right rear side of the board and bend the 
+shield up to access that area of the board. A Dremel tool with a thin 
+cutting blade or just a small file or knife can be used to open the 
+copper circuit trace between the power connector and the power switch. 
+The shield can then be put back and all Saver connections made on the 
+top of the board. The Saver input connects to one pin at the rear of the 
+power connector, and the Saver output to one leg of the power switch. 
+The third wire is connected to a convenient ground point. 
+     Other common versions of the C64 include board numbers 326298 (very
+early model), 250425 and 250466. The Saver modification can be added to 
+those boards without removing them from the case or removing the bottom 
+shield because everything can be done on the top of the board and no foil 
+traces need be cut. Look for a small coil labeled L5. Disconnect one end 
+of that part (there may be a jumper wire only) and install the input and 
+output connections of the Saver across the open circuit as shown in the 
+photos. 
+     On a C64C 250469 short board, a trace must be cut on the bottom of 
+the board to open the line between the DC input connector and the power
+switch. See photo. NOTE: as an alternate to cutting the bottom board 
+trace, a connection on the input filter coil can be cut (see photo) to 
+install the Saver, which makes removing the PC board unnecessary, 
+although there isn't much coil wire to work with. 
+
+When adding individual Saver components to computer boards that use a 
+metal shield over the motherboard, note that the area under that top 
+metal shield (heat sink) is very small and you must mount the components 
+as low as possible so the metal shield doesn't short to anything 
+underneath it when it's put back. Alternatively, you can cut a portion 
+of the shield out over the new components, if that's easier or you can 
+purchase and use a pre-wired module and mount it over the cartridge port. 
+See photo.
+
+How it works:
+    The circuit for the protector is simple and strightforward. A 4.7
+volt zener diode on the 5 volt line continuously monitors that DC level.
+The resistor in series with the zener diode limits the current to the
+base of the first transistor Q1, and the resistor from base to ground
+keeps that transistor cut off until the threshold voltage is exceeded.
+The zeners 4.7 volts plus Q1 transistors 0.6V B to E drop totals 
+slightly over 5 volts, the trip point of the device. If the supply
+voltage rises above that level, the zener diode conducts, turns on the
+transistor and pulls its collector lead to ground. That lead is wired
+to a normally conducting second transistor Q2 which drives the relay. 
+When Q2 turns off, the relay opens. The relay is de-energized only 
+during an over-voltage condition. If the supply fails in that manner, 
+the relay drops out and opens the previously closed contacts cutting 
+off the +5VDC supply voltage to the computer. The circuit is designed 
+to keep the 5 volt line open only as long as the fault persists. It is 
+therefore self-resetting.
+    There is one fuse inside the C64 that protects the 9VAC line (and
+another embedded inside the supply) but neither the C64 nor its supply 
+are fused on the regulated 5 volt line. One fuse can be added to the 
+protector circuit if desired. That fuse will open if an external 
+overload or short circuit is accidentally applied to the computer ports. 
+The new fuse protects the Saver relay (too much current can weld the 
+contacts together) as well as the power supply from excessive current 
+draw. However, that failure is unlikely and a fuse isn't really needed 
+since the power supply regulator IC itself has a feature called 
+"fold-back current limiting". If too much current is drawn for whatever 
+reason, the voltage automatically drops down to limit the current. On 
+the other hand, if the regulator shorts and its output voltage rises, 
+the Saver will "trip" and protect the computer and itself from damage.
+
+Some notes about the parts used:
+    The relay can be an SPST (single pole single throw) if the indicator 
+LED is not used. An SPDT (single pole, double throw) or DPDT (double 
+pole, double throw) will also work. The relay selected must have a five 
+volt coil and contacts rated at 2 Amps. Since the computer only draws 
+about 850mA (more when a cartridge is used), a 1 Amp relay would also 
+work but a margin of safety is a good idea. The relay I use is a DPDT 
+with two sets of 2 Amp contacts. Wired together, the total is 4 Amps,
+greater than any load could impose, so it provides a good safety factor.
+    You need a relay with a 5 volt coil, and one that has a high DC 
+resistance is preferred. The higher the DC resistance of the relay coil, 
+the less load it represents, so a coil resistance of 150 ohms or higher 
+is preferable in this application. NOTE: small relays often have a coil 
+that is sensitive to the polarity of its applied voltage! If such a 
+relay coil is wired backwards, it will not energize. 
+ 
+    The transistors can be any low power silicon NPN type rated at 500mA 
+or more. The voltage rating is not critical either. Generic types such 
+as the 2N2222, 2N3565 and 2N3904 are OK as is their equivalent such as 
+the old Sylvania ECG123A or NTE123A. A higher power NPN transistor will 
+also work, such as tab mount or TO-220 "flatpack" types, although they 
+are physically larger. Note also that the metal tab or case of such a 
+transistor is normally connected to one internal element, usually the 
+collector, so its metal case must be isolated from surrounding metal or 
+wiring.
+    The zener diode can be a 1/2 or 1 Watt but its voltage rating is
+important since it sets the basic "trip" point of the device. The two 
+resistor values at the zener are likewise critical. See special note at
+the end of this article!!! The silicon diode across the relay coil is 
+a small signal type such as a 1N914. Its current and voltage ratings 
+are not critical as it's only there to absorb "spikes" from the coil 
+when it de-energizes. Polarity is critical for any diode. They usually 
+have a band around the cathode (K) end. The resistors are all 1/4 Watt
+carbon or carbon film types. 1/2 or 1 Watt resistors of the same 
+resistance value can also be used although they will be physically 
+larger. Space is limited inside the computer, especially in the C64C 
+which has a metal shield over the PC board. Make sure nothing shorts 
+out when you put that metal cover back on!!!
+    If desired, an LED or buzzer can be used to monitor the relay status 
+and indicate a fault condition, but their use is optional. If the red LED 
+on the computer goes out, it's likely a power supply problem... either 
+low or high level of the 5V line. In newer Savers, I use a dual-LED (red
+and green) that has three legs. One leg is wired to relay NO (normally
+open) contacts and the other to the NC (normally closed) contacts. That
+way, the LED will light up green if the +5VDC is normal and change to 
+red if the PS fails via over-voltage. The center leg of that LED goes
+to ground through a 1K resistor. 
+
+     This is the basic circuit but later modifications were made and are 
+shown on "saver schematic.jpg". Most notable are the 220K resistor from 
+the relay coil driver collector Q2 to the base of the trigger transistor 
+Q1. The resistor adds a bit of feedback hysteresis (snap action) to the 
+relay circuit. The added 0.2uF capacitor from the driver transistor Q2 
+collector to ground keeps that device from oscillating. These mods stop 
+the momentary relay "buzz" that some users reported when using the Saver. 
+A continuous buzz from the Saver relay indicates an overload. It can 
+happen if there is some kind of short in the computer and can also happen 
+if the power supply starts to fail (output voltage too low). Don't let 
+the relay buzz continue or the relay contacts will be damaged.
+
+
+   2Amp fuse (optional)
+ ___[]~~~[]____________________________________
++5VDC       |           |        |   C        | com
+from        \           |      K_|_  O        0
+ PS         /  1K       |      A /\  I         \ relay
+            \ ohms      |        |   L  NO 0    \0 NC
+  4.7V   K  |           /        |___|     |     |
+ zener   \__|__         \ 2.2K   |         |--------- +5V out to
+ diode   A  /\ \        /        |               |     computer
+            |           \        |               \
+            |           |        |               /
+            |           |     C__|               \ 1K
+            |           |    |/                  /
+            |        C__|____|  Q2               |
+            |       |/     B |\__                |A
+            |_______| Q1      E  |              _\/_  
+            |     B |            |               |K  fault
+            /       |\__         |               | indicator
+       820  \        E  |        |               |    LED
+      ohms  /           |        |               | (optional)
+            |           |        |               |
+  GND (-) __|___________|________|_______________|_____ GND
+
+
+NOTE: Use of a power hungry add-on like a RAM expansion unit is not
+possible using the original CBM "brick" power pack. That RAM unit 
+originally shipped with its own power supply, one that provided 2.5 
+Amps for the 5 volt line. That beefier supply makes a Computer Saver 
+less necessary since it's a switcher like the C128 supply, and is much 
+less vulnerable to over-voltage failure as the C64 brick. If you have 
+an expander but no supply for it, consider getting a C128 power supply 
+and installing a power connector that fits your C64. With that hookup, 
+again, you don't need a Saver. A C64 power connector can be "pigtailed" 
+onto the existing C128 power cord in a Y formation or wired directly 
+into the supply case like the 128 cable. With both cables attached, 
+that supply could be used with either computer (one at a time, of 
+course). Just make sure to insulate all the wires after making the 
+connections to the cable if you decide to pigtail the 64 power connector. 
+
+SPECIAL NOTE: Because of fairly wide Saver component tolerances and to 
+accommodate the normal voltage variations of even good power supplies, 
+the basic Saver circuit must be "trimmed" so the voltage cuts off at 
+about 5.4 volts DC. If set too high, it will not protect the computer; 
+if too low it will trip prematurely even with a good PS. Feedback from 
+a few users indicated the Saver would trip when they turned their 
+computer off, and it remained in failsafe mode until unplugged from the 
+PS. Apparently some power supplies output can jump up past the failsafe 
+point when the load on them is suddenly removed (computer off). That's 
+why the trip point is set as high as it is. 5.4 volts is still under 
+the "absolute maximum rating" specification of 5.5VDC for the RAM chips. 
+The PS in question was the Commodore repairable one. It's about the same 
+size as a brick but is a different shape and has vent holes in its 
+plastic case. 
+     To ensure correct operation, I use a variable bench DC supply and a 
+very accurate voltmeter to test and adjust all my Saver circuits after 
+construction and before connecting to a computer. The Saver trip point 
+is often too high (or can be too low) with the standard resistor values 
+shown. To trim the voltage trip point, I add a higher value resistor in 
+parallel with the 1K ohm one, and in some cases the 820 ohm one. That 
+added resistor value normally varies between 2.2K and 10K with the parts 
+I used, but mostly because of the actual conduction point of each zener 
+diode. Note that the transistors used can also affect the trip point. A 
+different resistor pair (different values) can be used as long as their 
+combination sets the trip point at the correct level. 
+Note: S.I.T. means Set In Test.
+     To test the circuit after construction, I slowly increase the supply 
+voltage until I hear the relay cut in (voltage appears on the relay 
+output side) and continue advancing it until the relay cuts out again. 
+The voltage at that instant is the trip point of the device. Note that 
+the zener diode is somewhat temperature sensitive. If very cold, the 
+trip point will read high, and if hot from soldering, the trip point 
+will be low. Therefore, the mounting of the Saver components, if inside 
+the computer, should be away from all heat producing components. 
+     If building your own -external- Saver: since the 5VDC minus line is 
+usually tied to ground of the three wire AC cord, it's a good idea to 
+include that connection. That ensures the computer is properly grounded 
+in case the transformer in the PS goes electrically "leaky". To implement, 
+tie the DIN socket negative pin (2) to the shield tab and to chassis 
+ground. 
+     If you use an LED to monitor the 9VAC source from the power supply, 
+use a diode such as a 1N914 across the LED to protect it from reverse 
+current "spikes" from the transformer. A standard power supply diode is 
+not fast enough. Wire the diode as follows: anode to LED negative and 
+cathode to LED positive. Use a 470 to 1K ohm current limiting resistor in 
+series from the 9VAC to the LED. 
+     I have a European power supply that uses pin 4 rather than pin 5 
+for the 5VDC into the computer. Most C64's have those pins tied together 
+inside the computer but I found just one that didn't. So, either PS will 
+work if those two pins are wired together externally. 
+
+Addendum
+     All of my external Savers will now include the dual function LED. It 
+lights up green if the PS is working normally and goes red if the Saver
+senses overvoltage and cuts off power to the computer. 
+
+Ray Carlsen CET
+Carlsen Electronics

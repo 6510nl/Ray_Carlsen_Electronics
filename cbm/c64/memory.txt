@@ -1,0 +1,143 @@
+
+    RAM (RANDOM ACCESS MEMORY) PROBLEMS IN THE C64/128 COMPUTER
+           latest updates and/or corrections 6-9-2011
+
+     If you get an "out of memory" error or less than the normal 
+number of bytes free (should be 38911 for the C64) when you turn 
+your computer on, that's a RAM problem and usually points to a 
+partial failure in one of the RAM IC chips. Blank screen can be a 
+RAM problem but can also be caused by many other failures such as 
+a bad PLA or power supply which are actually more common. Bad RAM 
+can produce a "garbage" screen which is a symptom where the screen 
+fills up with random characters when the computer is turned on, or 
+it can show up as a few random characters anywhere on the screen. 
+There are two memory control chips that should also be suspected 
+when you have an apparent RAM problem: U13 and U25 in the C64, and
+U14 and U15 in a C128 and 128DCR. Those are generic 74LS257 logic 
+chips. The C64C integrates all memory control inside its PLA and 
+so doesn't use the 74LS257 chips.
+     Early C64 computers have eight 4164 TTL RAM chips installed.
+Some interim brown case and all later OEM C64C (white case) 
+computers have only two 4464 RAM ICs (41464 is the same IC) as 
+those chips have four times the memory "density" of the 4164. They 
+are not interchangeable with the earlier RAM. Early C128 computers 
+have sixteen 4164 chips and a total memory count at startup of 
+122365 bytes free in 128 mode. The USA metal case C128DCR has four 
+4464 (41464) RAM chips and the same bytes free count as the C128 
+mode startup screen. The 64 mode in all C128 computers shows the 
+same memory count at startup as a stock C64, namely 38911.
+     One common symptom of bad RAM is the error message "OUT OF 
+MEMORY IN 0" at startup. That means the computer failed its RAM 
+self test and therefore can't load programs or perform even simple 
+tasks. Because it can produce the opening screen, this means one
+RAM IC has an open element or "stuck" bit. There are eight RAM ICs 
+in there, so how do you find the bad one without just replacing 
+them all one at a time? Fortunately, there are several methods.
+     It's possible to calculate which RAM bank has failed the self
+test using the bytes free number, but I could never find exact 
+information regarding that procedure, so I've never used it. Since
+the computer partially works (opening screen comes up), I use a 
+method that often works: to "piggyback" a known good 4164 RAM 
+chip on top of each computer RAM IC and then power up the computer 
+and observe the number of bytes free on the screen. If the value 
+changes (even if it's still not correct), change that board RAM IC
+and try the computer again. Never leave the piggyback chip in
+place as that may cause timing problems or may eventually stop 
+working. The board chip can continue to deteriorate and could 
+eventually short out. It's best to remove and replace it quickly. 
+Some people just replace all the RAM at one time. Those chips are
+cheap and still available as of this writing. 
+     The piggyback method requires that you install the test chip 
+over a board RAM chip so all pins make good contact and no pins 
+short together. The test chip must be oriented correctly as well. 
+There is a notch or dot (or both) on one end of those ICs. Those
+markings must line up because if the test chip is installed
+backwards, it will likely be damaged when power is applied. You 
+can press the test chip pins against a tabletop to push all pins 
+inward slightly, and that will provide some spring tension when 
+the test chip is inserted over the board chip and can hold it in
+place. It's OK if you want to hold the chip with your fingers and 
+then power up the computer. There is only five volts present and 
+therefore absolutely no danger of electrical shock. Again, if the 
+bytes free number changes, that board IC is probably bad and 
+should be changed. If there is no change when all RAM is checked,
+it can still be a RAM problem (stuck bit) that keeps the computer
+locked up. Chip swaps is the next step in diagnosis. 
+     Note that shorted RAM will always produce a blank screen and
+will often get very hot to the touch. RAM normally runs barely warm
+to the touch after several minutes of operation. Any that get hot
+quickly or even noticeably warmer than the other RAM chips are bad!
+One or more shorted RAM chips usually point to a failing power
+supply. That MUST be checked before you turn the computer on again
+after repairs are done. One easy way is to measure the voltage at
+the appropriate pins of the four pin DIN plug of the power supply
+while it's plugged in to AC power but disconnected from the
+computer. Don't short any pins together while testing! That test 
+should be done while the PS is still fully warmed up. 
+     Two pins will measure 9 to 11 volts AC, which is normal. The
+other two pins should measure 5 volts DC. If that regulated source
+is high or low by more than a few tenths of a volt, the supply is
+failing and should be replaced. All black or white original CBM 64
+"brick" power supplies are potted with epoxy inside and therefore
+cannot be repaired. Note that some supply failures will not show up
+until the supply has been allowed to warm up for awhile. Therefore
+it's best to run the power supply with an artificial "load" (not
+a computer!) connected to it such as a small 12v light bulb. See 
+the PS tester article for more information about that.
+     Other chips may be damaged by overvoltage from a failing C64 
+power supply but RAM is particularly sensitive to that problem and 
+will usually be the first to fail by shorting out. Obviously the
+piggyback method of chip testing will not work with shorted chips
+that produce a blank screen. It's interesting to note that shorted 
+RAM chips in the C128 are almost unheard of. The 128 switching 
+supply is more reliable and rarely harms the computer even when it 
+does fail. Voltage "sag" (lower than 5 volts output) when loaded
+usually points to failing filter capacitors in the supply. The 
+C128 power supply is repairable unlike the old 64 epoxy brick. 
+
+CHIP REPLACEMENT:
+     There are several ways to replace ICs on a computer board. 
+One way that doesn't require a lot of work is to snip all the pins 
+off close to the body of the IC with a pair of small cutters and 
+just solder the new IC to the remaining pin stubs. It doesn't look 
+very neat, but it works fine as long as no pins are shorted 
+together. If you get the stubs too hot during soldering, they can 
+loosen up in the PC board holes and start moving around... so you 
+should solder quickly. Examine your work carefully when you're 
+done. Look for shorts between pins and solder splashes or bad 
+connections (sometimes called "cold solder" joints).
+     The next method is a variation of the first, namely to snip 
+all the pins of the bad chip, but in this case to desolder them 
+one at a time so you can install a socket. Once the stubs are 
+removed, you need to clean the residue of solder from the holes. 
+That's easily done with your iron and a solder sucker, a vacuum 
+device that slurps up molten solder when the trigger is pressed. 
+If a hole is open but a tiny bit of solder remains, you can poke 
+a straight pin through and wiggle it around a bit... gently! 
+Solder is made of tin & lead and is relatively soft, but if you 
+get too aggressive, you may damage a board trace (the copper 
+wiring in and around the holes) which MUST be repaired before 
+you install a socket. If you install an IC or socket over an 
+unrepaired trace, you've just created and covered up another 
+problem that is -very- difficult to find, even for a tech. 
+Damaged plated-through holes can be repaired by installing a 
+wire jumper through the board from top to bottom, then soldering 
+the wire to good copper on both sides.
+     With regards sockets, I always use them when replacing chips.
+4164 RAM chips usually cost under two US dollars each so just 
+replacing suspected chips by snipping the pins is OK. I always 
+desolder larger proprietary (expensive as well as hard to get) 
+ICs such as the PLA or SID intact. That way, if the suspected IC
+happens to still be good, I have not ruined it by cutting the pins 
+off. Removing any chip intact requires a lot more care and the 
+proper tools to prevent chip and/or board damage. Once even a small 
+IC is removed, it's still a good idea to install a socket. Then 
+that area of the board will never be subjected to the heat of 
+soldering again. Each board rework with a soldering iron results 
+in weakening of board/trace bonds. The less of that the better.
+
+
+Ray Carlsen
+Carlsen Electronics... a leader in trailing-edge technology
+
+

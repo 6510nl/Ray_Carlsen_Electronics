@@ -1,0 +1,44 @@
+
+             ADDING A C64 POWER CONNECTOR TO A C128 POWER SUPPLY
+                 latest updates and/or corrections 3-9-2013
+
+     A C128 power supply puts out the same two voltages as a C64 supply. 
+However, the 128 supply is more reliable and doesn't suffer the same bad 
+reputation as the C64 "brick". It can handle higher current on the 5V 
+line and will allow the 64 to run heavier loads such as a RAM Expansion 
+Cart which normally comes with its own beefier power supply. Of course 
+the C128 PS has a different type of connector which doesn't fit a C64, 
+but with the addition of a "pigtail" cable and connector, that supply 
+can work with a C64. 
+     You can either cut the cable off a defective C64 PS or buy a four 
+wire cable and DIN connector to do this modification. The color coding 
+of the wires inside each cable will be different, so the correct ones 
+need to be identified and connected together. Below is a common color 
+code used an both supplies. Wires must be insulated from each other to 
+prevent shorts between wires. It's best to "stagger" the four wires so 
+if the insulation breaks down, they still can't touch each other. View 
+the photos to see how it's done.
+
+Note: as an alternative to "pigtailing", you can drill a hole in the PS 
+case and wire a long cord directly to the inside of the C128 supply. 
+You will want to add some kind of strain relief so tugging on the added 
+cable doesn't cause eventual wire breakage and/or short circuits. 
+
+     C64 POWER CABLE             C128 POWER CABLE
+
+     BROWN  +5VDC                RED    +5VDC
+     BLUE   - (GROUND)           BLACK  - (GROUND)
+     BLACK  9VAC                 BROWN  9VAC
+     BLACK  9VAC                 WHITE  9VAC
+                                 SHIELD (GROUND BRAID)
+
+Note: If your power supply cables use different colors for their wires, 
+make sure you make the proper connections with them! One way to identify
+the 9VAC source is that an ohm meter will read low resistance when 
+measuring across that source (power off, of course). 
+
+Ray Carlsen
+Carlsen Electronics
+
+If you spot a mistake here, please let me know. Questions and comments
+are always welcome. Thanks!

@@ -1,0 +1,7 @@
+                               TESTING THE RAMLINK
+
+RL boots installing its full native partition size as default. To test the RL, 
+use RAMTOOLS on the utilities disk to delete the default partition, then make 
+a new partition to emulate a 1541, and finally use MCOPY on the disk to copy a 
+program over to the 1541 emulation partition. Use device 8 swap button and run 
+the program from the RAM disk.

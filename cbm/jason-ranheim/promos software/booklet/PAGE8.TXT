@@ -1,0 +1,52 @@
+   example, we are telling the PROMENADE to read a 27256 into
+   computer RAM from 5000 through BFFF, beginning at EPROM
+   address 1000. E6 is the control word for a 27256 programming
+   at 12.5 volts.
+
+   CHECKSUMS and HASHTOTALS
+
+       When you execute the READ command as in the examples
+   above, you will notice that a 'CHECKSUM' and a 'HASHTOTAL' is
+   printed on the screen as soon as the operation is completed.
+   The CHECKSUM is the low-order byte of the arithmetic sum of
+   all the data bytes read from the EPROM. The HASHTOTAL is the
+   result of exclusive-or ing all bytes read with each other.
+   These numbers can serve as a quick means of identification of
+   an EPROM, or as a means of checking the validity of the data
+   itself.
+
+   WHERE TO PUT THE DATA
+
+       Notice that the READ command gives you complete freedom:
+   you can read as many bytes from the EPROM as you want,
+   starting anywhere on the chip, and in principle you can put
+   them anywhere in computer memory. As a practical matter,
+   certain areas of computer RAM are off-limits because your
+   computer must use then for its own purposes. If your read
+   command overwrites these areas, the computer will crash.
+       Consider first the COMMODORE 64 or the 128 in 64 MODE:
+   if you are not running a BASIC program, then you are free to
+   use computer RAM from 0800 through DFFF. A BASIC program
+   ordinarily resides in RAM starting at 0801. In a later
+   section we discuss the matter of using PROMOS commands in a
+   BASIC application program.
+       In the case of the COMMODORE 128 in 128 MODE, we need to
+   consider a special PROMOS command which pertains only to the
+   128, the bank select command.
+
+   The B COMMAND- Select PROMOS RAM bank. (128 mode command.)
+
+       This command selects the computer RAM bank, 0 or 1, which
+   will be used for subsequent PROMOS operations.  Example:
+
+      B1
+
+      Execution of this command causes PROMOS to use bank 1
+   RAM, PROVIDED the RAM involved lies in the range 2000 through
+   DFFF.  Outside this range, bank 0 RAM will be used.
+      Using this command does not in any way affect the BASIC
+   7.0 'BANK' command.  PROMOS bank 1 will remain in use until
+   you switch back to PROMOS bank 0.  To do this, execute either
+
+
+                              -8-

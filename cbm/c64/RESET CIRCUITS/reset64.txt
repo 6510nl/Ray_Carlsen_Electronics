@@ -1,0 +1,129 @@
+          INSTALLING A RESET SWITCH ON YOUR C-64, C64C and SX   
+             latest updates and/or corrections: 1-3-2014
+
+There are two versions, warm and cold. I'll explain both here beginning 
+with the installation of a simple button switch.
+
+     A reset switch is handy if you want to return the computer to its
+power-up state without repeatedly turning the power switch off and on 
+again. A "warm" reset, implemented by adding a momentary contact push 
+button switch, will reset the computer back to the opening screen, but 
+that works only with BASIC programs. If a ML (machine language) program
+is running from disk and you push reset, the screen will freeze, the 
+computer will lock up, and the program will not be not eliminated from 
+memory. A soft reset will work if you're running a cartridge program. 
+     To enable a "cold" reset with a ML program running from a disk, a 
+small circuit can be added to your computer consisting of a diode, 
+resistor, capacitor and transistor. With that circuit wired in, the ML 
+program, although still in memory, will be stopped and the screen will 
+clear back to the opening screen. Another program can then be entered 
+as needed. That cold reset is roughly equivalent to turning the computer 
+power off and on again. 
+
+     To add a simple warm reset switch, you need a momentary contact 
+pushbutton switch (available from Radio Shack), a few lengths of wire 
+and some hand tools including a drill and a soldering iron. The switch 
+momentarily grounds the input to a chip (pin 8 of U20, a 556 timer IC 
+in the C64) which is used at power up to generate a single reset pulse 
+each time the computer is turned on. The original circuitry is a bit 
+different in a C64C and for the very early version C64 board as I'll 
+explain later.
+
+THE RESET SWITCH INSTALLATION IN A STANDARD C64
+
+     Connect one side of the switch to the junction of capacitor C105
+(a 0.1uF disk ceramic), resistor R50 (a 1 meg 1/2 watt), and pin 8 of
+the IC. NOTE: C105 is C34 in some versions of the 64. It's easiest to
+tack-solder onto the resistor leg nearest the capacitor on the top of
+the PC board. You don't have to pull the board out of the case. The
+other side of the switch goes to the nearest ground foil, found at the
+edge of the PC board near the resistor. By the way, don't miss-wire 
+and connect to the far side of the resistor... that goes directly to 
+the +5 volt supply! Grounding that line accidentally can kill chips! 
+Want to make the modification fail-safe? Add a 100 ohm 1/4 or 1/2 watt 
+resistor in line (in series) with the switch. Then if you make a 
+mistake, it will do no harm... it just will not work.
+     With the proper lengths of wire, you can mount the push button
+anywhere it will fit on the case. I like to install it on the lower
+left side near where the wires connect to the PC board. If mounted to
+the lower cabinet half-shell, the wires will not be disturbed when the
+keyboard (top half shell) is opened. Drill the appropriate sized hole 
+for the push button and mount it so that its terminals don't touch the 
+PC board compnents and cause a short. Solder the wires and you're done. 
+Solder quickly, by the way... those little switches are plastic and 
+will melt from too much heat.
+
+THE EARLY C64 (BOARD # 326298) SWITCH INSTALLATION
+
+     The design of the original on-board reset circuit is different in 
+this C64 board and the electrical connections to the switch are 
+therefore different. Rather than grounding the IC trigger point as in 
+other board versions, one end of the reset switch is connected to the 
++5VDC line! The other end of the switch goes to pin 12 of IC U20. These 
+connections effectively put the switch across capacitor C24. 
+     The cold reset modification is a bit different for this board as 
+well. The input side of it needs to be inverted, and an additional 
+transistor is used for that. See the photos of the warm and cold reset 
+circuits for early board 326298. All of these modifications can be made 
+on the top of the board, making removal from the case unnecessary.
+
+A RESET SWITCH FOR THE C64C
+     
+     You must remove the metal shield (heatsink) from the top of the
+board to get to the junction of capacitor C43, the anode of diode CR5,
+and pin 5 of IC U23. Tack solder one wire of your added pushbutton to
+pin 5 of the chip or to the anode side of diode CR5. The other side of 
+the added switch is connected to ground. Again, for safety's sake, it's 
+advisable to install a 100 ohm 1/4 or 1/2 watt resistor in series 
+(in-line with one wire) with the push button switch.
+     Mounting the switch in a C is a bit tricky. You must prevent the
+switch terminals touching the shield when it is reinstalled. I would put 
+the switch a bit closer to the front of the case to avoid touching the 
+shield. The switch wires will need to be routed through an open space in 
+the shield so they are not pinched when the shield is put back. 
+     When reinstalling the shield, make sure its little "fingers" touch 
+all the chips. Those fingers are heat sinks, and that metal against the 
+top of the IC's case draws away the waste heat and helps to lengthen the 
+life of those precious chips. Don't wipe off the white paste. It's heat 
+sink compound. If necessary, bend down all the tabs slightly before 
+re-installing the shield so all tabs press firmly on the chips. If the 
+heat sink paste is very dirty, It's OK to remove it. Grit in the paste 
+will keep it from making intimate contact with the chips anyway. If the 
+paste is dried out or missing, don't worry about replacing it. It's more 
+important that the metal fingers sit flat and firmly touch all the chips!
+
+HOW TO INSTALL THE COLD RESET CIRCUIT MODIFICATION
+
+     I discovered that if a delayed pulse is applied to the /EXROM line 
+at reset time, the ML program screen will completely clear. To create  
+that pulse, I took the pulse output of the reset generator IC in the 
+computer, fed it through a diode for isolation, and used it to charge a 
+capacitor. That charge goes though a resistor and onto the base of a 
+transistor, turning it on and bringing its collector to logic low. The 
+collector is tied to the /EXROM line in the computer and the charge on 
+the cap stays a fraction of a second longer than system reset, so the 
+/EXROM line is held low for that delayed time.
+     Although this circuit works well to clear the screen, the old 
+program is actually still in memory although it can be overwritten by 
+loading another into the computer. One way to tell the old program is 
+still there is to hit the RESTORE key. Another negative effect I 
+noticed is that an EPYX FastLoad cart no longer works with the cold 
+reset circuit in place (blank blue screen) and the computer is locked 
+up. All other cartridges seem to work fine however, as does JiffyDOS. 
+     If you use a DPDT center-off switch, both warm and cold reset 
+circuits can be implemented. By moving the switch one way, you get a 
+warm reset and by moving it the other way, a cold reset. That switch 
+can be either a center-off (three position) or a center-off momentary 
+contact two-way switch. One photo shows the installation in the most 
+common 250407 board but the same circuit can be installed in any C64 
+motherboard. 
+     Just for an experiment, I tried this circuit in a C128 which 
+already has a factory reset button. Of course it works to clear the
+screen as described above, but it locks the computer into C64 mode as 
+if a cartrige were plugged in! If a cold reset is preferred in this 
+computer model, one could install a switch to open and close the cold 
+reset input connection as necessary or install the dual position 
+switch as described above. 
+
+Ray Carlsen
+CARLSEN ELECTRONICS... a leader in trailing-edge technology.

@@ -1,0 +1,15 @@
+Kurzanleitung:
+
+F9=Beenden, F10=Reset und F11=Vollbild
+
+Das ROM 910111.bin (umbenannt nach C65-system_eng.rom) verursacht einen Sofortstart der Diskette.
+
+Kleine Einführung in XEMU
+
+C65 Modus:
+
+xc65.exe -8 c65Disk1.d81 ,ist der Aufruf eines Diskettenabbildes (c65Disk1.d81). Mit Dir wird das Verzeichnis ausgegeben. Ein LOAD am Anfang entfällt, da das Diskettenabbild automatisch geladen ist.
+
+Das Laden einer Datei von Diskette erfolgt aber wieder mit einem Load".....",8,1
+
+Dann RUN.

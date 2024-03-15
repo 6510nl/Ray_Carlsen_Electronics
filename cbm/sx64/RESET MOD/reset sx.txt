@@ -1,0 +1,149 @@
+
+                       A "DUAL" RESET SWITCH FOR THE SX64
+         There are two versions possible, a "warm" and a "cold" reset.
+                 latest additions and corrections  3-9-2013
+
+     There is a way to add a computer reset to the SX64 without drilling any 
+holes in the case for a new switch. The SX already has a drive reset switch on 
+the front panel inside the preference control door. With the addition of less 
+than a dozen small components, that button can be made to perform a dual 
+function: the original drive reset and, if the button is held down longer than 
+one second, a full computer, drive and external peripheral "warm" reset which 
+will clear the screen if a BASIC program is running. However, if running a ML 
+(machine language) program, the screen will freeze and the computer will lock 
+up, requiring it to be turned off and on again to reset it. To eliminate that 
+need, additional circuitry can be installed to enable a "cold" reset with ML 
+programs, returning the computer to a near normal bootup state with a clear 
+screen. Both modifications will be described here. NOTE: use of an EPYX 
+FastLoad cart will enable a full system reset, even with a ML program running, 
+with the warm reset modification only. 
+
+     Three transistors and a few other common components can be wired into the 
+computer reset circuit without pulling any boards, cutting board traces or 
+changing any wiring, and without any more disassembly that removing the top 
+cover of the SX. There are several places that these added components can be 
+located. The transistors and other components form simple delay and momentary 
+pulse circuits that take the momentary logic low of the existing drive reset 
+switch, modify it, then feed it back into the main computer reset circuit. 
+With the modification in place, holding the drive reset button down for one 
+second or more will reset the system. You will see the screen "shrink" and 
+freeze for a second, then redraw the opening screen with flashing cursor. If 
+all you need is a warm reset or you use the EPYX FL cart, that's all that 
+needs to be done.
+     A "cold" reset circuit can be added to clear the screen of a ML program 
+back to a startup state without the EPYX FastLoad cart (which doesn't work 
+with this cold mod installed) although it is compatible with JiffyDOS and 
+other carts. Although it doesn't completely erase the ML program from memory 
+(press RESTORE key to see it), it does work well enough to allow another 
+program to be loaded and run after the cold reset. I will show diagrams and 
+photos of both modifications.
+
+THE WARM DUAL-RESET CIRCUIT, HOW IT WORKS:
+     The on-board disk drive in the SX has a stand-alone drive reset switch. 
+The +5VDC on that switch when it's open (not pressed) is used to charge a 
+small capacitor. The charge on the cap keeps the first transistor of this
+modification (Q1) turned on with forward bias on its base, so its collector 
+is held at zero volts. When the reset button is pressed for less than one 
+second as is normally done to reset the drive, that first capacitor remains 
+charged and keeps Q1 turned on, so the rest of the circuit does nothing. If 
+the drive reset button is held down for longer than one second, the charge 
+on that first capacitor bleeds off and allows Q1 to turn off. As its collector 
+voltage rises, that positive going voltage is sent through a second capacitor 
+to the base of transistor Q2, turning it on and driving Q3 on as well. As the 
+charge on the second cap rises, Q2 and Q3 turn off again about half a second 
+later. The collectors of Q2 and Q3 are wired into the main reset circuit of 
+the computer at pin 1 of the serial port. The resulting nagative-going pulse 
+triggers a full computer and drive (and external peripherals, if present) 
+reset. A dual-transistor "darlington" arrangement was used as the pulse driver
+because each peripheral such as a 1541 adds a pull-up resistor to the serial
+reset line. If many drives are connected, that represents a greater load that
+must be driven reliably. I tested my prototype circuit with four external 
+drives connected and all were reset along with the computer. Note that two 
+transistors are required if the warm reset circuit only is needed and the 
+darlington collector is tied to the "downstream" system reset line.
+     The circuit modification is such that one and only one pulse is sent to 
+the reset circuit if the button is held down longer than one second. Except as 
+stated, the added components do not change the operation of the computer, 
+internal drive or connected peripherals in any way, so there is no need for 
+any kind of added "bypass" switch or reset disable circuitry. 
+     The components used are all common devices available at such outlets as 
+Radio Shack (www.radioshack.com) or Mouser Electronics (www.mouser.com). The
+three transistors are switching NPN types with a generic number of 2N2222, but 
+any small signal NPN type would work as well. The diode can be any signal or 
+power diode. I used a generic 1N914 type but a 1N4001 power supply diode would 
+also work. The resistors used for the prototype were 1/4 Watt carbon but any 
+wattage can be used as long as they will fit physically. The two capacitors 
+are small electrolytics, 10uF at 16 volts or higher. Polarity is critical for 
+the diode and the capacitors. Higher wattage resistors and higher voltage 
+electrolytic caps will also work in this modification but will be physically 
+larger. The component values chosen should not be changed since that is what 
+determines the timing of the delay when the switch is pressed and the duration 
+of the reset pulse. 
+
+FIRST AND SECOND PROTOTYPE INSTALLATIONS
+
+     I selected the top of the rear panel connector PC board as the easiest 
+place to mount the components (see photo). There is an open and tinned spot 
+on the ground plane of that board between the user and serial ports. The two 
+transistors emitter leads were first soldered to the ground foil, then the 
+other components were wired to them suspended by their leads. The second 
+prototype has all components of the mod on a small perforated board and was 
+installed at the SX rear panel PC board by removing the existing screw and 
+mounting the added board with it, providing a ground return for the board. 
+Photos show both types. NOTE: some SX computers don't connect the metal 
+chassis to the circuit ground, so a more reliable ground point should be 
+used. Pin 2 (the red wire) of either rear panel serial port is a good ground 
+point as is pin 1 of the drive reset connector P22. 
+     Four connections need to be added to the SX circuits to complete the 
+installation of the warm mod: 1. pin 2 of connector P22 on the FDD board 
+(comes from the drive reset switch on the front panel) is used as the  
+source for the added circuit, 2. +5VDC is taken from user port pin 2, 3. the 
+mod output line connects to pin 6, the reset line (purple wire) of either 
+rear panel serial port, and 4, the ground return line for the modification. 
+If you fabricate a board, make sure to include a line to a reliable ground. 
+All connection points are accessible without disassembling the SX, except as 
+stated above.
+     As an alternative to mounting the mod on the rear panel PC board, all 
+components can be mounted on the FDD board (see photos) but of course this 
+requires that board be removed. The connections for +5V, mod input, mod 
+output and ground are near the point chosen to mount the components by their 
+leads, without a separate PC board for those parts.
+
+          SX64 COMPUTER DUAL RESET MODIFICATION: PARTS LIST
+
+ 3     TRANSISTORS, NPN, GENERAL PURPOSE (2N2222 or equiv.)
+ 1     DIODE, GENERAL PURPOSE (1N914, 1N4848, 1N4001, ETC.)
+ 3     RESISTORS, 100K OHM, 1/4 OR 1/2 WATT
+ 1     RESISTOR, 10K OHM, 1/4 OR 1/2 WATT
+ 2     CAPACITORS, ELECTROLYTIC, 10uF @ 16VDC
+
+*****************************************************************************
+
+THE COLD RESET CIRCUIT, HOW IT WORKS:
+
+     A positive going pulse is taken from system reset IC UG7 pin 3 on the 
+CPU board, fed through an isolation diode and used to charge a 10uF capacitor 
+which in turn goes to the base of a transistor through a 10K resistor. When 
+that transistor turns on during system reset, its collector is pulled logic 
+low for a fraction of a second longer than reset (due to the charge on its 
+base drive capacitor) and pulls the /EXROM line low for that short time. 
+     In normal operation, the pulse from UG7 pin 3 on the CPU board appears 
+during power up to reset the system. To enable a cold system reset after 
+power up, the output wire (collector of the transistor) from the added warm 
+dual-reset circuit is routed to the trigger line (pin 2) of that IC. The 
+system is reset by holding down the drive reset push button for more than 
+one second. 
+
+          SX64 COLD RESET CIRCUIT MODIFICATION: PARTS LIST
+
+ 1     TRANSISTOR, NPN, GENERAL PURPOSE, (2N2222 or equiv.)
+ 1     DIODE, GENERAL PURPOSE (1N914, IN4848, 1N4001, ETC.)
+ 1     CAPACITOR, ELECTROLYTIC, 10uF @ 16V
+ 1     RESISTOR, 10K OHM, 1/4 or 1/2 WATT
+
+
+Ray Carlsen CET
+Carlsen Electronics... a leader in trailing-edge technology. 
+
+Please let me know if you spot any errors here or if you have any feedback
+(good or bad) to report. Questions and comments are always welcome. Thanks!

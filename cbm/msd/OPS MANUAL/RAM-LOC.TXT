@@ -1,0 +1,68 @@
+                               Section V
+                                                                                                              Useful RAM Locations
+
+Address             Description
+
+0054                Current drive number (DRVNUM)                 
+0055                Current track search number                 
+0056                Current sector search number                
+0069-006A           Points to last buffer used for directory search                 
+C077                Serial/IEEE listen address (usually $28)                 
+O078                Serial/IEEE talk address (usually $48)                 
+007A-0091           24 byte table of buffer oointers (2 bytes*12 buffers)       
+0092-0093           Points to the command buffer                 
+0094-0095           Points to the error buffer                 
+00A8                RAM image of the hardware latch @ $A000                 
+00B6                Current job number being executed by the controller   
+00B7                Number of active drives (O=single / l=dual)                 
+
+4000-40FF           Buffer number 0                 
+4100-41FF           Buffer number 1                 
+4200-42FF           Buffer number 2                 
+4300-43FF           Buffer number 3
+4400-44FF           Buffer number 4                     
+4500-45FF           Buffer number 5                      
+4600-46FF           Buffer number 6                
+4700-47FF           Buffer number 7                
+4800-48FF           Buffer number 8
+4900-49FF           Buffer number 9
+4A00-4AFF           Buffer for Drive 0 BAM            
+4B00-4BFF           Buffer for Drive 1 BAM                  
+
+4C00-4C0B           Job cue for 12 buffers                 
+4C0C-4C17           Track number for the 12 jobs                 
+4C18-4C23           Sector number for the 12 jobs                 
+4C24                Disk ID. Byte 0 of Drive 0
+4C25                Disk ID. Byte 0 of Drive 1
+4C26                Disk ID. Byte 1 of Drive 0          
+4C27                Disk ID. Byte 1 of Drive 1                
+4C28-4C2C           Five byte header image (used after read & before write)     
+4C2D                Write protect change flag for drive 0
+4C2E                Write protect change flag for Drive 1  
+4C2F                Last position of write protect, drive 0                                 
+4C30                Last position of write protect, Drive 1                 
+4C31-4C32           User vector for NMI interrupt                 
+4C35                Sector interleave count (normally 10)    
+4C36                Error recovery count (normally 5)                 
+4C37                Flag for head "landing". When motor stops, the drive 
+                    head normally Goes to track 40. To override this feature 
+                    set this byte to a non-zero number.
+4C88-4C89           Disk version from Track 18, Sector 0.                 
+4CF1                Talk delay byte for serial communications (normally a
+                    $0D in the "C64" mode, set to a 01 in the VIC mode).                
+4CF2-4CF3           IEEE attention service vector                 
+4CF4-4CF5           Serial attention service vector                
+4CF6                Maximum track # for both drives +1 (normally 36)
+
+4D00-4DFF           Unused RAM available to user
+
+4E00-4E28           Command buffer (SA=15)       
+4E64-4E87           Error message buffer      
+4E88                Current physical track number of Drive 0
+4E89                Current physical track number of Drive 1
+4E8C                Delay count for head step in mS (normally 5)
+4EA2                Header block ID byte (normally $08)
+4EA5                Next track the current job requests
+4EA6                Next sector the current job requests
+4EA9                Current job number (0-11)
+4EAC                Data block ID byte (normally $07)

@@ -1,0 +1,128 @@
+
+          REPAIRS TO THE MSD SD-1 (SINGLE) AND SD-2 (DUAL) DISK DRIVE
+                  Latest updates and corrections: 9-12-2023
+
+     I NO LONGER SERVICE THESE DRIVES. I found someone who does:
+ Wes Wiese <nanookofthenorth@roadrunner.com> repair of CMD HD & RL, MSD drives
+
+ Note: I recently learned that the Tandy (Radio Shack) TRS-80 floppy drive uses 
+ the same drive mechanism as the MSD drives and I now have the service manual:
+ "Tandy TRS-80 Service Manual.pdf" thanks to Jeff Birt <birt_j@soigeneris.com>.
+
+     This article describes what needs to be done to all MSD SD-1 and SD-2 disk 
+drives to keep them working. It has to do with the mechanical drives PC boards, 
+the ones mounted on the top and bottom of the mechanisms. Before I describe
+those problems, let me first mention a few recurrent faults I've encountered on 
+that side-mounted MSD controller board: 
+ 1. The IC sockets for the DOS ROMs seem to be of poor quality. Reseating the 
+chips (remove, scrape the IC pins, reinstall) in those sockets was necessary to 
+restore normal operation in a few drives I worked on. In one case, electrical 
+contacts in those sockets were so loose, the IC's fell out of them in transit. 
+For any repeat problems with sockets, it's best to just replace them both. 
+ 2. The connections from the power transformer to the main PC board sometimes go 
+intermittent. If your drive fails, especially if it's intermittent, extract the
+transformer plug and socket, and solder the wires directly to the board for a 
+permanent fix. 
+ 3. The metal shield cup under the head often falls loose and blocks the head
+from moving forward. Read the last segment for that repair. 
+
+DRIVE MECHANISM PROBLEMS (TEC FB-501)
+
+     First of all, the mechanisms used in the MSD series are unique. Most 360K 
+"generic" replacement drives such as old IBM types do not work. I found a few 
+Panasonic mechanisms that did work with a few modifications in an SD-1, but none 
+that ever worked in an SD-2. That makes it necessary to repair the original TEC 
+mechanisms.
+
+NOTE: This is from someone who did find suitable replacement mechanisms:
+"I was able to swap out the old TEC drives with a pair of Matsushita JA-551 
+DSDD drives that were pulls out of old XT computers that I had acquired over 
+the years. Aside from setting the drive select setting & termination resistor, 
+no other changes were needed. I did a lot of research and reading before arriving 
+at this conclusion. The orientation of the 34 pin floppy changed as this 
+connector on drive is higher within enclosure with the JA-551 drives. So there 
+is not as much slack as before in the ribbon cable. I had cable installed 
+backwards during initial testing and this delayed resolution / repair."
+
+     As old as they are, whether they have been used or not, this series of MSD 
+disk drives have or will have -all- developed a unique fault. There are two PC 
+boards on the drive mechanisms. The top one is the disk controller board and the 
+one on the bottom is the spindle motor drive board. Between them, these boards 
+have over a dozen small electrolytic capacitors that must -all- be replaced. 
+When these old caps leak their electrolyte, that corrosive substance eats away 
+at the copper board traces as well as nearby components. The damage is sometimes 
+hard to see but corrosion in the area around the caps is noticeable if you look 
+carefully. Symptoms may range from sudden inability to read or write to complete 
+failure of the mechanism which is indicated by 7 blinks of the LED's on power up. 
+Even if the drive is working perfectly now, those mechanisms are all affected 
+and must be reworked before damage to the board makes repairs more difficult or
+impossible later. 
+     To effect a complete repair, all of the electrolytic capacitors must be 
+removed, the board cleaned of all electrolyte residue and corrosion, and all the 
+caps replaced. In many instances, the residue has gone under components such as 
+IC's, so those chips and other board components must be removed and board repairs 
+done underneath them before they are re-installed or replaced. The electrolyte 
+tends to creep along copper board traces, so some damage can appear inches away 
+from the bad capacitors! 
+     The replacement caps will likely be taller than the original unless special 
+"low profile" caps are used. The taller caps can be used if they are installed 
+folded down so they don't stick out too far when the mechanism is re-installed in 
+the drive. For the spindle motor board, the caps must be oriented so they don't 
+touch or block anything during board installation back in the mechanism. Note 
+what might be in the way as the board is re-installed before you decide on the 
+orientation of those caps.
+     Much of the damage to board traces (the printed copper foil circuitry) is 
+hidden underneath the factory paint over the traces. This paint must be carefully 
+scraped off to expose the copper. Anywhere the paint is darkened has probably 
+suffered damage and the entire area must be carefully cleaned and examined under 
+strong light so that all breaks in the foil are located and repaired. After 
+scraping, I use an old typewriter eraser (remember typewriters?) to "polish" the 
+copper so it shines which makes breaks easier to see and makes soldering easier. 
+I use Isopropyl Alcohol or Acetone (which seems to work better) to clean up the 
+cap residue. I use needles on the ends of my ohm meter leads to poke into the 
+copper traces at each end to make sure there are no open circuits along their 
+paths. Some open circuits are hard to see but the meter will find them. 
+     Although conductive paint (used for car rear window defogger repairs) should 
+work to fix the open traces, I prefer to use solid copper wire for this type of 
+repair because some connections go through the board from top to bottom and 
+conductive paint will not work if that connection is broken. If wire is used, it 
+must necessarily be very thin. I use one strand out of a piece of stranded hookup 
+wire. For example, when an IC is removed to repair the damage underneath and I see 
+that the copper trace at the hole is eaten away, I poke the wire through the hole 
+and solder it to good copper on both sides of the board to effect a permanent 
+repair. I then seal the board with clear nail polish over all the affected areas. 
+That prevents any future damage to the exposed copper. When the polish dries, I 
+reinstall all components and sockets for the IC's. It's important to solder 
+quickly to secure the IC (socket) pins and avoid unsoldering the repair wires. 
+Note that some areas of the board will be corroded and soldering is impossible.
+     I am including some before-and-after photos of these repairs. Included are 
+pictorial diagrams of the boards showing the location of the capacitors and their 
+polarity. Note that there are three different versions of the spindle motor PC 
+board. These have different cap numbers and board locations. In one version, 
+three of the caps are special non-polarized types. It's important they be replaced 
+with the same type (also called bi-polar) electrolytics.
+     As of this writing, I have repaired about a dozen MSD drives. In almost every 
+case, the drive didn't work after the first rework. I had to go back repeatedly to 
+repair open traces that I missed the first time around. One fault produced an error 
+that showed up as no BAM update when a disk was changed. Another drive would read 
+but not write. Some foil breaks are impossible to find because the opens are under 
+components so the trace can't be followed by hand. Extracting components subjects
+the board to further possible damage which must be repaired. For traces that can't 
+be visualized and repaired, board jumper wires might have to be used. Much like a
+cancer, it's a frustrating problem that may take many tries to cure completely. 
+If you do manage to clean all the residue and fix the boards, it's still possible 
+you'll have problems later since the corrosion will continue unless all is found
+and removed. This is the most disgusting work I've ever done. It's far from a
+normal repair since the faults are not "logical" as a component failure would be.
+Age, shaky hands and reduced eyesight make it too difficult for me to continue. 
+     I should add one more thing I've discovered. There is a metal shield just
+under the head and it often loosens and falls free, blocking the assembly from
+moving forward. Rather than taking the drive all apart, pull the shield forward
+and put some contact cement inside, then press it back into place under the head.
+Before it sets up, make sure the head will go all the way forward to the stop. If
+not, slide the head back, push the shield up from underneath and try it again. 
+It should stay in place by itself but it might be a good idea to let it dry with
+the drive upside down and the head assembly moved all the way forward. There should
+be no restriction... no scraping of the shield when the head assembly is moved. 
+
+Ray Carlsen

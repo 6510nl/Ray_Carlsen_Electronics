@@ -1,0 +1,69 @@
+Short:    Vic Vision V1.04 C64 GFX to IFF
+Author:   uwdesign@lin.cbl.com.au (Kevin Picone)
+Uploader: uwdesign&lin.cbl.com.au (Kevin Picone)
+Type:     gfx/conv
+
+ *=----------------------------------------------------------------------=*
+
+                          >>  VIC-Vision V1.04  << 
+                        
+                         Last Updated:  7-July-1997
+
+
+                     The C64 To Amiga IFF GFX Converter       
+
+
+                           Amiga Programming By
+
+                       Kevin Picone & Daniel Martin
+
+
+                     C64 Format Reverse Engineering by
+        
+                              Daniel Martin
+
+
+      © Copyright 1996 Kevin Picone & Daniel Martin of Underware Design
+
+                           All Rights Reserved.
+
+ *=----------------------------------------------------------------------=*
+
+     We believe VIC-Vision to be one of the most comprehensive and easy
+ to use programs, for the conversion of Commodore 64 graphics to IFF, upon
+ the Amiga.  It was developed for 64 artists, Nostalgia Freaks ;),
+ demo coders etc. etc... who'd like to relive some C64 history upon their 
+ Amiga's.
+
+     The current version supports the following formats as direct inputs -
+ Koala Paint, Advanced Art Studio, Blazing Paddles, Doodle, FLI, AFLI, the
+ extremely rare CFLI format, fonts in raw data (8*8,8*16 & 16*16), Raw
+ sprite data (Expanded X/Y), Centauri Logo Editor, Image System and
+ Artist 64.  All formats which are capable of multi or single colour modes
+ have been supported.  A powerful parameter option has also been included
+ so that you can create your own custom bitmap conversion, that is, if you
+ know how the file is constructed.
+
+
+ *=----------------------------------------------------------------------=*
+
+                           New features in V1.04
+
+
+              * Fixed the 'Font' & 'Sprite' Colour selection bugs
+
+              * Added a View current convert picture option.
+            
+              * Added 'Load address' toggle (included or skip)
+
+              * Added file offset ability for converting various pieces
+                of GFX from a single loaded file, including pictures, fonts
+                and sprites.
+
+              * Updated the doc's into Amiga guide format.
+
+              * Added 'File not found' and File size screening ability to
+                the load requester. 
+
+
+ *=----------------------------------------------------------------------=*

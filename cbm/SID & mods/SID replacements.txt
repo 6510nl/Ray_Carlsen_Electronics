@@ -1,0 +1,13 @@
+                                       2-22-2021
+
+As of this writing...
+
+     There are apparently several replacement modules on the market now. The earliest, and I think still being sold via Ebay is the SwinSID which is also the least expensive. A later one is called the NANO SwinSID and has a smaller "footprint". One drawback of those early clones is the lack of SID POT inputs, so a proportional mouse, paddle or graphics tablet will not work. The joysticks use different inputs (keyboard lines, actually) so they work OK. 
+     Next up is the SwinSID Ultimate made by a guy in Hungry, but those are not being manufactured any longer. I bought a bunch of them before that guy quit producing. It can be programmed to emulate a 6581 or 8580, change voicing, etc. with a small C64 BASIC program. The sound level is a bit lower than an original SID (cut a 1K board resistor to increase) but it sounds very good and all functions including the POT inputs work fine. I heard this module has a problem with voicing when playing some older game carts; "Clowns" is apparently one of them but I have no personal experience with that. This module produces a "beep" at bootup to let you know it's there but that can be programmed off. 
+     There is now one called the FPGASID, a dual (6 voice stereo) SID module which is of course more expensive. 
+http://www.fpgasid.de/  FPGA dual (stereo) SID is €80  Purchase: https://webstore.kryoflux.com/
+     Lastly, there is one called the ARMSID which is a very good drop-in replacement and it doesn't need programming as it automatically selects for NTSC or PAL, 6581 or 8580, etc. There is now a dual stereo version. They sound very good and all functions work the same as an original SID including the POT inputs. One drawback I found is an incompatibility with Koala Paint software but other linear devices such as a proportional mouse work fine. https://www.retrocomp.cz/eshop  for ARMSID single and stereo versions.
+     I would go for one of these replacements rather than try to get a good original SID since you can't tell how well (or how long) one will work. A 6581 SID runs hot like the PLA and they fail because of it. That's why I always add heat sinks to those chips when I get a computer in for repair or upgrades. The new replacement modules 
+run cool (no need for heatsinks) and should outlive us all. I hope I got all this correct. Let me know if you spot any mistakes here. 
+
+Ray

@@ -1,0 +1,208 @@
+	   C64C (true C short board) - CHIPS vs COMMON SYMPTOMS     
+                   latest update and/or revision: 1-06-2020
+
+     There were several versions of model C64C that featured a slimline white 
+case, white keys and an internal heat sink shield. The earliest versions used 
+the original 64 motherboard (250425), the same board as some brown case C64's. 
+Interim boards (250466) used two 4464 RAM chips instead of eight 4164, used 
+either version SID or CIAs, but retained the old MPU, PLA and VIC-II. You 
+should reference the "c64-ic.txt" file for correct board ID numbers of those
+earlier boards. 
+     This latest 250469 "cost reduced" motherboard is narrower and uses the 
+fewest, most integrated chips. Most of these ICs are not interchangeable with 
+earlier models, and chip ID numbers are different than earlier boards. For that 
+reason, this article deals with this latest board only, although basic 
+troubleshooting is similar for all versions of the C64.
+
+U1 	906108-02 (6526/ A or 8521) CIA 
+     Startup screen normal but no cursor, or blank screen if chip is shorted 
+(remove to test). No keyboard or joyport access. Partial failure: some keys or 
+joystick positions don't work, "stuck" line may print a character at startup. 
+Cartridge works.
+
+U2 	906108-02 (6526/ A or 8521) CIA 
+     Lines or blocks instead of startup screen, but blank screen if chip is 
+shorted (remove to test). Partial failure: marginal or no serial / user port 
+access, keyboard and cartridges still work. 
+
+U3      74LS08 LOGIC
+     Blank screen, no border. 
+
+U4      251913-01 BASIC and KERNAL ROM (same IC as U32 in C128)
+     Blank screen, no border. Cartridges don't work except the few that bypass 
+the Kernal ROM such as CBM Kickman and Jupiter Lander. Those can be used as a 
+diagnostic for a bad Kernal.
+
+U5	901225-01 CHARACTER ROM	
+     Blank screen with border or screen full of shimmering lines or characters. 
+Partial failure: "garbage" characters or blocks where startup page info should 
+be. Cartridge works. 
+
+U6	318012-01 (8500) MPU aka CPU (6510 works as sub, see text)
+     Blank screen, no border. Cartridge doesn't work.
+
+U7      318014-01 (8562 or 8565) VIC-II
+     Blank -white- screen, no border. Partial failure may produce garbage or 
+"checkerboard" screen, or smeary screen that lacks contrast. If screen is blank 
+or garbled from bad VIC, "blind" disk commands from keyboard may still work. 
+NOTE: earlier 6567 will -not- sub for this chip.
+     
+U8	251715-01 (LH5062B OR YM3535) PLA, MEMORY CONTROL
+     Blank screen, no border. Runs cool, very rare failure.
+
+U9  	318013-01 (8580) or 906112-01 (6581) SID (SOUND INTERFACE DEVICE)
+     Blank or "garbage" screen if shorted (remove to test), otherwise normal 
+screen. No sound or garbled sound. Mouse or graphics tablet pointer stuck or 
+jitters. NOTE: for test purposes, computer will work without a SID plugged in. 
+NOTE: 8580 and 6581 are pin compatible and somewhat interchangeable, but only 
+with board component changes: pin 28 supply voltage either +9 or +12VDC, and 
+two capacitors values must be changed for correct voicing.
+
+U10 and U11 (M41464) 2 RAM CHIPS (64K X 4 DRAM)
+     Blank screen, no border. Shorted chips may get warmer (sometimes very hot) 
+than the other RAM chips. Partial failure: will sometimes produce "garbage" 
+screen, abnormal number of bytes free (lower than 38911) or "OUT OF MEMORY IN 0"
+error on startup screen.
+
+U18     4066 CMOS QUAD SWITCH (POTX/Y BUFFERS)
+     Startup screen normal, but mouse/graphics tablet don't work.
+
+U19     LC3514A or MN2114-2 SRAM 1K X 4 (aka COLOR RAM)
+     Shimmering colors on characters.
+
+U20	8701 or 7701 MASTER CLOCK OSC.		
+     Blank white screen, no border. 
+
+U21     4066 CMOS QUAD SWITCH
+     Wrong colors on characters. 
+
+U22     7406 LOGIC
+     Blank screen. No drive reset when computer switched on.
+
+U23     74LS14 LOGIC
+     Blank screen. Drive spindle motor runs continuously with computer on. 
+RUN/STOP-RESTORE doesn't work. 
+
+M1      252405-02 RF MODULATOR
+     Weak or no RF output (snowy screen) to TV. Internal defect in modulator can 
+affect A/V outputs (no audio or video) since those signals go -through- modulator.
+
+Q1     2SD313 TRANSISTOR, CASSETTE MOTOR DRIVER
+     Cassette motor will not turn when FF/REW or PLAY is pressed. Also check 
+fuse inside computer.
+
+F1     1.5 AMP FB FUSE, 9VAC PROTECTION
+    If fuse is open, computer appears to work normally, but no cassette 
+operation, no 9VAC to user port, and no sound from SID.
+
+POWER PACK: +5VDC at 1.5Amps and 9VAC at 1 Amp
+     Can produce many problems like blank screen (red power LED on, dim or 
+off), program lock-up, "garbage" screen, hum bars moving on screen, hum in 
+audio, damaged RAM chips, intermittant operation after warmup, etc. As common
+a failure as it is, the supply should be checked (by substitution) first. 
+
+*******************************************************************
+
+     Troubleshooting any version of the C64 is often difficult because some 
+symptoms can be caused by any one of a dozen chips. The most common, a blank 
+screen with no border, is sometimes frustrating for even a tech to diagnose. 
+We usually start by process of elimination, keeping in mind the chips most 
+likely to fail in order. Each board is different in how many of the major 
+chips are socketed, but that's a good place to start. Reseat all socketed chips 
+by lifting up on each end slightly (pry between chip and socket with a small 
+flat-blade screwdriver) and press the chip back down. There is no need to 
+remove the chip just for reseating. You risk bending pins if you remove it.
+    If you suspect a chip is bad based on symptoms, the best way to test it is 
+by installing it in a working computer. If none are available, and/or you have 
+no spare parts or boards, the job is nearly impossible. Substitution of chips 
+or parts is the only practical way for most people to diagnose a fault. Don't 
+overlook the power supply when you are troubleshooting. It deserves its bad 
+reputation for damaging computer chips under some fault modes. Check by 
+substitution only. The original supply is "potted" with epoxy inside and is not 
+repairable. After-market power supplies are "beefier" and usually repairable.
+     The 85xx series chips used in the C64C are, for the most part, not 
+interchangeable with earlier C64 ICs. They represent a different logic "family" 
+and in some cases have a different pinout. Substitutions should therefore not be 
+made casually. 
+     As indicated above, the computer will work with a few of the major chips 
+removed. This is helpful as a diagnostic. For example, the SID can produce a 
+blank screen if shorted, but the computer will still work without it, except 
+of course without sound, and the POTX/Y inputs will not work (mouse, graphics 
+tablet, etc.) but a joystick will still work. The two CIA chips can be removed 
+to test for shorted chips (they're bad for sure if they get hot) and the computer 
+will come up if the chip is bad although the startup screen will be affected (see 
+chip list for U1 and U2). A bad keyboard row or column is usually caused by a bad 
+CIA. The two CIAs can be swapped to aid in diagnosis if no other parts are 
+available, and the fault will follow the bad chip, but of course with different 
+symptoms.
+     Unlike the one in the C64, the PLA in the C64C runs cool to the touch. I've 
+never seen a bad one. Of course new and old versions are not interchangeable.
+The older 6510 MPU seems to work in the C64C as a sub for the 8500. I have tried 
+an 8500 in an old C64 and it worked (diagnostic test only), but I don't know how 
+well these chips interchange in actual use. All of the 8500 series chips run cooler 
+than the older 6500 series. The later C64C uses some of the same chips as a C128. 
+     Note that an open fuse in the older C64 computer will make it non-functional 
+because the converted 9VAC runs the VIC and SID chips. An open fuse or failed 9VAC 
+(bad power supply) with the later C64C may not be immediately apparent... the 
+computer will still work but you will have no sound, the user port will not get 
+the 9VAC, and the cassette motor will not work. 
+     The cabinet screws and the ones inside the computer may be the newer Torx 
+(star-shaped) type rather than standard Philips. If so, you may need to get a 
+T-10 bit to removed those screws. I've found that a standard small flat-blade 
+screwdriver fits well enough if a Torx driver is not available.
+     As mentioned before, the "blank screen" symptom is the hardest to troubleshoot 
+because many different problems can produce that symptom. It would therefore be 
+helpful to know what signals should appear on each pin of the microprocessor, the 
+heart of the machine. If, for example, the reset line was being held low for some 
+reason, that could be traced down to the specific problem and fixed. With that in 
+mind, here is the pinout for the 6510/8500 microprocessor used in the C64 and C64C. 
+Readings are taken with computer on and no external devices connected, keyboard 
+unplugged. You'll need an oscilloscope or logic probe to make sense of some of 
+these readings.
+   
+1  CLK 1 IN     OSC SIGNAL
+2  RDY          DATA, ANDED BA FROM PLA + /DMA 
+3  /IRQ         DATA (HIGH)
+4  /NMI         HIGH, FROM /RESTORE CIRCUIT
+5  AEC          DATA, ANDED AEC FROM VIC + /DMA
+6  VCC          ALWAYS +5VDC
+7  A0           DATA  \
+8  A1           DATA   |
+9  A2           DATA   |
+10 A3           DATA   |
+11 A4           DATA   |
+12 A5           DATA   |
+13 A6           DATA   | 
+14 A7           DATA   |
+15 A8           DATA   | ADDRESS LINES
+16 A9           DATA   |
+17 A10          DATA   |
+18 A11          DATA   |
+19 A12          DATA   |
+20 A13          DATA   |
+21 GROUND       0 VDC  |
+22 A14          DATA   |
+23 A15          DATA  /
+24 P5           +3V
+25 P4           HIGH
+26 P3           LOW
+27 P2           HIGH
+28 P1           HIGH
+29 P0           HIGH
+30 D7           DATA  \
+31 D6           DATR   |
+32 D5           DATA   |
+33 D4           DATA   |
+34 D3           DATA   | DATA LINES
+35 D2           DATA   |
+36 D1           DATA   |
+37 D0           DATA   |
+38 R/W          DATA  /
+39 CLK 2 OUT    OSC SIGNAL
+40 /RESET       HIGH, FROM RESET CIRCUIT
+
+
+Ray Carlsen CET
+CARLSEN ELECTRONICS
+If you have any questions or comments, please feel free to write,
+especially if you spot an error here. Thanks!

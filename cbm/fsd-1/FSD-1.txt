@@ -1,0 +1,20 @@
+										
+                         THE FSD-1 SINGLE FLOPPY DISK DRIVE
+
+     I don't have a schematic for this drive. It is apparently a clone of the 
+Commodore 1541-II REV 4 as it uses the same DOS ROM (CBM 355640-01, checksum 
+hex 641F) code in a single 16K IR EPROM. The drive has an internal switch-mode 
+power supply and uses a Newtronics twist-door mechanism. 
+     Note: if you need to swap out the mechanism for any reason, it's identical 
+to ones used in a 1541, but the stepper motor wires (the white six pin plug) 
+color codes don't match! Perhaps this was done to skirt copyright issues with 
+Commodore... I don't know. Those wires -must- be swapped around to match the 
+old FSD mechanism. Use a straight pin to slightly compress the tabs in the tiny 
+slots of the connector so the pins can be pulled out. If necessary, gently bend 
+the tabs out again slightly so the pins stay in place when reinserted in the 
+connector. The other three connectors appear to be wired correctly. Just make 
+sure you put them back with the proper orientation. There is no keyway to 
+prevent reversing them! The black connector for the R/W head wires is marked 
+with pin 1 as is the silk screen PC board. The two tiny switches on the bottom
+of the drive case are for device select, as on a Commodore 1541-II. The drive 
+was shipped with both switches up (on) as device 8.

@@ -1,0 +1,41 @@
+
+                  HOW TO IDENTIFY YOUR C64 BOARD
+              latest updates and corrections 9-11-14
+
+     There were half a dozen basic versions of the Commodore 64 and several
+minor revisions of some motherboards. The earliest boards had a cardboard 
+and tinfoil shield. To find out what board you have, the keyboard top cover 
+must be removed (three Philips screws) and the cardboard shield folded back 
+to see the ID number on the lower edge of the board. You can remove and 
+discard that cardboard shield. Note: this early board has a five pin DIN
+A/V connector; all the later boards have an eight pin jack with S-video. 
+
+326298, schematic 326106 was the first Commodore 64 production motherboard. 
+It had an early version ceramic VIC chip that produced vertical "ghost" lines 
+after all characters. This board also has a weaker than normal video output 
+which is a factory error. See the article in the 326298 directory for 
+instructions how to correct it. 
+
+250407, schematic 251138 is the most common and apparently the most plentiful 
+board. There are several revisions but the basic design is the same. Many 
+boards used the original ceramic VIC (see above) which can be replaced with 
+the newer black epoxy case 6567 VIC for cleaner video output. 
+
+250425, schematic 251469 is a later board with fewer chips for cost reduction. 
+It's the first board to use a single 8701 clock generator IC to replace four 
+IC's used in the previous designs. This is the first board to use a metal 
+shield with "fingers" which act as heat sinks for the chips that run hot 
+normally such as the PLA and SID. All later boards have this metal shield. 
+Some may have the early ceramic VIC chip. (see above)
+
+250441, schematic 251469 note: this board never went into production.
+
+250466, schematic 252278-1 is an interim board that further reduced the parts 
+count. It has only two 4464 RAM chips instead of the eight 4164 chips used in 
+the earlier boards. 
+
+250469, schematics 252312 and 250469. There are two similar versions of this
+last C64 "short" board, hence two schematics. They feature a later 85xx 
+"family" of ICs which are generally not interchangeable with earlier chips. 
+It has the lowest parts count of any C64. 
+

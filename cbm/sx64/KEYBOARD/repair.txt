@@ -1,0 +1,138 @@
+              THE SX KEYBOARD: DISASSEMBLY AND CLEANING
+               latest updates and corrections 09-24-2022
+
+Note: I've only worked on half-a-dozen and I don't know everything...
+
+     This keyboard is completely different than previous CBM designs.  
+Obviously none of the SX keyboard parts are interchangeable with a C64. 
+You need to know how this one works to be able to safely take it apart 
+for repair. The main keyboard component is a conductive rubber bladder. 
+A tiny spring inside the bottom of each key touches the bladder so its 
+conductive pad of carbon film presses onto the PC board contact. If the 
+bladder gets damaged or distorted, some keys will not work or may make 
+intermittent contact! If the key spring is too short (recessed from 
+fatague in use), that key will not work or it may be marginal and take 
+a harder hit to produce a response. If the spring is too long (stretched 
+and protruding from the key), that key will make contact all the time 
+and other keys will not work! Adjusting those springs under the non-
+functioning keys is the first thing I try before taking the keyboard 
+apart further when only a few keys don't work. 
+     If you don't have a keyboard test program to check key operation, 
+boot the computer and just tap each key lightly several times. I write 
+down the ones that don't respond properly so I can attend to them later. 
+Most of the keys should show some character on the screen. A few that 
+don't such as the F keys do affect the blinking cursor, so those can 
+be checked as well. Ones like the C=, CTRL and SHIFT keys affect the 
+operation of the other keys when they are held down. 
+
+     The keyboard case opens for cleaning by using a coin to pry on 
+the sides of the keyboard just to the left of the left arrow key and 
+to the right of the F1 key between the top and bottom half-shells. 
+The rear of the top cover will pop loose and you can pull the top up 
+and off. The internal keyboard is then visible as several rows of 
+keys over a black conductive rubber bladder, which in turn is mounted 
+over a PC board. 
+     The PC board assembly is held in place with four screws. The 
+fifth screw on the bladder is a connection point to ground the bladder
+to the circuit board underneath. That screw only has to be removed if 
+you intend to remove the bladder. Remove the connector at the rear of 
+the case (two longer screws) and the PC board assembly can then be 
+lifted out of the case bottom. 
+     All keys have to be removed to gain access to the PC board under 
+the bladder. Note that the shift-lock key is not a latching switch as 
+in a C64 or C128, but a momentary contact pushbutton like all the rest. 
+A circuit in the SX provides the "latch" needed and an LED on that 
+keyboard key comes on when ShiftLock is on. 
+     To remove individual keys, use your fingernails to squeeze the 
+two tabs of each key on the underside of the board assembly while 
+pushing them forward. The key assembly will pop out. Don't lose the 
+tiny spring inside the bottom of the key. If you drop one on the floor, 
+you may never find it, so be careful!!! I have "lost" a few springs.  
+I used a large magnet on a string to search and retrieve one's I've 
+dropped. It's helpful to arrange all removed keys, in order, on your 
+tabletop. If they get mixed up, you can use a C64 keyboard for a
+visual reference. I put a white towel down on the table so the keys
+do not move when set down. Springs will be more visible too. 
+     Before you decide to pull the bladder for cleaning, if only a few
+keys are not working properly, it may be that the springs under those 
+keys are weak from use. (see photos) If that's the case, individual key 
+functions may be restored by extracting each key, removing the tiny 
+spring and stretching it -slightly- to provide more pressure on the 
+bladder when the key is pressed. It is important to inspect the spring 
+afterwards to see if it sticks out from the key bottom. If it does, 
+that key might make contact all the time or it will be too sensitive 
+and make contact when you don't expect it! The correct position of the 
+spring is: very slightly recessed within the plastic when the key is 
+not pressed. 
+     Assuming there was a liquid spill, or re-tensioning the springs 
+did not help, removing the bladder from the PC board requires great 
+care. The bladder tends to stick to the board near each contact point. 
+If pulled away quickly, it will most certainly be torn. I use a dental 
+pick to slowly nudge the tiny areas that stick as I gently pull the 
+bladder off the board. The last one took me about 10 minutes to remove. 
+That work cannot be rushed! Some areas of the bladder may deform as 
+they pull loose and must be pushed back into place before reassembly. 
+If you don't -have- to pull the bladder from the keyboard, don't do 
+it, but if you must... 
+
+     One area that can prove problematic is the connection points 
+between the bladder and the PC board. There are nine painted "lines" of 
+conductive material under a strip of metal (which must be removed, two 
+screws) before the bladder can be lifted off the board. Those contact 
+points will require rework of some kind to make contact again when the 
+original bladder is put back. If any connections are open, the keyboard 
+will have many keys that don't work! To ensure the conductive lines 
+make good contact, there is a carbon based "paint" that can be used to 
+restore the contacts. You can test the conductive lines between board 
+& bladder after rework by installing a few keys: F1 S T V 9 P > 2 LOCK. 
+Pressing those keys should produce a response to verify all lines are 
+good. Note: such restorative paints should not be used on the key 
+contact pads since they would then stick up higher than normal and make 
+continuous contact. 
+     If you must clean the bladder, never use anything abrasive. The 
+black "dots" are the contacts. They are just a thin conductive coating 
+on plastic, so rough treatment can easily destroy the bladder beyond 
+repair. A -light- rub with a dry Q-tip is all that is needed on each 
+black spot... if necessary. For the copper PC board contacts, I use a 
+#2 pencil eraser to remove oxidation from each contact point, then I 
+rub each with a dry Q-tip or cloth to "polish" the surface. The 
+resulting contacts should be shiny with no spots or blemishes. I don't 
+use solvents unless the board and/or bladder is contaminated because 
+of a liquid spill. Sugary drinks like soda pop or coffee can be 
+cleaned with isopropyl (rubbing alcohol) and dried, then the board 
+should be polished as indicated above. Isopropyl alcohol can leave a 
+white powder residue that must be cleaned off. Hot water works OK. 
+Make sure there is no dust or debris on the board or the bladder before 
+reassembly. Plastic parts have a tendency to attract such particles, 
+especially when the air is dry (low humidity).
+
+IF THE BLADDER IS BEYOND REPAIR:
+     There is now a replacement bladder: http//www.rwapsoftware.co.uk
+Normally the plastic insulator sheet that comes with it is used with 
+the replacement bladder. If you have a keyboard where all contacts are
+good but some make contact and activate when the board is flexed, a 
+spacer alone may allow that original bladder to be used. I recently 
+used such a spacer sheet to correct that keyboard problem. To prevent 
+having to remove the bladder from its board contacts, I cut the plastic 
+sheet in two near the connection points and fitted the separate ends 
+between the bladder and board. 
+     If damaged and not serviceable, a replacement bladder with plastic 
+spacer sheet will restore your keyboard. I found that the new bladder 
+already has good contacts (no paint needed) and there is a pressure pad 
+on the top that ensures good contacts when the metal plate (two screws) 
+is put back. Just make sure the board contacts are clean. There is no 
+need for the old paper spacer... it can be removed and the board area 
+cleaned. Don't forget to bend the ground tab of the new bladder over 
+before intalling the grounding screw (observe the original bladder) so 
+the new bladder is properly grounded. 
+
+     Re-install all the keytops and test the keys before you put the 
+assemblly back in the case. If any keys don't respond correctly, pop 
+that key out and retension the spring as necessary. Reassembly into 
+the case completes the repair. Don't over-tighten any screws! One final 
+test I do before reassembly is to grab the ends of the board (or case 
+if already assembled) and twist it gently back and forth to see if any 
+keys make contact when not pressed... they shouldn't. 
+
+Ray Carlsen CET	
+CARLSEN ELECTRONICS

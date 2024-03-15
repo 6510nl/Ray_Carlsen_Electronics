@@ -1,0 +1,1 @@
+The CMD FD2000 and FD4000 take a 9VDC @ 1 Amp PS with a 2.5mm barrel plug, center positive. 

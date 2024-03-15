@@ -1,0 +1,180 @@
+									
+        WHAT YOU SHOULD KNOW IF YOU NEED YOUR CBM HARDWARE REPAIRED           
+               latest updates or corrections 12-25-2021
+
+  * MY QUALIFICATIONS AS A REPAIR TECHNICIAN
+  * REPAIR ESTIMATES & MY REPAIR PROCEDURES
+  * A NEW REPLACEMENT POWER SUPPLY FOR YOUR C128 OR C64
+  * A RESET SWITCH FOR YOUR C64 (WARM AND COLD)
+  * THE COMPUTER SAVER, A PROTECTION DEVICE FOR YOUR C64
+  * JIFFYDOS, A COMPUTER ENHANCEMENT AND DRIVE SPEEDUP CHIPSET
+  * DRIVE SELECT SWITCHES AND WRITE PROTECT BYPASS MODIFICATION
+
+*************************************************************************
+
+QUALIFICATIONS AS A REPAIR TECHNICIAN
+
+     I've been a professional electronics repair tech all my adult life. I started 
+back in the tube days fixing radios, TV's and many other consumer and industrial 
+electronics devices. All of the shops are gone now because modern electronics is 
+not considered repairable. I'm one of the few techs left that still service 
+electronic equipment but my services are now limited to Commodore only. 
+     I began repairing Commodore gear and writing repair articles in 1986 when I 
+bought my first C64 system. I joined several of the local Commodore clubs at that 
+time. Since my retirement back in 2009, CBM 8 bit repair is all I do and it is 
+more of a hobby than a business. I've collected lots of C= hardware over the years 
+that I now use for parts. I don't routinely sell hardware or parts, just service, 
+but I do make exceptions at times. The cause of a failure might seem like a 
+particular bad component but could be something else. So, if I sell an IC in hopes 
+it might fix the problem and it doesn't, I'm out that part (which are hard to get) 
+and the customer has lost money. That's a lose-lose situation I try to avoid. 
+     I apparently have the only website dedicated to Commodore 8 bit hardware 
+repair. If I can help you with simple problems, that's preferable to shipping it 
+back and forth to have me do it. Email me at rcarlsen@tds.net and we can discuss 
+the symptoms and possible solutions. Otherwise, I'll be happy to restore your 
+hardware to factory condition. I also do upgrades and modifications. Before you 
+send your equipment for repair, I suggest you read the instructions on my site 
+regarding packing equipment for safe transport. I've seen too many items broken 
+in transit due to improper packing or inadequate materials being used. I don't 
+trust any shipper to pack goods properly... I do it myself! I use regular mail 
+with tracking for most shipping unless requested to do otherwise. I add extra 
+insurance if appropriate or if requested by the owner. Priority Mail costs more 
+but packages don't always get there any quicker, and it doesn't offer any other 
+benefits beyond $50 insurance unless you pay for extras. I rarely use UPS or FedEx 
+for really expensive or one-of-a-kind items but I pack them myself and insure for 
+more than they are worth to cover any possible loss or damage in transit, however 
+unlikely. 
+
+REPAIR ESTIMATES
+
+     I can't know all the problems a computer or drive may have until I get it on 
+the bench for tests, so exact estimates are impossible beforehand. Therefore, I 
+usually "cap" repair charges for a C64, 1541, 1571, etc. at $50. Because the SX64 
+is much more complex as well as more compact and harder to work on, I would cap 
+that computer repair at $100. Obviously the repair cost for both versions of the 
+C128 will be more because it's much more complex and therefore harder to diagnose. 
+Figure a cap at $100 for those as well. With this in mind, the repair for these 
+devices could be less but will be no more unless agreed upon beforehand. I charge 
+no more than what the repair calls for and I'll let you know the final cost so you 
+can decide if it's worth it to you. To be honest, I essentially have to fix all 
+the problems with a computer to find out all that's wrong with it. That said, if 
+you decide it's not worth it, I stop there and you owe nothing because I don't 
+charge for estimates alone. 
+     There are a few things that can push the cost higher. I check everything when 
+I do a repair but I consider that a normal part of any work I do. You will not get 
+your computer back with keys that don't work or some other fault even though the 
+main problem is fixed. I've been on the receiving end of that kind of "service" 
+before myself. Costs on any computer or disk drive would naturally go higher if 
+special problems arise, if a drive has a bad head or I had to replace the computer 
+SID (sound) chip, for example. Good SID chips are hard to find now and I've seen 
+them priced at $35 and more. As of this writing, there is a substitute SID called
+the SwinSID Ultimate and another called the ARMSID. I have a small stock of these 
+modules I can use for replacements during repairs to your computer. I charge only 
+what those replacements cost me. Bad heads in a disk drive mean the mechanism must 
+be swapped out since replacement heads are not available except from another drive. 
+     Another potential problem with the C64 is a computer severely damaged (many 
+bad chips) by a failing power supply. Such damage makes that board uneconomical to 
+repair, so I might just swap it out. Any device that has been tampered with by 
+unqualified service persons may cost more to repair since I can't know what other 
+problems may have been accidentally caused by such repair attempts. 
+     I used to insist the user send their power supply along with the computer, but 
+there is still the risk that it will fail in the future and damage the computer. 
+For that reason, if requested I can install my computer Saver circuit for a minimal 
+charge in all C64's so they are safe with any PS from then on. Note that I also
+make an external Saver cable that plugs between the compter and PS. On all early 
+version C64 boards, I also routinely install heat sinks on the chips that normally 
+run hot to make them last longer. 
+     Regardless of what the hardware needs during repairs, I will keep you informed 
+about anything that might push the cost higher. No "surprises". Of course upgrades 
+like JiffyDOS and modifications like a reset switch would add to the cost but I'm 
+not pushing any of that on you. My website describes all the mods I can do, but you 
+decide what you want. Upgrades or mods would cost less if part of a repair job but 
+not much more if that's all you want done. 
+     Before you send equipment for repair, let me know via email what the symptoms 
+are and, if you're inclined, perhaps you can fix the equipment yourself. That's 
+actually why my Commodore repair website was created. If the remedy is something 
+simple such as cleaning the R/W head in a disk drive and the website doesn't tell 
+you what you need, I'll be happy to talk you through it and perhaps save you the 
+cost of shipping your hardware back and forth. 
+
+REPLACEMENT POWER SUPPLY
+
+     Since the original CBM power supplies for the C64 and "flat" C128 are dual 
+voltage units and one source is 9 volts AC, there are few commercial off-the-shelf 
+replacements made now. The world has moved on to +5VDC and +12VDC for electronic 
+devices. A manufacturer would have to tool up for a limited market and that's not 
+likely to happen. That's why I'm making a single universal replacement supply that 
+can be used with any Commodore 64 or 128, even if they have a power hungry REU, 
+RAMlink or carts connected. 
+     The 9VAC 1 Amp part of my PS is just a small transformer; nothing unique about 
+that except that the one I use can easily be wired to work in Europe and Australia 
+where the line voltage is 230 volts instead of 120 volts as in the USA and Canada. 
+Because there are many different types of power plugs used in other parts of the 
+world, I install an IEC socket on overseas power supplies. Then the user can obtain 
+the appropriate AC cord locally that fits their mains. For the USA and Canada, I 
+install a standard 3 wire power cord on my PS. 
+     The 5 volt source is a prefabricated "switching" type rather than the linear 
+design used in the "bricks". It's either a 3 or 5 Amp capacity (depending on the PS
+model) with automatic short-circuit and over-voltage shutdown protection. A single 
+power cable out of the PS case connects to a C64 and I can add a C128 plug to that 
+cable in a Y configuration. If you buy a C64-only PS, a short adapter can be used 
+to power the Plus/4 via a square 4 pin connector. 
+
+A RESET SWITCH FOR THE C64: TWO TYPES, WARM AND COLD
+
+     I can install a push button for a warm reset that will clear any BASIC program 
+in memory and return the computer to its opening screen. However, a warm reset will 
+not clear a ML program. The screen will freeze but you must turn the computer off 
+and on again to completely clear it. As an alternative, I can install a simple cold 
+reset circuit. It is implemented by use of a three-way center-off switch, normally 
+placed on the lower left case side. Pushing the switch one way provides a warm reset 
+and the other way a cold reset. The only drawback I've found to the cold reset is 
+that an EPYX FastLoad cart may not work. All other carts I tried work fine and 
+JiffyDOS is OK with it. Which reset modification you choose will depend on how you 
+normally use your C64. For example, if you use a freezer or other cart with reset 
+already on it, you will not need that mod. If your usage requires many off/on cycles, 
+a reset switch is handy and saves wear and tear on the power switch. 
+
+THE COMPUTER SAVER: A PROTECTION DEVICE FOR THE C64
+
+     A failing power supply such as the original Commodore black or white "brick" 
+can do a lot of damage to a computer, making it uneconomical to repair. I hand-make 
+small batches of what I call the Saver in three different versions. A Saver module 
+can be installed in any C64, Plus/4 or late version VIC20CR to protect those 
+computers from PS damage. That mod is normally done during repairs but could be 
+installed at any time. Shipping back and forth for that upgrade alone would cost 
+more than the mod itself but I can install it during any repair job. I also sell 
+a completed module that the user can install in their own computer. Lastly, I make 
+two external versions that plug between the computer and its PS. I don't have a 
+regular sales outlet or use Ebay. I'm a repair tech (now Commodore-only after 
+retirement) and now do this mostly as a hobby. 
+
+JIFFYDOS: A COMPUTER ENHANCEMENT AND DRIVE SPEED UPGRADE
+
+     JiffyDOS is a chipset that, when installed in a C64 or 128 (VIC20 and other 
+versions also available) allows many one-button commands such as: press F1 for a 
+disk directory listing and F5 to load a ML program. An additional JD chip in a CBM 
+disk drive will allow faster access. I can install JiffyDOS in your computer and/or 
+drive in one of two ways. You can buy the chipset modules for your devices and send 
+them to me with the hardware for installation or, with Commodore hardware only in 
+hand, I can program and install chips myself after I buy the codes from an 
+authorized source such as Jim Brain. The final cost for you is about the same but 
+if I program chips and install them, turnaround time is less. I also make switchless
+JiffyDOS modules that don't require holes drilled in the computer case. Such a
+computer boots in Jd unless a button is held down during power up or reset. 
+
+DRIVE SELECT SWITCH INSTALLATION AND WRITE PROTECT BYPASS WITH SWITCH
+
+     From the factory, a drive such as the 1541 is hardware wired as device 8. I 
+can install a switch on your 1541 or equivalent disk drive or C128DCR to enable you 
+to easily change the device number of the drive. Note that the 1541-II, 1571 and 
+1581 disk drives already have device select switches on them. With an added switch, 
+the 1541 or DCR drive can be changed 8/9 or 8/9/11 with a multiple position toggle 
+switch. A four position slide switch (or two toggle switches) can be installed to 
+select any device number from 8 through 11. 
+     A switch and simple circuit installation in a disk drive will enable you to 
+write to write-protected disks without notching them first or removing the WP tab. 
+A switch on the front of the drive is recommended so that you can easily see the 
+WP status (normal or bypassed) and not accidentally overwrite a valuable disk. 
+
+Ray

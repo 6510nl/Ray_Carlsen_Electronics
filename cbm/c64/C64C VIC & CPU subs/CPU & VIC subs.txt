@@ -1,0 +1,23 @@
+                 VIC and CPU substitutions in the C64C board (250469)
+                       latest updates or corrections  11-12-2021
+
+     Somehow I ended up with a dozen or more 8564 VIC chips for the "flat" C128.
+I decided to see if one could be adapted to work in a C64C motherboard which
+normally uses a hard-to-find 8562 IC. It works but of course requires an adapter 
+to cross-connect some pins. The 8562 is a 40 pin IC and the 8564 has 48 so some
+of its pins are not used and were left open. Note that the 8564 C128 VIC IC does 
+not work in earlier C64 boards and I don't know why.
+     Another experiment was tried to see if a C128 8502 MPU IC would substitute
+for the 8500 in the C64C and it also worked. The photo "CPU & VIC subs.jpg" shows
+how they are wired up. Note the added clock pulse delay circuit using a TTL IC. 
+
+     Note: these are just experiments to see if those chips can be substituted. 
+I don't know how well they will work in all applications. 
+
+CAUTION: Never try to install an 8562 VIC IC from the 250469 short board into an
+earlier C64 board that uses a 6567 VIC. The +12V on pin 13 that is only +5VDC in
+the 25469 board will destroy the 8562!!! The install of a 6567 in a C64C short 
+board will produce an opening screen but it looks very bad as the two chips are 
+not compatible. 
+
+Ray

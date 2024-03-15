@@ -1,0 +1,99 @@
+                           C64 BLANK SCREEN       
+                 Latest updates and corrections 11-27-21
+
+     Blank screen is the most common symptom, and a failing PLA chip is
+the most common reason in the early version C64. However, quite a few 
+other failures can cause it as well, such as a bad power supply (check 
+with a known good substitute), bad RAM chip(s), and in general, just 
+about any other chip in there because many chips share multiple data 
+lines. If any one of those lines is loaded down or missing a signal for 
+whatever reason, it can produce that symptom. Fortunately, most of the 
+time, the same few ICs are the cause of the blank screen symptom, so 
+that narrows the search down a bit. You start with the statistically 
+most common failures are work your way down. There are a few tests you
+can run to determine what the problem is. At a minimum, you will need a 
+supply of known good replacement chips, some skill with a volt-ohm meter 
+and a soldering iron. Repair is mostly educated guesswork and trial and 
+error to see what works and what doesn't as you go along.
+     Turn the computer off and back on rapidly about five times. If the
+screen ever comes up with flashing colors or all one color, the PLA is
+suspect. Replace it to check. Try a game cartridge. Some carts will 
+essentially "replace" some of the chips in the computer when the game
+runs. If a cart works, check the ROMs. The screen can have a normal 
+border even if the CHARacter or BASIC ROMs are bad. A bad Kernal ROM 
+will show no border but a few game carts bypass the Kernal. Commodore 
+Kickman and Jupiter Lander are the only two I have that work with a 
+missing or bad Kernal ROM... but not a shorted one, of course.
+     A diagnostic cart called the Dead Test can sometimes find a bad
+RAM but other bad chips can give a false "one blink" indication. If 
+RAM or other chips are shorted, even the DT cart will not function. 
+Another diagnostic cart is more helpful after repairs are done but it
+requires a harness called the "octopus" cable that cross-connects all
+the ports. That cart will throw lots of errors without the cable. 
+     After the above tests fail to restore normal operation, I drag
+out the oscilloscope and check all eight data lines. There should be
+activity on all lines which normally measures about 4VPP. If one or more
+are missing or low (3VPP is not good enough), you need to find which IC
+is dragging that line down. Note that many chips share data lines, so
+each one must be checked. I desolder one pin of each suspected IC and
+free it so it doesn't make contact. If the data signal returns, I swap
+out that chip. You can't do that with anything but an oscilloscope. A
+logic probe may not tell you enough. A standard meter is useless for
+anything but voltage checks... the +5VDC and 9VAC from the power supply
+and the various on-board regulators.
+     I once repaired a C64 with one bad RAM chip, U10 on a 250425 board. 
+The symptom was a blank screen. Remembering that some game cartridges 
+would work with a bad Kernal, I tried a cartridge and the computer 
+produced a garbled game screen. After swapping out the PLA and the 
+Kernal without success, I tried the RAM "piggyback" trick (explained in 
+detail later) with the cart plugged in and got the game screen with U10 
+piggybacked. I then got a normal boot screen after that RAM chip was 
+replaced. If you ever find more than one bad RAM chip (often shorted) 
+in a computer, it was more than likely caused by a failing power supply.
+One failure mode of the Commodore black or white "brick" is due to 
+over-voltage on the five volt output --after warmup--. The PS may work 
+fine again after it cools down but then go on to kill another C64!
+     The internal RF unit outputs a signal that goes to the antenna
+input of your TV. If the picture is snowy, suspect the RF modulator,
+or bad cabling (switchbox, adaptor, etc.) to the TV. If the computer is 
+"dead" but is getting its +5VDC source from the power supply (red LED 
+on), the PS 9VAC source may be missing. If so, the modulator will produce 
+a black screen... darker than the blank screen of a failing chip in the 
+computer. Loss of 9VAC can be a bad PS or blown fuse in the computer.
+     See if any of the RAM chips (there are eight of them) get warm or
+hot... feel each one with the back of your finger after the computer has 
+run for about 5 minutes. Shorted chips will get hotter than the others. 
+Note: bad RAM doesn't always get hot. See if the computer resets the 
+other components in the system like the drive and/or printer. If so, try 
+a "blind" disk command and see if the drive responds. Try formatting a 
+disk. If that works, you may have a bad VIC chip (no screen display). 
+Sometimes a bad SID chip will produce a blank screen... pull it out and 
+try the computer. It will boot without it, although you will have no 
+sound and a proportional mouse will not work. The few large chips that 
+normally run hot have a high failure rate: in rough order... the PLA, 
+SID, MPU and the VIC. Static zaps usually take out chips like the CIAs 
+because those ICs are directly connected to the external ports. A 
+shorted CIA can produce a blank screen. You will get a startup screen 
+with the CIA's removed but you will have no cursor without U1 (keyboard 
+interface) plugged in. 
+     The smaller so-called "glue logic" chips (TTL) run cool and are 
+pretty rugged. Although they rarely fail, I've had a few repair jobs 
+that drove me crazy by making me unsolder a dozen IC's until I found the 
+bad one. Sometimes there is just no easy way. With the above noted 
+exceptions, removing a chip will usually produce a blank screen. 
+     The only practical way to check chips is by substitution. The
+easiest way to do that is by inserting each suspected chip into a working 
+computer that already has all chips socketed. You can chase your tail 
+doing it the other way around, and you're really stuck if you end up 
+having more than one bad IC. I made a test board for just that reason.
+Suspected chip(s) can be tested one at a time and only the bad ones need 
+be replaced. At the very least, you need a source of known good chips for 
+test purposes. Be careful... they are static sensitive. If you don't want 
+to go to that much trouble to diagnose the problem, you will probably be 
+better off hunting up another C64. Chips are hard to find and expensive. 
+Keep a spare "breadbox" or two, even if only for parts. Salvage from used
+boards is all there is to keep our "obsolete" computers going.
+
+Ray Carlsen 
+CARLSEN ELECTRONICS... a leader in trailing-edge technology.
+

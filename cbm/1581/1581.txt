@@ -1,0 +1,178 @@
+                    1581 DISK DRIVE DIAGNOSTICS         
+              latest updates and corrections 11-3-2014
+
+To properly diagnose a problem with your 1581, you need to know what 
+should happen during normal operation of the drive. A visual inspection 
+of the stepper and spindle activity is helpful in troubleshooting. To 
+see the drive operate, you will need to remove the top cover from the 
+mechanism, and that requires removal of the drive from the case. NOTE: 
+It is especially important to note and write down the orientation of 
+the four wire drive power cable at the PC board. This cable carries the 
++5 and +12 volt power sources from the PC board to the drive mechanism. 
+Note that the red wire goes to pin 1. If that drive cable is accidently 
+reversed on the PC board, it will destroy the drive instantly when the 
+drive is powered up! Make sure you get it back the way it came off. The 
+34 wire flat data cable also needs to be oriented properly. If put on 
+backwards, the drive will not work but that mistake shouldn't cause any 
+damage. I've done it a few times without a problem during installation 
+of alternate mechanisms.
+     One difference between the 1581 and earlier drive types such as the 
+1541 and 1571 is the functioning of the drive activity light. In the 1581, 
+the green activity light comes on during the power-up sequence (drive 
+self-test) and during disk accesses, i.e. a read or write in progress, 
+but disk errors are displayed by a flashing -power- (red LED) light. It 
+will alternately flash dim and bright at about a 2 per second rate if a 
+disk error is encountered. This is different than in a 1541 or 1571 where 
+the drive activity light functions as an error indicator.
+
+Normal operation:
+     When powered up without a disk in the drive, the 1581 power (red) 
+and drive activity (green) lights will come on. The stepper motor will 
+pull the heads back to track 1 if it is not already there. To see if the 
+stepper is working, turn off the drive and push the head mechanism 
+forward, then turn it back on. If it is already over track one, it will 
+move forward -slightly-, then move back in one quick sequence. If you 
+listen closely, you can hear it "burp" as the stepper operates. Then, as 
+the drive completes the internal self test and initializition (about 2 
+seconds), the green activity light will go out and the stepper will 
+"burp" again and remain in the "track zero" area. Note that the spindle 
+motor does not turn unless there is a disk in the drive. 
+     If there is an unformatted (blank) disk in the drive at power up, 
+the spindle will turn and the stepper will pull the heads back to track 
+1 (if not already there). As the initial disk read fails, the heads will 
+remain at track one and the stepper may burp again. The spindle motor 
+will continue to run for about 15 seconds, then stop. Exception: if the 
+computer is connected but turned off, the spindle will run continuously 
+because one or more serial lines are held at a logic low level by the 
+computer. If the computer accesses the drive by trying to read a blank 
+disk, the drive error will flash the red (power) LED. If you access and 
+read the error channel, it will indicate: 74,DRIVE NOT READY,00,00. The
+same thing will happen if the drive heads are clogged. 
+     If there is a formatted disk in the drive, but the drive cannot 
+read the data for some reason (example: an IBM formatted disk), the 
+stepper will move the head back and forth seeking a good track to read. 
+Depending on what the drive reads, the heads may remain in the track 1 
+area or move to the directory track (40) area, and the spindle will 
+continue to turn for about 15 seconds after the green activity light has 
+gone out. (See Note 1) If a computer is connected and a disk with 
+unreadable (corrupted or incorrect) data is accessed, the 1581 red drive 
+power light will flash. If the error channel is read, it will say: 
+20, READ ERROR,40,00 because the drive can't read the disk directory at 
+track 40.   
+     Lastly, if there is a correctly formatted and readable CBM disk in 
+the drive at power up (or if connected, a computer reset), the stepper 
+pulls the heads back to track 1 (if not already there), then the stepper 
+will move the heads forward to track 40 (the directory) and "park" the 
+heads over that track, and the green activity light will go out after 
+about two seconds. 
+     Note that during disk accesses, the green activity light will blink 
+or stay on as the drive reads a good disk, and the spindle motor will 
+stop about 10 seconds later. Long directories with many entries may take 
+several seconds to load. If the same disk directory is accessed again by 
+the user, note that the drive spindle doesn't move but the activity light 
+turns on for a short time. That's because the BAM and directory 
+information for that disk is stored in drive memory until the disk is 
+changed. A disk change prompts the drive to reread the BAM from the disk 
+the next time the drive is accessed by the computer. Therefore, after a 
+disk change, the spindle will turn and the drive will read the disk 
+again... even if the same disk is reinserted. There is a tiny switch just
+inside the drive door on the left side that closes when a disk is 
+inserted. That's what the drive electronics uses to sense when a disk is 
+changed. Another switch (or photo sensor in some mechanisms) is used for 
+write protection. It checks to see if the hole in the disk is open 
+(OK to write) or closed (protected). Note: that is exactly opposite to 
+the way a 5.25" disk is write protected. 
+     If the 1581 is connected to a C128 and the computer is turned on or 
+reset in the 128 mode, the 1581 (like the 1571) will attempt to autoboot 
+from the disk. If the disk contains a special USR file with the name 
+COPYRIGHT CBM 86, the drive will read and execute that file and 
+automatically run the program at the specified load address. 
+
+Note 1: An IBM formatted disk has the same MFM encoding as a Commodore 
+formatted disk, but other differences normally make IBM disks unreadable 
+in a 1581. However, because of the similarities, with the proper 
+software (such as Big Blue Reader), an IBM double density (720K) disk 
+can be read or written to in a 1581. Likewise, a 1581 formatted disk 
+can be read in an IBM type PC if the proper software is used. Of course 
+programs from either system are not cross-compatible, but such things as 
+text files can be accessed. Note that newer IBM 1.44M (high density) 
+disks are not compatible and will not work in a 1581. Also, some PC
+systems will not automatically recognise 720K disks properly. 
+
+Drive problems:
+     The 1581 is a very reliable drive compared to other CBM types and 
+actual breakdowns are rare. The most common drive failure is actually a 
+fault in the external power supply. If the +5 volt regulated source 
+"sags" (drops below 5 volts) during drive accesses, the drive will throw 
+random errors or will not work at all. That supply problem is usually 
+intermittant and it may work when cold but fail after warmup. If you can 
+borrow another supply, that's the easiest way to check for a bad one. 
+An alternative diagnostic is to monitor the +5 volt line (the red wire 
+on the four wire bundle to the drive mechanical deck) inside the drive 
+with a voltmeter while the drive is being used. It should remain steady 
+at 5 volts DC. If the voltage drops at any time, the external power pack 
+is probably failing. The supply must be checked with a load on it (drive 
+connected) for voltage checks to be valid. Unloaded, the voltage may
+measure a normal level so it must be checked in service. 
+     One drive problem shows up as a continuous green activity light (the 
+LED doesn't go out two seconds after power up) and there is no drive 
+access. Most of the time, it's the DOS ROM chip U2 (CBM 318045-01) that's 
+bad. That chip can be a ROM or an EPROM and normally is the only socketed 
+chip in the drive, unless someone has added other sockets during repairs 
+or upgrades. Other chips that can produce that symptom are a bad VIA chip 
+U5, a CBM 8520, (also used in the Amiga) or U9, a 74LS14 (a standard TTL 
+IC). Note that if the drive doesn't complete its initialization sequence 
+at powerup or reset (for whatever reason), two of the serial lines (pins 
+4 and 5 of the DIN connectors) will remain logic low instead of going high 
+as they should. 
+     Another thing that concerns some 1581 owners is the WD1770 vs WD1772 
+U4 drive controller IC dilemma. Some early drives failed because of a bad 
+batch of 1770 disk controller ICs from the factory. Due to that one-time
+problem, some users routinely changed U4 to the later 1772. If your drive 
+is working, that change is not necessary! The "upgrade" required a jumper 
+change on the drive PC board. If the original chip is a 1770, the CBM 
+schematic indicates there should be a jumper or 47 ohm resistor installed 
+at J1 on the PC board and if a 1772 is installed, J1 should be opened. 
+Supposedly the jumper changes the step rate to 6mS but I don't think that's 
+true. One old post from Commodore's Fred Bowen indicates all drives should 
+have the jumper installed, regardless of the chip used. Electrically, that 
+jumper connects U5 (8520) pin 25 (PHI-2) to pin 19 (TOD). I've never seen a 
+factory jumper at J1 in any of the drives I've worked on. Note that some 
+very late drives have a 1772 installed by the factory and no board marking 
+for the J1 jumper. The confusion continues...
+     The original fault with a failing 1770 was directory corruption. Other 
+symptoms of a failing U4 include intermittent "file not found" and spindle 
+motor not spinning when the drive is accessed. One recent U4 failure showed 
+no stepper activity at power up (no "burp"), the green LED flashed once per 
+second repeatedly and the spindle ran continuously. Note: the 1571 drive 
+uses the same two controller ICs interchangeably, and that drive has no 
+board jumper. 
+     Another fault that Commodore found and fixed in some early 1581 
+drives was a bad connection between IC U10 pin 10 to ground. Some drives 
+apparently had a bad connection at that point, and it should be checked 
+and resoldered if necessary. That fault caused intermittant "device not 
+present" errors. 
+     One user reported a U13 (74LS241) failure that I'll include here: 
+"Symptoms: reading anything (directory, file, error channel) from the 
+drive results in the mechanism spinning, green light on and the system 
+locked up. Initialization at boot or reset is always ok. Format and save 
+commands seem to be executed, although after saving, the error LED is 
+blinking. Correct execution of the format and save commands was 
+confirmed with a working 1581."
+     Lastly, a fault that is not really a drive problem but that looks 
+like one shows up when you connect a 1581 to a C64 (or VIC20) with a 
+datassette also connected. When accessed, the drive will lock up the 
+serial bus and the green activity LED on the drive will stay on. The 
+1581 uses one serial line for burst mode (128 mode only) that the C64 
+doesn't support, and that line is also used by the datassette for its 
+read function. A 1581 pulls the \SRQ (pin 1) line low when the drive is 
+accessed, and that locks the bus. Note that this problem doesn't happen 
+with a 1571 or on a C128 (64 or 128 modes) with a 1581 and datassette 
+connected. If it is necessary to use a datassette with a 1581 on a C64, 
+one workaround would be to cut the computers \SRQ line to the serial 
+port (it's never used anyway), or make up a special serial cable with 
+that line disconnected. 
+
+Ray Carlsen CET
+Carlsen Electronics... a leader in trailing-edge technology
+     

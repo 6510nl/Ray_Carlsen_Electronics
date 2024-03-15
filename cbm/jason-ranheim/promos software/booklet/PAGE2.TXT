@@ -1,0 +1,54 @@
+    GETTING STARTED
+
+        With the power OFF, plug your PROMENADE into the user
+    Port at the left rear of your COMMODORE 64 or 128. Install
+    the PROMOS 2.0 diskette In your 1541, 1571 or 1581 disk
+    drive. Turn ON your computer. If you are in 128 mode, the
+    software will load automatically. If In 64 mode, type:
+
+        LOAD"P*",8,1 <CR>
+
+        The <CR> above means 'type a carriage return'.
+
+        You will shortly see a brief sign-on message and
+    copyright notice. At this point, your system is ready.
+
+    HANDLING EPROMS
+
+        EPROM's need to be handled with reasonable care if one is
+    to avoid irretrievable damage to them. They are very
+    susceptible to static electricity. This can be a problem in
+    a cold, dry climate in the wintertime. Always discharge
+    yourself by touching a grounded object before handling them.
+    The aluminum case of the PROMENADE itself is convenient for
+    this purpose.
+        To install an EPROM In the PROMENADE socket, RAISE the
+    operating lever, drop the EPROM Into place and then close the
+    socket by moving the lever down to the case as far as it will
+    go. NOTE- EPROM's having 24 pins (e.g. 2716, 2732) use the
+    RIGHTMOST 24 socket positions. Twenty eight pin EPROM's
+    occupy the entire socket. MAKE SURE the orientation notch
+    points to the LEFT as the figure on the top of the cover
+    indicates.
+        NOW TO INSURE PROPER ELECTRICAL CONNECTION to all pins of
+    the EPROM, move the EPROM from side to side slightly by
+    forcing it with the thumbs. This may take quite a bit of
+    force. Doing this becomes habitual after a while. The
+    objective here is to have the contacts in the socket cut
+    through any tarnish films which might otherwise prevent
+    proper operation.
+
+    HEXADECIMAL NOTATION
+
+        If you are already familiar with HEX notation, skip this
+    section. If not, you will need to spend a little effort at
+    this point to aquaint yourself with a very useful idea.
+        In the world of EPROM's and computers, information is
+    conveyed in little units known as 'BITS'.  A bit can have one
+    of two values.  The meaning we associate with these values
+    can be anything capable of expression as a 'binary' or
+    two-valued entity.  For example, a statement can be either
+
+
+                              -2-
+

@@ -1,0 +1,53 @@
+     D0,1FFF,5
+
+     This command produces a screen display of all the data on
+a 2764. The first two parameters are the starting and ending
+EPROM ADDRESSES of the range to be displayed. The third
+parameter is the CONTROL WORD for the particular EPROM.
+Another example:
+
+     D6000,7FFF,E6
+
+     This command scans the top 8k of a 27256.
+
+THE A COMMAND- ASCII scan of EPROM data.
+
+     The A command works just like the D command except that
+the display is of printable ASCII characters. For example:
+
+     A0,7FF,28
+
+     In this example, we do an ASCII scan on all bytes of a
+2716.
+
+THE E COMMAND- Check EPROM for erased condition.
+
+     The data at all erased locations on an EPROM is FF; that
+is, all data bits are one's. To check for this condition,
+use the E command. An example:
+
+     E0,3FFF,6
+
+     This command checks for FF at all locations on a 27128A.
+The EPROM addresses of all un-erased locations are printed on
+the screen. Their total number is also printed. The first
+and last addresses on the 27128A are 0 and 3FFF. The control
+word is 6. Another example:
+
+     E800,FFF,EO
+
+     This command checks for the erased condition of the top
+half of a 2732.
+
+THE P (or pi symbol) COMMAND- Program EPROM from computer memory.
+
+     The key letter for this command can be either P or 
+(pi symbol). The command works the-same either way.
+     There are five parameters needed for this command: the
+STARTING and ENDING computer MEMORY ADDRESSES defining where
+the information is to come from, the STARTING ADDRESS on the
+EPROM specifying where we want the data to go, the CONTROL
+WORD; and the last parameter is the PROGRAM METHOD WORD (PMW
+
+
+                                -12-

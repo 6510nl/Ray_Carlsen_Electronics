@@ -1,0 +1,64 @@
+										
+                        C128 POWER SUPPLY REPAIRS
+                 Latest updates and corrections: 4-7-2012
+
+     The power supply for the "flat" C128 computer is a "switching" type and 
+therefore runs cooler and lasts longer than the C64 linear PS. However, the 
+C128 supply does have a few shortcomings that can make it fail. One of them 
+is the glue the factory used to hold components in place during assembly. The 
+other is failing solder connections on a few components. Either of those can 
+cause intermittent operation or outright failure to function. In addition, 
+there is one fuse in the case bottom that will open if there is an overload 
+or short circuit on the 9VAC line of the computer. A shorted SID chip caused 
+that fuse to open in one C128 I recently repaired. Note there is another 
+fuse inside the PS on its circuit board which protects the 5V source. 
+     There are a few trouble spots on the PS PC board that should be checked 
+and that often require resoldering whenever you open a C128 power supply. If 
+any solder appears to be breaking loose, it should be resoldered. See photo. 
+Always apply new solder... don't just reflow the old. Places to check are 
+the terminals of the power transistors and large components like the filter 
+capacitors. Check also for cracks in the PC board from rough handling. 
+Bridge over any broken traces with wire soldered to both sides of the break.
+
+THE MYSTERY FAILURES CAUSED BY GLUE:
+     Factory glue looks like ordinary contact cement and is tan or light 
+brown in color when new. As it ages, expecially near sources of heat such 
+as power transistors, the glue turns brown and eventually black. Black glue 
+is hygroscopic (absorbs water out of the air) and that is what damages the 
+power supply circuit board. The resulting moisture under the glue can cause 
+abnormal conduction between circuits and will eventually cause corrosion 
+of copper board traces and component wiring. The failed glue must be removed 
+before it causes permanent damage. When new, it's very adhesive and nearly 
+impossible to remove, but when aged, it scrapes off easily. I use a dental 
+pick to do the job. After the glue is removed, if the resulting corrosion is 
+not too severe (no open circuits), the PS should work again. Of course any 
+component destroyed by corrosion or damaged from glue removal efforts must 
+be replaced. 
+
+DISASSEMBLY:
+     The case comes apart after removing four screws from the bottom. Clean 
+the residual of plastic off the ends of those screws before you put them 
+back... it makes that much easier. With the case open, you'll notice the top 
+might be stuck to something inside. It's the double-sided tape that is stuck 
+to the transformer. You may need to pull the chassis out of the bottom 
+half-shell in order to pry it off the top. Don't stress the PC board or you 
+may crack it. With the assembly apart, examine the board top and bottom for 
+brown or black glue. Scrape the glue away from the wiring and components 
+(see photos) and resolder any connections that look like they are breaking 
+loose. 
+
+REASSEMBLY:
+     After the repairs are done, set the assembly back inside the bottom case 
+half. The transformer has a recessed area it fits down into, and the PC board 
+should sit flat against the bottom of the case. If it's tilted up on one 
+side, there is likely a pinched wire underneath which must be rerouted out of 
+the way. Now press the AC and DC cords into their places and put the top cover 
+back on. Make sure the case top seats fully and evenly all the way around 
+before you put the screws back in. If not, wiring is likely holding the board 
+up. Once these repairs are done, the power supply should work fine again. 
+Actual component failures are rather rare. 
+
+Ray Carlsen CET
+CARLSEN ELECTRONICS
+
+Please let me know if you spot any errors here. I appreciate feedback!

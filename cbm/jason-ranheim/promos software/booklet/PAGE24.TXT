@@ -1,0 +1,48 @@
+    location still does not verify, programming stops and the
+    failure is reported.
+
+        Intelligent #3- In this method, the margin pulse is 4
+    times the preceding total accumulation. If after 15 ms of
+    pulses verification has not been achieved, a 60 ms pulse is
+    tried. If the location now verifies, programming moves on.
+    If not, the EPROM has failed.
+       For any of the Intelligent programming methods, the EPROM
+    Supply (VCC) is set to 6 volts.
+       PMW's from 4 to F have the meanings given In the
+    following table:
+
+       PMW   INT METHOD  TEST PULSE  TOTAL ACCUMULATION*
+
+        4         1       variable          12 ms.
+        5         1       variable          25 ms.
+        6         1       variable          50 ms.
+        7         1       variable         100 ms.
+        8         2         .25 ms.         75 ms.
+        9         2         .50 ms.         75 ms.
+        A         2         1.0 ms.         75 ms.
+        B         2         2.0 ms.         75 ms.
+        C         3         .25 ms.        100 ms.
+        D         3         .50 ms.        100 ms.
+        E         3         1.0 ms.        100 ms.
+        F         3         2.0 ms.        100 ms.
+
+       * = the maximum time that can be accumulated at a
+   location before an error Is reported.
+       If you add $40 to the PHW, that is set bit 6 high, the
+   programming is altered in this respect: The PROMENADE turns
+   off Vpp before attempting to read back the EPROM. This slows
+   down programming; but it is advisable in few cases.
+       For example:
+
+       PC000,C7FF,0,28,47
+
+   This command programs a 27C16 with data from C000 through
+   C7FF. Another example:
+
+       P4000,BFFF,0,E6,46
+
+   This programs an OKI 27256 with the specified data.
+
+
+
+                              -24-

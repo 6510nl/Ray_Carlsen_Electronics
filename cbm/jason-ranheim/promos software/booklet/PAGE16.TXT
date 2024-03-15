@@ -1,0 +1,49 @@
+   address so you know where in RAM the data is. Oftentimes,
+   it's a good Idea to jot these addresses down. As with the S
+   command, you cannot load into the range D000 through DFFF
+   from 64 mode. In 128 mode, if you want to load the file Into
+   bank one RAM, first set bank 1 with the B command.
+       There is one other important feature of the L command:
+   you can specify your own load-start address. This is
+   mandatory if you want to load a PGM file whose load-start
+   address is unknown or if you want to load it someplace else.
+   To specify your own load-start address, just add it to your L
+   command:
+
+       L"2532 DATA",9,6000
+
+       The load-start address of this file we know to be 2000.
+   But we have forced the data to be loaded at 6000 by means of
+   this command.
+       This feature makes it very easy to merge separate PGM
+   files Into one.
+
+   THE Q COMMAND- Quit PROMOS.
+
+       Should you wish to disengage PROMOS, use the Q command.
+   Just execute:
+
+       Q
+
+   and PROMOS is gone. You can re-enable PROMOS by executing
+   the following SYS:
+
+       SYS320
+
+       COMMODORE 128 users can switch to 64 mode using the G064
+   command, then re-enable PROMOS using SYS320 from 64 mode.
+   After a RESET, you can use SYS320 to re-enable PROMOS in 128
+   mode without having to reload the program.
+
+   THE Z COMMAND- Zero the PROMENADE programming socket.
+
+       This command sets the voltage at all pins of the C1
+   socket to (nearly) 0 volts so EPROM's can be safely installed
+   and removed. This is done automatically for the most part.
+   C128 users will notice that after a 128 mode LOAD or SAVE,
+   the red light is left on, indicating an energized condition.
+   Here is where the Z command comes in. Execute this command
+   to reset the C1 socket.
+
+
+                            -16-
